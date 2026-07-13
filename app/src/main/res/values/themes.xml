@@ -52,8 +52,8 @@
 
     <!-- Splash Screen Theme-->
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/ic_launcher_background</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenBackground">@android:color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_sk_foreground</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
 
@@ -66,4 +66,44 @@
 
     <!-- place holder for dark background night theme overrides -->
     <style name="DarkBackground" />
+
+    <!-- shiroikuma-nekokan fork: the 白い熊 猫管 black/yellow base look, applied at
+         runtime instead of DynamicColors (see Utils.patchColors). Slot-level user
+         overrides are painted on top by SkStyler. -->
+    <style name="SkBlackYellow">
+        <item name="colorPrimary">#FFFF00</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="colorPrimaryContainer">#FFFF00</item>
+        <item name="colorOnPrimaryContainer">#000000</item>
+        <item name="colorSecondary">#FFFF00</item>
+        <item name="colorOnSecondary">#000000</item>
+        <item name="colorSecondaryContainer">#333300</item>
+        <item name="colorOnSecondaryContainer">#FFFF00</item>
+        <item name="colorTertiary">#FFFF00</item>
+        <item name="colorOnTertiary">#000000</item>
+        <item name="colorTertiaryContainer">#333300</item>
+        <item name="colorOnTertiaryContainer">#FFFF00</item>
+        <item name="android:colorBackground">#000000</item>
+        <item name="colorOnBackground">#FFFF00</item>
+        <item name="colorSurface">#000000</item>
+        <item name="colorOnSurface">#FFFF00</item>
+        <item name="colorSurfaceVariant">#141400</item>
+        <item name="colorOnSurfaceVariant">#FFFF00</item>
+        <item name="colorSurfaceContainer">#0D0D00</item>
+        <item name="colorSurfaceContainerLow">#080800</item>
+        <item name="colorSurfaceContainerLowest">#000000</item>
+        <item name="colorSurfaceContainerHigh">#141400</item>
+        <item name="colorSurfaceContainerHighest">#1A1A00</item>
+        <item name="colorSurfaceInverse">#FFFF00</item>
+        <item name="colorOnSurfaceInverse">#000000</item>
+        <item name="colorOutline">#FFFF00</item>
+        <item name="colorOutlineVariant">#666600</item>
+        <item name="android:textColorPrimary">#FFFF00</item>
+        <item name="android:textColorSecondary">#A6FFFF00</item>
+        <item name="android:textColorTertiary">#A6FFFF00</item>
+        <item name="android:textColorHint">#80FFFF00</item>
+        <item name="colorControlNormal">#FFFF00</item>
+        <item name="colorControlActivated">#FFFF00</item>
+        <item name="colorAccent">#FFFF00</item>
+    </style>
 </resources>

@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="184dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@drawable/ic_launcher_sk_foreground" />
 
         <TextView
             android:id="@+id/welcome_text"
