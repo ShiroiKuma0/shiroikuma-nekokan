@@ -25,14 +25,14 @@
     <string name="wrongValueForBarcodeType">Giá trị không hợp lệ cho loại mã vạch đã chọn</string>
     <string name="expiryDate">Ngày hết hạn</string>
     <string name="currency">Tiền tệ</string>
-    <string name="welcome">Chào mừng tới Catima</string>
+    <string name="welcome">Chào mừng tới 白い熊 猫管</string>
     <string name="failedParsingImportUriError">Không thể phân tích URI đã nhập</string>
     <string name="exporting">Đang xuất dữ liệu…</string>
     <string name="group_edit">Sửa nhóm</string>
     <string name="debug_version_fmt">Phiên bản: <xliff:g id="version">%s</xliff:g></string>
     <string name="backImageDescription">Ảnh mặt sau</string>
     <string name="view_online">Xem online</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Để quét mã vạch, Catima sẽ cần truy cập vào camera của bạn. Nhấn vào đây để thay đổi cài đặt việc cấp quyền.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Để quét mã vạch, 白い熊 猫管 sẽ cần truy cập vào camera của bạn. Nhấn vào đây để thay đổi cài đặt việc cấp quyền.</string>
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
     <string name="turn_flashlight_on">Mở đèn pin</string>
     <string name="importOptionFilesystemTitle">Nhập dữ liệu từ hệ thống</string>
@@ -68,7 +68,7 @@
     <string name="setBackImage">Đặt ảnh mặt sau</string>
     <string name="settings_display_barcode_max_brightness">Tăng sáng màn hình</string>
     <string name="chooseExpiryDate">Chọn ngày hết hạn</string>
-    <string name="permissionReadCardsDescription">đọc thẻ Catima của bạn và mọi thông tin trong đó, bao gồm cả ghi chú và ảnh</string>
+    <string name="permissionReadCardsDescription">đọc thẻ 白い熊 猫管 của bạn và mọi thông tin trong đó, bao gồm cả ghi chú và ảnh</string>
     <string name="anyDate">Bất cứ ngày nào</string>
     <string name="unsupportedBarcodeType">Loại mã vạch này chưa thể hiện thị được. Ửng dụng có thể hỗ trợ nó ở những phiên bản sau này.</string>
     <string name="failedLaunchingPhotoPicker">Không tìm thấy ứng dụng thư viện ảnh được hỗ trợ</string>
@@ -100,7 +100,7 @@
     <string name="ok">Đồng ý</string>
     <string name="unarchive">Bỏ lưu trữ</string>
     <string name="addWithoutBarcode">Thêm thẻ không có mã vạch</string>
-    <string name="importCatima">Nhập dữ liệu từ Catima</string>
+    <string name="importCatima">Nhập dữ liệu từ 白い熊 猫管</string>
     <string name="sort_by">Xếp theo</string>
     <string name="on_google_play">trên CH Play</string>
     <string name="turn_flashlight_off">Tắt đèn pin</string>
@@ -179,7 +179,7 @@
     <string name="noGiftCardsGroup">Tạo vài thẻ, và sắp xếp chúng vào nhóm này</string>
     <string name="on_github">trên Github</string>
     <string name="sort">Sắp Xếp</string>
-    <string name="permissionReadCardsLabel">Đọc thẻ Catima</string>
+    <string name="permissionReadCardsLabel">Đọc thẻ 白い熊 猫管</string>
     <string name="groups">Nhóm</string>
     <string name="photos">Ảnh</string>
     <string name="storageReadPermissionRequired">Tác vụ này cần được cấp quyền đọc bộ nhớ…</string>
@@ -220,7 +220,7 @@
     </plurals>
     <string name="version_history">Lịch sử phiên bản</string>
     <string name="note">Ghi chú</string>
-    <string name="importCatimaMessage">Chọn tập tin được xuất từ Catima để nhập liệu.\nTạo tập tin từ menu Nhập/Xuất dữ liệu ở ứng dụng Catima khác và bấm Xuất dữ liệu.</string>
+    <string name="importCatimaMessage">Chọn tập tin được xuất từ 白い熊 猫管 để nhập liệu.\nTạo tập tin từ menu Nhập/Xuất dữ liệu ở ứng dụng 白い熊 猫管 khác và bấm Xuất dữ liệu.</string>
     <plurals name="balancePoints">
         <item quantity="other"><xliff:g>%s</xliff:g> điểm</item>
     </plurals>
@@ -233,7 +233,6 @@
     <string name="deleteConfirmationGroup">Xóa nhóm\?</string>
     <string name="rate_this_app">Đánh giá ứng dụng</string>
     <string name="credits">Ghi nhận</string>
-    <string name="app_name">Catima</string>
     <string name="and_data_usage">và sử dụng dữ liệu</string>
     <string name="show_validity">Hiển thị tính hợp lệ</string>
     <string name="source_repository">Kho lưu trữ nguồn</string>
@@ -278,7 +277,7 @@
     <string name="width">Chiều rộng</string>
     <string name="setBarcodeWidth">Đặt chiều rộng mã vạch</string>
     <string name="card_list_widget_name">Danh sách thẻ</string>
-    <string name="card_list_widget_empty">Sau khi được nhập vào Catima, thẻ hội viên của bạn sẽ xuất hiện ở đây. Hãy đảm bảo tất cả các thẻ không ở trạng thái đã lưu trữ.</string>
+    <string name="card_list_widget_empty">Sau khi được nhập vào 白い熊 猫管, thẻ hội viên của bạn sẽ xuất hiện ở đây. Hãy đảm bảo tất cả các thẻ không ở trạng thái đã lưu trữ.</string>
     <string name="cardWithNumber">Thẻ <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Thẻ <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Vui lòng không quay thiết bị, thao tác này sẽ huỷ hành động</string>

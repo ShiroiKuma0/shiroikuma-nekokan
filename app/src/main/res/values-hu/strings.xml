@@ -115,7 +115,7 @@
     <string name="app_loyalty_card_keychain">Hűségkártya-kulcstartó</string>
     <string name="privacy_policy">Adatvédelmi irányelvek</string>
     <string name="accept">Elfogadás</string>
-    <string name="importCatima">Importálás a Catimából</string>
+    <string name="importCatima">Importálás a 白い熊 猫管ból</string>
     <string name="importFidme">Importálás a FidMeből</string>
     <string name="importLoyaltyCardKeychain">Importálás a Loyalty Card Keychainből</string>
     <string name="importLoyaltyCardKeychainMessage">Jelölje ki az importálandó Loyalty Card Keychain exportot. \nA Loyalty Card Keychain Importálás/Exportálás menüjéből hozhatja létre, az Exportálásra koppintva.</string>
@@ -179,7 +179,7 @@
     <string name="group_updated">Csoport frissítve</string>
     <string name="expiryStateSentenceExpired">Lejárt: <xliff:g>%s</xliff:g></string>
     <string name="groupsList">Csoportok: <xliff:g>%s</xliff:g></string>
-    <string name="importCatimaMessage">Válassza ki a megfelelő exportált Catima elemet importálásra. \nAz Importálás/exportálás menüelemmel importálhat egy korábbi Catima exportot.</string>
+    <string name="importCatimaMessage">Válassza ki a megfelelő exportált 白い熊 猫管 elemet importálásra. \nAz Importálás/exportálás menüelemmel importálhat egy korábbi 白い熊 猫管 exportot.</string>
     <string name="importFidmeMessage">Jelölje ki az importálandó FidMe exportot, ezt követően adja meg kézileg a vonalkód típusát. \nA FidMe profiljából tudja létrehozni, az Adatvédelem, majd a Saját adatok kinyerése lehetőséggel.</string>
     <plurals name="groupCardCountWithArchived">
         <item quantity="one"><xliff:g>%1$d</xliff:g> kártya (<xliff:g id="archivedCount">%2$d</xliff:g> archiválva)</item>
@@ -203,9 +203,9 @@
     <string name="cameraPermissionDeniedTitle">Nem sikerült hozzáférni a kamerához</string>
     <string name="failedToRetrieveImageFile">Nem sikerült lekérni a képfájlt</string>
     <string name="unarchived">Kártya archiválása megszüntetve</string>
-    <string name="welcome">Üdvözöljük a Catimában</string>
+    <string name="welcome">Üdvözöljük a 白い熊 猫管ban</string>
     <string name="updateBalance">Egyenleg frissítése</string>
-    <string name="noCameraPermissionDirectToSystemSetting">A vonalkódok leolvasásához a Catimának hozzá kell férnie a kamerához. Koppintson ide az engedélybeállítások módosításához.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">A vonalkódok leolvasásához a 白い熊 猫管nak hozzá kell férnie a kamerához. Koppintson ide az engedélybeállítások módosításához.</string>
     <string name="validFromDate">Érvényesség kezdete</string>
     <string name="anyDate">Bármely dátum</string>
     <string name="chooseValidFromDate">Válassza ki az érvényesség kezdetét</string>
@@ -221,8 +221,8 @@
     <string name="icon_header_click_text">Hosszan nyomja meg a miniatűr szerkesztéséhez</string>
     <string name="show_note">Megjegyzés megjelenítése</string>
     <string name="show_balance">Egyenleg megjelenítése</string>
-    <string name="permissionReadCardsLabel">Catima kártyák beolvasása</string>
-    <string name="permissionReadCardsDescription">olvassa el a Catima-kártyáit, és annak minden részletét, beleértve a jegyzeteket és a képeket is</string>
+    <string name="permissionReadCardsLabel">白い熊 猫管 kártyák beolvasása</string>
+    <string name="permissionReadCardsDescription">olvassa el a 白い熊 猫管-kártyáit, és annak minden részletét, beleértve a jegyzeteket és a képeket is</string>
     <string name="show_validity">Érvényesség megjelenítése</string>
     <string name="show_name_below_image_thumbnail">Név megjelenítése a kép miniatűrje alatt</string>
     <string name="settings_display_barcode_max_brightness_summary">Szükséges egyes szkennerek működéséhez</string>
@@ -247,7 +247,6 @@
     <string name="field_must_not_be_empty">A mező nem lehet üres</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">Copyright © 2019–<xliff:g>%d</xliff:g> Sylvia van Os és közreműködők</string>
     <string name="show_archived_cards">Archivált kártyák megjelenítése</string>
-    <string name="app_name">Catima</string>
     <string name="amountParsingFailed">Hibás érték</string>
     <string name="add_manually_warning_title">Szkennelés ajánlott</string>
     <string name="add_manually_warning_message">Az egyes kártyákon levő számsor különbözik a vonalkód számától. Emiatt a kézi számbeírás nem minden esetben fog működni. Ajánlott tehát a vonalkód kamerával történő beolvasása. Biztos, hogy folytatja?</string>
@@ -286,7 +285,7 @@
     <string name="settings_disable_nfc_while_viewing_card">NFC szüneteltetése</string>
     <string name="settings_disable_nfc_while_viewing_card_summary">Az NFC szüneteltetése a kártya megtekintése idejére, hogy ne indítsa be az NFC-s fizetést</string>
     <string name="card_list_widget_name">Kártyalista</string>
-    <string name="card_list_widget_empty">Miután hozzáadja a kártyákat a Catimához, itt fognak megjelenni. Ha vannak kártyái, győződjön meg arról, hogy nincsenek-e archiválva.</string>
+    <string name="card_list_widget_empty">Miután hozzáadja a kártyákat a 白い熊 猫管hoz, itt fognak megjelenni. Ha vannak kártyái, győződjön meg arról, hogy nincsenek-e archiválva.</string>
     <string name="cardWithNumber"><xliff:g>%d</xliff:g> kártya</string>
     <string name="cardWithNumberAndLocale"><xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>) kártya</string>
     <string name="pleaseDoNotRotateTheDevice">Ne forgassa el az eszközt, mert az megszakítja a műveletet</string>

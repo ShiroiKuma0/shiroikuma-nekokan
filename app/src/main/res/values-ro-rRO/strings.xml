@@ -89,7 +89,7 @@
     <string name="unsupportedBarcodeType">Acest tip de cod de bare nu poate fi afișat. Este posibil ca acesta să se poată afișa într-o versiune mai nouă a aplicației.</string>
     <string name="photos">Imagini</string>
     <string name="noGiftCardsGroup">Creați câteva carduri, iar apoi atribuiți-le grupului de aici</string>
-    <string name="importCatima">Importați din Catima</string>
+    <string name="importCatima">Importați din 白い熊 猫管</string>
     <string name="intent_import_card_from_url_share_multiple_text">Aș dori să partajez niște carduri cu tine</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">Drepturi de autor © 2019–<xliff:g>%d</xliff:g> Sylvia van Os și contribuitorii</string>
     <string name="translate_platform">pe Weblate</string>
@@ -108,14 +108,14 @@
     <string name="validFromDate">Valid de la data de</string>
     <string name="cameraPermissionDeniedTitle">Camera n-a putut fi accesată</string>
     <string name="wrongValueForBarcodeType">Valoarea nu este validă pentru tipul de cod de bare selectat</string>
-    <string name="welcome">Bine ați venit la Catima</string>
+    <string name="welcome">Bine ați venit la 白い熊 猫管</string>
     <string name="and_data_usage">și utilizarea datelor</string>
     <string name="group_edit">Editați Grup</string>
     <string name="debug_version_fmt">Versiune: <xliff:g id="version">%s</xliff:g></string>
     <string name="show_validity">Afișați validitatea</string>
     <string name="backImageDescription">Imagine din spate</string>
     <string name="view_online">Vizualizați online</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Pentru a scana codurile de bare, Catima necesită acces la cameră. Apăsați aici pentru a schimba setările permisiunilor dvs.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Pentru a scana codurile de bare, 白い熊 猫管 necesită acces la cameră. Apăsați aici pentru a schimba setările permisiunilor dvs.</string>
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
     <string name="turn_flashlight_on">Porniți lanterna</string>
     <string name="height">Înălțime</string>
@@ -136,7 +136,7 @@
     <string name="showMoreInfo">Afișați informații</string>
     <string name="failedToOpenUrl">Mai întâi instalați un browser web</string>
     <string name="setBackImage">Setați imaginea din spate</string>
-    <string name="permissionReadCardsDescription">citiți cardurile dumneavoastră Catima și toate detaliile lor, inclusiv notițele și imaginile</string>
+    <string name="permissionReadCardsDescription">citiți cardurile dumneavoastră 白い熊 猫管 și toate detaliile lor, inclusiv notițele și imaginile</string>
     <string name="anyDate">Orice dată</string>
     <string name="failedLaunchingPhotoPicker">N-a putut fi găsită o aplicație galerie suportată</string>
     <string name="expiryStateSentenceExpired">Expirat: <xliff:g>%s</xliff:g></string>
@@ -209,7 +209,7 @@
     <string name="updateBalanceHint">Introduceți suma</string>
     <string name="on_github">pe GitHub</string>
     <string name="sort">Sortați</string>
-    <string name="permissionReadCardsLabel">Citiți cardurile Catima</string>
+    <string name="permissionReadCardsLabel">Citiți cardurile 白い熊 猫管</string>
     <string name="storageReadPermissionRequired">Permisiunea de citire a spațiului de stocare este necesară pentru această acțiune…</string>
     <plurals name="deleteCardsConfirmation">
         <item quantity="one">Ștergeți acest <xliff:g>%d</xliff:g> card permanent?</item>
@@ -226,7 +226,6 @@
     <string name="app_libraries">Biblioteci terțe: <xliff:g id="app_libraries_list">%s</xliff:g></string>
     <string name="updateBalanceTitle">Cât de mult ați cheltuit sau primit?</string>
     <string name="app_resources">Resurse terțe: <xliff:g id="app_resources_list">%s</xliff:g></string>
-    <string name="app_name">Catima</string>
     <string name="shortcutSelectCard">Selectați un card</string>
     <string name="accept">Acceptă</string>
     <string name="settings_category_title_privacy">Confidențialitate</string>
@@ -243,7 +242,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> selectate</item>
     </plurals>
     <string name="version_history">Istoricul versiunilor</string>
-    <string name="importCatimaMessage">Selectați exportul dumneavoastră din Catima pentru import.\nCreați întâi fișierul din meniul Import/Export al unei alte aplicații Catima apăsând butonul de Export.</string>
+    <string name="importCatimaMessage">Selectați exportul dumneavoastră din 白い熊 猫管 pentru import.\nCreați întâi fișierul din meniul Import/Export al unei alte aplicații 白い熊 猫管 apăsând butonul de Export.</string>
     <plurals name="balancePoints">
         <item quantity="one"><xliff:g>%s</xliff:g> punct</item>
         <item quantity="few"><xliff:g>%s</xliff:g> puncte</item>
@@ -292,7 +291,7 @@
     <string name="card_list_widget_name">Listă de carduri</string>
     <string name="settings_disable_nfc_while_viewing_card">Pauză NFC</string>
     <string name="settings_disable_nfc_while_viewing_card_summary">Pauză NFC pentru a preveni declanșarea plăților NFC în timpul vizualizării unui card</string>
-    <string name="card_list_widget_empty">După ce adăugați carduri de fidelitate în Catima, ele vor apărea aici. Dacă aveți carduri, fi-ți sigur că ele nu sunt arhivate.</string>
+    <string name="card_list_widget_empty">După ce adăugați carduri de fidelitate în 白い熊 猫管, ele vor apărea aici. Dacă aveți carduri, fi-ți sigur că ele nu sunt arhivate.</string>
     <string name="cardWithNumber">Card <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Card <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Vă rog să nu rotiți dispozitivul, deoarece acest lucru va anula acțiunea</string>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Catima</string>
     <string name="action_add">Engadir</string>
     <string name="noGiftCards">Preme no botón + para engadir unha tarxeta ou desde o menú ⋮</string>
     <string name="noGiftCardsGroup">Crea tarxetas e despois engádeas aquí ao grupo</string>
@@ -42,10 +41,10 @@
     <string name="exporting">Exportando…</string>
     <string name="storageReadPermissionRequired">O preciso o permiso de lectura para realizar esta acción…</string>
     <string name="cameraPermissionRequired">O preciso o acceso á cámara para realizar esta acción…</string>
-    <string name="permissionReadCardsLabel">Ler tarxetas Catima</string>
-    <string name="permissionReadCardsDescription">ler as tarxetas Catima e os seus detalles, incluíndo notas e imaxes</string>
+    <string name="permissionReadCardsLabel">Ler tarxetas 白い熊 猫管</string>
+    <string name="permissionReadCardsDescription">ler as tarxetas 白い熊 猫管 e os seus detalles, incluíndo notas e imaxes</string>
     <string name="cameraPermissionDeniedTitle">Non puido acceder á cámara</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Catima precisa acceso á cámara para escanear códigos de barras. Toca aquí para cambiar os axustes do permiso.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">白い熊 猫管 precisa acceso á cámara para escanear códigos de barras. Toca aquí para cambiar os axustes do permiso.</string>
     <string name="exportOptionExplanation">Os datos vanse escribir na localización que elixas</string>
     <string name="importOptionFilesystemTitle">Importar desde o sistema de ficheiros</string>
     <string name="about">Sobre</string>
@@ -113,8 +112,8 @@
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
     <string name="privacy_policy">Directiva de privacidade</string>
     <string name="accept">Aceptar</string>
-    <string name="importCatima">Importar desde Catima</string>
-    <string name="importCatimaMessage">Selecciona o ficheiro de exportación para importalo.\nCréao no menú Importar/Exportar noutra app Catima premendo en Exportar.</string>
+    <string name="importCatima">Importar desde 白い熊 猫管</string>
+    <string name="importCatimaMessage">Selecciona o ficheiro de exportación para importalo.\nCréao no menú Importar/Exportar noutra app 白い熊 猫管 premendo en Exportar.</string>
     <string name="importFidme">Importar desde FidMe</string>
     <string name="importFidmeMessage">Elixe o ficheiro exportado desde FidMe, e despois elixe manualmente o tipo de código de barras.\nCréao no teu perfil FidMe en Protección de Datos e despois premendo en Extraer os meus datos.</string>
     <string name="importLoyaltyCardKeychain">Importar desde Loyalty Card Keychain</string>
@@ -182,7 +181,7 @@
     <string name="previousCard">Anterior</string>
     <string name="nextCard">Seguinte</string>
     <string name="failedToOpenUrl">Primeiro instala un navegador web</string>
-    <string name="welcome">Ben vida a Catima</string>
+    <string name="welcome">Ben vida a 白い熊 猫管</string>
     <string name="updateBalanceTitle">Canto gastaches ou recibiches?</string>
     <string name="updateBalanceHint">Escribe a cantidade</string>
     <string name="currentBalanceSentence">Saldo actual: <xliff:g>%s</xliff:g></string>
@@ -283,7 +282,7 @@
     <string name="width">Anchura</string>
     <string name="setBarcodeWidth">Establecer anchura do código de barras</string>
     <string name="card_list_widget_name">Lista de tarxetas</string>
-    <string name="card_list_widget_empty">Aquí aparecerán as tarxetas fidelidade cando as engadas a Catima. Se tes tarxetas mira que non estean arquivadas.</string>
+    <string name="card_list_widget_empty">Aquí aparecerán as tarxetas fidelidade cando as engadas a 白い熊 猫管. Se tes tarxetas mira que non estean arquivadas.</string>
     <string name="cardWithNumber">Tarxeta <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Tarxeta <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Por favor non rotes o dispositivo, porque isto cancelará a acción</string>

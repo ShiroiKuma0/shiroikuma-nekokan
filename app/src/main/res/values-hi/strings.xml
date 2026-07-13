@@ -101,7 +101,7 @@
         <item quantity="one"><xliff:g>%s</xliff:g> पॉइंट</item>
         <item quantity="other"><xliff:g>%s</xliff:g> पॉइंट्स</item>
     </plurals>
-    <string name="importCatimaMessage">आयात करने के लिए Catima से अपना निर्यात चुनें।\nइसे किसी अन्य Catima ऐप के आयात/निर्यात मेनू से \"निर्यात\" दबाकर बनाएँ।</string>
+    <string name="importCatimaMessage">आयात करने के लिए 白い熊 猫管 से अपना निर्यात चुनें।\nइसे किसी अन्य 白い熊 猫管 ऐप के आयात/निर्यात मेनू से \"निर्यात\" दबाकर बनाएँ।</string>
     <plurals name="selectedCardCount">
         <item quantity="one"><xliff:g>%d</xliff:g> चयनितहुए</item>
         <item quantity="other"><xliff:g>%d</xliff:g> चयनित किए गए</item>
@@ -120,7 +120,7 @@
     <string name="points">पॉइंट्स</string>
     <string name="chooseImportType">यहाँ से डेटा का आयात करें</string>
     <string name="privacy_policy">गोपनीयता नीति</string>
-    <string name="importCatima">कैटिमा से आयात करें</string>
+    <string name="importCatima">白い熊 猫管 से आयात करें</string>
     <string name="app_license">कॉपीलेफ्ट लिबर सॉफ्टवेयर, GPLv3+ लाइसेंस प्राप्त</string>
     <string name="about_title_fmt"><xliff:g id="app_name">%s</xliff:g> के बारे में</string>
     <string name="debug_version_fmt">संस्करण: <xliff:g id="version">%s</xliff:g></string>
@@ -156,7 +156,6 @@
     <string name="setBackImage">पीछे की छवि सेट करें</string>
     <string name="unsupportedBarcodeType">इस प्रकार का बारकोड को प्रदर्शित नहीं किया जा सकता। यह आने वाले संस्करण मे समर्थन हो सकता है।</string>
     <string name="setFrontImage">सामने की छवि सेट करें</string>
-    <string name="app_name">कैटिमा</string>
     <string name="translate_platform">वेबलेट पर</string>
     <string name="card_id_must_not_be_empty">कार्ड आईडी खाली नहीं होनी चाहिए</string>
     <string name="duplicateCard">प्रतिलिपि बनाए</string>
@@ -226,7 +225,7 @@
     <string name="show_name_below_image_thumbnail">छवि थंबनेल के नीचे नाम दिखाएँ</string>
     <string name="show_archived_cards">संग्रहीत(Archived) कार्ड दिखाएँ</string>
     <string name="manually_enter_barcode_instructions">अपने कार्ड पर आईडी नंबर या टेक्स्ट दर्ज करें और अपने कार्ड पर मौजूद बारकोड की तरह दिखने वाले बारकोड को दबाएं।</string>
-    <string name="welcome">कैटिमा में आपका स्वागत है</string>
+    <string name="welcome">白い熊 猫管 में आपका स्वागत है</string>
     <string name="previousCard">पिछला</string>
     <string name="failedLaunchingPhotoPicker">समर्थित छवि चयनकर्ता नहीं मिल सका</string>
     <string name="reverse">...उल्टे क्रम में</string>
@@ -283,7 +282,7 @@
     <string name="settings_column_count_1">1</string>
     <string name="settings_column_count_7">7</string>
     <string name="card_list_widget_name">कार्ड सूची</string>
-    <string name="card_list_widget_empty">कैटिमा में कुछ लॉयल्टी कार्ड जोड़ने के बाद, वे यहाँ दिखाई देंगे। अगर आपके पास कार्ड हैं, तो सुनिश्चित करें कि वे सभी संग्रहित न हों।</string>
+    <string name="card_list_widget_empty">白い熊 猫管 में कुछ लॉयल्टी कार्ड जोड़ने के बाद, वे यहाँ दिखाई देंगे। अगर आपके पास कार्ड हैं, तो सुनिश्चित करें कि वे सभी संग्रहित न हों।</string>
     <string name="cardWithNumber">कार्ड <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">कार्ड <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">कृपया डिवाइस को घुमाएँ नहीं, क्योंकि इससे कार्रवाई रद्द हो जाएगी</string>

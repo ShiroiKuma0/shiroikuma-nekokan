@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="action_search">Hanap</string>
-    <string name="app_name">Catima</string>
     <string name="action_add">Magdagdag</string>
     <string name="noGiftCards">I-click ang + button para magdagdag ng card, o mag-import mula sa ⋮ menu.</string>
     <string name="noGiftCardsGroup">Gumawa ng ilang card, at pagkatapos ay i-assign ang mga ito sa grupo dito.</string>

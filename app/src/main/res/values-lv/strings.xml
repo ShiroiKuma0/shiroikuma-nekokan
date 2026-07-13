@@ -106,7 +106,7 @@
         <item quantity="other"><xliff:g>%s</xliff:g> punkti</item>
     </plurals>
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
-    <string name="importCatimaMessage">Jāatlasa sava izguves datne no Catima, lai ievietotu. \nTo var izveidot citā ierīcē esošas Catima lietotnes sadaļā \"Ievietot/izgūt\" spiežot \"Izgūt\".</string>
+    <string name="importCatimaMessage">Jāatlasa sava izguves datne no 白い熊 猫管, lai ievietotu. \nTo var izveidot citā ierīcē esošas 白い熊 猫管 lietotnes sadaļā \"Ievietot/izgūt\" spiežot \"Izgūt\".</string>
     <string name="importLoyaltyCardKeychainMessage">Jāatlasa sava izguves datne no Loyalty Card Keychain, lai ievietotu. \nTo var izveidot Loyalty Card Keychain sadaļā \"Import/Export\" spiežot \"Export\".</string>
     <string name="removeImage">Noņemt attēlu</string>
     <string name="exportPasswordHint">Ievadīt paroli</string>
@@ -161,7 +161,7 @@
     <string name="expiryStateSentence">Derīgums beigsies: <xliff:g>%s</xliff:g></string>
     <string name="balanceSentence">Atlikums: <xliff:g>%s</xliff:g></string>
     <string name="editBarcode">Labot svītrkodu</string>
-    <string name="importCatima">Ievietot no Catima</string>
+    <string name="importCatima">Ievietot no 白い熊 猫管</string>
     <string name="importFidme">Ievietot no FidMe</string>
     <string name="importFidmeMessage">Jāatlasa sava izguves datne no FidMe, lai ievietotu, un pēc tam pašrocīgi jāatlasa svītrkodu veidi. \nTo var izveidot savā FidMe profila sadaļā \"Data Protection\" spiežot \"Extract my data\".</string>
     <string name="importLoyaltyCardKeychain">Ievietot no Loyalty Card Keychain</string>
@@ -199,9 +199,9 @@
         <item quantity="other"><xliff:g>%1$d</xliff:g> cards (<xliff:g id="archivedCount">%2$d</xliff:g> arhivētas)</item>
     </plurals>
     <string name="failedToOpenUrl">Vispirms nepieciešams uzstādīt pārlūku</string>
-    <string name="welcome">Laipni lūdzam Catima</string>
+    <string name="welcome">Laipni lūdzam 白い熊 猫管</string>
     <string name="cameraPermissionRequired">Šai darbībai ir nepieciešama atļauja piekļūt kamerai…</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Lai nolasītu svītrkodus, Catima būs nepieciešama piekļuve kamerai. Piesist šeit, lai mainītu savus atļauju iestatījumus.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Lai nolasītu svītrkodus, 白い熊 猫管 būs nepieciešama piekļuve kamerai. Piesist šeit, lai mainītu savus atļauju iestatījumus.</string>
     <string name="cameraPermissionDeniedTitle">Nevarēja piekļūt kamerai</string>
     <string name="updateBalance">Atjaunināt atlikumu</string>
     <string name="updateBalanceTitle">Cik daudz iztērēji vai saņēmi?</string>
@@ -234,8 +234,8 @@
     <string name="add_manually_warning_title">Nolasīšana ir ieteicama</string>
     <string name="settings_display_barcode_max_brightness_summary">Nepieciešams, lai darbotos atsevišķi nolasītāji</string>
     <string name="importCancelled">Ievietošana atcelta</string>
-    <string name="permissionReadCardsLabel">Lasīt Catima kartes</string>
-    <string name="permissionReadCardsDescription">lasīt Catima kartes un to informāciju, tajā skaitā piezīmes un attēlus</string>
+    <string name="permissionReadCardsLabel">Lasīt 白い熊 猫管 kartes</string>
+    <string name="permissionReadCardsDescription">lasīt 白い熊 猫管 kartes un to informāciju, tajā skaitā piezīmes un attēlus</string>
     <string name="settings_use_volume_keys_navigation_summary">Izmantot skaļuma pogas, lai mainītu, kura karte tiek attēlota</string>
     <string name="chooseValidFromDate">Izvēlēties \"Derīga no\" datumu</string>
     <string name="settings_category_title_cards_overview">Karšu pārskats</string>
@@ -260,7 +260,6 @@
     <string name="setBarcodeHeight">Iestatīt svītrkoda augstumu</string>
     <string name="switchToFrontImage">Pārslēgties uz priekšpuses attēlu</string>
     <string name="show_validity">Rādīt derīgumu</string>
-    <string name="app_name">Catima</string>
     <string name="settings_keep_screen_on_summary">Atspējo ekrāna noildzi kartes skatīšanas laikā</string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">Atspējo ekrāna aizslēgšanu kartes skatīšanas laikā</string>
     <string name="useFrontImage">Izmantot priekšpuses attēlu</string>
@@ -290,7 +289,7 @@
     <string name="setBarcodeWidth">Iestatīt svītrkoda platumu</string>
     <string name="width">Platums</string>
     <string name="card_list_widget_name">Karšu saraksts</string>
-    <string name="card_list_widget_empty">Pēc klienta karšu pievienošanas Catima tās parādīsies šeit. Ja Tev ir kartes, jāpārliecinās, ka tās visas nav arhivētas.</string>
+    <string name="card_list_widget_empty">Pēc klienta karšu pievienošanas 白い熊 猫管 tās parādīsies šeit. Ja Tev ir kartes, jāpārliecinās, ka tās visas nav arhivētas.</string>
     <string name="cardWithNumber">Karte <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Karte <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Lūgums nepagriezt ierīci, jo tas atcels darbību</string>

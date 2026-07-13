@@ -81,7 +81,7 @@
     <string name="expiryDate">Datum isteka</string>
     <string name="never">Nikada</string>
     <string name="accept">Prihvati</string>
-    <string name="importCatima">Uvezi iz Catima</string>
+    <string name="importCatima">Uvezi iz 白い熊 猫管</string>
     <string name="importFidme">Uvezi iz FidMe</string>
     <string name="importLoyaltyCardKeychainMessage">Odaberi tvoj izvoz iz LoyaltyCardKeychain za uvoz. \nStvori je putem izbornika „Uvoz/Izvoz” u aplikaciji Loyalty Card Keychain pritiskom na „Izvoz”.</string>
     <string name="updateBarcodeQuestionText">Promijenio/la si ID. Želiš li također aktualizirati crtični kod da koristi istu vrijednost\?</string>
@@ -114,7 +114,7 @@
     <string name="unarchived">Kartica je uklonjena iz arhive</string>
     <string name="failedLaunchingPhotoPicker">Nije bilo moguće pronaći podržani birač slika</string>
     <string name="cameraPermissionDeniedTitle">Nije bilo moguće pristupiti kameri</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Za snimanje crtičnih kodova Catima treba pristup tvojoj kameri. Dodirni ovdje za mijenjanje postavki dozvola.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Za snimanje crtičnih kodova 白い熊 猫管 treba pristup tvojoj kameri. Dodirni ovdje za mijenjanje postavki dozvola.</string>
     <string name="app_libraries">Biblioteke trećih strana: <xliff:g id="app_libraries_list">%s</xliff:g></string>
     <string name="selectBarcodeTitle">Odaberi crtični kod</string>
     <string name="group_edit">Uredi grupu</string>
@@ -123,7 +123,7 @@
     <string name="balance">Saldo</string>
     <string name="chooseImportType">Uvezi podatke iz</string>
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
-    <string name="importCatimaMessage">Odaberi tvoj izvoz iz Catima za uvoz. \nStvori je putem izbornika „Uvoz/Izvoz” jedne druge Catima aplikacije pritiskom na „Izvoz”.</string>
+    <string name="importCatimaMessage">Odaberi tvoj izvoz iz 白い熊 猫管 za uvoz. \nStvori je putem izbornika „Uvoz/Izvoz” jedne druge 白い熊 猫管 aplikacije pritiskom na „Izvoz”.</string>
     <string name="height">Visina</string>
     <string name="switchToFrontImage">Prebaci na prednju sliku</string>
     <string name="switchToBackImage">Prebaci na stražnju sliku</string>
@@ -167,7 +167,7 @@
         <item quantity="other"><xliff:g>%1$d</xliff:g> kartica (<xliff:g id="archivedCount">%2$d</xliff:g> je arhivirano)</item>
     </plurals>
     <string name="help_translate_this_app">Pomogni prevoditi ovu aplikaciju</string>
-    <string name="welcome">Pozdrav u Catima</string>
+    <string name="welcome">Pozdrav u 白い熊 猫管</string>
     <string name="currentBalanceSentence">Aktualni saldo: <xliff:g>%s</xliff:g></string>
     <string name="newBalanceSentence">Novi saldo: <xliff:g>%s</xliff:g></string>
     <plurals name="deleteCardsTitle">
@@ -238,7 +238,7 @@
     <string name="manually_enter_barcode_instructions">Upiši broj ID-a ili tekst na kartici i pritisni crtični kod koji izgleda kao onaj na tvojoj kartici.</string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">Deaktivira zaključavanje ekrana tijekom prikaza kartice</string>
     <string name="action_more_options">Više opcija</string>
-    <string name="permissionReadCardsDescription">čitaj tvoje Catima kartice i sve njihove pojedinosti, uključujući bilješke i slike</string>
+    <string name="permissionReadCardsDescription">čitaj tvoje 白い熊 猫管 kartice i sve njihove pojedinosti, uključujući bilješke i slike</string>
     <string name="enter_card_id">Upiši broj ID-a ili tekst na tvojoj kartici</string>
     <string name="action_display_options">Opcije prikaza</string>
     <string name="settings_display_barcode_max_brightness_summary">Potrebno za rad nekih čitača</string>
@@ -249,11 +249,10 @@
     <string name="field_must_not_be_empty">Polje ne smije biti prazno</string>
     <string name="settings_allow_content_provider_read_summary">Aplikacije će i dalje morati zatražiti dozvolu za odobravanje pristupa</string>
     <string name="settings_allow_content_provider_read_title">Dozvoli drugim aplikacijama pristup mojim podacima</string>
-    <string name="permissionReadCardsLabel">Čitaj Catima kartice</string>
+    <string name="permissionReadCardsLabel">Čitaj 白い熊 猫管 kartice</string>
     <string name="show_archived_cards">Prikaži arhivirane kartice</string>
     <string name="settings_category_title_privacy">Privatnost</string>
     <string name="settings_keep_screen_on_summary">Deaktivira isključivanje ekrana tijekom prikaza kartice</string>
-    <string name="app_name">Catima</string>
     <string name="continue_">Nastavi</string>
     <string name="add_manually_warning_message">Za neke kartice se vrijednost crtičnog koda razlikuje od broja na kartici. Zbog toga ručno upisivanje crtičnog koda možda neće uvijek funkcionirati. Preporučuje se snimanje crtičnog koda pomoću kamere. Želiš li svejedno nastaviti?</string>
     <string name="add_manually_warning_title">Preporučuje se snimanje</string>
@@ -292,7 +291,7 @@
     <string name="setBarcodeWidth">Postavi širinu crtičnog koda</string>
     <string name="cardWithNumber">Kartica <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kartica <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
-    <string name="card_list_widget_empty">Nakon što dodaš neke kartice vjernosti u Catima, one će se pojaviti ovdje. Ako već imaš kartice, provjeri da nisu sve arhivirane.</string>
+    <string name="card_list_widget_empty">Nakon što dodaš neke kartice vjernosti u 白い熊 猫管, one će se pojaviti ovdje. Ako već imaš kartice, provjeri da nisu sve arhivirane.</string>
     <string name="pleaseDoNotRotateTheDevice">Ne okreći uređaj jer će to prekinuti radnju</string>
     <string name="acra_catima_has_crashed">Žao nam je, ali aplikacija <xliff:g id="app_name">%s</xliff:g> je prekinula rad. Pomogni riješiti ovaj problem slanjem izvještaja o grešci.</string>
     <string name="acra_explain_crash">Po mogućnosti dodaj više detalja o tvojim radnjama:</string>

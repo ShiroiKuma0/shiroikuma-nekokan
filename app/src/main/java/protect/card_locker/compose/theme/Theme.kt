@@ -1,48 +1,42 @@
 package protect.card_locker.compose.theme
 
-import android.os.Build
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.colorResource
-import protect.card_locker.R
-import protect.card_locker.preferences.Settings
+import protect.card_locker.shiroikuma.SkSlot
+import protect.card_locker.shiroikuma.SkTheme
 
 @Composable
 fun CatimaTheme(content: @Composable () -> Unit) {
     val context = LocalContext.current
-    val settings = Settings(context)
 
-    val isDynamicColorSupported = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
+    // shiroikuma-nekokan fork: Compose screens (About, image viewer) follow the
+    // 白い熊 猫管 UI foundation colors instead of dynamic/light/dark schemes.
+    val background = Color(SkTheme.color(context, SkSlot.BACKGROUND))
+    val text = Color(SkTheme.color(context, SkSlot.TEXT))
+    val textSecondary = Color(SkTheme.color(context, SkSlot.TEXT_SECONDARY))
+    val accent = Color(SkTheme.color(context, SkSlot.ACCENT))
+    val onAccent = Color(SkTheme.contrastColor(SkTheme.color(context, SkSlot.ACCENT)))
 
-    val lightTheme = if (isDynamicColorSupported) {
-        dynamicLightColorScheme(context)
-    } else {
-        lightColorScheme(primary = colorResource(id = R.color.md_theme_light_primary))
-    }
-
-    var darkTheme = if (isDynamicColorSupported) {
-        dynamicDarkColorScheme(context)
-    } else {
-        darkColorScheme(primary = colorResource(id = R.color.md_theme_dark_primary))
-    }
-
-    if (settings.oledDark) {
-        darkTheme = darkTheme.copy(background = Color.Black)
-    }
-
-    val colorScheme = when (settings.theme) {
-        AppCompatDelegate.MODE_NIGHT_NO -> lightTheme
-        AppCompatDelegate.MODE_NIGHT_YES -> darkTheme
-        else -> if (isSystemInDarkTheme()) darkTheme else lightTheme
-    }
+    val colorScheme = darkColorScheme(
+        primary = accent,
+        onPrimary = onAccent,
+        primaryContainer = accent,
+        onPrimaryContainer = onAccent,
+        secondary = accent,
+        onSecondary = onAccent,
+        secondaryContainer = background,
+        onSecondaryContainer = text,
+        background = background,
+        onBackground = text,
+        surface = background,
+        onSurface = text,
+        surfaceVariant = background,
+        onSurfaceVariant = textSecondary,
+        outline = accent,
+    )
 
     MaterialTheme(
         colorScheme = colorScheme,

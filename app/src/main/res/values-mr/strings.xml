@@ -7,14 +7,14 @@
     <string name="cameraPermissionDeniedTitle">कॅमेरा ऍक्सेस करू शकले नाही</string>
     <string name="failedParsingImportUriError">\"import URI \",parse करू शकले नाही</string>
     <string name="exporting">निर्यात करत आहे…</string>
-    <string name="noCameraPermissionDirectToSystemSetting">बारकोड स्कॅन करण्यासाठी Catima ला कॅमेरा परमिशन हवी आहे. परमिशन देण्यासाठी येथे क्लिक करा.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">बारकोड स्कॅन करण्यासाठी 白い熊 猫管 ला कॅमेरा परमिशन हवी आहे. परमिशन देण्यासाठी येथे क्लिक करा.</string>
     <string name="importOptionFilesystemTitle">फाईल सिस्टिम मधून आयात करा</string>
     <string name="cardShortcut">कार्ड शॉर्टकट</string>
     <string name="cardId">कार्ड आयडी</string>
     <string name="exportOptionExplanation">तुमचा डेटा तुम्हाला हवी असलेली स्टोरेज लोकेशन मध्ये सेव्ह होईल.</string>
     <string name="importFailed">आयात करता आले नाही</string>
     <string name="edit">एडीट</string>
-    <string name="permissionReadCardsDescription">तुमची Catima कार्डे आणि त्याचे सर्व तपशील, नोट्स आणि प्रतिमांसह वाचा</string>
+    <string name="permissionReadCardsDescription">तुमची 白い熊 猫管 कार्डे आणि त्याचे सर्व तपशील, नोट्स आणि प्रतिमांसह वाचा</string>
     <string name="barcodeType">बारकोड प्रकार</string>
     <string name="noBarcode">बारकोड न्हवे</string>
     <plurals name="deleteCardsTitle">
@@ -44,7 +44,7 @@
     <string name="scanCardBarcode">बारकोड स्कॅन करा</string>
     <string name="action_search">शोधणे</string>
     <string name="noGiftCardsGroup">काही कार्डे तयार करा, आणि त्यांना गृप ला नियुक्त करा.</string>
-    <string name="permissionReadCardsLabel">Catima कार्ड्स वाचा</string>
+    <string name="permissionReadCardsLabel">白い熊 猫管 कार्ड्स वाचा</string>
     <string name="storageReadPermissionRequired">हे कृती/क्रिया करण्यासाठी स्टोरेज परमिशन/परवानगी पाहिजे…</string>
     <plurals name="deleteCardsConfirmation">
         <item quantity="one">हे कार्ड <xliff:g>%d</xliff:g> कायमचे हटवायचे\?</item>
@@ -52,7 +52,6 @@
     </plurals>
     <string name="exportFailedTitle">निर्यात अयशस्वी झाले</string>
     <string name="editCardTitle">कार्ड संपादित करा</string>
-    <string name="app_name">कटिमा</string>
     <string name="noCardsMessage">आधी कार्ड आड करा</string>
     <string name="share">शेअर</string>
     <plurals name="selectedCardCount">
