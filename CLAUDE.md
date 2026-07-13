@@ -89,5 +89,13 @@ installable side-by-side with upstream Catima.
 
 ## Current status
 
-Repo bootstrapped 2026-07-13: fork of Catima `v2.43.0` (versionCode 167), identity + fork
-versioning + signing + skills in place. First build pending the icon confirmation.
+**Released `2.43.0+3`** (2026-07-13; tag `2.43.0+3`, APK attached, default branch `custom`;
+`README.md` + `CHANGELOG-shiroikuma.md` track it). The fork so far: identity + fork versioning +
+signing + skills; the black-yellow traced launcher icon (adaptive + legacy mipmaps, splash,
+welcome logo, widget preview); the complete string rebrand (default + 54 locales, incl.
+transliterations/inflections; export filename `shiroikuma-nekokan_<date>.zip`); and the
+**白い熊 猫管 UI** theming layer (`protect.card_locker.shiroikuma.*` — SkUiActivity page with
+Settings entry + long-press-⋮ shortcut, RGBA slider color pickers with recent-color boxes,
+external fonts with glyph-rendered list + per-role weight/size, border/roundness sliders to 0,
+SkBlackYellow overlay replacing Material You, SkStyler runtime application incl. card rows and
+the Compose About screen).
