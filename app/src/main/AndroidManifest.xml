@@ -151,6 +151,12 @@
             android:name=".preferences.SettingsActivity"
             android:label="@string/settings"
             android:theme="@style/AppTheme.NoActionBar" />
+        <!-- shiroikuma-nekokan fork: the 白い熊 猫管 UI page -->
+        <activity
+            android:name=".shiroikuma.SkUiActivity"
+            android:label="@string/sk_ui_title"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!-- FIXME: ImportExportActivity cancels import on rotation -->
         <activity
             android:name=".ImportExportActivity"

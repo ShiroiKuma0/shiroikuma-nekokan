@@ -30,8 +30,8 @@
     <string name="importLoyaltyCardKeychain">Loyalty Card Keychain\'den içe aktar</string>
     <string name="importFidmeMessage">FidMe\'den içe aktarmak için dışa aktardığınız dosyayı seçin ve ardından barkod türlerini elle seçin.\nFidMe profilinizden Veri Koruma seçeneğini seçip ardından \"Verilerimi çıkar\" düğmesine basarak bir tane oluşturun.</string>
     <string name="importFidme">FidMe\'den içe aktar</string>
-    <string name="importCatimaMessage">İçe aktarmak için Catima\'dan dışa aktardığınız dosyayı seçin. \nBaşka bir Catima uygulamasının İçe/dışa aktar menüsündeki dışa aktar düğmesine basarak bir tane oluşturun.</string>
-    <string name="importCatima">Catima\'dan içe aktar</string>
+    <string name="importCatimaMessage">İçe aktarmak için 白い熊 猫管\'dan dışa aktardığınız dosyayı seçin. \nBaşka bir 白い熊 猫管 uygulamasının İçe/dışa aktar menüsündeki dışa aktar düğmesine basarak bir tane oluşturun.</string>
+    <string name="importCatima">白い熊 猫管\'dan içe aktar</string>
     <string name="accept">Kabul et</string>
     <string name="privacy_policy">Gizlilik politikası</string>
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
@@ -197,9 +197,9 @@
     <string name="previousCard">Önceki</string>
     <string name="nextCard">Sonraki</string>
     <string name="failedToOpenUrl">Önce bir web tarayıcısı kurun</string>
-    <string name="welcome">Catima\'ya Hoş Geldiniz</string>
+    <string name="welcome">白い熊 猫管\'ya Hoş Geldiniz</string>
     <string name="failedToRetrieveImageFile">Resim dosyası alınamadı</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Barkodları taramak için Catima\'nın kameranıza erişmesi gerekecektir. İzin ayarlarınızı değiştirmek için buraya dokunun.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Barkodları taramak için 白い熊 猫管\'nın kameranıza erişmesi gerekecektir. İzin ayarlarınızı değiştirmek için buraya dokunun.</string>
     <string name="currentBalanceSentence">Geçerli bakiye: <xliff:g>%s</xliff:g></string>
     <string name="updateBalanceHint">Miktarı girin</string>
     <string name="updateBalanceTitle">Ne kadar harcadınız veya aldınız?</string>
@@ -224,8 +224,8 @@
     <string name="show_note">Notu göster</string>
     <string name="show_balance">Bakiyeyi göster</string>
     <string name="show_validity">Geçerliliği göster</string>
-    <string name="permissionReadCardsLabel">Catima kartlarını oku</string>
-    <string name="permissionReadCardsDescription">Catima kartlarınızı ve tüm detaylarını, notlar ve resimler de dahil olmak üzere okuyun</string>
+    <string name="permissionReadCardsLabel">白い熊 猫管 kartlarını oku</string>
+    <string name="permissionReadCardsDescription">白い熊 猫管 kartlarınızı ve tüm detaylarını, notlar ve resimler de dahil olmak üzere okuyun</string>
     <string name="settings_keep_screen_on_summary">Ekran zaman aşımını bir kart görüntülerken devre dışı bırakır</string>
     <string name="settings_allow_content_provider_read_title">Diğer uygulamaların verilerime erişmesine izin ver</string>
     <string name="settings_display_barcode_max_brightness_summary">Bazı tarayıcıların çalışması için gereklidir</string>
@@ -247,7 +247,6 @@
     <string name="enter_card_id">Kartınızdaki ID numarasını veya metni girin</string>
     <string name="addWithoutBarcode">Barkodsuz bir kart ekle</string>
     <string name="field_must_not_be_empty">Alan boş olamaz</string>
-    <string name="app_name">Catima</string>
     <string name="continue_">Devam et</string>
     <string name="add_manually_warning_title">Tarama yapılması tavsiye edilir</string>
     <string name="add_manually_warning_message">Bazı kartta barkod değeri kartta yazan sayıdan farklıdır. Bu nedenle, bir barkodu elle girmek her zaman işe yaramayabilir. Bunun yerine barkodu kameranızla taramanız tavsiye edilir. Yine de devam etmek istiyor musunuz?</string>
@@ -284,7 +283,7 @@
     <string name="width">Genişlik</string>
     <string name="setBarcodeWidth">Barkod genişliğini ayarla</string>
     <string name="card_list_widget_name">Kart listesi</string>
-    <string name="card_list_widget_empty">Catima\'ya sadakat kartları eklediğinizde, burada gözükecekler. Eğer kartlarınız varsa, arşivlemediğinizden emin olun.</string>
+    <string name="card_list_widget_empty">白い熊 猫管\'ya sadakat kartları eklediğinizde, burada gözükecekler. Eğer kartlarınız varsa, arşivlemediğinizden emin olun.</string>
     <string name="cardWithNumber">Kart <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kart <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Lütfen cihazı döndürme, bu işlemi iptal edecektir</string>

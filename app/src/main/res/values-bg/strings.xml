@@ -102,7 +102,7 @@
     <string name="ok">Добре</string>
     <string name="importSuccessful">Данните са внесени</string>
     <string name="chooseImportType">Внасяне на данни на</string>
-    <string name="importCatimaMessage">Изберете предварително изнесен файл от Catima, който да внесете.\nСъздайте такъв файл от меню Внасяне/изнасяне от друго устройство с Catima като изберете Изнасяне.</string>
+    <string name="importCatimaMessage">Изберете предварително изнесен файл от 白い熊 猫管, който да внесете.\nСъздайте такъв файл от меню Внасяне/изнасяне от друго устройство с 白い熊 猫管 като изберете Изнасяне.</string>
     <string name="importOptionFilesystemButton">Избиране от файлова система</string>
     <string name="importOptionFilesystemExplanation">Изберете определен файл от файловата система</string>
     <string name="app_resources">Ресурси: <xliff:g id="app_resources_list">%s</xliff:g></string>
@@ -114,7 +114,7 @@
 \nвсички права запазени © 2016–2020 Бранден Арчър</string>
     <string name="about">Относно</string>
     <string name="importOptionFilesystemTitle">Внасяне от файловата система</string>
-    <string name="importCatima">Внасяне от Catima</string>
+    <string name="importCatima">Внасяне от 白い熊 猫管</string>
     <string name="exportSuccessful">Данните са изнесени</string>
     <plurals name="selectedCardCount">
         <item quantity="one"><xliff:g>%d</xliff:g> избрана</item>
@@ -197,9 +197,9 @@
     <string name="previousCard">Предишна</string>
     <string name="nextCard">Следваща</string>
     <string name="failedToOpenUrl">Първо инсталирайте уеб браузър</string>
-    <string name="welcome">Добре дошли при Катима</string>
+    <string name="welcome">Добре дошли при 白い熊 猫管</string>
     <string name="failedToRetrieveImageFile">Не е възможно извличане на изображение</string>
-    <string name="noCameraPermissionDirectToSystemSetting">За да сканирате щрихкодове с Catima е необходим достъп до камерата. За да промените разрешението докоснете тук.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">За да сканирате щрихкодове с 白い熊 猫管 е необходим достъп до камерата. За да промените разрешението докоснете тук.</string>
     <string name="updateBalanceTitle">Колко е похарчено или получено?</string>
     <string name="updateBalanceHint">Въведете стойност</string>
     <string name="newBalanceSentence">Нов баланс: <xliff:g>%s</xliff:g></string>
@@ -224,8 +224,8 @@
     <string name="show_balance">Баланс</string>
     <string name="show_validity">Валидност</string>
     <string name="show_name_below_image_thumbnail">Наименование</string>
-    <string name="permissionReadCardsLabel">Четене на карти на Catima</string>
-    <string name="permissionReadCardsDescription">четене на картите на Catima с всички подробности, включително бележки и изображения</string>
+    <string name="permissionReadCardsLabel">Четене на карти на 白い熊 猫管</string>
+    <string name="permissionReadCardsDescription">четене на картите на 白い熊 猫管 с всички подробности, включително бележки и изображения</string>
     <string name="settings_allow_content_provider_read_title">Разрешаване на достъп на други приложения до данните</string>
     <string name="settings_display_barcode_max_brightness_summary">Необходимо за работата на някои скенери</string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">Без заключване на екрана при преглед на карта</string>
@@ -247,7 +247,6 @@
     <string name="enter_card_id">Въведете номера или текста от картата</string>
     <string name="addWithoutBarcode">Добавяне на карта без щрихкод</string>
     <string name="field_must_not_be_empty">Полето не трябва да е празно</string>
-    <string name="app_name">Catima</string>
     <string name="continue_">Продължаване</string>
     <string name="add_manually_warning_title">Препоръчително е да сканирате</string>
     <string name="add_manually_warning_message">Стойностите от щрихкода и отбелязаните на картата числа в някои случаи се различават. По тази причина при ръчно въвеждане картата може да не работи. Препоръчително е да сканирате щрихкода с камерата. Желаете ли да продължите въпреки това?</string>
@@ -284,7 +283,7 @@
     <string name="width">Ширина</string>
     <string name="setBarcodeWidth">Задаване ширина на щрихкода</string>
     <string name="card_list_widget_name">Списък с карти</string>
-    <string name="card_list_widget_empty">Когато добавите карти в Catima те ще се покажат тук. Ако имате карти уверете се, че са извън архива.</string>
+    <string name="card_list_widget_empty">Когато добавите карти в 白い熊 猫管 те ще се покажат тук. Ако имате карти уверете се, че са извън архива.</string>
     <string name="cardWithNumber">Карта <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Карта <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Не завъртайте устройството, защото това ще прекъсне действието</string>

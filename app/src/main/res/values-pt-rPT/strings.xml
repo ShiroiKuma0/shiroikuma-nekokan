@@ -125,8 +125,8 @@
     <string name="app_loyalty_card_keychain">Chaveiro de cartão de fidelidade</string>
     <string name="privacy_policy">Política de privacidade</string>
     <string name="accept">Aceitar</string>
-    <string name="importCatima">Importar do Catima</string>
-    <string name="importCatimaMessage">Selecione a exportação <i>catima.zip</i> do Catima a importar. \nPrimeiro crie a exportação no menu \"Importar / exportar\" de outra aplicação Catima pressionando \"Exportar\" nesse menu.</string>
+    <string name="importCatima">Importar do 白い熊 猫管</string>
+    <string name="importCatimaMessage">Selecione a exportação <i>catima.zip</i> do 白い熊 猫管 a importar. \nPrimeiro crie a exportação no menu \"Importar / exportar\" de outra aplicação 白い熊 猫管 pressionando \"Exportar\" nesse menu.</string>
     <string name="importFidme">Importar do FidMe</string>
     <string name="importLoyaltyCardKeychain">Importar do Loyalty Card Keychain</string>
     <string name="importLoyaltyCardKeychainMessage">Selecione a exportação do Loyalty Card Keychain a importar. \nCrie a exportação no menu \"Importar/exportar\" no Loyalty Card Keychain a pressionar \"Exportar\".</string>
@@ -203,9 +203,9 @@
     <string name="nextCard">Próximo</string>
     <string name="previousCard">Anterior</string>
     <string name="failedToOpenUrl">Instale primeiro um navegador de Internet</string>
-    <string name="welcome">Bem-vindo ao Catima</string>
+    <string name="welcome">Bem-vindo ao 白い熊 猫管</string>
     <string name="failedToRetrieveImageFile">Falha ao recuperar o ficheiro de imagem</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Para digitalizar códigos de barras, o Catima tem de aceder à câmara. Clique aqui para mudar as configurações de permissão.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Para digitalizar códigos de barras, o 白い熊 猫管 tem de aceder à câmara. Clique aqui para mudar as configurações de permissão.</string>
     <string name="cameraPermissionDeniedTitle">Não foi possível aceder à câmara</string>
     <string name="importCards">Importar cartões</string>
     <string name="currentBalanceSentence">Saldo atual: <xliff:g>%s</xliff:g></string>
@@ -227,8 +227,8 @@
     <string name="donate">Doar</string>
     <string name="show_validity">Mostrar validade</string>
     <string name="show_balance">Mostrar saldo</string>
-    <string name="permissionReadCardsLabel">Ler cartões Catima</string>
-    <string name="permissionReadCardsDescription">leia seus cartões do Catima e todos os seus detalhes, incluindo notas e imagens</string>
+    <string name="permissionReadCardsLabel">Ler cartões 白い熊 猫管</string>
+    <string name="permissionReadCardsDescription">leia seus cartões do 白い熊 猫管 e todos os seus detalhes, incluindo notas e imagens</string>
     <string name="show_note">Mostrar nota</string>
     <string name="show_name_below_image_thumbnail">Mostrar nome abaixo da miniatura do ícone</string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">Desativa o bloqueio de tela ao visualizar um cartão</string>
@@ -253,7 +253,6 @@
     <string name="app_copyright_short">Copyright © Sylvia van Os e contribuidores</string>
     <string name="field_must_not_be_empty">O campo não pode estar vazio</string>
     <string name="show_archived_cards">Mostrar cartões arquivados</string>
-    <string name="app_name">Catima</string>
     <string name="continue_">Continuar</string>
     <string name="add_manually_warning_title">Recomenda-se a digitalização</string>
     <string name="add_manually_warning_message">Em alguns cartões, o valor do código de barras é diferente do número escrito no cartão. Por este motivo, a introdução manual de um código de barras pode nem sempre funcionar. Recomenda-se que, em vez disso, digitalizar o código de barras com a sua câmara. Ainda quer continuar?</string>
@@ -290,7 +289,7 @@
     <string name="width">Largura</string>
     <string name="setBarcodeWidth">Definir a largura do código de barras</string>
     <string name="card_list_widget_name">Lista de cartões</string>
-    <string name="card_list_widget_empty">Após adicionar cartões de fidelidade em Catima, eles aparecerão aqui. Se tem cartões, certifique-se de que não estão todos arquivados.</string>
+    <string name="card_list_widget_empty">Após adicionar cartões de fidelidade em 白い熊 猫管, eles aparecerão aqui. Se tem cartões, certifique-se de que não estão todos arquivados.</string>
     <string name="cardWithNumber">Cartão <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Cartão <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Não gire o dispositivo, pois cancelará a ação</string>

@@ -88,7 +88,7 @@
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">Derechos de autor © 2019-<xliff:g>%d</xliff:g> Sylvia van Os y colaboradores</string>
     <string name="app_resources">Recursos de terceros: <xliff:g id="app_resources_list">%s</xliff:g></string>
     <string name="app_libraries">Bibliotecas de terceros: <xliff:g id="app_libraries_list">%s</xliff:g></string>
-    <string name="importCatimaMessage">Seleccione su exportado desde Catima para importarlo.\nCréalo primero desde el menú Importar/Exportar de otra app de Catima al presionar Exportar desde allí.</string>
+    <string name="importCatimaMessage">Seleccione su exportado desde 白い熊 猫管 para importarlo.\nCréalo primero desde el menú Importar/Exportar de otra app de 白い熊 猫管 al presionar Exportar desde allí.</string>
     <string name="importFidmeMessage">Seleccione su exportado desde FidMe para importar, y luego escoja los tipos de códigos de barras manualmente.\nCréalo desde tu perfil de FidMe eligiendo Protección de datos y pulsa Extraer mis datos.</string>
     <string name="importLoyaltyCardKeychainMessage">Seleccione su exportado desde Loyalty Card Keychain para importarlo.\nCréalo desde el menú Importar/Exportar en Loyalty Card Keychain pulsando Exportar desde allí.</string>
     <string name="importVoucherVaultMessage">Seleccione su exportado desde Voucher Vault para importarlo.\nCréalo pulsando Exportar en Voucher Vault.</string>
@@ -116,7 +116,7 @@
     <string name="importVoucherVault">Importar desde Voucher Vault</string>
     <string name="importLoyaltyCardKeychain">Importar desde Loyalty Card Keychain</string>
     <string name="importFidme">Importar desde FidMe</string>
-    <string name="importCatima">Importar desde Catima</string>
+    <string name="importCatima">Importar desde 白い熊 猫管</string>
     <string name="accept">Aceptar</string>
     <string name="privacy_policy">Política de privacidad</string>
     <string name="app_loyalty_card_keychain">Llavero con tarjeta de fidelización</string>
@@ -182,7 +182,7 @@
     <string name="rate_this_app">Califica esta aplicación</string>
     <string name="options">Opciones</string>
     <string name="failedToOpenUrl">Instale primero un navegador web</string>
-    <string name="welcome">Bienvenido/a a Catima</string>
+    <string name="welcome">Bienvenido/a a 白い熊 猫管</string>
     <string name="group_name_already_in_use">Nombre del grupo ya está en uso</string>
     <string name="group_name_is_empty">El nombre del grupo no debe estar vacío</string>
     <string name="settings_oled_dark">Fondo negro puro para el tema oscuro</string>
@@ -207,7 +207,7 @@
     <string name="failedToRetrieveImageFile">No se pudo recuperar el archivo de imagen</string>
     <string name="updateBalanceTitle">¿Cuánto has gastado o recibido?</string>
     <string name="currentBalanceSentence">Saldo actual: <xliff:g>%s</xliff:g></string>
-    <string name="noCameraPermissionDirectToSystemSetting">Para escanear códigos de barras, Catima necesitará acceso a su cámara. Toque aquí para cambiar los ajustes de su permiso.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Para escanear códigos de barras, 白い熊 猫管 necesitará acceso a su cámara. Toque aquí para cambiar los ajustes de su permiso.</string>
     <string name="updateBalanceHint">Introduzca el importe</string>
     <string name="newBalanceSentence">Nuevo balance: <xliff:g>%s</xliff:g></string>
     <string name="cameraPermissionDeniedTitle">No pudo acceder a la cámara</string>
@@ -230,8 +230,8 @@
     <string name="show_note">Mostrar la nota</string>
     <string name="show_validity">Mostrar la validez</string>
     <string name="show_balance">Mostrar el saldo</string>
-    <string name="permissionReadCardsLabel">Leer Tarjetas Catima</string>
-    <string name="permissionReadCardsDescription">lea sus tarjetas Catima y todos sus detalles, incluyendo notas e imágenes</string>
+    <string name="permissionReadCardsLabel">Leer Tarjetas 白い熊 猫管</string>
+    <string name="permissionReadCardsDescription">lea sus tarjetas 白い熊 猫管 y todos sus detalles, incluyendo notas e imágenes</string>
     <string name="settings_allow_content_provider_read_title">Permite a otras aplicaciones acceder a mis datos</string>
     <string name="settings_display_barcode_max_brightness_summary">Necesario para que funcione en algunos escáneres</string>
     <string name="settings_keep_screen_on_summary">Deshabilita el tiempo de espera de la pantalla mientras se ve una tarjeta</string>
@@ -253,7 +253,6 @@
     <string name="enter_card_id">Introduce el número de identificación o el texto de tu tarjeta</string>
     <string name="addWithoutBarcode">Añadir una tarjeta sin código de barras</string>
     <string name="field_must_not_be_empty">Este campo no debe estar vacío</string>
-    <string name="app_name">Catima</string>
     <string name="continue_">Continuar</string>
     <string name="add_manually_warning_title">Se recomienda escanear</string>
     <string name="add_manually_warning_message">En algunas tarjetas, el valor del código de barras difiere del número escrito en la tarjeta. Por este motivo, introducir manualmente puede que no siempre funcione. Se recomienda analizar el código de barras con su cámara en su lugar. ¿Aún desea continuar?</string>
@@ -290,7 +289,7 @@
     <string name="setBarcodeWidth">Establecer el ancho del código de barras</string>
     <string name="width">Ancho</string>
     <string name="card_list_widget_name">Lista de tarjetas</string>
-    <string name="card_list_widget_empty">Después de añadir algunas tarjetas de fidelidad en Catima, aparecerán aquí. Si tienes tarjetas, asegúrate de que no estén archivadas.</string>
+    <string name="card_list_widget_empty">Después de añadir algunas tarjetas de fidelidad en 白い熊 猫管, aparecerán aquí. Si tienes tarjetas, asegúrate de que no estén archivadas.</string>
     <string name="cardWithNumber">Tarjeta <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Tarjeta <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Por favor, no rote el dispositivo, ya que esto cancelará la acción</string>

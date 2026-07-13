@@ -51,7 +51,7 @@ class ImportExportActivity : CatimaAppCompatActivity() {
 
         internal fun getExportFilename(): String {
             val sdf = SimpleDateFormat("yyyyMMdd", Locale.US)
-            return "catima_${sdf.format(Date())}.zip"
+            return "shiroikuma-nekokan_${sdf.format(Date())}.zip"
         }
     }
 

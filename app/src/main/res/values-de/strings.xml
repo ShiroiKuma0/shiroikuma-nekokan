@@ -100,8 +100,8 @@
     <string name="importLoyaltyCardKeychain">Aus Loyalty Card Keychain importieren</string>
     <string name="importFidmeMessage">Wähle deinen „FidMe-Export“ zum Importieren und anschließend manuell die Barcodetypen aus.\nErstelle ihn aus deinem FidMe-Profil, indem du Datenschutz wählst und dann auf Meine Daten extrahieren drückst.</string>
     <string name="importFidme">Aus FidMe importieren</string>
-    <string name="importCatimaMessage">Wähle deinen „Catima-Export“ zum Importieren aus.\nExportiere diesen zuvor im Import/Export-Menü einer anderen Catima-Anwendung.</string>
-    <string name="importCatima">Aus Catima importieren</string>
+    <string name="importCatimaMessage">Wähle deinen „白い熊 猫管-Export“ zum Importieren aus.\nExportiere diesen zuvor im Import/Export-Menü einer anderen 白い熊 猫管-Anwendung.</string>
+    <string name="importCatima">Aus 白い熊 猫管 importieren</string>
     <string name="setBarcodeId">Barcodewert festlegen</string>
     <string name="sameAsCardId">Entspricht Kartennummer</string>
     <string name="barcodeId">Barcodewert</string>
@@ -196,11 +196,11 @@
     <string name="previousCard">Vorherige</string>
     <string name="nextCard">Nächste</string>
     <string name="failedToOpenUrl">Bitte installiere zuerst einen Webbrowser</string>
-    <string name="welcome">Willkommen bei Catima</string>
+    <string name="welcome">Willkommen bei 白い熊 猫管</string>
     <string name="failedToRetrieveImageFile">Bilddatei konnte nicht abgerufen werden</string>
     <string name="updateBalanceTitle">Wie viel hast du ausgegeben oder erhalten?</string>
     <string name="cameraPermissionDeniedTitle">Kein Zugriff auf die Kamera</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Um Barcodes zu scannen, benötigt Catima Zugriff auf deine Kamera. Tippe hier, um deine Berechtigungseinstellungen zu ändern.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Um Barcodes zu scannen, benötigt 白い熊 猫管 Zugriff auf deine Kamera. Tippe hier, um deine Berechtigungseinstellungen zu ändern.</string>
     <string name="updateBalanceHint">Betrag eingeben</string>
     <string name="importCards">Karten importieren</string>
     <string name="currentBalanceSentence">Aktuelles Guthaben: <xliff:g>%s</xliff:g></string>
@@ -224,8 +224,8 @@
     <string name="show_validity">Gültigkeitsdauer anzeigen</string>
     <string name="show_name_below_image_thumbnail">Namen unter dem Vorschaubild anzeigen</string>
     <string name="settings_allow_content_provider_read_title">Anderen Apps den Zugriff auf meine Daten gestatten</string>
-    <string name="permissionReadCardsLabel">Catima-Karten lesen</string>
-    <string name="permissionReadCardsDescription">Lesen deiner Catima Karten mit allen Details, einschließlich Notizen und Bildern</string>
+    <string name="permissionReadCardsLabel">白い熊 猫管-Karten lesen</string>
+    <string name="permissionReadCardsDescription">Lesen deiner 白い熊 猫管 Karten mit allen Details, einschließlich Notizen und Bildern</string>
     <string name="settings_allow_content_provider_read_summary">Apps müssen weiterhin eine Genehmigung beantragen, um Zugriff zu erhalten</string>
     <string name="settings_display_barcode_max_brightness_summary">Erforderlich für das Funktionieren einiger Scanner</string>
     <string name="settings_keep_screen_on_summary">Deaktiviert die Bildschirmzeitüberschreitung beim Anzeigen einer Karte</string>
@@ -247,7 +247,6 @@
     <string name="addWithoutBarcode">Eine Karte ohne Barcode hinzufügen</string>
     <string name="field_must_not_be_empty">Feld darf nicht leer sein</string>
     <string name="manually_enter_barcode_instructions">Trage die Kartenummer oder Text deiner Karte ein und drücke auf den Barcode, der wie der auf deiner Karte aussieht.</string>
-    <string name="app_name">Catima</string>
     <string name="continue_">Fortfahren</string>
     <string name="add_manually_warning_title">Scannen empfohlen</string>
     <string name="add_manually_warning_message">In einigen Geschäften weicht der Wert des Barcodes von dem auf der Karte angegebenen Wert ab. Aus diesem Grund funktioniert die manuelle Eingabe des Barcodes in einigen Fällen nicht. Es wird empfohlen, stattdessen den Barcode mit deiner Kamera zu scannen. Möchtest du dennoch fortfahren?</string>
@@ -283,7 +282,7 @@
     <string name="sort_by_valid_from">Gültig ab</string>
     <string name="width">Breite</string>
     <string name="setBarcodeWidth">Barcodebreite einstellen</string>
-    <string name="card_list_widget_empty">Nachdem du einige Treuekarten in Catima hinzugefügt hast, werden sie hier angezeigt. Wenn du Karten hast, stelle sicher, dass diese nicht alle archiviert sind.</string>
+    <string name="card_list_widget_empty">Nachdem du einige Treuekarten in 白い熊 猫管 hinzugefügt hast, werden sie hier angezeigt. Wenn du Karten hast, stelle sicher, dass diese nicht alle archiviert sind.</string>
     <string name="card_list_widget_name">Kartenliste</string>
     <string name="cardWithNumberAndLocale">Karte <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="cardWithNumber">Karte <xliff:g>%d</xliff:g></string>

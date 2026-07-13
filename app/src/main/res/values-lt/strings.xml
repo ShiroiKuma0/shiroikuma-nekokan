@@ -68,9 +68,9 @@
     <string name="importFidmeMessage">Pasirinkite <i>fidme-export-request-xxxxxx.zip</i> eksportą iš FidMe, kurį norite importuoti, ir po to brūkšninių kodų tipus pasirinkite rankiniu būdu.
 \nSukurkite jį iš savo FidMe profilio, pasirinkę Duomenų apsauga ir pirmiausia paspaudę Išgauti mano duomenis.</string>
     <string name="importFidme">Importuoti iš FidMe</string>
-    <string name="importCatimaMessage">Norėdami importuoti, pasirinkite savo <i> catima.zip </i> eksportavimą iš Catima.
-\nSukurkite ją iš kitos Catima programos importavimo / eksportavimo meniu, pirmiausia ten paspausdami Eksportuoti.</string>
-    <string name="importCatima">Importuoti iš Catima</string>
+    <string name="importCatimaMessage">Norėdami importuoti, pasirinkite savo <i> catima.zip </i> eksportavimą iš 白い熊 猫管.
+\nSukurkite ją iš kitos 白い熊 猫管 programos importavimo / eksportavimo meniu, pirmiausia ten paspausdami Eksportuoti.</string>
+    <string name="importCatima">Importuoti iš 白い熊 猫管</string>
     <string name="accept">Priimti</string>
     <string name="privacy_policy">Privatumo politika</string>
     <string name="chooseImportType">Importuoti duomenis iš</string>
@@ -206,11 +206,11 @@
     <string name="currentBalanceSentence">Dabartinis likutis: <xliff:g>%s</xliff:g></string>
     <string name="newBalanceSentence">Naujas balansas: <xliff:g>%s</xliff:g></string>
     <string name="failedToOpenUrl">Pirmiausia įdiekite žiniatinklio naršyklę</string>
-    <string name="welcome">Sveiki užėję į Catima</string>
+    <string name="welcome">Sveiki užėję į 白い熊 猫管</string>
     <string name="showMoreInfo">Rodyti informaciją</string>
     <string name="settings_oled_dark">Visiškai juodas fonas tamsiajai temai</string>
     <string name="cameraPermissionDeniedTitle">Nepavyko pasiekti kameros</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Skanuoti brūkšniniams kodams Catima reikės gauti leidimo naudotis jūsų kamera. Spustelkite čia norėdami pakeisti leidimų nustatymus.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Skanuoti brūkšniniams kodams 白い熊 猫管 reikės gauti leidimo naudotis jūsų kamera. Spustelkite čia norėdami pakeisti leidimų nustatymus.</string>
     <plurals name="balancePoints">
         <item quantity="one"><xliff:g>%s</xliff:g> taškas</item>
         <item quantity="few"><xliff:g>%s</xliff:g> taškai</item>
@@ -248,7 +248,7 @@
     <string name="add_manually_warning_title">Rekomenduojama skenuoti</string>
     <string name="continue_">Tęsti</string>
     <string name="add_manually_warning_message">Kai kuriuose parduotuvėse brūkšninio kodo vertė gali skirtis nuo kortelėje nurodyto numerio. Dėlto įvedus brūkšninį kodą rankiniu būdu gali nepavykti. Vietoj to, labai rekomenduojama nuskaityti brūkšninį kodą naudojant kamerą. Ar vis tiek norite tęsti?</string>
-    <string name="permissionReadCardsLabel">Skenuoti Catima Korteles</string>
+    <string name="permissionReadCardsLabel">Skenuoti 白い熊 猫管 Korteles</string>
     <string name="settings_category_title_cards">Kortelių peržiūra</string>
     <string name="settings_category_title_general">Bendri</string>
     <string name="settings_category_title_privacy">Privatumąi</string>
@@ -263,14 +263,13 @@
     <string name="receive">Gauti</string>
     <string name="amountParsingFailed">Negaliojanti suma</string>
     <string name="balanceParsingFailed">Negaliojantis balansas</string>
-    <string name="permissionReadCardsDescription">skaityti savo Catima korteles ir visą informaciją apie jas, įskaitant pastabas ir paveikslėlius</string>
+    <string name="permissionReadCardsDescription">skaityti savo 白い熊 猫管 korteles ir visą informaciją apie jas, įskaitant pastabas ir paveikslėlius</string>
     <string name="show_validity">Parodyti galiojimą</string>
     <string name="action_display_options">Rodymo parinktys</string>
     <string name="show_archived_cards">Rodyti archyvuotus korteles</string>
     <string name="card_id_must_not_be_empty">Kortelės ID negali būti tuščia</string>
     <string name="add_a_card_in_a_different_way">Pridėti kortelę kitu būdu</string>
     <string name="field_must_not_be_empty">Laukelis negali būti tuščias</string>
-    <string name="app_name">Catima</string>
     <string name="app_copyright_short">Autorių teisės © Sylvia van Os ir pagalbininkai</string>
     <string name="useFrontImage">Naudoti priekinį vaizdą</string>
     <string name="useBackImage">Naudoti galinį vaizdą</string>

@@ -8,7 +8,6 @@
         <item quantity="other"><xliff:g>%d</xliff:g> выбрана</item>
     </plurals>
     <string name="action_add">Дадаць</string>
-    <string name="app_name">Catima</string>
     <string name="action_search">Пошук</string>
     <string name="noGiftCards">Націсніце кнопку + плюс, каб дадаць картку, або імпартуйце праз меню ⋮</string>
     <string name="storeName">Назва</string>
@@ -36,7 +35,7 @@
     <string name="importing">Імпартаванне…</string>
     <string name="storageReadPermissionRequired">Для гэтага дзеяння патрабуецца дазвол на чытанне сховішча…</string>
     <string name="cameraPermissionRequired">Для гэтага дзеяння патрабуецца дазвол на доступ да камеры…</string>
-    <string name="permissionReadCardsLabel">Чытаць карты Catima</string>
+    <string name="permissionReadCardsLabel">Чытаць карты 白い熊 猫管</string>
     <string name="exportOptionExplanation">Даныя будуць запісаны ў выбранае вамі месца</string>
     <string name="importOptionFilesystemExplanation">Выберыце пэўны файл з файлавай сістэмы.</string>
     <string name="importOptionFilesystemButton">З файлавай сістэмы</string>
@@ -69,11 +68,11 @@
     <string name="failedParsingImportUriError">Не атрымалася разабраць URI імпарту</string>
     <string name="exportFailedTitle">Не ўдалося экспартаваць</string>
     <string name="exportFailed">Немагчыма выканаць экспарт</string>
-    <string name="permissionReadCardsDescription">чытаць вашы карты Catima і ўсе іх дэталі, уключаючы нататкі і выявы</string>
+    <string name="permissionReadCardsDescription">чытаць вашы карты 白い熊 猫管 і ўсе іх дэталі, уключаючы нататкі і выявы</string>
     <string name="exporting">Экспартаванне…</string>
     <string name="cameraPermissionDeniedTitle">Не атрымалася атрымаць доступ да камеры</string>
     <string name="app_copyright_old">Заснавана на Loyalty Card Keychain\nаўтарскае права © 2016–2020 Branden Archer</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Каб сканаваць штрыхкоды, Catima спатрэбіцца доступ да вашай камеры. Націсніце тут, каб змяніць параметры дазволу.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Каб сканаваць штрыхкоды, 白い熊 猫管 спатрэбіцца доступ да вашай камеры. Націсніце тут, каб змяніць параметры дазволу.</string>
     <string name="about_title_fmt">Пра <xliff:g id="app_name">%s</xliff:g></string>
     <string name="debug_version_fmt">Версія: <xliff:g id="version">%s</xliff:g></string>
     <string name="app_libraries">Бясплатныя староннія бібліятэкі: <xliff:g id="app_libraries_list">%s</xliff:g></string>
@@ -131,7 +130,7 @@
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
     <string name="privacy_policy">Палітыка прыватнасці</string>
     <string name="accept">Прыняць</string>
-    <string name="importCatima">Імпарт з Catima</string>
+    <string name="importCatima">Імпарт з 白い熊 猫管</string>
     <string name="importFidme">Імпарт з FidMe</string>
     <string name="importLoyaltyCardKeychain">Імпарт з Loyalty Card Keychain</string>
     <string name="importVoucherVault">Імпарт з Voucher Vault</string>
@@ -190,7 +189,7 @@
     <string name="previousCard">Папярэдняя</string>
     <string name="nextCard">Наступная</string>
     <string name="failedToOpenUrl">Спачатку ўсталюйце вэб-браўзер</string>
-    <string name="welcome">Сардэчна запрашаем у Catima</string>
+    <string name="welcome">Сардэчна запрашаем у 白い熊 猫管</string>
     <string name="importCards">Імпартаваць карты</string>
     <string name="updateBalanceTitle">Колькі вы патрацілі або атрымалі?</string>
     <string name="updateBalanceHint">Увядзіце суму</string>
@@ -269,7 +268,7 @@
     <string name="groupsList">Групы: <xliff:g>%s</xliff:g></string>
     <string name="switchToBackImage">Пераключыцца на задні відарыс</string>
     <string name="importFidmeMessage">Каб імпартаваць, выберыце файл <i>fidme-export-request-xxxxxx.zip</i> з FidMe, а потым уручную выберыце тыпы штрыхкодаў. \nСтварыце яго з вашага профілю FidMe, выбраўшы \"Абарону даных\", а затым націснуўшы \"Выняць мае даныя\".</string>
-    <string name="importCatimaMessage">Каб імпартаваць, выберыце файл <i>catima.zip</i> з Catima. \nСтварыце яго з меню \"Імпарт/Экспарт\" іншай праграмы Catima, спачатку націснуўшы там \"Экспарт\".</string>
+    <string name="importCatimaMessage">Каб імпартаваць, выберыце файл <i>catima.zip</i> з 白い熊 猫管. \nСтварыце яго з меню \"Імпарт/Экспарт\" іншай праграмы 白い熊 猫管, спачатку націснуўшы там \"Экспарт\".</string>
     <string name="switchToBarcode">Пераключыцца на штрыхкод</string>
     <string name="settings_locale">Мова</string>
     <plurals name="groupCardCountWithArchived">
@@ -302,7 +301,7 @@
     <string name="pref_enable_acra">Запытваць дазвол на адпраўку справаздач аб збоях</string>
     <string name="pref_enable_acra_summary">Калі гэта ўключана, вам будзе прапанавана паведаміць пра збой, калі ён адбудзецца. Справаздачы аб збоях ніколі не адпраўляюцца аўтаматычна.</string>
     <string name="card_list_widget_name">Спіс карт</string>
-    <string name="card_list_widget_empty">Пасля таго, як вы дадасце некалькі картак лаяльнасці ў Catima, яны з\'явяцца тут. Калі ў вас ёсць карты, пераканайцеся, што яны не ўсе заархіваваны.</string>
+    <string name="card_list_widget_empty">Пасля таго, як вы дадасце некалькі картак лаяльнасці ў 白い熊 猫管, яны з\'явяцца тут. Калі ў вас ёсць карты, пераканайцеся, што яны не ўсе заархіваваны.</string>
     <string name="acra_catima_has_crashed">Прабачце, але ў праграме <xliff:g id="app_name">%s</xliff:g> адбыўся збой. Калі ласка, дапамажыце нам выправіць гэту праблему, даслаўшы нам справаздачу аб памылцы.</string>
     <string name="back">Назад</string>
     <string name="copy_value">Скапіяваць значэнне</string>

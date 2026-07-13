@@ -7,8 +7,8 @@
     <string name="importLoyaltyCardKeychain">Loyalty Card Keychainからインポート</string>
     <string name="importFidmeMessage">FidMeからエクスポートしたデータを選択してインポートしたうえで、手動でバーコードの種類を選択してください。\nFidMeプロフィールから作成するには データ保護 を選択して データを抽出 を押してください。</string>
     <string name="importFidme">FidMeからインポート</string>
-    <string name="importCatimaMessage">インポートするにはCatimaからエクスポートしたファイルを選択してください。\nファイルは別なCatimaアプリのインポート／エクスポートメニューからエクスポートを押して作成できます。</string>
-    <string name="importCatima">Catimaからインポート</string>
+    <string name="importCatimaMessage">インポートするには白い熊 猫管からエクスポートしたファイルを選択してください。\nファイルは別な白い熊 猫管アプリのインポート／エクスポートメニューからエクスポートを押して作成できます。</string>
+    <string name="importCatima">白い熊 猫管からインポート</string>
     <string name="accept">承認</string>
     <string name="privacy_policy">プライバシーポリシー</string>
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
@@ -172,20 +172,19 @@
     <string name="validFromDate">有効期限</string>
     <string name="chooseValidFromDate">有効期限を選択</string>
     <string name="anyDate">無期限</string>
-    <string name="app_name">Catima</string>
     <string name="settings_display_barcode_max_brightness_summary">一部のスキャナを動かすのに必要です</string>
     <string name="storageReadPermissionRequired">このアクションのためにストレージの読み取り権限を許可…</string>
     <string name="cameraPermissionDeniedTitle">カメラへアクセスできません</string>
     <string name="cameraPermissionRequired">このアクションのためにカメラへのアクセス権限の許可…</string>
     <string name="noGiftCardsGroup">幾つかカードを作り、それらをこのグループに紐づけます</string>
-    <string name="noCameraPermissionDirectToSystemSetting">バーコードをスキャンするためには、Catimaはカメラへのアクセスを必要とします。ここをタップして権限設定の変更をお願いします。</string>
+    <string name="noCameraPermissionDirectToSystemSetting">バーコードをスキャンするためには、白い熊 猫管はカメラへのアクセスを必要とします。ここをタップして権限設定の変更をお願いします。</string>
     <string name="importCards">カードをインポート</string>
     <string name="show_balance">残高を表示</string>
     <string name="show_validity">有効期限を表示</string>
     <string name="donate">寄付する</string>
     <string name="duplicateCard">複製</string>
     <string name="unarchived">アーカイブを解除しました</string>
-    <string name="welcome">Catimaへようこそ</string>
+    <string name="welcome">白い熊 猫管へようこそ</string>
     <string name="show_name_below_image_thumbnail">画像サムネイルの下に名前を表示</string>
     <string name="settings_keep_screen_on_summary">画面の自動消灯を無効化します</string>
     <string name="settings_category_title_cards">カードビュー</string>
@@ -206,7 +205,7 @@
     <string name="action_more_options">オプション</string>
     <string name="add_a_card_in_a_different_way">別の方法でカードを追加</string>
     <string name="continue_">続</string>
-    <string name="permissionReadCardsLabel">Catimaのカードを読む</string>
+    <string name="permissionReadCardsLabel">白い熊 猫管のカードを読む</string>
     <string name="settings_column_count_6">6</string>
     <string name="settings_column_count_3">3</string>
     <string name="settings_column_count_5">5</string>
@@ -218,7 +217,7 @@
     <string name="settings_category_title_privacy">プライバシー</string>
     <string name="exportCancelled">輸出がキャンセルされた</string>
     <string name="settings_allow_content_provider_read_title">他のアプリが自分のデータにアクセスすることを許可する</string>
-    <string name="permissionReadCardsDescription">Catimaカードと、ノートや画像を含むすべての詳細を読み取る</string>
+    <string name="permissionReadCardsDescription">白い熊 猫管カードと、ノートや画像を含むすべての詳細を読み取る</string>
     <string name="settings_use_volume_keys_navigation_summary">ボリュームボタンを使ってどのカードを表示するかを変更する</string>
     <string name="unsupportedFile">このファイルはサポートされていません</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">著作権 © 2019–<xliff:g>%d</xliff:g> Sylvia van Os と貢献者一同</string>
@@ -277,7 +276,7 @@
     <string name="width">幅</string>
     <string name="card_list_widget_name">カード一覧</string>
     <string name="setBarcodeWidth">バーコードの幅を設定</string>
-    <string name="card_list_widget_empty">Catimaで幾つかポイントカードを追加すると、ここに表示されます。カードをお持ちの場合、全てアーカイブがされていないことをご確認ください。</string>
+    <string name="card_list_widget_empty">白い熊 猫管で幾つかポイントカードを追加すると、ここに表示されます。カードをお持ちの場合、全てアーカイブがされていないことをご確認ください。</string>
     <string name="cardWithNumber">カード <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">カード <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">動作がキャンセルされるため、デバイスを回転させないようにしてください</string>

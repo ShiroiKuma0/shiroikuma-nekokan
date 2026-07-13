@@ -24,7 +24,7 @@
     <string name="settings_system_theme">যন্ত্রর থিম</string>
     <string name="settings_theme">থিম</string>
     <string name="starImage">তারা ছবি</string>
-    <string name="importCatima">ক্যাতিনা আগম</string>
+    <string name="importCatima">白い熊 猫管 আগম</string>
     <string name="importLoyaltyCardKeychain">আমদানি লয়্যালটি কার্ড কীচেন</string>
     <string name="importVoucherVault">আমদানি ভাউচার ভল্ট</string>
     <string name="barcodeId">বারকোড আইডি</string>
@@ -80,7 +80,7 @@
     <string name="expiryDate">মেয়াদোত্তীর্ণ তারিখ</string>
     <string name="noBarcodeFound">কোনো বারকোড পাওয়া যায়নি</string>
     <string name="cameraPermissionRequired">এই কাজটির জন্য ক্যামেরা ব্যবহার করার অনুমতি লাগবে…</string>
-    <string name="noCameraPermissionDirectToSystemSetting">বারকোড স্ক্যান করার জন্য, Catima কে ক্যামেরাটি ব্যবহার করার অনুমতি দিতে হবে। এইখানে টাচ করে আপনার অনুমতি সেটিংস পালটে নিন।</string>
+    <string name="noCameraPermissionDirectToSystemSetting">বারকোড স্ক্যান করার জন্য, 白い熊 猫管 কে ক্যামেরাটি ব্যবহার করার অনুমতি দিতে হবে। এইখানে টাচ করে আপনার অনুমতি সেটিংস পালটে নিন।</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">মেধাস্বত্ব © 2019–<xliff:g>%d</xliff:g> Sylvia van Os</string>
     <string name="app_license">কপিলেফট দ্বারা রক্ষা করা মুক্ত সফটওয়্যার, লাইসেন্স করা GPLv3+ এর অধীনে</string>
     <plurals name="deleteCardsConfirmation">
@@ -186,8 +186,8 @@
     <string name="importCards">কার্ড আমদানি করুন</string>
     <string name="importFidmeMessage">FidMe থেকে আমদানি করতে আপনার <i>fidme-export-request-xxxxxx.zip</i> রপ্তানি নির্বাচন করুন এবং পরে বারকোডের ধরন ম্যানুয়ালি নির্বাচন করুন।
 \nআপনার FidMe প্রোফাইল থেকে ডেটা সুরক্ষা নির্বাচন করে এবং তারপর প্রথমে আমার ডেটা বের করুন টিপে এটি তৈরি করুন।</string>
-    <string name="importCatimaMessage">ক্যাটিমা থেকে আমদানি করতে আপনার <i>catima.zip</i> রপ্তানি নির্বাচন করুন।
-\nঅন্য Catima অ্যাপের আমদানি/রপ্তানি মেনু থেকে প্রথমে সেখানে রপ্তানি টিপে এটি তৈরি করুন।</string>
+    <string name="importCatimaMessage">白い熊 猫管 থেকে আমদানি করতে আপনার <i>catima.zip</i> রপ্তানি নির্বাচন করুন।
+\nঅন্য 白い熊 猫管 অ্যাপের আমদানি/রপ্তানি মেনু থেকে প্রথমে সেখানে রপ্তানি টিপে এটি তৈরি করুন।</string>
     <string name="importVoucherVaultMessage">আমদানি করতে ভাউচার ভল্ট থেকে আপনার <i>vouchervault.json</i> এক্সপোর্ট নির্বাচন করুন।
 \nপ্রথমে ভাউচার ভল্টে এক্সপোর্ট টিপে এটি তৈরি করুন।</string>
     <string name="settings_oled_dark">অন্ধকার থিমের জন্য খাঁটি কালো পটভূমি</string>
@@ -213,7 +213,7 @@
     <string name="archive">সংরক্ষণ করুন</string>
     <string name="unarchive">সংরক্ষণাগারমুক্ত করুন</string>
     <string name="archived">কার্ড সংরক্ষণাগারভুক্ত</string>
-    <string name="welcome">Catima-তে স্বাগতম</string>
+    <string name="welcome">白い熊 猫管-তে স্বাগতম</string>
     <string name="updateBalanceTitle">আপনি কত খরচ করেছেন?</string>
     <string name="updateBalanceHint">পরিমান লিখুন</string>
     <string name="currentBalanceSentence">বর্তমান ব্যালেন্স: <xliff:g>%s</xliff:g></string>

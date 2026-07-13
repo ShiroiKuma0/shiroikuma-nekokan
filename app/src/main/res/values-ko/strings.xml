@@ -108,7 +108,7 @@
     <string name="archived">보관된 카드</string>
     <string name="unarchived">보관되지 않은 카드</string>
     <string name="failedLaunchingPhotoPicker">지원되는 갤러리 앱을 찾을 수 없습니다</string>
-    <string name="welcome">Catima 오신 것을 환영합니다</string>
+    <string name="welcome">白い熊 猫管 오신 것을 환영합니다</string>
     <string name="validFromDate">유효</string>
     <string name="anyDate">모든 날짜</string>
     <string name="chooseValidFromDate">유효한 날짜를 선택하십시오</string>
@@ -143,7 +143,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> 선택됨</item>
     </plurals>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">저작권 © 2019–<xliff:g>%d</xliff:g> Sylvia van Os 및 기여자</string>
-    <string name="noCameraPermissionDirectToSystemSetting">바코드를 스캔하려면 Catima가 카메라에 접근해야 합니다. 권한 설정을 변경하려면 여기를 탭하세요.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">바코드를 스캔하려면 白い熊 猫管가 카메라에 접근해야 합니다. 권한 설정을 변경하려면 여기를 탭하세요.</string>
     <string name="exportOptionExplanation">데이터는 선택한 위치에 기록됩니다</string>
     <string name="app_license">GPL v3+로 라이선스된 카피레프트 자유 소프트웨어</string>
     <string name="failedOpeningFileManager">파일 관리자를 열 수 없습니다</string>
@@ -206,8 +206,8 @@
     <string name="noGroupCards">이 그룹은 비어 있습니다</string>
     <string name="app_loyalty_card_keychain">로열티 카드 키체인</string>
     <string name="privacy_policy">개인 정보 정책</string>
-    <string name="importCatima">Catima에서 가져오기</string>
-    <string name="importCatimaMessage">가져올 Catima에서 <i>catima.zip</i> 내보내기를 선택합니다. \n먼저 내보내기를 눌러 다른 Catima 앱의 가져오기/내보내기 메뉴에서 생성합니다.</string>
+    <string name="importCatima">白い熊 猫管에서 가져오기</string>
+    <string name="importCatimaMessage">가져올 白い熊 猫管에서 <i>catima.zip</i> 내보내기를 선택합니다. \n먼저 내보내기를 눌러 다른 白い熊 猫管 앱의 가져오기/내보내기 메뉴에서 생성합니다.</string>
     <string name="importFidme">FidMe에서 가져오기</string>
     <string name="importFidmeMessage">가져올 FidMe에서 <i>fidme-export-request-xxxxxx.zip</i> 내보내기를 선택하고 나중에 바코드 유형을 수동으로 선택합니다. \n데이터 보호를 선택한 다음 먼저 내 데이터 추출을 눌러 FidMe 프로필에서 생성합니다.</string>
     <string name="importLoyaltyCardKeychainMessage">가져올 포인트 카드 키체인에서 <i>LoyaltyCardKeychain.csv</i> 내보내기를 선택합니다. \n먼저 내보내기를 눌러 로열티 카드 키체인의 가져오기/내보내기 메뉴에서 만드십시오.</string>
@@ -219,12 +219,12 @@
     <string name="nextCard">다음</string>
     <string name="failedToOpenUrl">먼저 웹 브라우저를 설치하십시오</string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">카드가 보일 때 화면 잠금 방지</string>
-    <string name="permissionReadCardsDescription">당신의 Catima 카드와 그에 대한 모든 세부 정보, 메모 및 이미지를 읽으세요</string>
+    <string name="permissionReadCardsDescription">당신의 白い熊 猫管 카드와 그에 대한 모든 세부 정보, 메모 및 이미지를 읽으세요</string>
     <string name="settings_oled_dark_summary">OLED 화면에서의 배터리 사용량 줄임</string>
     <string name="app_copyright_short">저작권 © Sylvia van Os 및 기여자</string>
     <string name="settings_allow_content_provider_read_summary">접근을 위해서는 해당 앱에서 별도로 권한 요청을 해야 합니다</string>
     <string name="settings_allow_content_provider_read_title">다른 앱의 내 정보 접근 허용</string>
-    <string name="permissionReadCardsLabel">Catima 카드 읽기</string>
+    <string name="permissionReadCardsLabel">白い熊 猫管 카드 읽기</string>
     <string name="settings_keep_screen_on_summary">카드가 보일 때 화면 꺼짐 방지</string>
     <string name="view_online">온라인에서 보기</string>
     <string name="settings_category_title_general">일반</string>
@@ -241,7 +241,6 @@
     <string name="manually_enter_barcode_instructions">카드에 있는 ID 번호나 텍스트를 입력 후 카드에 있는 것과 비슷한 바코드를 누르세요.</string>
     <string name="enter_card_id">카드에 있는 ID 숫자 또는 텍스트 입력</string>
     <string name="addWithoutBarcode">바코드가 없는 카드 추가</string>
-    <string name="app_name">Catima</string>
     <string name="add_manually_warning_title">스캔을 권장합니다</string>
     <string name="continue_">계속</string>
     <string name="addFromPdfFile">PDF 파일 선택</string>
@@ -279,7 +278,7 @@
     <string name="setBarcodeWidth">바코드 너비를 설정하세요</string>
     <string name="card_list_widget_name">카드 목록</string>
     <string name="settings_disable_nfc_while_viewing_card">NFC 일시 중지</string>
-    <string name="card_list_widget_empty">Catima에 멤버십 카드를 추가하면 여기에 표시됩니다. 카드가 있는데도 보이지 않는다면 모두 보관 처리되어 있지 않은지 확인해 보세요.</string>
+    <string name="card_list_widget_empty">白い熊 猫管에 멤버십 카드를 추가하면 여기에 표시됩니다. 카드가 있는데도 보이지 않는다면 모두 보관 처리되어 있지 않은지 확인해 보세요.</string>
     <string name="pleaseDoNotRotateTheDevice">기기를 회전하지 마세요. 진행 중인 작업이 취소될 수 있습니다</string>
     <string name="acra_catima_has_crashed">죄송합니다. <xliff:g id="app_name">%s</xliff:g> 앱이 종료되었습니다. 문제 해결을 위해 오류 리포트를 보내주세요.</string>
     <string name="acra_crash_email_subject"><xliff:g id="app_name">%s</xliff:g> 크래시 리포트</string>

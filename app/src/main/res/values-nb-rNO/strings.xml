@@ -94,7 +94,7 @@
     <string name="accept">Godta</string>
     <string name="privacy_policy">Personvernspraksis</string>
     <string name="importFidme">Importer fra FidMe</string>
-    <string name="importCatima">Importer fra Catima</string>
+    <string name="importCatima">Importer fra 白い熊 猫管</string>
     <string name="errorReadingImage">Kunne ikke lese bildet</string>
     <string name="noBarcodeFound">Fant ingen strekkode</string>
     <string name="addFromImage">Velg et bilde fra galleriet</string>
@@ -158,8 +158,8 @@
     <string name="help_translate_this_app">Bistå oversettelsen av programmet</string>
     <string name="license">Lisens</string>
     <string name="version_history">Versjonshistorikk</string>
-    <string name="importCatimaMessage">Velg din <i>catima.zip</i>-eksport fra Catima å importere.
-\nOpprett den fra «Importer/Eksporter»-menyen i en annen Catima-app ved å trykke på «Eksporter» der først.</string>
+    <string name="importCatimaMessage">Velg din <i>catima.zip</i>-eksport fra 白い熊 猫管 å importere.
+\nOpprett den fra «Importer/Eksporter»-menyen i en annen 白い熊 猫管-app ved å trykke på «Eksporter» der først.</string>
     <string name="source_repository">Kildekode</string>
     <string name="on_github">på GitHub</string>
     <string name="and_data_usage">og bruk av data</string>
@@ -201,10 +201,10 @@
         <item quantity="other"><xliff:g>%1$d</xliff:g> kort (<xliff:g id="archivedCount">%2$d</xliff:g> arkivert)</item>
     </plurals>
     <string name="failedToOpenUrl">Installer en nettleser først</string>
-    <string name="welcome">Velkommen til Catima</string>
+    <string name="welcome">Velkommen til 白い熊 猫管</string>
     <string name="failedToRetrieveImageFile">Kunne ikke hente bildefil</string>
     <string name="cameraPermissionDeniedTitle">Fikk ikke tilgang til kameraet</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Catima trenger kameratilgang for å skanne strekkoder. Trykk her for å endre tilgangsinnstillingene.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">白い熊 猫管 trenger kameratilgang for å skanne strekkoder. Trykk her for å endre tilgangsinnstillingene.</string>
     <string name="importCards">Importer kort</string>
     <string name="currentBalanceSentence">Nåværende saldo: <xliff:g>%s</xliff:g></string>
     <string name="updateBalanceTitle">Hvor mye brukte eller fikk du?</string>
@@ -228,8 +228,8 @@
     <string name="show_validity">Vis gyldighet</string>
     <string name="setBarcodeHeight">Sett strekkodehøyde</string>
     <string name="donate">Doner</string>
-    <string name="permissionReadCardsLabel">Les Catima-kort</string>
-    <string name="permissionReadCardsDescription">Les Catima-kortene dine og detaljene om dem, inkludert notater og bilder</string>
+    <string name="permissionReadCardsLabel">Les 白い熊 猫管-kort</string>
+    <string name="permissionReadCardsDescription">Les 白い熊 猫管-kortene dine og detaljene om dem, inkludert notater og bilder</string>
     <string name="settings_allow_content_provider_read_summary">Programmer vil fremdeles måtte forespørre tilgang for å få det innvilget</string>
     <string name="settings_display_barcode_max_brightness_summary">Nødvendig for noen skannere</string>
     <string name="settings_keep_screen_on_summary">Skrur av skjermtidsavbrudd under visning av et kort</string>
@@ -246,7 +246,6 @@
     <string name="balanceParsingFailed">Ugyldig saldo</string>
     <string name="action_more_options">Flere alternativer</string>
     <string name="addWithoutBarcode">Legg til kort uten strekkode</string>
-    <string name="app_name">Catima</string>
     <string name="card_id_must_not_be_empty">Kort-ID må fylles ut</string>
     <string name="add_a_card_in_a_different_way">Legg til et kort på annen måte</string>
     <string name="manually_enter_barcode_instructions">Skriv inn ID-nummer eller tekst fra kortet og trykk på strekkoden som ser ut til å ligne.</string>

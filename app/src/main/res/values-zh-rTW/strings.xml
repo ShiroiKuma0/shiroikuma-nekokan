@@ -145,8 +145,8 @@
     <string name="importLoyaltyCardKeychainMessage">請選取您從 Loyalty Card Keychain 匯出的檔案以進行匯入。\n您可以在 Loyalty Card Keychain 的「匯入／匯出」選單中按下「匯出」來建立此檔案。</string>
     <string name="importFidme">自 FidMe 匯入</string>
     <string name="importFidmeMessage">請選取您從 FidMe 匯出的檔案以進行匯入，並在之後手動選擇條碼類型。\n您可以在 FidMe 的個人檔案中選擇「Data Protection」，然後按下「Extract my data」來建立此檔案。</string>
-    <string name="importCatima">自卡提碼匯入</string>
-    <string name="importCatimaMessage">請選取您從 Catima 匯出檔案以進行匯入。\n您可以在另一台裝置的 Catima 應用程式中，透過「匯入／匯出」選單按下「匯出」來建立此檔案。</string>
+    <string name="importCatima">自白い熊 猫管匯入</string>
+    <string name="importCatimaMessage">請選取您從 白い熊 猫管 匯出檔案以進行匯入。\n您可以在另一台裝置的 白い熊 猫管 應用程式中，透過「匯入／匯出」選單按下「匯出」來建立此檔案。</string>
     <string name="points">點</string>
     <string name="app_libraries">第三方程式庫：<xliff:g id="app_libraries_list">%s</xliff:g></string>
     <string name="app_resources">第三方資源：<xliff:g id="app_resources_list">%s</xliff:g></string>
@@ -191,9 +191,9 @@
     <string name="failedLaunchingPhotoPicker">無法找到支援的圖片選取器</string>
     <string name="previousCard">上一張</string>
     <string name="nextCard">下一張</string>
-    <string name="welcome">歡迎使用卡提碼</string>
+    <string name="welcome">歡迎使用白い熊 猫管</string>
     <string name="importCards">導入卡片</string>
-    <string name="noCameraPermissionDirectToSystemSetting">卡提碼需要鏡頭使用權才能夠掃描條碼， 點擊這裏更變你的權限設定。</string>
+    <string name="noCameraPermissionDirectToSystemSetting">白い熊 猫管需要鏡頭使用權才能夠掃描條碼， 點擊這裏更變你的權限設定。</string>
     <string name="validFromDate">生效</string>
     <string name="anyDate">任何日期</string>
     <string name="chooseValidFromDate">選擇生效日期</string>
@@ -218,9 +218,8 @@
     <string name="show_name_below_image_thumbnail">在縮圖下方顯示名稱</string>
     <string name="setBarcodeHeight">設定條碼高度</string>
     <string name="app_copyright_short">著作權所有© Sylvia van Os與其他貢獻者</string>
-    <string name="permissionReadCardsLabel">讀取卡提碼卡片</string>
-    <string name="app_name">卡提碼</string>
-    <string name="permissionReadCardsDescription">讀取卡提碼卡片及卡片資訊，包含註記與圖片</string>
+    <string name="permissionReadCardsLabel">讀取白い熊 猫管卡片</string>
+    <string name="permissionReadCardsDescription">讀取白い熊 猫管卡片及卡片資訊，包含註記與圖片</string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">觀看卡片時避免螢幕鎖定</string>
     <string name="settings_allow_content_provider_read_summary">其他程式仍然需要取得權限</string>
     <string name="settings_allow_content_provider_read_title">允許其他程式使用我的資料</string>
@@ -274,7 +273,7 @@
     <string name="unsupportedFile">不支援此檔案</string>
     <string name="generic_error_please_retry">發生錯誤</string>
     <string name="sort_by_valid_from">有效期限開始日</string>
-    <string name="card_list_widget_empty">加入卡提碼的卡片會在這顯示。若您已加入卡片，請確認卡片是否被歸檔。</string>
+    <string name="card_list_widget_empty">加入白い熊 猫管的卡片會在這顯示。若您已加入卡片，請確認卡片是否被歸檔。</string>
     <string name="width">寬</string>
     <string name="card_list_widget_name">卡片清單</string>
     <string name="setBarcodeWidth">設定條碼寬度</string>

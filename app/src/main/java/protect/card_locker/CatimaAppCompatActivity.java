@@ -14,6 +14,10 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowInsetsControllerCompat;
 
+import protect.card_locker.shiroikuma.SkSlot;
+import protect.card_locker.shiroikuma.SkStyler;
+import protect.card_locker.shiroikuma.SkTheme;
+
 public class CatimaAppCompatActivity extends AppCompatActivity {
     protected boolean activityOverridesNavBarColor = false;
 
@@ -37,22 +41,26 @@ public class CatimaAppCompatActivity extends AppCompatActivity {
         // XXX changing this in onCreate causes issues with the splash screen activity, so doing this here
         Window window = getWindow();
         if (window != null) {
-            boolean darkMode = Utils.isDarkModeEnabled(this);
             View decorView = window.getDecorView();
             WindowInsetsControllerCompat wic = new WindowInsetsControllerCompat(window, decorView);
-            wic.setAppearanceLightStatusBars(!darkMode);
+            // shiroikuma-nekokan fork: the background is dark regardless of day/night mode.
+            wic.setAppearanceLightStatusBars(false);
             window.setStatusBarColor(Color.TRANSPARENT);
         }
         // XXX android 9 and below has a nasty rendering bug if the theme was patched earlier
         Utils.postPatchColors(this);
+        // shiroikuma-nekokan fork: apply the 白い熊 猫管 UI colors/fonts to the view tree.
+        SkStyler.INSTANCE.apply(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         if (!activityOverridesNavBarColor) {
-            Utils.setNavigationBarColor(this, null, Utils.resolveBackgroundColor(this), !Utils.isDarkModeEnabled(this));
+            Utils.setNavigationBarColor(this, null, SkTheme.INSTANCE.color(this, SkSlot.BACKGROUND), false);
         }
+        // shiroikuma-nekokan fork: re-apply on return (e.g. after edits in the UI page).
+        SkStyler.INSTANCE.apply(this);
     }
 
     protected void enableToolbarBackButton() {

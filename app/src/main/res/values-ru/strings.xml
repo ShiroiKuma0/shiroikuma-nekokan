@@ -100,9 +100,9 @@
     <string name="importFidmeMessage">Выберите для импортирования файл, экспортированный из FidMe, а затем вручную укажите типы штрих-кодов. \nФайл можно создать в приложении FidMe, перейдя в свой профиль, выбрав функцию \"Защита данных\", и затем нажав кнопку \"Извлечь мои данные\".</string>
     <string name="importLoyaltyCardKeychainMessage">Выберите для импортирования файл, экспортированный из Loyalty Card Keychain. \nФайл можно создать в приложении Loyalty Card Keychain, перейдя в меню \"Импорт/Экспорт\" и нажав кнопку \"Экспорт\".</string>
     <string name="importLoyaltyCardKeychain">Импорт из Loyalty Card Keychain</string>
-    <string name="importCatimaMessage">Выберите для импортирования файл, экспортированный из Catima. \nФайл можно создать в другой копии Catima, перейдя в меню \"Импорт/экспорт\" и нажав кнопку \"Экспорт\".</string>
+    <string name="importCatimaMessage">Выберите для импортирования файл, экспортированный из 白い熊 猫管. \nФайл можно создать в другой копии 白い熊 猫管, перейдя в меню \"Импорт/экспорт\" и нажав кнопку \"Экспорт\".</string>
     <string name="importFidme">Импорт из FidMe</string>
-    <string name="importCatima">Импорт из Catima</string>
+    <string name="importCatima">Импорт из 白い熊 猫管</string>
     <string name="errorReadingImage">Невозможно считать изображение</string>
     <string name="noBarcodeFound">Штрих-код не найден</string>
     <string name="addFromImage">Выбрать изображение из галереи</string>
@@ -208,10 +208,10 @@
     </plurals>
     <string name="nextCard">Следующая</string>
     <string name="previousCard">Предыдущая</string>
-    <string name="welcome">Добро пожаловать в Catima</string>
+    <string name="welcome">Добро пожаловать в 白い熊 猫管</string>
     <string name="failedToOpenUrl">Сначала необходимо установить браузер</string>
     <string name="failedToRetrieveImageFile">Невозможно получить файл изображения</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Для сканирования штрих-кодов Catima требуется доступ к камере устройства. Нажмите здесь, чтобы изменить настройки разрешений.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Для сканирования штрих-кодов 白い熊 猫管 требуется доступ к камере устройства. Нажмите здесь, чтобы изменить настройки разрешений.</string>
     <string name="updateBalance">Обновить баланс</string>
     <string name="newBalanceSentence">Новый баланс: <xliff:g>%s</xliff:g></string>
     <string name="currentBalanceSentence">Текущий баланс: <xliff:g>%s</xliff:g></string>
@@ -236,8 +236,8 @@
     <string name="show_validity">Показывать срок действия</string>
     <string name="show_name_below_image_thumbnail">Показывать название под миниатюрой</string>
     <string name="show_balance">Показывать баланс</string>
-    <string name="permissionReadCardsDescription">чтение ваших карт Catima и всех их данных, включая заметки и изображения</string>
-    <string name="permissionReadCardsLabel">Чтение карт Catima</string>
+    <string name="permissionReadCardsDescription">чтение ваших карт 白い熊 猫管 и всех их данных, включая заметки и изображения</string>
+    <string name="permissionReadCardsLabel">Чтение карт 白い熊 猫管</string>
     <string name="settings_allow_content_provider_read_summary">Приложениям по-прежнему придётся запрашивать разрешение для получения доступа</string>
     <string name="settings_allow_content_provider_read_title">Разрешать другим приложениям доступ к моим данным</string>
     <string name="settings_category_title_privacy">Конфиденциальность</string>
@@ -259,7 +259,6 @@
     <string name="enter_card_id">Введите номер или текст с карты</string>
     <string name="addWithoutBarcode">Добавить карту без штрих-кода</string>
     <string name="field_must_not_be_empty">Поле не может быть пустым</string>
-    <string name="app_name">Catima</string>
     <string name="add_manually_warning_title">Рекомендуется сканирование</string>
     <string name="continue_">Продолжить</string>
     <string name="add_manually_warning_message">В некоторых картах значение штрих-кода отличается от написанного на карте номера, из-за чего введение штрих-кода вручную не всегда работает. Вместо этого рекомендуется отсканировать штрих-код камерой. Продолжить?</string>
@@ -296,7 +295,7 @@
     <string name="width">Ширина</string>
     <string name="setBarcodeWidth">Указать ширину штрих-кода</string>
     <string name="card_list_widget_name">Список карт</string>
-    <string name="card_list_widget_empty">После добавления карт лояльности в Catima, они появятся здесь. Если у вас есть карты, убедитесь, что они не архивированы.</string>
+    <string name="card_list_widget_empty">После добавления карт лояльности в 白い熊 猫管, они появятся здесь. Если у вас есть карты, убедитесь, что они не архивированы.</string>
     <string name="cardWithNumber">Карта <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Карта <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Не поворачивайте устройство, так как это отменит действие</string>
