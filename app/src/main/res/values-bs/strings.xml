@@ -24,7 +24,7 @@
     <string name="settings_system_theme">Sistem</string>
     <string name="settings_theme">Tema</string>
     <string name="starImage">Omiljena zvijezda</string>
-    <string name="importCatima">Uvezi iz Catima</string>
+    <string name="importCatima">Uvezi iz 白い熊 猫管</string>
     <string name="importLoyaltyCardKeychain">Uvezi iz Loyalty Card Keychain</string>
     <string name="importVoucherVault">Uvezi iz trezora vaučer</string>
     <string name="barcodeId">Barcode vrijednost</string>
@@ -93,7 +93,6 @@
     <string name="about">O</string>
     <string name="noBarcode">Nema barkoda</string>
     <string name="deleteTitle">Obriši karticu</string>
-    <string name="app_name">Catima</string>
     <plurals name="selectedCardCount">
         <item quantity="one"><xliff:g>%d</xliff:g> odabran</item>
         <item quantity="few"><xliff:g>%d</xliff:g> odabranih</item>
@@ -127,10 +126,10 @@
     </plurals>
     <string name="barcodeImageDescriptionWithType">Slika <xliff:g>%s</xliff:g> barkoda</string>
     <string name="storageReadPermissionRequired">Za ovu radnju potrebna je dozvola za čitanje pohrane…</string>
-    <string name="permissionReadCardsLabel">Čitajte Catima kartice</string>
-    <string name="permissionReadCardsDescription">da pročita vaše Catima kartice i sve njihove detalje, uključujući bilješke i slike</string>
+    <string name="permissionReadCardsLabel">Čitajte 白い熊 猫管 kartice</string>
+    <string name="permissionReadCardsDescription">da pročita vaše 白い熊 猫管 kartice i sve njihove detalje, uključujući bilješke i slike</string>
     <string name="cameraPermissionDeniedTitle">Nije bilo moguće pristupiti kameri</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Za skeniranje barkodova, Catima će trebati pristup vašoj kameri. Dodirnite ovdje da promijenite postavke dozvola.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Za skeniranje barkodova, 白い熊 猫管 će trebati pristup vašoj kameri. Dodirnite ovdje da promijenite postavke dozvola.</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">Autorska prava © 2019–<xliff:g>%d</xliff:g> Sylvia van Os i saradnici</string>
     <string name="app_copyright_short">Autorska prava © Sylvia van Os i saradnici</string>
     <string name="app_license">Slobodni softver zaštićen autorskim pravom, licenciran pod GPLv3+</string>
@@ -186,7 +185,7 @@
     <string name="updateBalanceHint">Unesite iznos</string>
     <string name="updateBalanceTitle">Koliko ste potrošili ili primili?</string>
     <string name="importCards">Uvezi kartice</string>
-    <string name="welcome">Dobrodošli u Catima</string>
+    <string name="welcome">Dobrodošli u 白い熊 猫管</string>
     <string name="failedToOpenUrl">Prvo instalirajte web preglednik</string>
     <string name="nextCard">Sljedeće</string>
     <string name="previousCard">Prethodno</string>
@@ -292,7 +291,7 @@
     <string name="width">Širina</string>
     <string name="card_list_widget_name">Lista kartica</string>
     <string name="setBarcodeWidth">Postavi širinu barkoda</string>
-    <string name="card_list_widget_empty">Nakon što dodate neke kartice vjernosti u Catima, one će se pojaviti ovdje. Ako imate kartice, provjerite da nisu sve arhivirane.</string>
+    <string name="card_list_widget_empty">Nakon što dodate neke kartice vjernosti u 白い熊 猫管, one će se pojaviti ovdje. Ako imate kartice, provjerite da nisu sve arhivirane.</string>
     <string name="cardWithNumber">Kartica <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kartica <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Molimo vas da ne rotirate uređaj, jer će to prekinuti radnju</string>
@@ -303,5 +302,5 @@
     <string name="pref_enable_acra_summary">Kada je omogućeno, bit ćete upitani da prijavite pad sistema kada se dogodi. Izvještaji o padu sistema se nikada ne šalju automatski.</string>
     <string name="copy_value">Kopiraj vrijednost</string>
     <string name="copied_to_clipboard">Kopirano u međuspremnik</string>
-    <string name="importCatimaMessage">Odaberite izvoz iz Catima za uvoz. \nKreirajte ga iz menija Uvoz/izvoz druge Catima aplikacije pritiskom na Izvoz.</string>
+    <string name="importCatimaMessage">Odaberite izvoz iz 白い熊 猫管 za uvoz. \nKreirajte ga iz menija Uvoz/izvoz druge 白い熊 猫管 aplikacije pritiskom na Izvoz.</string>
 </resources>

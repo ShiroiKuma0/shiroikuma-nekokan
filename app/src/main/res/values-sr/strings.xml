@@ -96,7 +96,7 @@
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
     <string name="privacy_policy">Politika privatnosti</string>
     <string name="accept">Prihvati</string>
-    <string name="importCatima">Uvezi iz Catime</string>
+    <string name="importCatima">Uvezi iz 白い熊 猫管</string>
     <string name="importFidme">Uvoz iz FidMe</string>
     <string name="importLoyaltyCardKeychain">Uvezi iz aplikacije Loyalty Card Keychain</string>
     <string name="importLoyaltyCardKeychainMessage">Odaberi svoj izvoz iz aplikacije Loyalty Card Keychain za uvoz. \nKreiraj ga iz menija \"Import/Export\" u aplikaciji Loyalty Card Keychain klikom na \"Export\".</string>
@@ -157,7 +157,7 @@
     <string name="previousCard">Prethodna</string>
     <string name="nextCard">Sledeća</string>
     <string name="failedToOpenUrl">Prvo instalirajte internet pregledač</string>
-    <string name="welcome">Dobrodošli u Catima aplikaciju</string>
+    <string name="welcome">Dobrodošli u 白い熊 猫管 aplikaciju</string>
     <string name="importCards">Uvezi kartice</string>
     <string name="updateBalanceTitle">Koliko si potrošio ili primio?</string>
     <string name="updateBalanceHint">Unesi vrednost</string>
@@ -182,7 +182,6 @@
     <string name="show_archived_cards">Prikaži arhivirane kartice</string>
     <string name="view_online">Pregledaj online</string>
     <string name="action_more_options">Više opcija</string>
-    <string name="app_name">Catima</string>
     <plurals name="selectedCardCount">
         <item quantity="one"><xliff:g>%d</xliff:g> izabrana</item>
         <item quantity="few"><xliff:g>%d</xliff:g> izabrane</item>
@@ -197,8 +196,8 @@
         <item quantity="other">Obriši <xliff:g>%d</xliff:g> kartica</item>
     </plurals>
     <string name="cameraPermissionRequired">Potrebna dozvola za pristup kameri za ovu akciju…</string>
-    <string name="permissionReadCardsLabel">Pročitaj Catima kartice</string>
-    <string name="permissionReadCardsDescription">Pročitaj svoje Catima kartice i sve njihove detalje, uključujući beleške i slike</string>
+    <string name="permissionReadCardsLabel">Pročitaj 白い熊 猫管 kartice</string>
+    <string name="permissionReadCardsDescription">Pročitaj svoje 白い熊 猫管 kartice i sve njihove detalje, uključujući beleške i slike</string>
     <string name="cameraPermissionDeniedTitle">Nije moguće pristupiti kameri</string>
     <string name="exportFailed">Nije moguće izvršiti izvoz</string>
     <string name="app_copyright_short">Autorska prava © Sylvia van Os i saradnici</string>
@@ -210,7 +209,7 @@
     <string name="settings_keep_screen_on">Drži ekran uključen</string>
     <string name="settings_keep_screen_on_summary">Onemogućava vremensko ograničenje gašenja ekrana dok gledate karticu</string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">Onemogućava zaključavanje ekrana dok gledate karticu</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Za skeniranje bar-kodova, Catimi će trebati pristup tvojoj kameri. Dodirnite ovde da biste promenili podešavanja dozvole.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Za skeniranje bar-kodova, 白い熊 猫管 će trebati pristup tvojoj kameri. Dodirnite ovde da biste promenili podešavanja dozvole.</string>
     <string name="groups">Grupe</string>
     <string name="group_edit">Izmeni grupu</string>
     <string name="group_updated">Grupa ažurirana</string>
@@ -230,7 +229,7 @@
     <string name="never">Nikad</string>
     <string name="chooseExpiryDate">Odaberi datum isteka</string>
     <string name="noBarcodeFound">Nije pronađen bar-kod</string>
-    <string name="importCatimaMessage">Odaberi svoj export iz Carine radi importa.\nMožeš da ga kreiraš u Catima aplikaciji koju prenosiš iz menija Uvoz/Izvoz u drugoj Catima aplikaciji pritiskom na Izvoz.</string>
+    <string name="importCatimaMessage">Odaberi svoj export iz Carine radi importa.\nMožeš da ga kreiraš u 白い熊 猫管 aplikaciji koju prenosiš iz menija Uvoz/Izvoz u drugoj 白い熊 猫管 aplikaciji pritiskom na Izvoz.</string>
     <string name="importFidmeMessage">Odaberi svoj izvoz iz FidMe za uvoz, a zatim ručno izaberite tipove bar-kodova.\nKreirajte ga iz svog FidMe profila tako što ćeš izabrati \"Data Protection\", a zatim pritisnuti \"Extract my data first\".</string>
     <string name="backImageDescription">Zadnja fotografija kartice</string>
     <string name="setBackImage">Postavi zadnju fotografiju</string>
@@ -290,7 +289,7 @@
     <string name="settings_column_count_4">4</string>
     <string name="addFromPkpass">Izaberi \"Passbook\" dokument (.pkpass/.pkpasses)</string>
     <string name="card_list_widget_name">Lista kartica</string>
-    <string name="card_list_widget_empty">Nakon što dodate neke kartice lojalnosti u Catima, one će se pojaviti ovde. Ako imate kartice, uverite se da nisu sve arhivirane.</string>
+    <string name="card_list_widget_empty">Nakon što dodate neke kartice lojalnosti u 白い熊 猫管, one će se pojaviti ovde. Ako imate kartice, uverite se da nisu sve arhivirane.</string>
     <string name="cardWithNumber">Kartica <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kartica <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Molimo ne rotiraj uređaj, jer će to poništiti radnju</string>

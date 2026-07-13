@@ -35,6 +35,7 @@ import protect.card_locker.Utils
 import protect.card_locker.databinding.SettingsActivityBinding
 import protect.card_locker.shared.BluetoothPermissionHelper
 import protect.card_locker.shared.WearBluetoothSecurity
+import protect.card_locker.shiroikuma.SkUiActivity
 import protect.card_locker.wearos.BluetoothPairingNotificationManager
 import protect.card_locker.wearos.WearSyncPermissionRequester
 
@@ -148,12 +149,23 @@ class SettingsActivity : CatimaAppCompatActivity() {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.preferences)
 
+            setupShiroikumaUiPreference()
             setupThemePreference()
             setupOledDarkPreference()
             setupLocalePreference()
             setupCrashReporterPreference()
             setupWearSyncPreference()
             setupWearSyncDevicePreferences()
+        }
+
+        // shiroikuma-nekokan fork: the 白い熊 猫管 UI page entry
+        private fun setupShiroikumaUiPreference() {
+            val shiroikumaUiPreference =
+                findPreference<Preference>(getString(R.string.settings_key_shiroikuma_ui))
+            shiroikumaUiPreference!!.setOnPreferenceClickListener {
+                startActivity(Intent(requireContext(), SkUiActivity::class.java))
+                true
+            }
         }
 
         private fun setupThemePreference() {

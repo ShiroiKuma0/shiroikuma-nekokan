@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">کاتیما</string>
     <string name="action_search">گشتن</string>
     <string name="action_add">اضافه کردن</string>
     <plurals name="selectedCardCount">
@@ -52,10 +51,10 @@
     <string name="exporting">. . .درحال بیرونی گرفتن</string>
     <string name="storageReadPermissionRequired">…برای این کار دسترسی به حافظه نیازه</string>
     <string name="cameraPermissionRequired">… دسترسی به دوربین نیازه</string>
-    <string name="permissionReadCardsLabel">کارت های کاتیما رو بخونید</string>
-    <string name="permissionReadCardsDescription">کارتای کاتیما و تمام جزئیاتشون از جمله یادداشت‌ها و عکس‌ها رو بخون</string>
+    <string name="permissionReadCardsLabel">کارت های 白い熊 猫管 رو بخونید</string>
+    <string name="permissionReadCardsDescription">کارتای 白い熊 猫管 و تمام جزئیاتشون از جمله یادداشت‌ها و عکس‌ها رو بخون</string>
     <string name="cameraPermissionDeniedTitle">دسترسی به دوربین گرفته نشد</string>
-    <string name="noCameraPermissionDirectToSystemSetting">برای اسکن بارکد ها، کاتیما نیاز داره به دوربین شما دسترسی داشته باشه. اینجا بزنید تا تنظیمات دسترسی خود را تغییر دهید.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">برای اسکن بارکد ها، 白い熊 猫管 نیاز داره به دوربین شما دسترسی داشته باشه. اینجا بزنید تا تنظیمات دسترسی خود را تغییر دهید.</string>
     <string name="exportOptionExplanation">داده‌ها تو جای دلخواه خودت نوشته میشه</string>
     <string name="importOptionFilesystemTitle">ورود از فایل سیستم</string>
     <string name="importOptionFilesystemExplanation">یه فایل خاص رو از سیستم انتخاب کن</string>
@@ -133,8 +132,8 @@
     <string name="app_loyalty_card_keychain">جاکیلیدی کارت وفاداری</string>
     <string name="privacy_policy">سیاست حفظ حریم خصوصی</string>
     <string name="accept">باشه</string>
-    <string name="importCatima">واردات از کاتیما</string>
-    <string name="importCatimaMessage">خروجی خودتو از کاتیما برای وارد کردن \nانتخاب کن.\n\n اونارو از منوی واردات/صادرات یه برنامه کاتیما دیگه با فشار دادن صادرات ایجاد کن.</string>
+    <string name="importCatima">واردات از 白い熊 猫管</string>
+    <string name="importCatimaMessage">خروجی خودتو از 白い熊 猫管 برای وارد کردن \nانتخاب کن.\n\n اونارو از منوی واردات/صادرات یه برنامه 白い熊 猫管 دیگه با فشار دادن صادرات ایجاد کن.</string>
     <string name="importFidme">’واردات از FidMe</string>
     <string name="importFidmeMessage">خروجی خودتو FidMe برای وارد کردن انتخاب کن و بعد انواع بارکدها رو به صورت دستی انتخاب کن.\n با انتخاب Data Protection و بعد فشردن Extract my data، اون رو از پروفایل FidMe خودتو درست کن.</string>
     <string name="importLoyaltyCardKeychain">وارد کردن از جاکلیدی کارت وفاداری</string>
@@ -213,7 +212,7 @@
     <string name="previousCard">قبلی</string>
     <string name="nextCard">بعدی</string>
     <string name="failedToOpenUrl">اول یه مرورگر وب نصب کن</string>
-    <string name="welcome">به کاتیما خوش اومدی</string>
+    <string name="welcome">به 白い熊 猫管 خوش اومدی</string>
     <string name="importCards">کارت‌های وارداتی</string>
     <string name="updateBalanceTitle">چقدر هزینه کردی یا گرفتی؟</string>
     <string name="updateBalanceHint">مبلغ رو وارد کن</string>
@@ -280,7 +279,7 @@
     <string name="width">عرض</string>
     <string name="card_list_widget_name">لیست کارت‌ها</string>
     <string name="setBarcodeWidth">تنظیم عرض بارکد</string>
-    <string name="card_list_widget_empty">بعد از اینکه چندتا کارت وفاداری تو کاتیما اضافه کردی، اونها اینجا ظاهر میشن. اگه کارت داری، مطمئن شو که همه اونها بایگانی نشدن.</string>
+    <string name="card_list_widget_empty">بعد از اینکه چندتا کارت وفاداری تو 白い熊 猫管 اضافه کردی، اونها اینجا ظاهر میشن. اگه کارت داری، مطمئن شو که همه اونها بایگانی نشدن.</string>
     <string name="cardWithNumber">کارت <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">کارت <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">لطفاً دستگاه رو نچرخون، چون اینکار عملکرد رو لغو میکنه</string>

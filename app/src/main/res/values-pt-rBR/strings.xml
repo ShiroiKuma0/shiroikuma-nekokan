@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Catima</string>
     <string name="action_search">Pesquisar</string>
     <string name="action_add">Adicionar</string>
     <string name="noGiftCards">Clique no botão \"+\" para adicionar um cartão ou importar a partir do menu \"⋮\"</string>
@@ -24,7 +23,7 @@
     <string name="exportSuccessfulTitle">Exportado</string>
     <string name="importing">Importando…</string>
     <string name="exporting">Exportando…</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Para ler códigos de barras, Catima precisará de acesso à sua câmera. Toque aqui para alterar suas configurações de permissão.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Para ler códigos de barras, 白い熊 猫管 precisará de acesso à sua câmera. Toque aqui para alterar suas configurações de permissão.</string>
     <string name="importOptionFilesystemTitle">Importar dos seus arquivos</string>
     <plurals name="selectedCardCount">
         <item quantity="one"><xliff:g>%d</xliff:g> selecionado</item>
@@ -61,8 +60,8 @@
     <string name="exportFailed">Não foi possível exportar</string>
     <string name="storageReadPermissionRequired">Permissão para ler o armazenamento é necessário para esta ação…</string>
     <string name="cameraPermissionRequired">Permissão para acessar a câmera é necessária para esta ação…</string>
-    <string name="permissionReadCardsLabel">Ler cartões Catima</string>
-    <string name="permissionReadCardsDescription">ler seus cartões Catima e todos os seus detalhes, incluindo notas e imagens</string>
+    <string name="permissionReadCardsLabel">Ler cartões 白い熊 猫管</string>
+    <string name="permissionReadCardsDescription">ler seus cartões 白い熊 猫管 e todos os seus detalhes, incluindo notas e imagens</string>
     <string name="cameraPermissionDeniedTitle">Não foi possível acessar a câmera</string>
     <string name="exportOptionExplanation">Os dados serão gravados em um local de sua escolha</string>
     <string name="importOptionFilesystemExplanation">Escolha um arquivo específico nos seus arquivos</string>
@@ -77,7 +76,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> cartões</item>
     </plurals>
     <string name="noCameraFoundGuideText">Seu dispositivo parece não ter uma câmera. Se tiver, tente reiniciar o dispositivo. Caso contrário, tente usar o botão \"Mais opções\" abaixo para adicionar um código de barras manualmente.</string>
-    <string name="importCatimaMessage">Selecione o arquivo exportado do Catima para importação. \nFaça isso a partir do menu \"Importar/Exportar\" em outro aplicativo Catima tocando em Exportar.</string>
+    <string name="importCatimaMessage">Selecione o arquivo exportado do 白い熊 猫管 para importação. \nFaça isso a partir do menu \"Importar/Exportar\" em outro aplicativo 白い熊 猫管 tocando em Exportar.</string>
     <string name="importLoyaltyCardKeychain">Importar do Loyalty Card Keychain</string>
     <string name="importLoyaltyCardKeychainMessage">Selecione o arquivo exportado do Loyalty Card Keychain, para importação. \nFaça isso a partir do menu \"Importar/Exportar\" no Loyalty Card Keychain tocando em Exportar.</string>
     <string name="setBarcodeId">Definir valor do código de barras</string>
@@ -145,7 +144,7 @@
     <string name="unarchived">Cartão desarquivado</string>
     <string name="failedLaunchingPhotoPicker">Não foi possível encontrar um seletor de imagens compatível</string>
     <string name="failedToOpenUrl">Instale um navegador primeiro</string>
-    <string name="welcome">Bem-vindo(a) ao Catima</string>
+    <string name="welcome">Bem-vindo(a) ao 白い熊 猫管</string>
     <string name="importCards">Importar cartões</string>
     <string name="height">Altura</string>
     <string name="switchToBarcode">Mudar para código de barras</string>
@@ -253,7 +252,7 @@
     <string name="privacy_policy">Política de Privacidade</string>
     <string name="currency">Moeda</string>
     <string name="chooseImportType">Importar dados de</string>
-    <string name="importCatima">Importar do Catima</string>
+    <string name="importCatima">Importar do 白い熊 猫管</string>
     <string name="balanceParsingFailed">Saldo inválido</string>
     <string name="accept">Aceitar</string>
     <string name="importFidme">Importar de FidMe</string>
@@ -290,7 +289,7 @@
     <string name="width">Largura</string>
     <string name="setBarcodeWidth">Definir largura do código de barras</string>
     <string name="card_list_widget_name">Lista de cartões</string>
-    <string name="card_list_widget_empty">Depois que você adicionar alguns cartões de fidelidade no Catima, eles aparecerão aqui. Se você tiver cartões, verifique se eles não estão todos arquivados.</string>
+    <string name="card_list_widget_empty">Depois que você adicionar alguns cartões de fidelidade no 白い熊 猫管, eles aparecerão aqui. Se você tiver cartões, verifique se eles não estão todos arquivados.</string>
     <string name="cardWithNumber">Cartão <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Cartão <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Não gire o dispositivo, pois isso cancelará a ação</string>

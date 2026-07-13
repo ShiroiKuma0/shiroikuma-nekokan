@@ -51,11 +51,11 @@
     <string name="cameraPermissionDeniedTitle">ক্যামেরাটি ব্যবহার করা যাচ্ছে না</string>
     <string name="failedParsingImportUriError">দেওয়া URL-টি প্রক্রিয়া করা যাচ্ছে না</string>
     <string name="exporting">রপ্তানি করা হচ্ছে…</string>
-    <string name="noCameraPermissionDirectToSystemSetting">বারকোড স্ক্যান করার জন্য, ক্যাটিমা কে ক্যামেরাটি ব্যবহার করার অনুমতি দিতে হবে। এইখানে টাচ করে আপনার অনুমতি সেটিংস পালটে নিন।</string>
+    <string name="noCameraPermissionDirectToSystemSetting">বারকোড স্ক্যান করার জন্য, 白い熊 猫管 কে ক্যামেরাটি ব্যবহার করার অনুমতি দিতে হবে। এইখানে টাচ করে আপনার অনুমতি সেটিংস পালটে নিন।</string>
     <string name="settings_dark_theme">অন্ধকার</string>
     <string name="exportOptionExplanation">ডেটাটি আপনার পছন্দের জায়গায় রাখা হবে।</string>
     <string name="importFailed">আমদানি করা গেল না</string>
-    <string name="permissionReadCardsDescription">সমস্ত ক্যাটিমা কার্ডস এবং তার তথ্য পড়ুন, নোট্স আর ছবি সহ</string>
+    <string name="permissionReadCardsDescription">সমস্ত 白い熊 猫管 কার্ডস এবং তার তথ্য পড়ুন, নোট্স আর ছবি সহ</string>
     <string name="importFailedTitle">আমদানি ব্যর্থ</string>
     <string name="importExportHelp">নিজের ডেটা সংরক্ষণ করে রাখলে পরে সেটা অন্য ডিভাইসে সরিয়ে নিতে পারবেন।</string>
     <string name="importExport">আমদানি/রপ্তানি</string>
@@ -68,5 +68,4 @@
     <string name="permissionReadCardsLabel">কাটিমা কার্ডস পড়ুন</string>
     <string name="storageReadPermissionRequired">এই কাজটির জন্য ফোনের স্টোরেজ দেখার অনুমতি লাগবে…</string>
     <string name="exportFailedTitle">রপ্তানি ব্যর্থ</string>
-    <string name="app_name">ক্যাটিমা</string>
 </resources>

@@ -84,13 +84,12 @@
         <item quantity="one">Slet dette <xliff:g>%d</xliff:g> kort permanent\?</item>
         <item quantity="other">Slet disse <xliff:g>%d</xliff:g> kort permanent\?</item>
     </plurals>
-    <string name="app_name">Catima</string>
     <string name="cameraPermissionRequired">Behov for kamera adgang er krævet for denne funktion…</string>
     <string name="storageReadPermissionRequired">Behov for lager adgang er krævet for denne funktion…</string>
-    <string name="permissionReadCardsLabel">Læs Catima Kort</string>
-    <string name="permissionReadCardsDescription">læs dit Catima kort og alle kortets detaljer, også noter og billeder</string>
+    <string name="permissionReadCardsLabel">Læs 白い熊 猫管 Kort</string>
+    <string name="permissionReadCardsDescription">læs dit 白い熊 猫管 kort og alle kortets detaljer, også noter og billeder</string>
     <string name="cameraPermissionDeniedTitle">Kunne ikke få adgang til kamera</string>
-    <string name="noCameraPermissionDirectToSystemSetting">For at scanne stregkoder, har Catima behov for at få adgang til dit kamera. Klik her for at ændre dine tilladelser i indstillinger.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">For at scanne stregkoder, har 白い熊 猫管 behov for at få adgang til dit kamera. Klik her for at ændre dine tilladelser i indstillinger.</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">Copyright © 2019–<xliff:g>%d</xliff:g> Sylvia van Os og hjælpere</string>
     <string name="app_copyright_short">Copyright © Sylvia van Os og hjælpere</string>
     <string name="about_title_fmt">Om <xliff:g id="app_name">%s</xliff:g></string>
@@ -105,7 +104,7 @@
     <string name="expiryStateSentence">Udløber: <xliff:g>%s</xliff:g></string>
     <string name="moveBarcodeToTopOfScreen">Flyt stregkoden til toppen af skærmen</string>
     <string name="accept">Acceptér</string>
-    <string name="importCatima">Importer fra Catima</string>
+    <string name="importCatima">Importer fra 白い熊 猫管</string>
     <string name="expiryDate">Udløbsdato</string>
     <string name="never">Aldrig</string>
     <string name="chooseExpiryDate">Vælg udløbsdato</string>

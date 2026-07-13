@@ -66,7 +66,7 @@
     <string name="group_edit">Editar grupo</string>
     <string name="debug_version_fmt">Versión: <xliff:g id="version">%s</xliff:g></string>
     <string name="backImageDescription">Imágen dorsal</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Para escanear códigos de barra, Catima necesitará acceso a la cámara. Presione aquí para cambiar la configuración de sus permisos.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Para escanear códigos de barra, 白い熊 猫管 necesitará acceso a la cámara. Presione aquí para cambiar la configuración de sus permisos.</string>
     <string name="app_loyalty_card_keychain">Cartera para Tarjetas de Fidelización</string>
     <string name="importOptionFilesystemTitle">Importar desde su sistema de archivos</string>
     <string name="leaveWithoutSaveTitle">Salir</string>
@@ -88,7 +88,7 @@
     <string name="setBackImage">Establecer imágen dorsal</string>
     <string name="settings_display_barcode_max_brightness">Iluminar la pantalla de visualización del código de barras</string>
     <string name="chooseExpiryDate">Elija la fecha de vencimiento</string>
-    <string name="permissionReadCardsDescription">Lea sus tarjetas Catima y todo sus detalles, incluyendo notas e imágenes</string>
+    <string name="permissionReadCardsDescription">Lea sus tarjetas 白い熊 猫管 y todo sus detalles, incluyendo notas e imágenes</string>
     <string name="unsupportedBarcodeType">Este tipo de código de barras aún no puede ser visualizado. Es posible que sea soportado en una versión futura de la aplicación.</string>
     <string name="expiryStateSentenceExpired">Expirado: <xliff:g>%s</xliff:g></string>
     <string name="groupsList">Grupos: <xliff:g>%s</xliff:g></string>
@@ -98,7 +98,7 @@
     <string name="group_name_is_empty">El nombre del grupo no debe estar vacío</string>
     <string name="settings_keep_screen_on">Mantener la pantalla encendida</string>
     <string name="setBarcodeId">Establecer valor del código de barras</string>
-    <string name="importCatima">Importar desde Catima</string>
+    <string name="importCatima">Importar desde 白い熊 猫管</string>
     <string name="intent_import_card_from_url_share_text">Quiero compartirte una tarjeta</string>
     <string name="addFromImage">Seleccione una imágen desde la galería</string>
     <string name="app_copyright_short">Copyright © Sylvia van Os y colaboradores</string>
@@ -128,7 +128,7 @@
     <string name="moveDown">Mover hacia abajo</string>
     <string name="importLoyaltyCardKeychain">Importar desde Loyalty Card Keychain</string>
     <string name="group_updated">Grupo actualizado</string>
-    <string name="permissionReadCardsLabel">Leer Tarjetas Catima</string>
+    <string name="permissionReadCardsLabel">Leer Tarjetas 白い熊 猫管</string>
     <string name="groups">Grupos</string>
     <string name="photos">Fotos</string>
     <string name="storageReadPermissionRequired">Se necesita permiso para leer el almacenamiento para realizar esta acción…</string>
@@ -143,7 +143,6 @@
     <string name="importSuccessful">Datos importados</string>
     <string name="app_libraries">Librerías externas: <xliff:g id="app_libraries_list">%s</xliff:g></string>
     <string name="app_resources">Recursos externos: <xliff:g id="app_resources_list">%s</xliff:g></string>
-    <string name="app_name">Catima</string>
     <string name="accept">Aceptar</string>
     <plurals name="groupCardCount">
         <item quantity="one"><xliff:g>%d</xliff:g> tarjeta</item>
@@ -155,7 +154,7 @@
         <item quantity="many"><xliff:g>%d</xliff:g> seleccionados</item>
         <item quantity="other"/>
     </plurals>
-    <string name="importCatimaMessage">Seleccione su exportado desde Catima para importarlo.\nCréelo desde el menu para Importar/Exportar de otra aplicación de Catima presionando la opción Exportar.</string>
+    <string name="importCatimaMessage">Seleccione su exportado desde 白い熊 猫管 para importarlo.\nCréelo desde el menu para Importar/Exportar de otra aplicación de 白い熊 猫管 presionando la opción Exportar.</string>
     <plurals name="balancePoints">
         <item quantity="one"><xliff:g>%s</xliff:g> punto</item>
         <item quantity="many"><xliff:g>%s</xliff:g> puntos</item>
@@ -214,7 +213,7 @@
     <string name="previousCard">Anterior</string>
     <string name="nextCard">Siguiente</string>
     <string name="failedToOpenUrl">Primero instala un navegador web</string>
-    <string name="welcome">Bienvenido/a a Catima</string>
+    <string name="welcome">Bienvenido/a a 白い熊 猫管</string>
     <string name="importCards">Importar tarjetas</string>
     <string name="updateBalanceHint">Ingrese monto</string>
     <string name="validFromDate">Valido desde</string>

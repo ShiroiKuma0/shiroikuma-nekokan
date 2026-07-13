@@ -70,8 +70,8 @@
     <string name="app_loyalty_card_keychain">سلسلة مفاتيح بطاقة الولاء</string>
     <string name="privacy_policy">سياسة الخصوصية</string>
     <string name="accept">قبول</string>
-    <string name="importCatima">الاستيراد من Catima</string>
-    <string name="importCatimaMessage">حدّد ملفك تصدير من Catima للاستيراد.\nإنشئها من قائمة الاستيراد / التصدير لتطبيق Catima آخر بالضغط على تصدير .</string>
+    <string name="importCatima">الاستيراد من 白い熊 猫管</string>
+    <string name="importCatimaMessage">حدّد ملفك تصدير من 白い熊 猫管 للاستيراد.\nإنشئها من قائمة الاستيراد / التصدير لتطبيق 白い熊 猫管 آخر بالضغط على تصدير .</string>
     <string name="importFidme">الاستيراد من FidMe</string>
     <string name="importFidmeMessage">حدّد للتصدير من FidMe للاستيراد، ثم حدد أنواع الباركود يدويًا بعد ذلك. \nقم بإنشاءها من ملفك التعريفي في FidMe عن طريق اختيار \"حماية البيانات\" ثم النقر على \"استخراج بياناتي\".</string>
     <string name="importVoucherVault">الاستيراد من Voucher Vault</string>
@@ -221,13 +221,13 @@
     <string name="nextCard">التالي</string>
     <string name="failedToRetrieveImageFile">فشل في استخراج ملف الصورة</string>
     <string name="failedToOpenUrl">ثبت متصفح ويب أولاً</string>
-    <string name="welcome">مرحبًا بك في كاتيما</string>
+    <string name="welcome">مرحبًا بك في 白い熊 猫管</string>
     <string name="updateBalanceTitle">كم أنفقت أو استلمت؟</string>
     <string name="currentBalanceSentence">الرصيد الحالي: <xliff:g> %s </xliff:g></string>
     <string name="importCards">استيراد البطاقات</string>
     <string name="newBalanceSentence">الرصيد الجديد: <xliff:g>%s</xliff:g></string>
     <string name="cameraPermissionDeniedTitle">تعذر الوصول إلى الكاميرا</string>
-    <string name="noCameraPermissionDirectToSystemSetting">لمسح الباركود، ستحتاج كاتيما إلى الوصول إلى الكاميرا. اضغط هنا لتغيير إعدادات الأذونات.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">لمسح الباركود، ستحتاج 白い熊 猫管 إلى الوصول إلى الكاميرا. اضغط هنا لتغيير إعدادات الأذونات.</string>
     <string name="updateBalance">تحديث الرصيد</string>
     <string name="updateBalanceHint">أدخل المبلغ</string>
     <string name="storageReadPermissionRequired">الصلاحيه للوصول للتخزين مطلوبة لهذا الاجراء…</string>
@@ -239,7 +239,7 @@
     <string name="height">الطول</string>
     <string name="permissionReadCardsDescription">اقرأ بطاقتك مع جميع التفاصيل، بما فيه الملاحظات والصور</string>
     <string name="settings_display_barcode_max_brightness_summary">ظروري لعمل بعض الماسحات الضوئية</string>
-    <string name="permissionReadCardsLabel">اقرأ بطاقات كاتيما</string>
+    <string name="permissionReadCardsLabel">اقرأ بطاقات 白い熊 猫管</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">حقوق النشر © 2019–<xliff:g>%d</xliff:g> Sylvia van Os والمساهمون</string>
     <string name="app_copyright_short">حقوق النشر © Sylvia van Os والمساهمون</string>
     <string name="show_name_below_image_thumbnail">إظهار الاسم أسفل الصورة المصغرة</string>
@@ -271,7 +271,6 @@
     <string name="enter_card_id">أدخل رقم الهوية أو النص الموجود على بطاقتك</string>
     <string name="addWithoutBarcode">إضافة بدون باركود</string>
     <string name="field_must_not_be_empty">يجب ألا يكون الحقل فارغا</string>
-    <string name="app_name">كاتيما</string>
     <string name="add_manually_warning_title">الفحص موصى به</string>
     <string name="continue_">استمر</string>
     <string name="spend">انفق</string>
@@ -310,7 +309,7 @@
     <string name="card_list_widget_name">قائمة البطاقات</string>
     <string name="cardWithNumber">البطاقة <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">البطاقة <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
-    <string name="card_list_widget_empty">بعد أن تضيف بطاقات الولاء في كاتيما، ستظهر هنا. وإذا كنت تملك البطاقات، تأكد من عدم وجودهن جميعا في الأرشفة.</string>
+    <string name="card_list_widget_empty">بعد أن تضيف بطاقات الولاء في 白い熊 猫管، ستظهر هنا. وإذا كنت تملك البطاقات، تأكد من عدم وجودهن جميعا في الأرشفة.</string>
     <string name="pleaseDoNotRotateTheDevice">نرجو منك عدم تدوير الجهاز، أو سيُلغى هذا الإجراء</string>
     <string name="acra_catima_has_crashed">نأسف، لقد توقف <xliff:g id="app_name">%s</xliff:g>. ساعدنا في إصلاح هذه المشكلة من خلال إرسال تقرير للأخطاء.</string>
     <string name="acra_explain_crash">بقدر الإمكان، نرجو منك أن تضيف مزيدا من المعلومات عمَّ كنت تفعل هنا:</string>

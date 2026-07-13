@@ -79,10 +79,9 @@
         <item quantity="one"><xliff:g>%d</xliff:g> elektita</item>
         <item quantity="other"><xliff:g>%d</xliff:g> elektitaj</item>
     </plurals>
-    <string name="app_name">Catima</string>
     <string name="barcodeImageDescriptionWithType">Bildo <xliff:g>%s</xliff:g> strikodo</string>
     <string name="cameraPermissionRequired">Permeso atingi fotilon estas bezonata por ĉi tiu ago…</string>
-    <string name="permissionReadCardsLabel">Legi Catima kartojn</string>
+    <string name="permissionReadCardsLabel">Legi 白い熊 猫管 kartojn</string>
     <string name="noMatchingGiftCards">Neniu rezulto. Provu ŝanĝi vian serĉon.</string>
     <string name="noGiftCardsGroup">Kreu kartojn kaj poste atribuu ilin al la grupo ĉi tie.</string>
     <string name="storageReadPermissionRequired">Permeso legi stokadon estas bezonata por ĉi tiu ago…</string>
@@ -145,7 +144,7 @@
     <string name="translate_platform">sur Weblate</string>
     <string name="failedToRetrieveImageFile">Malsukcesis ricevi bildodosieron</string>
     <string name="help_translate_this_app">Helpi traduki ĉi tiun apon</string>
-    <string name="welcome">Bonvenon al Catima</string>
+    <string name="welcome">Bonvenon al 白い熊 猫管</string>
     <string name="donate">Doni</string>
     <string name="validFromSentence">Valida ekde: <xliff:g>%s</xliff:g></string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">Preventas ekranŝloson dum rigardo al karto</string>
@@ -163,7 +162,7 @@
     <string name="expiryStateSentenceExpired">Eksvalidiĝis: <xliff:g>%s</xliff:g></string>
     <string name="balanceParsingFailed">Nevalida saldo</string>
     <string name="chooseImportType">Importi datumojn de</string>
-    <string name="importCatima">Importi el Catima</string>
+    <string name="importCatima">Importi el 白い熊 猫管</string>
     <string name="updateBalance">Ĝisdatigi saldon</string>
     <string name="sort_by_name">Nomo</string>
     <string name="sort_by_most_recently_used">Plej laste uzitaj</string>
@@ -203,9 +202,9 @@
     </plurals>
     <string name="show_balance">Montri saldon</string>
     <string name="addWithoutBarcode">Aldoni karton sen strikodo</string>
-    <string name="permissionReadCardsDescription">legi viajn Catima-kartojn kaj ĉiujn iliajn detalojn, inkluzive de notoj kaj bildoj</string>
+    <string name="permissionReadCardsDescription">legi viajn 白い熊 猫管-kartojn kaj ĉiujn iliajn detalojn, inkluzive de notoj kaj bildoj</string>
     <string name="cameraPermissionDeniedTitle">Fotilo neatingebla</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Por skani strikodojn Catima bezonas atingorajton al via fotilo. Klaku ĉi tie por ŝanĝi viajn permesajn agordojn.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Por skani strikodojn 白い熊 猫管 bezonas atingorajton al via fotilo. Klaku ĉi tie por ŝanĝi viajn permesajn agordojn.</string>
     <string name="app_copyright_short">Kopirajto © Sylvia van Os kaj kontribuantoj</string>
     <string name="settings_display_barcode_max_brightness_summary">Bezonata por ke iuj skaniloj funkciu</string>
     <string name="unsupportedBarcodeType">Ne eblas montri ĉi tiun strikodspecon. Ĝi eble estos subtenata en posta versio de la apo.</string>
@@ -241,8 +240,8 @@
     <string name="pageWithNumber">Paĝo <xliff:g>%d</xliff:g></string>
     <string name="settings_system_locale">Sistemo</string>
     <string name="app_resources">Liberaj triaj risurcoj: <xliff:g id="app_resources_list">%s</xliff:g></string>
-    <string name="importCatimaMessage">Elektu la <i>catima.zip</i> eksporton kiun vi volas importi.
-\nKreu ĝin unue en la importi/eksporti menuo en alia Catima apo elektante \'eksporti\' tie.</string>
+    <string name="importCatimaMessage">Elektu la <i>shiroikuma-nekokan.zip</i> eksporton kiun vi volas importi.
+\nKreu ĝin unue en la importi/eksporti menuo en alia 白い熊 猫管 apo elektante \'eksporti\' tie.</string>
     <string name="importFidme">Importi el FidMe</string>
     <string name="exportPassword">Starigi pasvorton por protekti vian eksporton (nedevige)</string>
     <string name="failedGeneratingShareURL">Komunigebla URL ne generebla. Bonvolu raporti.</string>

@@ -31,6 +31,7 @@ import java.util.ArrayList;
 
 import protect.card_locker.databinding.LoyaltyCardLayoutBinding;
 import protect.card_locker.preferences.Settings;
+import protect.card_locker.shiroikuma.SkStyler;
 
 public class LoyaltyCardCursorAdapter extends BaseCursorAdapter<LoyaltyCardCursorAdapter.LoyaltyCardListItemViewHolder> {
     private int mCurrentSelectedIndex = -1;
@@ -84,6 +85,11 @@ public class LoyaltyCardCursorAdapter extends BaseCursorAdapter<LoyaltyCardCurso
     }
 
     public void onBindViewHolder(LoyaltyCardListItemViewHolder inputHolder, Cursor inputCursor) {
+        // shiroikuma-nekokan fork: card frame + name/note per the 白い熊 猫管 UI theme.
+        if (inputHolder.itemView instanceof MaterialCardView) {
+            SkStyler.INSTANCE.styleCardRow((MaterialCardView) inputHolder.itemView, inputHolder.mStoreField, inputHolder.mNoteField);
+        }
+
         // Invisible until we want to show something more
         boolean showDivider = false;
         inputHolder.mDivider.setVisibility(View.GONE);

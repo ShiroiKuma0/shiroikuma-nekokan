@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">کاتیما</string>
     <string name="action_search">جستجو</string>
     <string name="action_add">افزودن</string>
     <string name="noGiftCards">برای افزودن کارت، روی دکمه + کلیک کنید یا از منوی ⋮ کارت‌ها را وارد کنید.</string>
@@ -64,10 +63,10 @@
     <string name="importing">درحال ایمپورت…</string>
     <string name="exporting">درحال خروجی گیری…</string>
     <string name="cameraPermissionRequired">دسترسی به دوربین برای این کار نیاز است…</string>
-    <string name="permissionReadCardsLabel">خواندن کارتهای کاتیما</string>
-    <string name="permissionReadCardsDescription">کارت های کاتیما و تمام جزئیاتشان از جمله یادداشت‌ها و عکس‌ها را بخوانید</string>
+    <string name="permissionReadCardsLabel">خواندن کارتهای 白い熊 猫管</string>
+    <string name="permissionReadCardsDescription">کارت های 白い熊 猫管 و تمام جزئیاتشان از جمله یادداشت‌ها و عکس‌ها را بخوانید</string>
     <string name="cameraPermissionDeniedTitle">نمیتوان به دوربین دسترسی پیدا کرد</string>
-    <string name="noCameraPermissionDirectToSystemSetting">برای اسکن بارکد ها، کاتیما نیاز دارد به دوربین شما دسترسی داشته باشد. اینجا بزنید تا تنظیمات دسترسی خود را تغییر دهید.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">برای اسکن بارکد ها، 白い熊 猫管 نیاز دارد به دوربین شما دسترسی داشته باشد. اینجا بزنید تا تنظیمات دسترسی خود را تغییر دهید.</string>
     <string name="importExport">واردات/صادرات</string>
     <string name="settings_category_title_privacy">حریم شخصی</string>
     <string name="settings_category_title_general">عمومی</string>
@@ -114,7 +113,7 @@
     <string name="noGroupCards">این گروه خالی است</string>
     <string name="noGroups">روی دکمه + اضافه کلیک کنید تا گروه‌هایی برای دسته‌بندی اضافه کنید.</string>
     <string name="editGroup">ویرایش گروه: <xliff:g>%s</xliff:g></string>
-    <string name="importCatimaMessage">فایل <i>catima.zip</i> خروجی خود را از Catima برای وارد کردن انتخاب کنید.\nآن را از منوی وارد/صادر کردن در یک اپلیکیشن دیگر Catima با فشردن دکمه صادرکردن ابتدا ایجاد کنید.</string>
+    <string name="importCatimaMessage">فایل <i>catima.zip</i> خروجی خود را از 白い熊 猫管 برای وارد کردن انتخاب کنید.\nآن را از منوی وارد/صادر کردن در یک اپلیکیشن دیگر 白い熊 猫管 با فشردن دکمه صادرکردن ابتدا ایجاد کنید.</string>
     <string name="unsupportedBarcodeType">این نوع بارکد هنوز نمی‌تواند نمایش داده شود. ممکن است در نسخه آینده برنامه پشتیبانی شود.</string>
     <plurals name="balancePoints">
         <item quantity="one"><xliff:g>%s</xliff:g> نقطه</item>
@@ -162,7 +161,7 @@
     <string name="app_loyalty_card_keychain">جاکلیدی کارت وفاداری</string>
     <string name="privacy_policy">خط مشی رازداری</string>
     <string name="accept">قبول</string>
-    <string name="importCatima">واردات از کاتیما</string>
+    <string name="importCatima">واردات از 白い熊 猫管</string>
     <string name="importFidme">واردات از FidMe</string>
     <string name="importVoucherVault">واردات از صندوق کوپن</string>
     <string name="importVoucherVaultMessage">فایل خروجی <i>vouchervault.json</i> خود را از صندوق کوپن برای وارد کردن انتخاب کنید.\nآن را ابتدا با فشردن دکمه صادرکردن در صندوق کوپن ایجاد کنید.</string>
@@ -282,7 +281,7 @@
     <string name="spend">خرج کردن</string>
     <string name="addFromPkpass">یک فایل دفترچه حساب (.pkpass) انتخاب کنید</string>
     <string name="noCameraFoundGuideText">به نظر نمی‌رسد دستگاه شما دوربین داشته باشد. اگر دارد، دستگاه را مجدداً راه‌اندازی کنید. در غیر این صورت، از دکمه گزینه‌های بیشتر در زیر برای افزودن بارکد به روش دیگری استفاده کنید.</string>
-    <string name="card_list_widget_empty">بعد از اینکه چند کارت وفاداری در کاتیما اضافه کردید، آنها اینجا ظاهر می‌شوند. اگر کارت دارید، مطمئن شوید که همه آنها بایگانی نشده‌اند.</string>
+    <string name="card_list_widget_empty">بعد از اینکه چند کارت وفاداری در 白い熊 猫管 اضافه کردید، آنها اینجا ظاهر می‌شوند. اگر کارت دارید، مطمئن شوید که همه آنها بایگانی نشده‌اند.</string>
     <string name="card_list_widget_name">فهرست کارت</string>
     <string name="cardWithNumber">کارت <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">کارت <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
