@@ -31,3 +31,6 @@
 # Catima-specific
 SHA256SUMS
 /shared/build
+
+# shiroikuma-nekokan fork: signing credentials (never commit)
+/keystore.properties
