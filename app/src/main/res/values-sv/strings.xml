@@ -39,7 +39,7 @@
     <string name="points">Poäng</string>
     <string name="chooseImportType">Importera data från</string>
     <string name="accept">Acceptera</string>
-    <string name="importCatima">Importera från Catima</string>
+    <string name="importCatima">Importera från 白い熊 猫管</string>
     <string name="importFidme">Importera från FidMe</string>
     <string name="importLoyaltyCardKeychain">Importera från Loyalty Card Keychain</string>
     <string name="importVoucherVault">Importera från Voucher Vault</string>
@@ -135,7 +135,7 @@
     <string name="balance">Saldo</string>
     <string name="balanceSentence">Saldo: <xliff:g>%s</xliff:g></string>
     <string name="settings_disable_lockscreen_while_viewing_card">Förhindra skärmlåsning</string>
-    <string name="importCatimaMessage">Välj den exporterade från Catima som du vill importera.\nSkapa den från Import/Export-menyn i en annan Catima-app genom att trycka på Exportera.</string>
+    <string name="importCatimaMessage">Välj den exporterade från 白い熊 猫管 som du vill importera.\nSkapa den från Import/Export-menyn i en annan 白い熊 猫管-app genom att trycka på Exportera.</string>
     <string name="expiryStateSentence">Giltigt till: <xliff:g>%s</xliff:g></string>
     <string name="exportSuccessful">Data exporterad</string>
     <string name="importSuccessful">Data importerad</string>
@@ -196,10 +196,10 @@
         <item quantity="other"><xliff:g>%1$d</xliff:g> kort (<xliff:g id="archivedCount">%2$d</xliff:g> arkiverade)</item>
     </plurals>
     <string name="failedToOpenUrl">Installera en webbläsare först</string>
-    <string name="welcome">Välkommen till Catima</string>
+    <string name="welcome">Välkommen till 白い熊 猫管</string>
     <string name="importCards">Importera kort</string>
     <string name="cameraPermissionDeniedTitle">Kunde inte komma åt kamera</string>
-    <string name="noCameraPermissionDirectToSystemSetting">För att skanna streckkoder kommer Catima att behöva åtkomst till din kamera. Tryck här för att ändra dina tillståndsinställningar.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">För att skanna streckkoder kommer 白い熊 猫管 att behöva åtkomst till din kamera. Tryck här för att ändra dina tillståndsinställningar.</string>
     <string name="anyDate">Valfritt datum</string>
     <string name="chooseValidFromDate">Välj giltigt från datum</string>
     <string name="validFromSentence">Giltigt från: <xliff:g>%s</xliff:g></string>
@@ -219,7 +219,7 @@
     <string name="settings_category_title_general">Generellt</string>
     <string name="switchToBarcode">Byt till streckkod</string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">Stänger av skärmlåset medans kort visas</string>
-    <string name="permissionReadCardsDescription">läsa dina Catima-kort med alla dess detaljer, inklusive anteckningar och bilder</string>
+    <string name="permissionReadCardsDescription">läsa dina 白い熊 猫管-kort med alla dess detaljer, inklusive anteckningar och bilder</string>
     <string name="action_display_options">Visningsalternativ</string>
     <string name="settings_display_barcode_max_brightness_summary">Nödvändigt för att en del skannrar ska fungera</string>
     <string name="settings_oled_dark_summary">Reducerar batterianvändning på OLED-skärmar</string>
@@ -233,7 +233,7 @@
     <string name="setBarcodeHeight">Ställ in streckkodens höjd</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">Kopieringsskydd © 2019–<xliff:g>%d</xliff:g> Sylvia van Os och medverkande</string>
     <string name="settings_allow_content_provider_read_title">Tillåt andra appar att komma åt min data</string>
-    <string name="permissionReadCardsLabel">Läsa Catima-kort</string>
+    <string name="permissionReadCardsLabel">Läsa 白い熊 猫管-kort</string>
     <string name="donate">Donera</string>
     <string name="show_archived_cards">Visa arkiverade kort</string>
     <string name="settings_category_title_privacy">Sekretess</string>
@@ -247,7 +247,6 @@
     <string name="enter_card_id">Lägg till kortets id-nummer eller text</string>
     <string name="addWithoutBarcode">Lägg till kort utan streckkod</string>
     <string name="field_must_not_be_empty">Obligatoriskt fält</string>
-    <string name="app_name">Catima</string>
     <string name="continue_">Fortsätt</string>
     <string name="settings_column_count_5">5</string>
     <string name="settings_column_count_6">6</string>
@@ -285,7 +284,7 @@
     <string name="cardWithNumber">Kort <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kort <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="setBarcodeWidth">Ange streckkodsbredd</string>
-    <string name="card_list_widget_empty">Bonuskort som du lägger till i Catima kommer att dyka upp här. Om du redan har kort, kontrollera att de alla inte är arkiverade.</string>
+    <string name="card_list_widget_empty">Bonuskort som du lägger till i 白い熊 猫管 kommer att dyka upp här. Om du redan har kort, kontrollera att de alla inte är arkiverade.</string>
     <string name="add_manually_warning_message">För vissa kort skiljer sig streckkodsvärdet från numret som är skrivet på kortet. På grund av detta kan det ibland ej vara möjligt att ange en streckkod manuellt. Det rekommenderas att istället skanna streckkoden med din kamera. Vill du ändå fortsätta?</string>
     <string name="pleaseDoNotRotateTheDevice">Var vänlig rotera ej enheten, då detta kommer att avbryta åtgärden</string>
     <string name="acra_catima_has_crashed">Vi beklagar, men <xliff:g id="app_name">%s</xliff:g> har kraschat. Vänligen hjälp oss att lösa detta problem genom att skicka en felrapport till oss.</string>

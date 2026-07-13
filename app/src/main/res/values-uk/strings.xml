@@ -24,11 +24,11 @@
     <string name="importVoucherVaultMessage">Виберіть експорт зі Сховища ваучерів для імпорту.\nСтворіть його, натиснувши «Експорт» у Сховищі ваучерів.</string>
     <string name="importVoucherVault">Імпорт з Voucher Vault</string>
     <string name="importLoyaltyCardKeychainMessage">Виберіть експорт із брелока картки лояльності для імпорту.\nСтворіть його з меню «Імпорт/Експорт» у брелоку картки лояльності, натиснувши «Експорт».</string>
-    <string name="importCatimaMessage">Виберіть експорт із Catima для імпорту.\nСтворіть його з меню Імпорт/експорт іншого застосунку Catima, натиснувши «Експорт».</string>
+    <string name="importCatimaMessage">Виберіть експорт із 白い熊 猫管 для імпорту.\nСтворіть його з меню Імпорт/експорт іншого застосунку 白い熊 猫管, натиснувши «Експорт».</string>
     <string name="importLoyaltyCardKeychain">Імпорт з Loyalty Card Keychain</string>
     <string name="importFidmeMessage">Виберіть експорт із FidMe для імпорту та після цього вручну виберіть типи штрих-кодів.\nСтворіть його зі свого профілю FidMe, вибравши «Захист даних» та натиснувши «Витягти мої дані».</string>
     <string name="importFidme">Імпорт з FidMe</string>
-    <string name="importCatima">Імпорт з Catima</string>
+    <string name="importCatima">Імпорт з 白い熊 猫管</string>
     <string name="accept">Прийняти</string>
     <string name="privacy_policy">Політика конфіденційності</string>
     <string name="app_loyalty_card_keychain">Брелок для картки лояльності</string>
@@ -209,7 +209,7 @@
     <string name="previousCard">Попередня</string>
     <string name="nextCard">Наступна</string>
     <string name="failedToOpenUrl">Спочатку встановіть браузер</string>
-    <string name="welcome">Ласкаво просимо до Catima</string>
+    <string name="welcome">Ласкаво просимо до 白い熊 猫管</string>
     <string name="failedToRetrieveImageFile">Збій доступу до файлу зображення</string>
     <string name="importCards">Імпорт карток</string>
     <string name="updateBalanceTitle">Скільки ви витратили або отримали?</string>
@@ -217,7 +217,7 @@
     <string name="currentBalanceSentence">Поточний баланс: <xliff:g>%s</xliff:g></string>
     <string name="newBalanceSentence">Новий баланс: <xliff:g>%s</xliff:g></string>
     <string name="cameraPermissionDeniedTitle">Не вдалося отримати доступ до камери</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Для сканування штрих-кодів, Catima потрібен доступ до вашої камери. Натисніть тут, щоб змінити дозволи.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Для сканування штрих-кодів, 白い熊 猫管 потрібен доступ до вашої камери. Натисніть тут, щоб змінити дозволи.</string>
     <string name="updateBalance">Оновити баланс</string>
     <string name="storageReadPermissionRequired">Дозвіл на читання сховища, необхідний для цієї дії…</string>
     <string name="cameraPermissionRequired">Дозвіл на доступ до камери, необхідний для цієї дії…</string>
@@ -236,9 +236,9 @@
     <string name="show_note">Показати примітку</string>
     <string name="show_validity">Показати термін дії</string>
     <string name="show_balance">Показати баланс</string>
-    <string name="permissionReadCardsLabel">Читайте картки Catima</string>
+    <string name="permissionReadCardsLabel">Читайте картки 白い熊 猫管</string>
     <string name="settings_allow_content_provider_read_summary">Застосунки все ще муситимуть запитувати дозвіл на отримання доступу</string>
-    <string name="permissionReadCardsDescription">читайте ваші картки Catima та всю інформацію на них, включно з примітками та зображеннями</string>
+    <string name="permissionReadCardsDescription">читайте ваші картки 白い熊 猫管 та всю інформацію на них, включно з примітками та зображеннями</string>
     <string name="settings_display_barcode_max_brightness_summary">Необхідно для роботи деяких сканерів</string>
     <string name="settings_keep_screen_on_summary">Вимикає тайм-аут екрана під час перегляду картки</string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">Вимикає блокування екрана під час перегляду картки</string>
@@ -259,7 +259,6 @@
     <string name="enter_card_id">Введіть ID або текст на вашій картці</string>
     <string name="addWithoutBarcode">Додати картку без штрих-коду</string>
     <string name="field_must_not_be_empty">Поле вводу не повинно бути порожнім</string>
-    <string name="app_name">Catima</string>
     <string name="add_manually_warning_message">Для деяких карток значення штрих-коду відрізняється від номера, вказаного на картці. Через це введення штрих-коду вручну не завжди може працювати. Рекомендується замість цього відсканувати штрих-код за допомогою камери. Ви все одно хочете продовжити?</string>
     <string name="continue_">Продовжити</string>
     <string name="add_manually_warning_title">Рекомендується відсканувати</string>
@@ -296,7 +295,7 @@
     <string name="width">Ширина</string>
     <string name="setBarcodeWidth">Встановити ширину штрих-коду</string>
     <string name="card_list_widget_name">Список карток</string>
-    <string name="card_list_widget_empty">Після того, як ви додасте кілька карток лояльності в Catima, вони з’являться тут. Якщо у вас є картки, переконайтеся, що вони не всі заархівовані.</string>
+    <string name="card_list_widget_empty">Після того, як ви додасте кілька карток лояльності в 白い熊 猫管, вони з’являться тут. Якщо у вас є картки, переконайтеся, що вони не всі заархівовані.</string>
     <string name="cardWithNumber">Картка <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Картка <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Будь ласка, не повертайте пристрій, оскільки це скасує дію</string>

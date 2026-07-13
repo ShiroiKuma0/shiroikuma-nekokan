@@ -11,10 +11,9 @@
     <string name="exportName">Exporta</string>
     <string name="action_search">Cerca</string>
     <string name="deleteTitle">Elimina la targeta</string>
-    <string name="welcome">Benvingut a Catima</string>
+    <string name="welcome">Benvingut a 白い熊 猫管</string>
     <string name="noGiftCards">Fes clic al botó + per afegir una targeta, o importa des del menú ⋮</string>
     <string name="photos">Fotos</string>
-    <string name="app_name">Catima</string>
     <string name="moveDown">Baixar abaix</string>
     <string name="setBackImage">Setejar la imatge posterior</string>
     <string name="setFrontImage">Imatge Frontal</string>
@@ -237,10 +236,10 @@
     <string name="exporting">Exportant…</string>
     <string name="storageReadPermissionRequired">Cal permís per llegir l\'emmagatzematge per a aquesta acció…</string>
     <string name="cameraPermissionRequired">Cal permís per accedir a la càmera per a aquesta acció…</string>
-    <string name="permissionReadCardsLabel">Legeix targetes Catima</string>
-    <string name="permissionReadCardsDescription">llegeix les teves targetes Catima i tots els seus detalls, incloses notes i imatges</string>
+    <string name="permissionReadCardsLabel">Legeix targetes 白い熊 猫管</string>
+    <string name="permissionReadCardsDescription">llegeix les teves targetes 白い熊 猫管 i tots els seus detalls, incloses notes i imatges</string>
     <string name="cameraPermissionDeniedTitle">No s\'ha pogut accedir a la càmera</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Per escanejar codis de barres, Catima necessitarà accés a la teva càmera. Toca aquí per canviar la configuració dels permisos.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Per escanejar codis de barres, 白い熊 猫管 necessitarà accés a la teva càmera. Toca aquí per canviar la configuració dels permisos.</string>
     <string name="about">Sobre</string>
     <string name="app_copyright_old">Clauer basat en na Loyalty Card Keychain\ncopyright © 2016–2020 Branden Archer</string>
     <string name="addManually">Introduïu el codi de barres manualment</string>

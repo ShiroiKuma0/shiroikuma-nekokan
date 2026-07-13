@@ -965,7 +965,9 @@ public class Utils {
         Settings settings = new Settings(activity);
 
         Resources.Theme theme = activity.getTheme();
-        DynamicColors.applyToActivityIfAvailable(activity);
+        // shiroikuma-nekokan fork: the 白い熊 猫管 black/yellow look replaces
+        // Material You dynamic colors (see themes.xml SkBlackYellow + SkStyler).
+        theme.applyStyle(R.style.SkBlackYellow, true);
 
         if (isDarkModeEnabled(activity) && settings.getOledDark()) {
             theme.applyStyle(R.style.DarkBackground, true);

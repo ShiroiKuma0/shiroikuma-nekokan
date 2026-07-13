@@ -17,8 +17,8 @@
     <string name="importLoyaltyCardKeychain">Tuo Loyalty Card Keychain varmuuskopiotiedostosta</string>
     <string name="importFidmeMessage">Valitse vienti FidMe:stä tuotavaksi ja valitse viivakoodityypit manuaalisesti sen jälkeen. \nLuo se FidMe-profiilistasi valitsemalla \"Data Protection\" ja painamalla \"Extract my data\".</string>
     <string name="importFidme">Tuo FidMe-varmuuskopiotiedostosta</string>
-    <string name="importCatimaMessage">Valitse tuotava vientitiedosto Catimasta. \nLuo se Catima-sovelluksen Tuo/vie-valikosta painamalla siellä ensin Vie.</string>
-    <string name="importCatima">Tuo Catima varmuuskopiotiedostosta</string>
+    <string name="importCatimaMessage">Valitse tuotava vientitiedosto 白い熊 猫管sta. \nLuo se 白い熊 猫管-sovelluksen Tuo/vie-valikosta painamalla siellä ensin Vie.</string>
+    <string name="importCatima">Tuo 白い熊 猫管 varmuuskopiotiedostosta</string>
     <string name="accept">Hyväksy</string>
     <string name="privacy_policy">Tietosuojakäytäntö</string>
     <string name="app_loyalty_card_keychain">Kanta-asiakaskortin avainnippu</string>
@@ -197,7 +197,7 @@
     <string name="previousCard">Edellinen</string>
     <string name="nextCard">Seuraava</string>
     <string name="failedToOpenUrl">Asenna ensin verkkoselain</string>
-    <string name="welcome">Tervetuloa Catimaan</string>
+    <string name="welcome">Tervetuloa 白い熊 猫管an</string>
     <string name="updateBalanceTitle">Kuinka paljon kulutit tai tienasit?</string>
     <string name="updateBalanceHint">Syötä summa</string>
     <string name="archive">Arkistoi</string>
@@ -206,7 +206,7 @@
     <string name="currentBalanceSentence">Nykyinen saldo: <xliff:g>%s</xliff:g></string>
     <string name="newBalanceSentence">Uusi saldo: <xliff:g>%s</xliff:g></string>
     <string name="cameraPermissionDeniedTitle">Ei pääsyä kameraan</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Viivakoodien lukeminen vaatii, että Catimalla on käyttöoikeus kameraan. Napauta tästä muuttaaksesi oikeuksia.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Viivakoodien lukeminen vaatii, että 白い熊 猫管lla on käyttöoikeus kameraan. Napauta tästä muuttaaksesi oikeuksia.</string>
     <string name="updateBalance">Päivitä saldo</string>
     <string name="cameraPermissionRequired">Tämä toiminto vaatii oikeuden käyttää kameraa…</string>
     <string name="storageReadPermissionRequired">Tämä toiminto vaatii oikeuden lukea tallennustilaa…</string>
@@ -215,7 +215,7 @@
     <string name="chooseValidFromDate">Valitse kelvollinen päivämäärä</string>
     <string name="validFromSentence">Kelvollinen alkaen: <xliff:g>%s</xliff:g></string>
     <string name="donate">Lahjoita</string>
-    <string name="permissionReadCardsLabel">Lue Catima-kortteja</string>
+    <string name="permissionReadCardsLabel">Lue 白い熊 猫管-kortteja</string>
     <string name="permissionReadCardsDescription">lue korttisi ja kaikki niiden tiedot, mukaan lukien huomautukset ja kuvat</string>
     <string name="settings_allow_content_provider_read_summary">Sovellusten tulee silti pyytää lupaa saadakseen pääsyn</string>
     <string name="settings_category_title_privacy">Yksityisyys</string>
@@ -246,7 +246,6 @@
     <string name="addWithoutBarcode">Lisää kortti jossa ei ole viivakoodia</string>
     <string name="field_must_not_be_empty">Kenttä ei saa olla tyhjä</string>
     <string name="manually_enter_barcode_instructions">Syötä kortissa näkyvä numero tai teksti ja klikkaa viivakoodia, joka vastaa kortissa olevaa koodia.</string>
-    <string name="app_name">Catima</string>
     <string name="balanceParsingFailed">Virheellinen saldo</string>
     <string name="view_online">Näytä verkossa</string>
     <string name="continue_">Jatka</string>
@@ -285,7 +284,7 @@
     <string name="width">Leveys</string>
     <string name="setBarcodeWidth">Aseta viivakoodin leveys</string>
     <string name="card_list_widget_name">Korttiluettelo</string>
-    <string name="card_list_widget_empty">Kun olet lisännyt kanta-asiakaskortteja Catimaan, ne näkyvät täällä. Jos sinulla on kortteja, varmista, etteivät ne kaikki ole arkistoituja.</string>
+    <string name="card_list_widget_empty">Kun olet lisännyt kanta-asiakaskortteja 白い熊 猫管an, ne näkyvät täällä. Jos sinulla on kortteja, varmista, etteivät ne kaikki ole arkistoituja.</string>
     <string name="cardWithNumber">Kortti <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kortti <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Älä kierrä laitetta, koska se peruu toiminnon</string>

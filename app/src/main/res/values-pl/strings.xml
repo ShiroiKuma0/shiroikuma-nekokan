@@ -96,8 +96,8 @@
     <string name="importLoyaltyCardKeychain">Importuj z Loyalty Card Keychain</string>
     <string name="importFidmeMessage">Wybierz swój plik eksportu z FidMe, aby zaimportować, po czym wybierz typy kodów kreskowych. \nStwórz go ze swojego profilu FidMe, wybierając Ochrona Danych, a następnie Wyodrębnij moje dane.</string>
     <string name="importFidme">Importuj z FidMe</string>
-    <string name="importCatimaMessage">Wybierz swój plik eksportu z Catima, aby zaimportować. \nUtwórz go z menu Import/eksport innej aplikacji Catima poprzez wybór opcji Eksport.</string>
-    <string name="importCatima">Importuj z Catima</string>
+    <string name="importCatimaMessage">Wybierz swój plik eksportu z 白い熊 猫管, aby zaimportować. \nUtwórz go z menu Import/eksport innej aplikacji 白い熊 猫管 poprzez wybór opcji Eksport.</string>
+    <string name="importCatima">Importuj z 白い熊 猫管</string>
     <string name="accept">Zaakceptuj</string>
     <string name="privacy_policy">Polityka prywatności</string>
     <string name="app_loyalty_card_keychain">Brelok dla twoich kart lojalnościowych</string>
@@ -210,9 +210,9 @@
     </plurals>
     <string name="failedToRetrieveImageFile">Nie udało się pobrać pliku obrazu</string>
     <string name="failedToOpenUrl">Najpierw zainstaluj przeglądarkę</string>
-    <string name="welcome">Witaj w Catima</string>
+    <string name="welcome">Witaj w 白い熊 猫管</string>
     <string name="currentBalanceSentence">Bieżące saldo: <xliff:g>%s</xliff:g></string>
-    <string name="noCameraPermissionDirectToSystemSetting">By zeskanować kody kreskowe, Catima musi mieć dostęp do twojej kamery. Dotknij tutaj by zmienić swoje ustawienia dostępu.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">By zeskanować kody kreskowe, 白い熊 猫管 musi mieć dostęp do twojej kamery. Dotknij tutaj by zmienić swoje ustawienia dostępu.</string>
     <string name="updateBalanceTitle">Ile wydałeś lub otrzymałeś?</string>
     <string name="updateBalanceHint">Wpisz sumę</string>
     <string name="updateBalance">Zaktualizuj balans</string>
@@ -236,8 +236,8 @@
     <string name="show_balance">Pokaż balans</string>
     <string name="show_validity">Pokaż ważność</string>
     <string name="show_note">Pokaż notatkę</string>
-    <string name="permissionReadCardsLabel">Odczytaj karty Catima</string>
-    <string name="permissionReadCardsDescription">odczytywanie swoich kart Catima i ich szczegółów, włącznie z notatkami i obrazkami</string>
+    <string name="permissionReadCardsLabel">Odczytaj karty 白い熊 猫管</string>
+    <string name="permissionReadCardsDescription">odczytywanie swoich kart 白い熊 猫管 i ich szczegółów, włącznie z notatkami i obrazkami</string>
     <string name="settings_allow_content_provider_read_title">Pozwól innym aplikacjom na dostęp do moich danych</string>
     <string name="settings_display_barcode_max_brightness_summary">Potrzebne aby niektóre skanery działały</string>
     <string name="settings_keep_screen_on_summary">Wyłącza wygaszanie ekranu kiedy wyświetlana jest karta</string>
@@ -259,7 +259,6 @@
     <string name="enter_card_id">Wpisz numer ID lub tekst na twojej karcie</string>
     <string name="addWithoutBarcode">Dodaj kartę bez kodu kreskowego</string>
     <string name="field_must_not_be_empty">Pole nie może być puste</string>
-    <string name="app_name">Catima</string>
     <string name="continue_">Kontynuuj</string>
     <string name="addFromPdfFile">Wybierz plik PDF</string>
     <string name="errorReadingFile">Nie można odczytać pliku</string>
@@ -295,7 +294,7 @@
     <string name="sort_by_valid_from">Ważne od</string>
     <string name="setBarcodeWidth">Ustaw szerokość kodu kreskowego</string>
     <string name="width">Szerokość</string>
-    <string name="card_list_widget_empty">Karty lojalnościowe dodane w aplikacji Catima pokażą się tutaj. Jeżeli masz jakieś karty, upewnij się że nie są one zarchiwizowane.</string>
+    <string name="card_list_widget_empty">Karty lojalnościowe dodane w aplikacji 白い熊 猫管 pokażą się tutaj. Jeżeli masz jakieś karty, upewnij się że nie są one zarchiwizowane.</string>
     <string name="card_list_widget_name">Lista kart</string>
     <string name="cardWithNumber">Karta <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Karta <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>

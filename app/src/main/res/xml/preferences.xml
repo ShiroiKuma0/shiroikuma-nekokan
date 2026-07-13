@@ -6,6 +6,13 @@
         android:title="@string/settings_category_title_general"
         app:iconSpaceReserved="false">
 
+        <Preference
+            android:key="@string/settings_key_shiroikuma_ui"
+            android:title="@string/sk_ui_title"
+            android:summary="@string/sk_settings_ui_summary"
+            app:iconSpaceReserved="false"
+            app:singleLineTitle="false" />
+
         <ListPreference
             android:defaultValue="@string/settings_key_system_theme"
             android:entries="@array/theme_value_strings"

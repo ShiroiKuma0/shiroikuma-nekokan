@@ -17,6 +17,7 @@ import protect.card_locker.MainActivity
 import protect.card_locker.R
 import protect.card_locker.Utils
 import protect.card_locker.databinding.SettingsActivityBinding
+import protect.card_locker.shiroikuma.SkUiActivity
 
 class SettingsActivity : CatimaAppCompatActivity() {
 
@@ -84,6 +85,14 @@ class SettingsActivity : CatimaAppCompatActivity() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.preferences)
+
+            // shiroikuma-nekokan fork: the 白い熊 猫管 UI page entry
+            val shiroikumaUiPreference =
+                findPreference<Preference>(getString(R.string.settings_key_shiroikuma_ui))
+            shiroikumaUiPreference!!.setOnPreferenceClickListener {
+                startActivity(Intent(requireContext(), SkUiActivity::class.java))
+                true
+            }
 
             // Show pretty names and summaries
             val themePreference = findPreference<ListPreference>(getString(R.string.settings_key_theme))

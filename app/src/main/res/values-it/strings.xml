@@ -100,8 +100,8 @@
     <string name="importLoyaltyCardKeychain">Importa da Loyalty Card Keychain</string>
     <string name="importFidmeMessage">Seleziona il tuo file di esportazione da FidMe per importarlo, dopodiché seleziona i tipi di codice a barre manualmente. \nPer crearlo, si fa dal tuo profilo FidMe scegliendo \"Data Protection\" e poi \"Extract my data\".</string>
     <string name="importFidme">Importa da FidMe</string>
-    <string name="importCatimaMessage">Seleziona il file di esportazione per importarlo. \nSi può creare dal menu Importa/esporta di un\'altra applicazione Catima premendo su Esporta.</string>
-    <string name="importCatima">Importa da Catima</string>
+    <string name="importCatimaMessage">Seleziona il file di esportazione per importarlo. \nSi può creare dal menu Importa/esporta di un\'altra applicazione 白い熊 猫管 premendo su Esporta.</string>
+    <string name="importCatima">Importa da 白い熊 猫管</string>
     <string name="setBarcodeId">Imposta il valore del codice a barre</string>
     <string name="sameAsCardId">Uguale al codice</string>
     <string name="barcodeId">Valore del codice a barre</string>
@@ -201,11 +201,11 @@
     </plurals>
     <string name="previousCard">Precedente</string>
     <string name="nextCard">Successivo</string>
-    <string name="welcome">Benvenuti su Catima</string>
+    <string name="welcome">Benvenuti su 白い熊 猫管</string>
     <string name="failedToOpenUrl">Installa prima un browser web</string>
     <string name="failedToRetrieveImageFile">Impossibile ottenere il file dell\'immagine</string>
     <string name="cameraPermissionDeniedTitle">Impossibile accedere alla fotocamera</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Per poter scansionare i codici a barre, Catima ha bisogno di accedere alla tua fotocamera. Premi qui per poter cambiare le impostazioni dei permessi.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Per poter scansionare i codici a barre, 白い熊 猫管 ha bisogno di accedere alla tua fotocamera. Premi qui per poter cambiare le impostazioni dei permessi.</string>
     <string name="updateBalance">Aggiorna bilancio</string>
     <string name="updateBalanceTitle">Quanto hai speso o ricevuto?</string>
     <string name="updateBalanceHint">Inserisci l\'importo</string>
@@ -229,7 +229,7 @@
     <string name="show_balance">Mostra bilancio</string>
     <string name="show_validity">Mostra validità</string>
     <string name="show_name_below_image_thumbnail">Mostra il nome sotto l\'immagine</string>
-    <string name="permissionReadCardsLabel">Leggi Carte Catima</string>
+    <string name="permissionReadCardsLabel">Leggi Carte 白い熊 猫管</string>
     <string name="settings_allow_content_provider_read_summary">Le applicazioni dovranno comunque richiedere l\'autorizzazione per ottenere l\'accesso</string>
     <string name="settings_allow_content_provider_read_title">Consenti ad altre applicazioni di accedere ai miei dati</string>
     <string name="permissionReadCardsDescription">Leggere le sue carte e tutti i suoi dettagli, comprese le note e le immagini</string>
@@ -253,7 +253,6 @@
     <string name="enter_card_id">Inserire il numero ID o il testo sulla sua carta</string>
     <string name="addWithoutBarcode">Aggiungere una carta senza codice a barre</string>
     <string name="field_must_not_be_empty">Il campo non deve essere vuoto</string>
-    <string name="app_name">Catima</string>
     <string name="add_manually_warning_title">Consigliata scansione</string>
     <string name="continue_">Successivo</string>
     <string name="add_manually_warning_message">Per alcune carte, il valore del codice a barre differisce dal numero scritto sulla carta. Per questo motivo, l\'inserimento manuale del codice a barre potrebbe non funzionare sempre. Per questo motivo si consiglia di scansionare il codice a barre con la fotocamera. Vuoi procedere lo stesso?</string>
@@ -290,7 +289,7 @@
     <string name="setBarcodeWidth">Imposta larghezza del codice a barre</string>
     <string name="width">Larghezza</string>
     <string name="card_list_widget_name">Lista delle carte</string>
-    <string name="card_list_widget_empty">Dopo aver aggiunto alcune carte fedeltà in Catima, queste appariranno qui. Se hai delle carte, assicurati che non siano tutte archiviate.</string>
+    <string name="card_list_widget_empty">Dopo aver aggiunto alcune carte fedeltà in 白い熊 猫管, queste appariranno qui. Se hai delle carte, assicurati che non siano tutte archiviate.</string>
     <string name="cardWithNumber">Carta <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Carta <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="acra_crash_email_subject"><xliff:g id="app_name">%s</xliff:g> rapporto sull\'incidente</string>
