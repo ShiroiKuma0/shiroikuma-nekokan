@@ -1,5 +1,7 @@
 import com.android.build.gradle.internal.tasks.factory.dependsOn
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.io.FileInputStream
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.com.android.application)
@@ -11,16 +13,31 @@ kotlin {
     jvmToolchain(21)
 }
 
+// --- shiroikuma-nekokan fork: signing + versioning (see gradle.properties + build-apk skill) ---
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+}
+
+val forkVersionName = "${project.property("VERSION_NAME")}+${project.property("BUILD_NUMBER")}"
+val forkVersionCode = project.property("VERSION_CODE").toString().toInt() * 10000 +
+    project.property("BUILD_NUMBER").toString().toInt()
+
+base {
+    archivesName = "shiroikuma-nekokan_${forkVersionName}_arm64-v8a"
+}
+
 android {
-    namespace = "protect.card_locker"
+    namespace = project.property("APP_NAMESPACE").toString()
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "me.hackerchick.catima"
+        applicationId = project.property("APP_ID").toString()
         minSdk = 23
         targetSdk = 36
-        versionCode = 167
-        versionName = "2.43.0"
+        versionCode = forkVersionCode
+        versionName = forkVersionName
 
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
@@ -34,8 +51,22 @@ android {
         buildConfigField("boolean", "useAcraCrashReporter", "true")
     }
 
+    signingConfigs {
+        if (keystorePropertiesFile.exists()) {
+            create("release") {
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+                storeFile = file(keystoreProperties.getProperty("storeFile"))
+                storePassword = keystoreProperties.getProperty("storePassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (keystorePropertiesFile.exists()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -161,6 +192,41 @@ dependencies {
     androidTestImplementation(libs.androidx.test.runner)
     androidTestImplementation(libs.androidx.test.uiautomator.uiautomator)
     androidTestImplementation(libs.androidx.test.espresso.espresso.core)
+}
+
+// --- shiroikuma-nekokan fork: build the release APK (foss flavor), copy to ~/tmp, bump BUILD_NUMBER ---
+tasks.register("buildApk") {
+    description = "Build the foss release APK, copy it to ~/tmp, and bump BUILD_NUMBER for next time."
+    dependsOn("assembleFossRelease")
+    // Capture project state at configuration time so the action is configuration-cache compatible.
+    val fvName = forkVersionName
+    val fvCode = forkVersionCode
+    val releaseApkDir = layout.buildDirectory.dir("outputs/apk/foss/release")
+    val userHome = providers.systemProperty("user.home")
+    val propsFile = rootProject.file("gradle.properties")
+    val currentBuildNumber = project.property("BUILD_NUMBER").toString().toInt()
+    doLast {
+        val apkName = "shiroikuma-nekokan_${fvName}_arm64-v8a.apk"
+        val outputDir = releaseApkDir.get().asFile
+        val targetDir = File(userHome.get(), "tmp")
+        targetDir.mkdirs()
+        outputDir.listFiles { _, name -> name.endsWith(".apk") }?.firstOrNull()?.let { apk ->
+            val targetFile = File(targetDir, apkName)
+            apk.copyTo(targetFile, overwrite = true)
+            println("[1;36m>>> ${targetFile.absolutePath}[0m")
+            println("[1;36m>>> versionCode $fvCode[0m")
+        } ?: throw GradleException("No APK found in $outputDir")
+
+        // Auto-increment BUILD_NUMBER for the next build.
+        val nextBuildNumber = currentBuildNumber + 1
+        propsFile.writeText(
+            propsFile.readText().replace(
+                "BUILD_NUMBER=$currentBuildNumber",
+                "BUILD_NUMBER=$nextBuildNumber"
+            )
+        )
+        println("[1;36m>>> BUILD_NUMBER bumped to $nextBuildNumber[0m")
+    }
 }
 
 tasks.register("copyRawResFiles", Copy::class) {
