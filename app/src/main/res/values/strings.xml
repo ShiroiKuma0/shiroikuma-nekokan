@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Catima</string>
+    <!-- shiroikuma-nekokan fork: launcher/application label (never translated) -->
+    <string name="sk_app_name" translatable="false">白い熊 猫管</string>
     <string name="action_search">Search</string>
     <string name="action_add">Add</string>
     <plurals name="selectedCardCount">
