@@ -15,6 +15,7 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResult
@@ -37,6 +38,8 @@ import protect.card_locker.databinding.MainActivityBinding
 import protect.card_locker.databinding.SortingOptionBinding
 import protect.card_locker.preferences.Settings
 import protect.card_locker.preferences.SettingsActivity
+import protect.card_locker.shiroikuma.SkStyler
+import protect.card_locker.shiroikuma.SkUiActivity
 import protect.card_locker.wearos.WearSyncPermissionRequester
 import java.io.UnsupportedEncodingException
 import java.util.concurrent.atomic.AtomicInteger
@@ -688,7 +691,32 @@ class MainActivity : CatimaAppCompatActivity(), CardAdapterListener {
             }
         }
 
+        // shiroikuma-nekokan fork: restyle the toolbar once the menu exists, and make a
+        // long-press on the overflow (⋮) button open the 白い熊 猫管 UI page directly.
+        binding.toolbar.post {
+            SkStyler.styleToolbar(this, binding.toolbar)
+            findOverflowButton(binding.toolbar)?.setOnLongClickListener {
+                startActivity(Intent(this, SkUiActivity::class.java))
+                true
+            }
+        }
+
         return super.onCreateOptionsMenu(inputMenu)
+    }
+
+    // shiroikuma-nekokan fork: locate the toolbar's overflow (⋮) button by its
+    // standard content description.
+    private fun findOverflowButton(root: ViewGroup): View? {
+        val overflowDescription = getString(androidx.appcompat.R.string.abc_action_menu_overflow_description)
+        for (i in 0 until root.childCount) {
+            val child = root.getChildAt(i)
+            if (child is ViewGroup) {
+                findOverflowButton(child)?.let { return it }
+            } else if (child.contentDescription == overflowDescription) {
+                return child
+            }
+        }
+        return null
     }
 
     override fun onOptionsItemSelected(inputItem: MenuItem): Boolean {

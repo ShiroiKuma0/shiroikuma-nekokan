@@ -100,7 +100,6 @@
     </plurals>
     <string name="previousCard">Fyrra</string>
     <string name="failedToOpenUrl">Settu inn vef-vafra fyrst</string>
-    <string name="welcome">Velkomin að Catima</string>
+    <string name="welcome">Velkomin að 白い熊 猫管</string>
     <string name="importCards">Flytja inn kort</string>
-    <string name="app_name">Catima</string>
 </resources>

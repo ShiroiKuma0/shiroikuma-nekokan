@@ -98,9 +98,9 @@
     <string name="importLoyaltyCardKeychainMessage">Kies het te importeren exportbestand. \nGa naar het import-/exportmenu van Klantenkaartkluis om een exportbestand samen te stellen.</string>
     <string name="importLoyaltyCardKeychain">Importeren uit Klantenkaartkluis</string>
     <string name="importFidmeMessage">Kies het te importeren exportbestand en kies nadien de juiste barcodes. \nGa naar je FidMe-profiel en druk op ‘Gegevensbescherming’ om een exportbestand samen te stellen.</string>
-    <string name="importCatimaMessage">Kies het te importeren exportbestand. \nGa naar het import-/exportmenu van Catima op een ander apparaat om een exportbestand samen te stellen.</string>
+    <string name="importCatimaMessage">Kies het te importeren exportbestand. \nGa naar het import-/exportmenu van 白い熊 猫管 op een ander apparaat om een exportbestand samen te stellen.</string>
     <string name="importFidme">Importeren uit FidMe</string>
-    <string name="importCatima">Importeren uit Catima</string>
+    <string name="importCatima">Importeren uit 白い熊 猫管</string>
     <string name="errorReadingImage">De afbeelding kan niet worden uitgelezen</string>
     <string name="noBarcodeFound">Geen barcode aangetroffen</string>
     <string name="addFromImage">Afbeelding kiezen uit galerij</string>
@@ -196,12 +196,12 @@
     </plurals>
     <string name="previousCard">Vorige</string>
     <string name="nextCard">Volgende</string>
-    <string name="welcome">Welkom bij Catima</string>
+    <string name="welcome">Welkom bij 白い熊 猫管</string>
     <string name="failedToOpenUrl">Installeer een webbrowser</string>
     <string name="failedToRetrieveImageFile">De afbeelding kan niet worden opgehaald</string>
     <string name="cameraPermissionDeniedTitle">Geen cameratoegang</string>
     <string name="updateBalanceTitle">Hoeveel heb je uitgegeven of ontvangen?</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Catima heeft toegang tot je camera nodig om barcodes te kunnen scannen. Druk hier om toegang te verlenen.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">白い熊 猫管 heeft toegang tot je camera nodig om barcodes te kunnen scannen. Druk hier om toegang te verlenen.</string>
     <string name="currentBalanceSentence">Huidig saldo: <xliff:g>%s</xliff:g></string>
     <string name="updateBalance">Saldo bijwerken</string>
     <string name="updateBalanceHint">Voer een bedrag in</string>
@@ -224,9 +224,9 @@
     <string name="show_name_below_image_thumbnail">Naam onder miniatuur tonen</string>
     <string name="show_note">Aantekening tonen</string>
     <string name="show_validity">Geldigheid tonen</string>
-    <string name="permissionReadCardsLabel">Catimakaarten uitlezen</string>
+    <string name="permissionReadCardsLabel">白い熊 猫管kaarten uitlezen</string>
     <string name="settings_allow_content_provider_read_summary">Let op: apps moeten nog steeds om toestemming vragen</string>
-    <string name="permissionReadCardsDescription">Lees alle Catima-kaarten uit, inclusief alle details, aantekeningen en afbeeldingen</string>
+    <string name="permissionReadCardsDescription">Lees alle 白い熊 猫管-kaarten uit, inclusief alle details, aantekeningen en afbeeldingen</string>
     <string name="settings_allow_content_provider_read_title">Andere apps toegang geven tot gegevens</string>
     <string name="settings_keep_screen_on_summary">Laat het scherm niet op zwart gaan tijdens het bekijken van een kaart</string>
     <string name="settings_category_title_privacy">Privacy</string>
@@ -247,7 +247,6 @@
     <string name="enter_card_id">Voer het id-nummer of de tekst van je kaart in</string>
     <string name="addWithoutBarcode">Kaart zonder barcode toevoegen</string>
     <string name="field_must_not_be_empty">Dit veld is vereist</string>
-    <string name="app_name">Catima</string>
     <string name="add_manually_warning_title">Scannen wordt aangeraden</string>
     <string name="add_manually_warning_message">Bij sommige kaarten wijkt de barcodewaarde af van het nummer op de kaart. Hierdoor werkt het handmatig invoeren van een barcode niet altijd. Het wordt aangeraden om in plaats daarvan de barcode met je camera te scannen. Wilt u nog steeds doorgaan?</string>
     <string name="continue_">Ga door</string>
@@ -284,7 +283,7 @@
     <string name="width">Breedte</string>
     <string name="setBarcodeWidth">Stel barcodebreedte in</string>
     <string name="card_list_widget_name">Kaartenlijst</string>
-    <string name="card_list_widget_empty">Zodra er kaarten in Catima toegevoegd zijn worden deze hier getoond. Heb je al kaarten? Controleer dan of deze niet gearchiveerd zijn.</string>
+    <string name="card_list_widget_empty">Zodra er kaarten in 白い熊 猫管 toegevoegd zijn worden deze hier getoond. Heb je al kaarten? Controleer dan of deze niet gearchiveerd zijn.</string>
     <string name="cardWithNumber">Kaart <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kaart <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Draai niet je telefoon, dit annuleert de actie</string>

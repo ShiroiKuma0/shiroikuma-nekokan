@@ -31,7 +31,6 @@
     <string name="editCardTitle">Muuda kaarti</string>
     <string name="addCardTitle">Lisa kaart</string>
     <string name="scanCardBarcode">Skaneeri triipkoodi</string>
-    <string name="app_name">Catima</string>
     <string name="noGiftCards">Kaardi lisamiseks klõpsi + pluss nuppu või impordi ⋮ikooniga menüüst</string>
     <string name="action_search">Otsi</string>
     <string name="unstar">Eemalda lemmikute hulgast</string>
@@ -67,10 +66,10 @@
     <string name="storageReadPermissionRequired">Selle tegevuse jaoks on vajalikud õigused andmekandalt lugemiseks…</string>
     <string name="importFailed">Importimist ei õnnestunud teha</string>
     <string name="cameraPermissionRequired">Selle tegevuse jaoks on vajalikud õigused kaamera kasutamiseks…</string>
-    <string name="permissionReadCardsLabel">Loe Catima kaarte</string>
-    <string name="permissionReadCardsDescription">loe kõiki oma Catima kaarte koos nende üksikasjadega, sealhulgas märkuste ja piltidega</string>
+    <string name="permissionReadCardsLabel">Loe 白い熊 猫管 kaarte</string>
+    <string name="permissionReadCardsDescription">loe kõiki oma 白い熊 猫管 kaarte koos nende üksikasjadega, sealhulgas märkuste ja piltidega</string>
     <string name="cameraPermissionDeniedTitle">Puudub ligipääs kaamerale</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Triipkoodide skaneerimiseks vajab Catima õigust asutada kaamerat. Õiguste andmiseks klõpsi siin.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Triipkoodide skaneerimiseks vajab 白い熊 猫管 õigust asutada kaamerat. Õiguste andmiseks klõpsi siin.</string>
     <string name="exportOptionExplanation">Andmed salvestame sinu valitud asukohta</string>
     <string name="importOptionFilesystemTitle">Impordi failisüsteemist</string>
     <string name="importOptionFilesystemExplanation">Vali vajalik impordifail failisüsteemist</string>
@@ -168,8 +167,8 @@
     <string name="app_loyalty_card_keychain">Loyalty Card Keychain</string>
     <string name="privacy_policy">Andmekaitsepõhimõtted</string>
     <string name="accept">Nõustu</string>
-    <string name="importCatima">Impordi Catima varukoopiast</string>
-    <string name="importCatimaMessage">Importimiseks vali varem tehtud Catima ekspordifail. \nSellise faili saad luua mõnes teises seadmes olevast Catima rakendusest Import/Eksport menüüst valikust Eksport.</string>
+    <string name="importCatima">Impordi 白い熊 猫管 varukoopiast</string>
+    <string name="importCatimaMessage">Importimiseks vali varem tehtud 白い熊 猫管 ekspordifail. \nSellise faili saad luua mõnes teises seadmes olevast 白い熊 猫管 rakendusest Import/Eksport menüüst valikust Eksport.</string>
     <string name="importFidme">Impordi FidMe varukoopiast</string>
     <string name="importFidmeMessage">Importimiseks vali fail, mille oled FidMe rakendusest eksportinud. Peale importi määra triipkoodi tüübid käsistsi. \nSellise faili loomiseks vali oma FidMe profiilist eelistuse Andmekaitse-Paki lahti.</string>
     <string name="importLoyaltyCardKeychain">Impordi rakendusest Loyalty Card Keychain</string>
@@ -220,7 +219,7 @@
     <string name="previousCard">Eelmine</string>
     <string name="nextCard">Järgmine</string>
     <string name="failedToOpenUrl">Esmalt paigalda veebibrauser</string>
-    <string name="welcome">Tere tulemast kasutama kliendikaartide haldurit Catima</string>
+    <string name="welcome">Tere tulemast kasutama kliendikaartide haldurit 白い熊 猫管</string>
     <string name="validFromDate">Kehtib alates</string>
     <string name="anyDate">Ükspuha, mis kuupäev</string>
     <string name="chooseValidFromDate">Vali korrektne kehtivuse alguse kuupäev</string>
@@ -284,7 +283,7 @@
     <string name="setBarcodeWidth">Määratle triipkoodi laius</string>
     <string name="width">Laius</string>
     <string name="card_list_widget_name">Kaartide loend</string>
-    <string name="card_list_widget_empty">Kui lisad Catimasse kliendikaarte, siis saavad nad olema nähtavad siin. Kui sul on kaardid lisatud, siis palun kontrolli, et nad kõik poleks arhiveeritud.</string>
+    <string name="card_list_widget_empty">Kui lisad 白い熊 猫管sse kliendikaarte, siis saavad nad olema nähtavad siin. Kui sul on kaardid lisatud, siis palun kontrolli, et nad kõik poleks arhiveeritud.</string>
     <string name="cardWithNumber">Kaart: <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kaart: <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Palun ära pööra nutiseadet - see katkestab tegevuse</string>

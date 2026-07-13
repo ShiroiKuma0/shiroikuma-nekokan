@@ -24,8 +24,8 @@
     <string name="importLoyaltyCardKeychain">从 Loyalty Card Keychain 导入</string>
     <string name="importFidmeMessage">选择 Fidme 导出文件进行导入，之后再手动选择条码类型。 \n创建 Fidme 配置的导出文件，方法是选择“数据保护”，然后按“提取我的数据”。</string>
     <string name="importFidme">从 FidMe 导入</string>
-    <string name="importCatimaMessage">选择 Catima 导出文件来导入。 \n先按另一个 Catima 应用的导入/导出菜单中“导出”来创建文件。</string>
-    <string name="importCatima">从 Catima 导入</string>
+    <string name="importCatimaMessage">选择 白い熊 猫管 导出文件来导入。 \n先按另一个 白い熊 猫管 应用的导入/导出菜单中“导出”来创建文件。</string>
+    <string name="importCatima">从 白い熊 猫管 导入</string>
     <string name="accept">接受</string>
     <string name="privacy_policy">隐私政策</string>
     <string name="app_loyalty_card_keychain">会员卡卡包</string>
@@ -75,7 +75,7 @@
     <string name="importOptionFilesystemTitle">从文件系统导入</string>
     <string name="exportOptionExplanation">导出的数据将储存至你选择的位置</string>
     <string name="cameraPermissionDeniedTitle">无法访问相机</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Catima 需要访问您的相机来扫描条形码，轻触这里以更改您的权限设置。</string>
+    <string name="noCameraPermissionDirectToSystemSetting">白い熊 猫管 需要访问您的相机来扫描条形码，轻触这里以更改您的权限设置。</string>
     <string name="exporting">导出中……</string>
     <string name="importing">导入中……</string>
     <string name="exportFailed">无法导出卡片</string>
@@ -192,7 +192,7 @@
     <string name="archived">卡片已归档</string>
     <string name="unarchived">卡片未归档</string>
     <string name="failedToOpenUrl">先安装一个浏览器</string>
-    <string name="welcome">欢迎使用Catima</string>
+    <string name="welcome">欢迎使用白い熊 猫管</string>
     <string name="updateBalanceHint">输入金额</string>
     <string name="importCards">导入卡</string>
     <string name="updateBalance">更新余额</string>
@@ -217,10 +217,10 @@
     <string name="show_balance">显示余额</string>
     <string name="show_name_below_image_thumbnail">在图像缩略图下方显示名称</string>
     <string name="show_validity">显示有效性</string>
-    <string name="permissionReadCardsLabel">读取 Catima 卡</string>
+    <string name="permissionReadCardsLabel">读取 白い熊 猫管 卡</string>
     <string name="settings_allow_content_provider_read_summary">应用程序仍然需要请求权限</string>
     <string name="settings_allow_content_provider_read_title">允许其他应用程序访问我的数据</string>
-    <string name="permissionReadCardsDescription">读取你的 Catima 卡片及其所有细节，包括笔记和图像</string>
+    <string name="permissionReadCardsDescription">读取你的 白い熊 猫管 卡片及其所有细节，包括笔记和图像</string>
     <string name="settings_keep_screen_on_summary">在查看卡片时禁止屏幕超时</string>
     <string name="settings_oled_dark_summary">减少 OLED 显示屏上的电池使用量</string>
     <string name="settings_category_title_privacy">隐私</string>
@@ -241,7 +241,6 @@
     <string name="enter_card_id">输入卡片上的 ID 号或文本</string>
     <string name="addWithoutBarcode">不使用条形码添加卡片</string>
     <string name="field_must_not_be_empty">字段不能为空</string>
-    <string name="app_name">Catima</string>
     <string name="add_manually_warning_title">建议扫描</string>
     <string name="continue_">继续</string>
     <string name="add_manually_warning_message">某些卡片的二维码值和刻在卡上的数字并不一样。由于这个原因，手动输入二维码可能并不总是有用。这种情况下，建议你用相机扫描二维码。你仍要继续吗？</string>
@@ -278,7 +277,7 @@
     <string name="width">宽度</string>
     <string name="setBarcodeWidth">设置条码宽度</string>
     <string name="card_list_widget_name">卡片列表</string>
-    <string name="card_list_widget_empty">在 Catima 中添加了一些会员卡后，它们会出现在这里。如果你有卡片，确保不是所有都已归档。</string>
+    <string name="card_list_widget_empty">在 白い熊 猫管 中添加了一些会员卡后，它们会出现在这里。如果你有卡片，确保不是所有都已归档。</string>
     <string name="cardWithNumber"><xliff:g>%d</xliff:g> 卡</string>
     <string name="cardWithNumberAndLocale">卡 <xliff:g>%d</xliff:g> （<xliff:g>%s</xliff:g>）</string>
     <string name="pleaseDoNotRotateTheDevice">请不要旋转设备，这样做会取消操作</string>

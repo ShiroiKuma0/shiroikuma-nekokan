@@ -10,7 +10,6 @@
     <string name="noGiftCards">Clique no botão \"+\" para adicionar um cartão ou importar a partir do menu \"⋮\"</string>
     <string name="noGiftCardsGroup">Crie alguns cartões e, em seguida, atribua-os ao grupo aqui</string>
     <string name="noMatchingGiftCards">Nenhum resultado. Tente alterar sua pesquisa.</string>
-    <string name="app_name">Catima</string>
     <string name="addCardTitle">Adicionar cartão</string>
     <string name="noCardExistsError">Não foi possível encontrar esse cartão</string>
     <string name="importFailed">Não foi possível importar</string>
@@ -80,9 +79,9 @@
     <string name="exporting">Exportando…</string>
     <string name="storageReadPermissionRequired">Permissão para ler o armazenamento é necessário para esta ação…</string>
     <string name="cameraPermissionRequired">Permissão para acessar a câmera é necessária para esta ação…</string>
-    <string name="permissionReadCardsLabel">Ler cartões Catima</string>
-    <string name="permissionReadCardsDescription">ler seus cartões Catima e todos os seus detalhes, incluindo notas e imagens</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Para ler códigos de barras, Catima precisará de acesso à sua câmera. Toque aqui para alterar suas configurações de permissão.</string>
+    <string name="permissionReadCardsLabel">Ler cartões 白い熊 猫管</string>
+    <string name="permissionReadCardsDescription">ler seus cartões 白い熊 猫管 e todos os seus detalhes, incluindo notas e imagens</string>
+    <string name="noCameraPermissionDirectToSystemSetting">Para ler códigos de barras, 白い熊 猫管 precisará de acesso à sua câmera. Toque aqui para alterar suas configurações de permissão.</string>
     <string name="exportOptionExplanation">Os dados serão gravados em um local de sua escolha</string>
     <string name="importOptionFilesystemTitle">Importar dos seus arquivos</string>
     <string name="importOptionFilesystemExplanation">Escolha um arquivo específico nos seus arquivos</string>
@@ -154,8 +153,8 @@
     <string name="chooseImportType">Importar dados de</string>
     <string name="privacy_policy">Política de Privacidade</string>
     <string name="accept">Aceitar</string>
-    <string name="importCatima">Importar do Catima</string>
-    <string name="importCatimaMessage">Selecione o arquivo exportado do Catima para importação. \nFaça isso a partir do menu \"Importar/Exportar\" em outro aplicativo Catima tocando em Exportar.</string>
+    <string name="importCatima">Importar do 白い熊 猫管</string>
+    <string name="importCatimaMessage">Selecione o arquivo exportado do 白い熊 猫管 para importação. \nFaça isso a partir do menu \"Importar/Exportar\" em outro aplicativo 白い熊 猫管 tocando em Exportar.</string>
     <string name="importFidme">Importar de FidMe</string>
     <string name="importFidmeMessage">Selecione o arquivo exportado do FidMe para importação e em seguida selecione o tipo de código de barras manualmente. \nCrie-o pelo seu perfil no FidMe escolhendo \"Proteção de Dados\" (Data Protection) e então tocando em \"Extrair meus dados\".</string>
     <string name="importLoyaltyCardKeychain">Importar do Loyalty Card Keychain</string>
@@ -229,7 +228,7 @@
     </plurals>
     <string name="nextCard">Próximo</string>
     <string name="failedToOpenUrl">Instale um navegador primeiro</string>
-    <string name="welcome">Bem-vindo(a) ao Catima</string>
+    <string name="welcome">Bem-vindo(a) ao 白い熊 猫管</string>
     <string name="updateBalanceTitle">Quanto você gastou ou recebeu?</string>
     <string name="importCards">Importar cartões</string>
     <string name="updateBalanceHint">Inserir quantidade</string>
@@ -289,7 +288,7 @@
     <string name="setBarcodeWidth">Definir largura do código de barras</string>
     <string name="width">Largura</string>
     <string name="card_list_widget_name">Lista de cartões</string>
-    <string name="card_list_widget_empty">Depois que você adicionar alguns cartões de fidelidade no Catima, eles aparecerão aqui. Se você tiver cartões, verifique se eles não estão todos arquivados.</string>
+    <string name="card_list_widget_empty">Depois que você adicionar alguns cartões de fidelidade no 白い熊 猫管, eles aparecerão aqui. Se você tiver cartões, verifique se eles não estão todos arquivados.</string>
     <string name="cardWithNumber">Cartão <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Cartão <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Por favor, não gire o dispositivo, pois cancelará a ação</string>

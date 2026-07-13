@@ -103,7 +103,7 @@
     <string name="noBarcodeFound">Črtna koda ni bila najdena</string>
     <string name="balanceSentence">Stanje: <xliff:g>%s</xliff:g></string>
     <string name="chooseImportType">Uvozi podatke iz</string>
-    <string name="importCatima">Izvoz iz aplikacije Catima</string>
+    <string name="importCatima">Izvoz iz aplikacije 白い熊 猫管</string>
     <string name="importVoucherVault">Uvoz iz aplikacije Voucher Vault</string>
     <string name="privacy_policy">Politika zasebnosti</string>
     <string name="turn_flashlight_off">Izklopi svetilko</string>
@@ -179,10 +179,10 @@
     <string name="expiryDate">Datum poteka veljavnosti</string>
     <string name="chooseExpiryDate">Izberi datum poteka veljavnosti</string>
     <string name="moveBarcodeToTopOfScreen">Premakni črtno kodo na vrh zaslona</string>
-    <string name="importCatimaMessage">Izberi svoj obstoječ izvoz podatkov za uvoz v aplikacijo. \nNajprej izvozi podatke v meniju Uvozi/izvozi v drugi aplikaciji Catima s pritiskom na Izvozi.</string>
+    <string name="importCatimaMessage">Izberi svoj obstoječ izvoz podatkov za uvoz v aplikacijo. \nNajprej izvozi podatke v meniju Uvozi/izvozi v drugi aplikaciji 白い熊 猫管 s pritiskom na Izvozi.</string>
     <string name="importVoucherVaultMessage">Izberi svoj Voucher Vault izvoz podatkov za uvoz. \nIzvoz podatkov dobiš s pritiskom na gumb »Export« v Voucher Vault.</string>
     <string name="failedToOpenUrl">Prvo namesti spletni brskalnik</string>
-    <string name="welcome">Pozdravljen v Catimi</string>
+    <string name="welcome">Pozdravljen v 白い熊 猫管</string>
     <string name="noGiftCardsGroup">Ustvari kartice in jih dodeli tej skupini</string>
     <plurals name="deleteCardsTitle">
         <item quantity="one">Izbriši <xliff:g>%d</xliff:g> kartico</item>
@@ -197,7 +197,7 @@
         <item quantity="other">Izbriši teh <xliff:g>%d</xliff:g> kartic dokončno?</item>
     </plurals>
     <string name="cameraPermissionDeniedTitle">Ni bilo mogoče dostopati do kamere</string>
-    <string name="noCameraPermissionDirectToSystemSetting">Catima potrebuje dostop do vaše kamere za skeniranje črtnih kod. Pritisni tukaj in spremeni nastavitve dovoljenj.</string>
+    <string name="noCameraPermissionDirectToSystemSetting">白い熊 猫管 potrebuje dostop do vaše kamere za skeniranje črtnih kod. Pritisni tukaj in spremeni nastavitve dovoljenj.</string>
     <plurals name="groupCardCount">
         <item quantity="one"><xliff:g>%d</xliff:g> kartica</item>
         <item quantity="two"><xliff:g>%d</xliff:g> kartici</item>
@@ -223,12 +223,11 @@
     <string name="validFromDate">Velja od</string>
     <string name="anyDate">Katerikoli datum</string>
     <string name="chooseValidFromDate">Izberi datum začetka veljavnosti</string>
-    <string name="permissionReadCardsDescription">preberi svoje kartice Catima in vse podrobnosti, vključno z opombami in slikami</string>
+    <string name="permissionReadCardsDescription">preberi svoje kartice 白い熊 猫管 in vse podrobnosti, vključno z opombami in slikami</string>
     <string name="settings_display_barcode_max_brightness_summary">Potrebno za delovanje nekaterih skenerjev</string>
     <string name="app_copyright_short">Avtorske pravice © Sylvia van Os in drugi sodelujoči</string>
     <string name="app_copyright_fmt" tools:ignore="PluralsCandidate">Avtorske pravice © 2019–<xliff:g>%d</xliff:g> Sylvia van Os in drugi sodelujoči</string>
-    <string name="permissionReadCardsLabel">Preberi kartice Catima</string>
-    <string name="app_name">Catima</string>
+    <string name="permissionReadCardsLabel">Preberi kartice 白い熊 猫管</string>
     <string name="settings_keep_screen_on_summary">Med ogledom kartice ohrani vključen zaslon</string>
     <string name="settings_disable_lockscreen_while_viewing_card_summary">Med ogledom kartice onemogoči zaklepanje zaslona</string>
     <string name="settings_allow_content_provider_read_title">Dovoli drugim aplikacijam dostop do mojih podatkov</string>
@@ -295,7 +294,7 @@
     <string name="width">Širina</string>
     <string name="card_list_widget_name">Seznam kartic</string>
     <string name="setBarcodeWidth">Nastavi širino črtne kode</string>
-    <string name="card_list_widget_empty">Ko v Catimi dodaš nekaj kartic zvestobe, se bodo te prikazale tukaj. Če imaš kartice, se prepričaj, da niso vse arhivirane.</string>
+    <string name="card_list_widget_empty">Ko v 白い熊 猫管 dodaš nekaj kartic zvestobe, se bodo te prikazale tukaj. Če imaš kartice, se prepričaj, da niso vse arhivirane.</string>
     <string name="cardWithNumber">Kartica <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kartica <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Naprave ne obračaj, saj bo to prekinilo postopek</string>
