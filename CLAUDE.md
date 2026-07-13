@@ -1,0 +1,93 @@
+# shiroikuma-nekokan
+
+**白い熊 猫管** — a fork of [Catima](https://github.com/CatimaLoyalty/Android) (GPL-3.0), the
+loyalty-card & membership-card wallet. Package `shiroikuma.nekokan`, label **"白い熊 猫管"**,
+installable side-by-side with upstream Catima.
+
+## Branch & remote model (same as the sister forks)
+
+- `origin` = `git@github.com:ShiroiKuma0/shiroikuma-nekokan.git` (ssh) — our fork.
+- `upstream` = `https://github.com/CatimaLoyalty/Android.git` (https).
+- **`main`** tracks the latest upstream **release tag** (current base `v2.43.0`).
+- **`custom`** carries all our work, rebased onto `main` on each new upstream release. **All
+  development happens on `custom`.**
+- **Do not rename the `protect.card_locker` code namespace** — only the installed `APP_ID` differs
+  (`shiroikuma.nekokan`). Renaming would make every rebase a mass-conflict.
+
+## Skills (`.claude/skills/`)
+
+- **`build-apk`** — build the signed release APK (foss flavor) via the `buildApk` Gradle task, then
+  deliver it automatically via the global `/after-build` skill (adb push to `/sdcard/tmp/` if a
+  phone is connected, else scp to skhw) — **no transfer prompt**; never pause to ask how to
+  transfer.
+- **`upstream-new-version`** — check upstream Catima for a newer release tag; **⛔ before any
+  rebase, present a proceed-gated descriptive table of the new upstream version's features and wait
+  for 白い熊's explicit go-ahead**; then advance `main`, rebase `custom`, reset `BUILD_NUMBER`,
+  build the new `+1`.
+- **`publish-version`** — publish the latest tested APK as a GitHub release of the fork: tag
+  `<version>` (no `v` prefix), attach the APK, refresh the fork README + `CHANGELOG-shiroikuma.md`,
+  keep the default branch on `custom`. Pin `gh` with `-R ShiroiKuma0/shiroikuma-nekokan` (the
+  `upstream` remote otherwise wins).
+
+## Build, versioning, signing
+
+- **Build env (this machine):** default `java` is JDK 11 (can't run modern Gradle). Always:
+  `export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 ANDROID_HOME=/home/shiroikuma/android-sdk`.
+- **Build:** `./gradlew buildApk` (foss-flavor release, signed; copies the APK to `~/tmp` and bumps
+  `BUILD_NUMBER`). Fast dev iteration: `./gradlew :app:assembleFossDebug` (side-by-side installable
+  — debug has a `.debug` applicationId suffix). We never build the `gplay` flavor.
+- **Versioning** (`gradle.properties`): `VERSION_NAME`/`VERSION_CODE` track upstream release tags;
+  `BUILD_NUMBER` is our increment (bumped every build, reset to 1 on each new upstream version).
+  Fork `versionName = "<VERSION_NAME>+<BUILD_NUMBER>"`,
+  `versionCode = VERSION_CODE * 10000 + BUILD_NUMBER` (Catima 167 → `1670001`, …). APK filename:
+  `shiroikuma-nekokan_<VERSION_NAME>+<BUILD_NUMBER>_arm64-v8a.apk` (no NDK → universal APK;
+  `arm64-v8a` is just the filename convention).
+- **Signing:** release signed from gitignored `keystore.properties` (committed
+  `keystore.properties_sample` documents the keys) →
+  `~/.android-keystores/shiroikuma-nekokan.jks` (alias `nekokan`). Password recorded in
+  `~/〇/[666] 私資料/[666][27] 暗号/android-keystores.org` (jks backup in `android-keystores/`
+  next to it). Losing it loses the signing identity.
+- **Delivery:** APK to `~/tmp`, then `/after-build` (adb push to `/sdcard/tmp/` or scp to skhw);
+  **the user installs from the on-device file manager** (never `adb install`).
+
+## Working rules (override harness defaults where noted)
+
+- **No `Co-Authored-By: Claude` / "Generated with Claude" trailer** in commits or PR bodies — end
+  the message at the last line of the body. (Overrides the harness default; global rule in
+  `~/.claude/CLAUDE.md`.)
+- **Never commit or push until the user says "Push".** Treat the working tree as scratch between
+  "Push" commands; multiple uncommitted fixes can stack. "Push" = `git commit` + `git push origin
+  custom` (and `main` after an upstream sync). The user tests each build on-device first.
+- **After every successful build, deliver the APK automatically via `/after-build`** — never ask
+  how to transfer it, never pause.
+- **Commit subjects:** plain descriptive summary, no prefix.
+- Upstream owns `CHANGELOG.md` (compiled into the app via the `copyRawResFiles` task) — fork
+  changelog notes go to `CHANGELOG-shiroikuma.md` only.
+
+## Repo layout (upstream Catima)
+
+- `app/src/main/java/protect/card_locker/` — sources (mixed Java + Kotlin, some Compose):
+  `MainActivity`, `LoyaltyCardViewActivity`, `LoyaltyCardEditActivity`, barcode handling via ZXing
+  (`com.journeyapps:zxing-android-embedded`), import/export (`importexport/`), `DBHelper`/SQLite
+  persistence, widgets (`ListWidget`), ACRA crash reporting (foss flavor only).
+- `app/src/main/res/` — View-based layouts + some Compose; ~55 translated locales (label change
+  therefore lives in the **non-translatable `sk_app_name`** string + manifest, never in the
+  translated `app_name`).
+- Flavors: `foss` (default, we ship this) and `gplay`. minSdk 23, targetSdk 36, JDK 21.
+- Tests: `./gradlew :app:testFossReleaseUnitTest` (Robolectric).
+
+## Fork identity (the standing customization layer)
+
+| What | Value | Where |
+| --- | --- | --- |
+| App id | `shiroikuma.nekokan` | `gradle.properties` → `APP_ID` |
+| Namespace | `protect.card_locker` (never rename) | `gradle.properties` → `APP_NAMESPACE` |
+| Label | `白い熊 猫管` | `sk_app_name` in `values/strings.xml` + manifest `android:label` |
+| Icon | black-yellow traced Catima glyph (yellow `#FFFF00` line-art on black, adaptive) | `drawable/ic_launcher_*`, `mipmap-anydpi-v26/` |
+| Version logic | `forkVersionName`/`forkVersionCode` + `base { archivesName }` + `buildApk` task | `app/build.gradle.kts` |
+| Signing | `keystore.properties` (gitignored) → `~/.android-keystores/shiroikuma-nekokan.jks` | `app/build.gradle.kts` |
+
+## Current status
+
+Repo bootstrapped 2026-07-13: fork of Catima `v2.43.0` (versionCode 167), identity + fork
+versioning + signing + skills in place. First build pending the icon confirmation.
