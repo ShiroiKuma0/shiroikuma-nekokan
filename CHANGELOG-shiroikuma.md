@@ -3,7 +3,52 @@
 Everything built on top of stock [Catima](https://github.com/CatimaLoyalty/Android). Upstream owns
 `CHANGELOG.md` (compiled into the app); fork notes live here.
 
-## 2.43.0+3 — current
+## 2.43.0+8 — current
+
+Based on Catima `v2.43.0` (versionCode 167).
+
+### Export / Import — full-app backup (new)
+- **New first section on the UI page**: an Export/Import heading + row opening the panel, with a
+  live **"Last export"** status line — the settable directory is queried on every page opening
+  for the newest export; red warnings when no directory is set or no export exists yet.
+- **One panel serves both directions** (Kōjiki flow): a settable **SAF export directory**
+  (persisted device-locally, deliberately outside the exported settings; one-tap export once
+  set, save-as fallback when unset), a "Select all" checkbox and per-category checkboxes.
+- **Categories — everything settable in the app**: **All cards** (the complete Catima card
+  export — cards, groups, images — nested as `cards.zip`), **白い熊 猫管 UI (colors · fonts)**
+  (every `sk_` theme preference plus the imported font files), **App settings** (all remaining
+  preferences).
+- **Format**: one zip with `manifest.json`, type-tagged per-key JSON per preference category
+  (`{"t","v"}` — missing keys keep their current value on import), font binaries under
+  `fonts/`; filename `shiroikuma-nekokan-<version>-export_<yyyy-MM-dd_HH-mm-ss>.zip`.
+- **Import is partial and merging**: only selected categories that exist in the zip are
+  applied; preferences are merged (never cleared), cards go through Catima's own transactional
+  importer; font caches invalidated; a per-category failure never aborts the rest.
+- **Live progress dialog**: black-yellow box with a bold n/total counter and the current
+  category; cards tick individually via a per-card `CatimaExporter` progress hook (a tiny fork
+  patch — the slow part is Catima re-encoding each card image as PNG); a **Cancel** pill
+  interrupts the worker between items and deletes the partial export file.
+- **Owned black-yellow surfaces**: the panel, progress and finished-info dialogs are hand-drawn
+  black boxes with 2 dp yellow borders on transparent dialog windows (Material's surface tints
+  repainted them otherwise), with Arcanechat-style round pill buttons — Cancel alone on the
+  left, Import/Export together on the right.
+- **Success auto-close chain**: acknowledging the yellow-bordered info dialog closes info
+  dialog → panel → UI page in one go; the import variant offers **Restart now** (full app
+  restart) or **Later** (closes the chain); failures ("Export failed…", "No categories
+  selected.", "No 白い熊 猫管 export found in that file.") are toasts that leave the panel open.
+
+### UI page — kxkb visual format
+- Section headings restyled to the kxkb construction: 20 sp bold with a **text-wide** 2.5 dp
+  underline (underline exactly as wide as the heading text); subgroups 17 sp with a 1.5 dp
+  text-wide rule; thin **1 px full-width hairlines** separate top-level sections (none above
+  the first).
+- kxkb indent ladder: headings 36 dp → subgroups 54 dp → rows 72 dp → nested rows 90 dp
+  (18 dp steps); row text sizes 16 sp titles / 13 sp values / 15 sp slider values.
+
+### Packaging
+- New dependency `androidx.documentfile` (SAF tree access for the export directory).
+
+## 2.43.0+3
 
 Based on Catima `v2.43.0` (versionCode 167).
 
