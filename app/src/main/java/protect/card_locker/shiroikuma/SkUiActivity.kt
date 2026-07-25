@@ -1,8 +1,15 @@
 package protect.card_locker.shiroikuma
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.drawable.GradientDrawable
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.SeekBar
@@ -18,7 +25,9 @@ import protect.card_locker.databinding.ItemSkDimenBinding
 import protect.card_locker.databinding.ItemSkPreviewBoxBinding
 import protect.card_locker.databinding.ItemSkSectionBinding
 import protect.card_locker.databinding.ItemSkSubgroupBinding
+import protect.card_locker.databinding.ItemSkSwitchBinding
 import protect.card_locker.databinding.ItemSkTextBinding
+import protect.card_locker.databinding.ItemSkTokenBinding
 import protect.card_locker.databinding.ItemSkValueBinding
 
 /**
@@ -106,6 +115,12 @@ class SkUiActivity : CatimaAppCompatActivity() {
 
         addSection(R.string.sk_section_eximport)
         addEximportRow(1)
+        // The 保存復元 automation lives where backup lives — inside this section, below its rows.
+        addAutomationSwitchRow(1)
+        addAutomationTokenRow(1)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            addAllFilesAccessRow(1)
+        }
 
         addSection(SkSection.FOUNDATION)
         addColorRow(SkSlot.BACKGROUND, 1)
@@ -192,6 +207,98 @@ class SkUiActivity : CatimaAppCompatActivity() {
                 )
             },
         ).also { it.show() }
+    }
+
+    /**
+     * The 保存復元 master switch — OFF until 白い熊 turns it on; nothing in
+     * [SkStateExportReceiver] is reachable before that.
+     */
+    private fun addAutomationSwitchRow(level: Int) {
+        val row = ItemSkSwitchBinding.inflate(LayoutInflater.from(this), binding.skHolder, false)
+        val accent = SkTheme.color(this, SkSlot.ACCENT)
+        row.skSwitchTitle.setText(R.string.sk_auto_title)
+        row.skSwitchTitle.setTextColor(SkTheme.color(this, SkSlot.TEXT))
+        row.skSwitchDesc.setText(R.string.sk_auto_desc)
+        row.skSwitchDesc.setTextColor(SkTheme.color(this, SkSlot.TEXT_SECONDARY))
+        row.skSwitchToggle.thumbTintList = ColorStateList.valueOf(accent)
+        row.skSwitchToggle.trackTintList = ColorStateList.valueOf(accent)
+        row.skSwitchToggle.isChecked = SkAutomation.enabled(this)
+        row.skSwitchToggle.setOnCheckedChangeListener { _, checked ->
+            SkAutomation.setEnabled(this, checked)
+        }
+        // The switch itself is not clickable — the whole row is its hit area.
+        row.root.setOnClickListener { row.skSwitchToggle.toggle() }
+        indentRow(row.root, level)
+        binding.skHolder.addView(row.root)
+    }
+
+    /** Tap to copy the full token; "Regenerate" replaces it after a warning. */
+    private fun addAutomationTokenRow(level: Int) {
+        val row = ItemSkTokenBinding.inflate(LayoutInflater.from(this), binding.skHolder, false)
+        row.skTokenTitle.setText(R.string.sk_auto_token_title)
+        row.skTokenTitle.setTextColor(SkTheme.color(this, SkSlot.TEXT))
+        row.skTokenValue.setTextColor(SkTheme.color(this, SkSlot.ACCENT))
+        row.skTokenValue.text = SkAutomation.abbreviate(SkAutomation.token(this))
+        row.skTokenRegenerate.setText(R.string.sk_auto_token_regenerate)
+        row.skTokenRegenerate.setTextColor(EXIM_WARN_COLOR)
+        row.root.setOnClickListener {
+            // Deliberately not toasting the value itself — the row abbreviates it for a reason.
+            getSystemService(ClipboardManager::class.java).setPrimaryClip(
+                ClipData.newPlainText(getString(R.string.sk_auto_token_title), SkAutomation.token(this)),
+            )
+            Toast.makeText(this, R.string.sk_auto_token_copied, Toast.LENGTH_SHORT).show()
+        }
+        row.skTokenRegenerate.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setMessage(R.string.sk_auto_token_regen_warning)
+                .setNegativeButton(R.string.cancel, null)
+                .setPositiveButton(R.string.sk_auto_token_regenerate) { _, _ ->
+                    row.skTokenValue.text = SkAutomation.abbreviate(SkAutomation.regenerateToken(this))
+                    Toast.makeText(this, R.string.sk_auto_token_regenerated, Toast.LENGTH_LONG).show()
+                }
+                .show()
+        }
+        indentRow(row.root, level)
+        binding.skHolder.addView(row.root)
+    }
+
+    /**
+     * All-files access (API 30+): what lets an automation export write to the absolute directory
+     * the caller names, instead of only the SAF directory picked above.
+     */
+    private fun addAllFilesAccessRow(level: Int) {
+        val row = ItemSkValueBinding.inflate(LayoutInflater.from(this), binding.skHolder, false)
+        val granted = Environment.isExternalStorageManager()
+        row.skValueTitle.setText(R.string.sk_auto_allfiles_title)
+        row.skValueTitle.setTextColor(SkTheme.color(this, SkSlot.TEXT))
+        row.skValueDesc.setText(R.string.sk_auto_allfiles_desc)
+        row.skValueDesc.setTextColor(SkTheme.color(this, SkSlot.TEXT_SECONDARY))
+        row.skValueStatus.setText(
+            if (granted) R.string.sk_auto_allfiles_granted else R.string.sk_auto_allfiles_needed,
+        )
+        row.skValueStatus.setTextColor(
+            if (granted) SkTheme.color(this, SkSlot.TEXT_SECONDARY) else EXIM_WARN_COLOR,
+        )
+        row.root.setOnClickListener { openAllFilesAccessSettings() }
+        indentRow(row.root, level)
+        binding.skHolder.addView(row.root)
+    }
+
+    private fun openAllFilesAccessSettings() {
+        try {
+            startActivity(
+                Intent(
+                    Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION,
+                    Uri.parse("package:$packageName"),
+                ),
+            )
+        } catch (e: Exception) {
+            try {
+                startActivity(Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION))
+            } catch (e2: Exception) {
+                Toast.makeText(this, e2.message ?: e2.toString(), Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     /** Panel dismissed — refresh the last-export status line (unless the chain closed us). */
