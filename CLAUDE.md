@@ -89,13 +89,20 @@ installable side-by-side with upstream Catima.
 
 ## Current status
 
-**Released `2.43.0+3`** (2026-07-13; tag `2.43.0+3`, APK attached, default branch `custom`;
+**Released `2.43.0+8`** (2026-07-25; tag `2.43.0+8`, APK attached, default branch `custom`;
 `README.md` + `CHANGELOG-shiroikuma.md` track it). The fork so far: identity + fork versioning +
 signing + skills; the black-yellow traced launcher icon (adaptive + legacy mipmaps, splash,
 welcome logo, widget preview); the complete string rebrand (default + 54 locales, incl.
-transliterations/inflections; export filename `shiroikuma-nekokan_<date>.zip`); and the
+transliterations/inflections; card-export filename `shiroikuma-nekokan_<date>.zip`); the
 **白い熊 猫管 UI** theming layer (`protect.card_locker.shiroikuma.*` — SkUiActivity page with
 Settings entry + long-press-⋮ shortcut, RGBA slider color pickers with recent-color boxes,
 external fonts with glyph-rendered list + per-role weight/size, border/roundness sliders to 0,
 SkBlackYellow overlay replacing Material You, SkStyler runtime application incl. card rows and
-the Compose About screen).
+the Compose About screen); the **Export/Import full-app backup** (`SkEximport` +
+`SkEximportPanel` — first UI-page section with a last-export status line, settable SAF
+directory, categories All cards / UI / App settings as a manifest zip with nested `cards.zip` +
+type-tagged prefs JSON + fonts, merging partial import, live n/total progress with cancel via a
+per-card `CatimaExporter` hook, owned black-yellow dialog surfaces with pill buttons, success
+auto-close chain with Restart now / Later); and the **kxkb page format** (1 px section
+hairlines, text-wide 20 sp/2.5 dp + 17 sp/1.5 dp underlined headings, 36/54/72/90 dp indent
+ladder).
