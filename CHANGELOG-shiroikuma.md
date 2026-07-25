@@ -3,7 +3,53 @@
 Everything built on top of stock [Catima](https://github.com/CatimaLoyalty/Android). Upstream owns
 `CHANGELOG.md` (compiled into the app); fork notes live here.
 
-## 2.43.0+8 — current
+## 2.43.0+9 — current
+
+Based on Catima `v2.43.0` (versionCode 167).
+
+### 保存復元 automation — the sister-app state-export contract (new)
+- **Headless backup on request**: a new exported broadcast receiver (`SkStateExportReceiver`)
+  runs the very same category ZIP the Export/Import panel writes — no Activity, no interaction,
+  exactly one ZIP per request — so 白い熊 自由作業盤's 保存復元 project can back this app up in
+  its one-run batch alongside every sister app.
+- **Two token-gated actions**: `shiroikuma.nekokan.action.EXPORT_STATE` (extras `token`, optional
+  `path` / `items` / `progress_action`, plus `reply_action` / `reply_package` / `reply_id`) and
+  `shiroikuma.nekokan.action.LIST_CATEGORIES`, which answers instantly with one `id<TAB>label`
+  line per category — the ids `items` accepts and the entry names used inside the ZIP.
+- **Directory precedence**: the `path` extra (an absolute directory, created if missing, which
+  overrides the configured one) → the app's configured export directory → `ERROR:no-directory`.
+- **Reply channel**: a fresh broadcast carrying `reply_id` + `result`, with
+  `FLAG_INCLUDE_STOPPED_PACKAGES` so a backgrounded caller still hears it — no `ResultReceiver`,
+  no `PendingIntent`, no `Messenger`, and while the ordered result is set for AOSP correctness it
+  is never relied on (EMUI severs both between third-party apps). Exactly one terminal reply per
+  request, `AtomicBoolean`-guarded, so an async success and a synchronous error can never both
+  fire. Success reads `OK:<path>|<bytes>|<human size>|<n> categories` — both size forms computed
+  here, since the caller cannot stat the file.
+- **Distinct errors**: `automation disabled`, `bad token`, `no-directory`, `no-storage-access`,
+  `unknown category in items: …` — they debug differently, so they never collapse into one
+  message. A half-written ZIP is deleted rather than left behind as "the last export".
+- **Progress in real numbers, never a percentage**: while exporting, plain broadcasts carrying
+  `text` (`項目 123/456 — All cards`), structured `current`/`total`/`unit` and the app label,
+  throttled to one per 500 ms plus an unthrottled final one at completion.
+- **The gate** (`SkAutomation`): an `automation_enabled` master switch that is **OFF** until it
+  is turned on, plus a 24-byte `SecureRandom` token, hex-encoded, generated lazily on first read
+  and compared constant-time. Both live in their own device-local preference file — outside the
+  exported preference set — so the token can never travel inside a backup ZIP.
+- **UI, inside the Export/Import section** (directly below the existing export rows, never a
+  section of its own): the master switch with a one-line description, a token row showing
+  `80922d8c…4c49a87c` that copies the full token on tap and carries a warned **Regenerate**
+  action, and — API 30+ — an **All-files access** row showing the grant state, since writing to
+  an absolute `path` needs `MANAGE_EXTERNAL_STORAGE` (declared; used by nothing else).
+
+### Backup filename — the family convention (白い熊, 2026-07-25)
+- Every backup this app writes, from the panel and the automation path alike, is now
+  `shiroikuma-nekokan_<yyyy-MM-dd_HH-mm-ss>.zip` — the English identifier, no version, no
+  `-export` infix, no suffix — so all sister apps' backups sort and read uniformly in one
+  directory. The previous `shiroikuma-nekokan-<version>-export_<stamp>.zip` names stay
+  recognised by the "Last export" query.
+- The ZIP manifest now also records `appVersion`.
+
+## 2.43.0+8
 
 Based on Catima `v2.43.0` (versionCode 167).
 
