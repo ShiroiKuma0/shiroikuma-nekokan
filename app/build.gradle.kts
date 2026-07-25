@@ -150,6 +150,7 @@ dependencies {
     implementation(libs.androidx.core.core.ktx)
     implementation(libs.androidx.core.core.remoteviews)
     implementation(libs.androidx.core.core.splashscreen)
+    implementation(libs.androidx.documentfile.documentfile)
     implementation(libs.androidx.exifinterface.exifinterface)
     implementation(libs.androidx.palette.palette)
     implementation(libs.androidx.preference.preference)
