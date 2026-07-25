@@ -3,6 +3,8 @@ package protect.card_locker.shiroikuma
 import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
+import android.os.Environment
+import android.provider.DocumentsContract
 import androidx.documentfile.provider.DocumentFile
 import androidx.preference.PreferenceManager
 import org.json.JSONArray
@@ -17,6 +19,7 @@ import protect.card_locker.importexport.MultiFormatImporter
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.io.File
+import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
 import java.text.SimpleDateFormat
@@ -43,8 +46,18 @@ object SkEximport {
     private const val FORMAT_VERSION = 1
     private const val PREFS_NAME = "sk_eximport"
     private const val KEY_DIR_URI = "dir_uri"
-    private const val EXPORT_PREFIX = "shiroikuma-nekokan-"
-    private const val EXPORT_MARKER = "-export_"
+
+    /**
+     * The family backup-name convention (白い熊, 2026-07-25): every app writes
+     * `<english-app-name>_<yyyy-MM-dd_HH-mm-ss>.zip` — no version, no infix, no suffix — so all
+     * apps' backups sort and read uniformly in one directory.
+     */
+    const val EXPORT_PREFIX = "shiroikuma-nekokan_"
+
+    /** Pre-2026-07-25 name (`shiroikuma-nekokan-<version>-export_<stamp>.zip`), still recognised. */
+    private const val LEGACY_EXPORT_PREFIX = "shiroikuma-nekokan-"
+    private const val LEGACY_EXPORT_MARKER = "-export_"
+
     private const val CARDS_ENTRY = "cards.zip"
     private const val FONTS_DIR_ENTRY = "fonts/"
 
@@ -52,6 +65,12 @@ object SkEximport {
         CARDS("cards", R.string.sk_eim_cat_cards),
         APPEARANCE("appearance", R.string.sk_eim_cat_appearance),
         APP_SETTINGS("app_settings", R.string.sk_eim_cat_settings),
+        ;
+
+        companion object {
+            /** The ids accepted in the automation contract's `items` extra. */
+            fun byId(id: String): Cat? = entries.firstOrNull { it.id == id }
+        }
     }
 
     // ------------------------------------------------------------- directory
@@ -72,9 +91,11 @@ object SkEximport {
             ?.let { runCatching { DocumentFile.fromTreeUri(context, it) }.getOrNull() }
             ?.takeIf { it.isDirectory }
 
-    private fun isExportFile(name: String?): Boolean =
-        name != null && name.startsWith(EXPORT_PREFIX) &&
-            name.contains(EXPORT_MARKER) && name.endsWith(".zip")
+    private fun isExportFile(name: String?): Boolean {
+        if (name == null || !name.endsWith(".zip")) return false
+        return name.startsWith(EXPORT_PREFIX) ||
+            (name.startsWith(LEGACY_EXPORT_PREFIX) && name.contains(LEGACY_EXPORT_MARKER))
+    }
 
     fun latestExport(context: Context): DocumentFile? {
         val dir = exportDir(context) ?: return null
@@ -98,8 +119,74 @@ object SkEximport {
         SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ROOT).format(Date(t))
 
     fun exportFileName(): String =
-        EXPORT_PREFIX + BuildConfig.VERSION_NAME + EXPORT_MARKER +
-            SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.ROOT).format(Date()) + ".zip"
+        EXPORT_PREFIX + SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.ROOT).format(Date()) + ".zip"
+
+    // ------------------------------------------------------------- headless target
+
+    /**
+     * Where a headless export writes: the automation contract's absolute-directory override, or
+     * the app's own configured SAF directory. Everything the caller needs to write, size and —
+     * when the export fails halfway — drop the partial file again.
+     */
+    class Target(
+        val displayPath: String,
+        val open: () -> OutputStream,
+        val size: () -> Long,
+        val discard: () -> Unit,
+    )
+
+    /**
+     * Directory precedence for a headless export: [pathOverride] (absolute, created if missing) →
+     * the configured export directory → null, which the caller reports as `ERROR:no-directory`.
+     */
+    fun headlessTarget(context: Context, pathOverride: String): Target? {
+        val name = exportFileName()
+        if (pathOverride.isNotEmpty()) {
+            // /sdcard is a symlink — normalize it so the reported path is the real one.
+            val primary = Environment.getExternalStorageDirectory().absolutePath
+            val dir = File(pathOverride.replaceFirst(Regex("^/sdcard"), primary))
+            dir.mkdirs()
+            if (!dir.isDirectory) throw IOException("not a directory: $pathOverride")
+            val file = File(dir, name)
+            return Target(
+                displayPath = file.absolutePath,
+                open = { FileOutputStream(file) },
+                size = { file.length() },
+                discard = { runCatching { file.delete() } },
+            )
+        }
+
+        val dir = exportDir(context) ?: return null
+        val doc = dir.createFile("application/zip", name)
+            ?: throw IOException("cannot create $name in ${dir.name}")
+        return Target(
+            displayPath = displayPathOf(doc.uri),
+            open = {
+                context.contentResolver.openOutputStream(doc.uri)
+                    ?: throw IOException("cannot open ${doc.uri}")
+            },
+            size = { doc.length() },
+            discard = { runCatching { doc.delete() } },
+        )
+    }
+
+    /**
+     * Best-effort filesystem path for a SAF document (`primary:〇/x.zip` →
+     * `/storage/emulated/0/〇/x.zip`), so an automation reply names a path 白い熊 can open.
+     */
+    private fun displayPathOf(uri: Uri): String {
+        val docId = runCatching { DocumentsContract.getDocumentId(uri) }.getOrNull()
+            ?: return uri.toString()
+        val volume = docId.substringBefore(':', "")
+        val relative = docId.substringAfter(':', "")
+        if (volume.isEmpty() || relative.isEmpty()) return uri.toString()
+        val root = if (volume == "primary") {
+            Environment.getExternalStorageDirectory().absolutePath
+        } else {
+            "/storage/$volume"
+        }
+        return "$root/$relative"
+    }
 
     // ------------------------------------------------------------- export
 
@@ -139,6 +226,7 @@ object SkEximport {
                 .put("format", FORMAT)
                 .put("version", FORMAT_VERSION)
                 .put("app", context.packageName)
+                .put("appVersion", BuildConfig.VERSION_NAME)
                 .put("createdTs", System.currentTimeMillis())
                 .put("categories", JSONArray(cats.map { it.id }))
             writeEntry(zip, "manifest.json", manifest.toString(2).toByteArray())

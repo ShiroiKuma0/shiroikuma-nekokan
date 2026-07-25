@@ -14,6 +14,12 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="23" />
+    <!-- 保存復元 automation: an EXPORT_STATE broadcast may name an absolute directory to write the
+         backup ZIP into (白い熊's one archive folder), which needs All-files access. Granted by hand
+         from the UI page's Export/Import section; never used by the app's own interactive flows. -->
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <uses-feature
         android:name="android.hardware.nfc"
@@ -35,6 +41,19 @@
         android:theme="@style/AppTheme"
         android:localeConfig="@xml/locales_config">
         
+        <!-- The 保存復元 state-export contract (SkStateExportReceiver): sister-app automation
+             triggers this app's Export/Import backup headlessly. No android:permission — the caller
+             cannot hold one; the automation token is the gate, and the master switch is OFF until
+             白い熊 turns it on. -->
+        <receiver
+            android:name="protect.card_locker.shiroikuma.SkStateExportReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.action.EXPORT_STATE" />
+                <action android:name="${applicationId}.action.LIST_CATEGORIES" />
+            </intent-filter>
+        </receiver>
+
         <receiver
             android:name=".ListWidget"
             android:label="@string/card_list_widget_name"
