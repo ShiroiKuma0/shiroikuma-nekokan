@@ -32,6 +32,17 @@ import protect.card_locker.Utils;
  * format.
  */
 public class CatimaExporter implements Exporter {
+    // shiroikuma fork: optional per-card progress callback (drives the SkEximport progress dialog).
+    public interface CardProgressListener {
+        void onCardExported(int exportedCards);
+    }
+
+    private CardProgressListener cardProgressListener = null;
+
+    public void setCardProgressListener(CardProgressListener listener) {
+        cardProgressListener = listener;
+    }
+
     public void exportData(Context context, SQLiteDatabase database, OutputStream output, char[] password) throws IOException, InterruptedException {
         // Necessary vars
         int readLen;
@@ -61,6 +72,7 @@ public class CatimaExporter implements Exporter {
         zipOutputStream.closeEntry();
 
         // Loop over all cards again
+        int exportedCards = 0;
         Cursor cardCursor = DBHelper.getLoyaltyCardCursor(database);
         while (cardCursor.moveToNext()) {
             // For each card
@@ -79,6 +91,11 @@ public class CatimaExporter implements Exporter {
                     }
                     zipOutputStream.closeEntry();
                 }
+            }
+
+            exportedCards++;
+            if (cardProgressListener != null) {
+                cardProgressListener.onCardExported(exportedCards);
             }
         }
 

@@ -19,6 +19,7 @@ import protect.card_locker.databinding.ItemSkPreviewBoxBinding
 import protect.card_locker.databinding.ItemSkSectionBinding
 import protect.card_locker.databinding.ItemSkSubgroupBinding
 import protect.card_locker.databinding.ItemSkTextBinding
+import protect.card_locker.databinding.ItemSkValueBinding
 
 /**
  * shiroikuma-nekokan fork — the 白い熊 猫管 UI page.
@@ -32,9 +33,37 @@ class SkUiActivity : CatimaAppCompatActivity() {
     private lateinit var binding: ActivitySkUiBinding
     private var pendingFontSlot: SkSlot? = null
     private var framePreview: TextView? = null
+    private var eximPanel: SkEximportPanel? = null
 
     private val indentStepPx: Int
         get() = (INDENT_STEP_DP * resources.displayMetrics.density).toInt()
+
+    private val eximDirPicker =
+        registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) { uri ->
+            if (uri != null) {
+                // Persist across reboots, then remember it as the export directory.
+                try {
+                    contentResolver.takePersistableUriPermission(
+                        uri,
+                        android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION or
+                            android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION,
+                    )
+                } catch (ignored: SecurityException) {
+                }
+                SkEximport.setDirUri(this, uri)
+            }
+            eximPanel?.onDirPicked()
+        }
+
+    private val eximExportTarget =
+        registerForActivityResult(ActivityResultContracts.CreateDocument("application/zip")) { uri ->
+            eximPanel?.onExportTarget(uri)
+        }
+
+    private val eximImportSource =
+        registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+            eximPanel?.onImportSource(uri)
+        }
 
     private val openFontDocument =
         registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
@@ -75,6 +104,9 @@ class SkUiActivity : CatimaAppCompatActivity() {
         binding.skHolder.removeAllViews()
         framePreview = null
 
+        addSection(R.string.sk_section_eximport)
+        addEximportRow(1)
+
         addSection(SkSection.FOUNDATION)
         addColorRow(SkSlot.BACKGROUND, 1)
         addTextSlot(SkSlot.TEXT, 1)
@@ -106,23 +138,68 @@ class SkUiActivity : CatimaAppCompatActivity() {
         addTextSlot(SkSlot.BUTTON_TEXT, 1)
     }
 
-    private fun addSection(section: SkSection) {
+    private fun addSection(section: SkSection) = addSection(section.labelRes)
+
+    private fun addSection(labelRes: Int) {
         val row = ItemSkSectionBinding.inflate(LayoutInflater.from(this), binding.skHolder, false)
         val accent = SkTheme.color(this, SkSlot.ACCENT)
-        row.skSectionLabel.setText(section.labelRes)
+        row.skSectionLabel.setText(labelRes)
         row.skSectionLabel.setTextColor(accent)
         row.skSectionRule.setBackgroundColor(accent)
+        row.skSectionSpacer.setBackgroundColor(accent)
+        // The full-width hairline separates sections — the first one has nothing above it.
+        if (binding.skHolder.childCount == 0) {
+            row.skSectionSpacer.visibility = View.GONE
+        }
         binding.skHolder.addView(row.root)
     }
 
-    private fun addSubgroup(labelRes: Int, level: Int) {
+    /** The subgroup layout carries its own kxkb indent (54dp) — no indentRow here. */
+    private fun addSubgroup(labelRes: Int, @Suppress("UNUSED_PARAMETER") level: Int) {
         val row = ItemSkSubgroupBinding.inflate(LayoutInflater.from(this), binding.skHolder, false)
         val accent = SkTheme.color(this, SkSlot.ACCENT)
         row.skSubgroupLabel.setText(labelRes)
         row.skSubgroupLabel.setTextColor(accent)
         row.skSubgroupRule.setBackgroundColor(accent)
+        binding.skHolder.addView(row.root)
+    }
+
+    private fun addEximportRow(level: Int) {
+        val row = ItemSkValueBinding.inflate(LayoutInflater.from(this), binding.skHolder, false)
+        row.skValueTitle.setText(R.string.sk_section_eximport)
+        row.skValueTitle.setTextColor(SkTheme.color(this, SkSlot.TEXT))
+        row.skValueDesc.setText(R.string.sk_eim_row_desc)
+        row.skValueDesc.setTextColor(SkTheme.color(this, SkSlot.TEXT_SECONDARY))
+        // Queried on page open: the latest export in the settable directory.
+        val (status, warn) = SkEximport.lastExportStatus(this)
+        row.skValueStatus.text = status
+        row.skValueStatus.setTextColor(
+            if (warn) EXIM_WARN_COLOR else SkTheme.color(this, SkSlot.TEXT_SECONDARY),
+        )
+        row.root.setOnClickListener { openEximport() }
         indentRow(row.root, level)
         binding.skHolder.addView(row.root)
+    }
+
+    private fun openEximport() {
+        eximPanel = SkEximportPanel(
+            this,
+            pickDirectory = { eximDirPicker.launch(null) },
+            createExportFile = { name -> eximExportTarget.launch(name) },
+            openImportFile = {
+                eximImportSource.launch(
+                    arrayOf("application/zip", "application/octet-stream", "*/*"),
+                )
+            },
+        ).also { it.show() }
+    }
+
+    /** Panel dismissed — refresh the last-export status line (unless the chain closed us). */
+    fun onEximportPanelClosed() {
+        eximPanel = null
+        if (!isFinishing) {
+            buildRows()
+        }
     }
 
     private fun addColorRow(slot: SkSlot, level: Int) {
@@ -288,9 +365,12 @@ class SkUiActivity : CatimaAppCompatActivity() {
     private fun sizeLabel(sizeSp: Int): String =
         if (sizeSp <= 0) getString(R.string.sk_default) else getString(R.string.sk_sp_value, sizeSp)
 
-    /** Absolute indentation: base inset + level * full step — orientation at a glance. */
+    /**
+     * Absolute indentation on the kxkb ladder: heading 36dp → subgroup 54dp → L1 rows 72dp →
+     * L2 rows 90dp (18dp steps from a 54dp base).
+     */
     private fun indentRow(view: View, level: Int) {
-        val base = (16 * resources.displayMetrics.density).toInt()
+        val base = (BASE_INDENT_DP * resources.displayMetrics.density).toInt()
         view.setPaddingRelative(
             base + level * indentStepPx,
             view.paddingTop,
@@ -315,6 +395,8 @@ class SkUiActivity : CatimaAppCompatActivity() {
     }
 
     companion object {
-        private const val INDENT_STEP_DP = 28
+        private const val BASE_INDENT_DP = 54
+        private const val INDENT_STEP_DP = 18
+        private const val EXIM_WARN_COLOR = 0xFFFF5252.toInt()
     }
 }
