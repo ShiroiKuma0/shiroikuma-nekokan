@@ -44,6 +44,11 @@ object SkFonts {
     fun fontsDir(context: Context): File =
         File(context.filesDir, "fonts").apply { if (!exists()) mkdirs() }
 
+    /** Drop cached typefaces (font files may have been replaced by an import). */
+    fun invalidateCache() {
+        typefaceCache.clear()
+    }
+
     fun availableFontOptions(context: Context): List<FontOption> {
         val options = mutableListOf(
             FontOption(context.getString(R.string.sk_font_system_default), ""),

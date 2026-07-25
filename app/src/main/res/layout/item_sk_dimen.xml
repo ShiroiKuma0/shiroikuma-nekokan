@@ -13,7 +13,7 @@
         android:id="@+id/sk_dimen_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp" />
+        android:textSize="16sp" />
 
     <SeekBar
         android:id="@+id/sk_dimen_seekbar"
@@ -27,5 +27,5 @@
         android:layout_height="wrap_content"
         android:minWidth="56dp"
         android:gravity="end"
-        android:textSize="14sp" />
+        android:textSize="15sp" />
 </LinearLayout>
