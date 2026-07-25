@@ -23,7 +23,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:layout_toStartOf="@+id/sk_text_color_preview"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <View
             android:id="@+id/sk_text_color_preview"
@@ -52,7 +52,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:text="@string/sk_font"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/sk_text_font_value"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:textSize="14sp" />
+            android:textSize="13sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -82,7 +82,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:text="@string/sk_weight"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/sk_text_weight_value"
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:textSize="14sp" />
+            android:textSize="13sp" />
     </RelativeLayout>
 
     <LinearLayout
@@ -109,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sk_size"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <SeekBar
             android:id="@+id/sk_text_size_seekbar"
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:minWidth="56dp"
             android:gravity="end"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
     </LinearLayout>
 
     <TextView
