@@ -6,15 +6,18 @@
 
 **Loyalty cards, membership cards, coupons — in the black-yellow 白い熊 house style.**
 
-A fork of [Catima](https://github.com/CatimaLoyalty/Android) with **major additions**: a fully settable 白い熊 猫管 UI page (RGBA color pickers, external fonts, border/roundness sliders — everything live-previewed), the black-yellow traced icon and theme, and complete rebranding across all 54 locales.
+A fork of [Catima](https://github.com/CatimaLoyalty/Android) with **major additions**: one-tap full export/import (cards + theme + fonts + settings, by category), a fully settable 白い熊 猫管 UI page (RGBA color pickers, external fonts, border/roundness sliders — everything live-previewed), the black-yellow traced icon and theme, and complete rebranding across all 54 locales.
 
 Installs **side-by-side** with Catima (app id `shiroikuma.nekokan`).
 
-**📥 Latest release: [`2.43.0+3`](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases/latest)** — [all releases & APK downloads »](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases)
+**📥 Latest release: [`2.43.0+8`](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases/latest)** — [all releases & APK downloads »](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases)
 
 </div>
 
 ---
+
+## 📦 One-tap full backup — export / import everything
+The first section of the UI page. Pick a backup directory once and one tap exports **everything** as a single zip — all cards (the complete Catima export with images), every 白い熊 猫管 UI setting including your imported fonts, and the app settings — split into selectable categories. The page itself shows a "Last export" freshness line (red until you've backed up), the run has a live n/total progress dialog with per-card ticks and a working Cancel, and import merges category-wise — never wipes — with a restart offer at the end.
 
 ## 🎨 The 白い熊 猫管 UI page
 One page controls the whole look — reachable from Settings or by **long-pressing the ⋮ button** on the main screen. Sister-repo construction: big bold underlined section headings (Foundation / Top bar / Main screen / Buttons & controls), deeply indented items per level, tight rows. Every color opens a picker with **four RGBA sliders**, a live hex + swatch preview, and one-click boxes prefilled with your prior-selected colors. Foundation colors cascade: change the accent once and the toolbar icons, FAB, card borders and section rules follow.
