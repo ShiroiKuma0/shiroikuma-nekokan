@@ -20,9 +20,12 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 }
 
-val forkVersionName = "${project.property("VERSION_NAME")}+${project.property("BUILD_NUMBER")}"
-val forkVersionCode = project.property("VERSION_CODE").toString().toInt() * 10000 +
-    project.property("BUILD_NUMBER").toString().toInt()
+// The build counter is zero-padded to three digits in the NAME only (2.44.0+002), so builds sort
+// in order everywhere they are read as text — ~/tmp, the phone's file manager, the release tags.
+// The numeric versionCode is unaffected by the padding.
+val forkBuildNumber = project.property("BUILD_NUMBER").toString().toInt()
+val forkVersionName = "${project.property("VERSION_NAME")}+%03d".format(forkBuildNumber)
+val forkVersionCode = project.property("VERSION_CODE").toString().toInt() * 10000 + forkBuildNumber
 
 base {
     archivesName = "shiroikuma-nekokan_${forkVersionName}_arm64-v8a"
