@@ -10,22 +10,30 @@ import protect.card_locker.BuildConfig
 import protect.card_locker.R
 import java.io.OutputStream
 import java.util.Locale
+import java.util.concurrent.CopyOnWriteArrayList
 import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * shiroikuma-nekokan fork — the 保存復元 state-export contract, for 白い熊 自由作業盤's one-run
  * backup of every sister app.
  *
- * Two exported, token-gated actions ([SkAutomation] is the gate — no `android:permission`, since
+ * Three exported, token-gated actions ([SkAutomation] is the gate — no `android:permission`, since
  * the caller cannot hold one):
- *  - [ACTION_LIST_CATEGORIES] — instant; replies `OK:` plus one `id<TAB>label` line per exportable
- *    category. The ids are exactly the ones `items` accepts and the entry names used in the ZIP.
- *    Our list is flat (no sub-options), so no third `parent-id` field is emitted.
+ *  - [ACTION_LIST_CATEGORIES] — instant; replies `OK:` plus one `id<TAB>label<TAB>parent<TAB>on|off`
+ *    line per exportable category. The ids are exactly the ones `items` accepts and the entry names
+ *    used in the ZIP. Our list is flat (no sub-options), so the `parent` field is always empty; the
+ *    fourth field is this app stating whether the item starts ticked in the caller's picker, which
+ *    is [SkEximport.Cat.defaultOn] — the same answer our own panel seeds itself from.
  *  - [ACTION_EXPORT_STATE] — runs the very same category ZIP as the Export/Import panel
  *    ([SkEximport.export]), headlessly: no Activity, no interaction, ONE zip. Extras: `token`,
  *    optional `path` (an absolute directory that OVERRIDES the configured export directory),
- *    optional `items` (comma-separated category ids; absent = everything), optional
- *    `progress_action`, plus `reply_action` / `reply_package` / `reply_id`.
+ *    optional `items` (comma-separated category ids; absent = the default set, i.e. everything),
+ *    optional `progress_action`, plus `reply_action` / `reply_package` / `reply_id`.
+ *  - [ACTION_CANCEL_EXPORT] — fire-and-forget stop for a running export; answers nothing itself.
+ *    Extras: `token` plus an optional `reply_id` (absent = whatever is running). The export unwinds
+ *    at the next entry boundary, deletes its partial file and sends `ERROR:cancelled` as the one
+ *    terminal reply to the ORIGINAL request. Safe at any time: nothing running, or an export that
+ *    already finished, is a silent no-op.
  *
  * Directory precedence: the `path` extra → the configured export directory → `ERROR:no-directory`.
  *
@@ -50,6 +58,10 @@ class SkStateExportReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         val action = intent.action
+        if (action == ACTION_CANCEL_EXPORT) {
+            cancelExport(context.applicationContext, intent)
+            return
+        }
         if (action != ACTION_EXPORT_STATE && action != ACTION_LIST_CATEGORIES) {
             return
         }
@@ -96,11 +108,38 @@ class SkStateExportReceiver : BroadcastReceiver() {
             is Request.Done -> finishWith(request.result)
             is Request.Export -> {
                 val progress = throttledProgress(app, progressAction, replyPackage, replyId)
+                // Published before the thread starts, so a cancel racing the very first entry still
+                // finds this run; dropped only once the terminal reply is out.
+                val run = RunningExport(replyId)
+                running.add(run)
                 Thread {
-                    finishWith(runExport(app, request.cats, request.path, progress))
+                    try {
+                        finishWith(runExport(app, request.cats, request.path, progress, run))
+                    } finally {
+                        running.remove(run)
+                    }
                 }.start()
             }
         }
+    }
+
+    /**
+     * [ACTION_CANCEL_EXPORT]: flip the flag [SkEximport.export] checks between entries, and answer
+     * nothing at all — the running export owns the one terminal reply. Nothing running (or a
+     * `reply_id` naming an export that already finished) is a silent no-op, never an error.
+     */
+    private fun cancelExport(context: Context, intent: Intent) {
+        val token = intent.getStringExtra(EXTRA_TOKEN)
+        val replyId = intent.getStringExtra(EXTRA_REPLY_ID)?.trim().orEmpty()
+        if (!SkAutomation.enabled(context) || !SkAutomation.isTokenValid(context, token)) {
+            Log.i(TAG, "cancel ignored: gate closed")
+            return
+        }
+        // An absent reply_id means "the export you are running" — unambiguous, since the contract
+        // forbids two at once.
+        val hit = running.filter { replyId.isEmpty() || it.replyId == replyId }
+        hit.forEach { it.cancelled = true }
+        Log.i(TAG, "cancel requested (id=$replyId) → ${hit.size} running export(s) flagged")
     }
 
     /**
@@ -131,10 +170,14 @@ class SkStateExportReceiver : BroadcastReceiver() {
         }
     }
 
-    /** `OK:` plus one `id<TAB>label` line per category — the ids `items` accepts. */
+    /**
+     * `OK:` plus one `id<TAB>label<TAB>parent<TAB>on|off` line per category — the ids `items`
+     * accepts. The third field is empty throughout: our list is flat, and a top-level item still
+     * needs the placeholder for the fourth field to land in the right column.
+     */
     private fun categoryList(context: Context): String =
         SkEximport.Cat.entries.joinToString(separator = "\n", prefix = "OK:") {
-            "${it.id}\t${context.getString(it.labelRes)}"
+            "${it.id}\t${context.getString(it.labelRes)}\t\t${if (it.defaultOn) "on" else "off"}"
         }
 
     /** The requested categories, or null when [itemsRaw] names an id we do not export. */
@@ -151,6 +194,7 @@ class SkStateExportReceiver : BroadcastReceiver() {
         cats: Set<SkEximport.Cat>,
         path: String,
         progress: ThrottledProgress,
+        run: RunningExport,
     ): String {
         val target = try {
             SkEximport.headlessTarget(context, path) ?: return "ERROR:no-directory"
@@ -162,14 +206,25 @@ class SkStateExportReceiver : BroadcastReceiver() {
             // The counted length is the fallback for a destination we cannot stat; it is final once
             // export() returns, which is after the ZIP's central directory has been flushed.
             val counting = CountingOutputStream(target.open())
-            counting.use { SkEximport.export(context, cats, it, progress.listener) }
+            counting.use {
+                SkEximport.export(context, cats, it, progress.listener) { run.cancelled }
+            }
             val bytes = target.size().takeIf { it > 0 } ?: counting.count
             progress.final()
+            // A cancel landing here arrived after the ZIP was complete — the no-op case; reply OK.
             "OK:${target.displayPath}|$bytes|${humanSize(bytes)}|${cats.size} categories"
         } catch (e: Exception) {
-            target.discard() // a half-written ZIP is garbage — never leave it as "the last export"
-            storageError(path, e)
+            // A half-written ZIP is garbage — never leave it as "the last export", and a cancelled
+            // run must leave the directory exactly as it found it.
+            target.discard()
+            if (run.cancelled) "ERROR:cancelled" else storageError(path, e)
         }
+    }
+
+    /** One in-flight headless export, and the flag [ACTION_CANCEL_EXPORT] raises against it. */
+    private class RunningExport(val replyId: String) {
+        @Volatile
+        var cancelled = false
     }
 
     /**
@@ -272,6 +327,14 @@ class SkStateExportReceiver : BroadcastReceiver() {
         // Must stay in step with the manifest's ${applicationId}.action.* intent filter.
         const val ACTION_EXPORT_STATE = BuildConfig.APPLICATION_ID + ".action.EXPORT_STATE"
         const val ACTION_LIST_CATEGORIES = BuildConfig.APPLICATION_ID + ".action.LIST_CATEGORIES"
+        const val ACTION_CANCEL_EXPORT = BuildConfig.APPLICATION_ID + ".action.CANCEL_EXPORT"
+
+        /**
+         * The in-flight headless exports, reachable from the *other* receiver instance a cancel
+         * broadcast is delivered to (Android builds a fresh one per broadcast), hence static.
+         * At most one entry in practice — the contract forbids two exports at once.
+         */
+        private val running = CopyOnWriteArrayList<RunningExport>()
 
         // Contract extras — deliberately bare names, shared verbatim by every sister app.
         private const val EXTRA_TOKEN = "token"
