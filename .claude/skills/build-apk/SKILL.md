@@ -43,9 +43,10 @@ export ANDROID_HOME=/home/shiroikuma/android-sdk
 
 1. **Note the output filename / version.** Read the version + counter from `gradle.properties`:
    - `grep -E 'VERSION_NAME|VERSION_CODE|BUILD_NUMBER' gradle.properties`
-   - The APK will be `shiroikuma-nekokan_<VERSION_NAME>+<BUILD_NUMBER>_arm64-v8a.apk`, using the
-     `BUILD_NUMBER` value **before** the build (the `buildApk` task bumps it afterward).
-   - versionCode for that build = `VERSION_CODE * 10000 + BUILD_NUMBER`.
+   - The APK will be `shiroikuma-nekokan_<VERSION_NAME>+<NNN>_arm64-v8a.apk`, where `<NNN>` is the
+     `BUILD_NUMBER` value **before** the build (the `buildApk` task bumps it afterward),
+     **zero-padded to 3 digits** — `BUILD_NUMBER=2` → `2.44.0+002`.
+   - versionCode for that build = `VERSION_CODE * 10000 + BUILD_NUMBER` (the padding is name-only).
 
 2. **Build** (release, signed, **foss flavor**) — from the repo root:
    ```bash
@@ -86,9 +87,10 @@ keys). This fork uses its own keystore `~/.android-keystores/shiroikuma-nekokan.
   (CatimaLoyalty/Android release tags, e.g. `v2.43.0` → `VERSION_NAME=2.43.0`, `VERSION_CODE=167`).
 - `BUILD_NUMBER` is **our** fork increment, bumped on every `buildApk`, reset to `1` on each new
   upstream version (see the `upstream-new-version` skill).
-- Fork `versionName = "<VERSION_NAME>+<BUILD_NUMBER>"`; `versionCode = VERSION_CODE * 10000 + BUILD_NUMBER`
-  (Catima 167 → `1670001`, `1670002`, …). When upstream's code climbs, the new line's codes exceed
-  the old, keeping upgrades monotonic.
+- Fork `versionName = "<VERSION_NAME>+<BUILD_NUMBER zero-padded to 3 digits>"` (`2.44.0+002`);
+  `versionCode = VERSION_CODE * 10000 + BUILD_NUMBER`, unpadded (Catima 168 → `1680001`,
+  `1680002`, …). When upstream's code climbs, the new line's codes exceed the old, keeping
+  upgrades monotonic.
 
 ---
 

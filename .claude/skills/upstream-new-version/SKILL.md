@@ -26,7 +26,8 @@ upstream release tag, replay our `custom` customizations on top, and produce a f
 - `VERSION_NAME` / `VERSION_CODE` in `gradle.properties` **track upstream** (drop any suffix like
   `-beta` from `VERSION_NAME` should one ever appear).
 - `BUILD_NUMBER` is **our** fork increment; it **resets to `1`** on each new upstream version.
-- Fork `versionName = "<VERSION_NAME>+<BUILD_NUMBER>"`, `versionCode = VERSION_CODE * 10000 + BUILD_NUMBER`.
+- Fork `versionName = "<VERSION_NAME>+<BUILD_NUMBER zero-padded to 3 digits>"` (`2.44.0+002`),
+  `versionCode = VERSION_CODE * 10000 + BUILD_NUMBER` (unpadded — the padding is name-only).
   So when upstream's `versionCode` climbs (167 → 168), the new line's codes (`1680001`, …) all exceed
   the previous line's (`1670001`, …), keeping upgrades monotonic.
 
