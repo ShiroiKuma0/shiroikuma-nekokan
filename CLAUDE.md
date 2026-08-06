@@ -38,10 +38,12 @@ installable side-by-side with upstream Catima.
   — debug has a `.debug` applicationId suffix). We never build the `gplay` flavor.
 - **Versioning** (`gradle.properties`): `VERSION_NAME`/`VERSION_CODE` track upstream release tags;
   `BUILD_NUMBER` is our increment (bumped every build, reset to 1 on each new upstream version).
-  Fork `versionName = "<VERSION_NAME>+<BUILD_NUMBER>"`,
-  `versionCode = VERSION_CODE * 10000 + BUILD_NUMBER` (Catima 167 → `1670001`, …). APK filename:
-  `shiroikuma-nekokan_<VERSION_NAME>+<BUILD_NUMBER>_arm64-v8a.apk` (no NDK → universal APK;
-  `arm64-v8a` is just the filename convention).
+  Fork `versionName = "<VERSION_NAME>+<BUILD_NUMBER zero-padded to 3 digits>"` (`2.44.0+002`) — the
+  padding is applied when the name is built, `BUILD_NUMBER` stays a plain integer in
+  `gradle.properties`, and it keeps builds in order wherever they are read as text.
+  `versionCode = VERSION_CODE * 10000 + BUILD_NUMBER`, unpadded (Catima 168 → `1680001`, …). APK
+  filename: `shiroikuma-nekokan_<versionName>_arm64-v8a.apk` (no NDK → universal APK; `arm64-v8a`
+  is just the filename convention).
 - **Signing:** release signed from gitignored `keystore.properties` (committed
   `keystore.properties_sample` documents the keys) →
   `~/.android-keystores/shiroikuma-nekokan.jks` (alias `nekokan`). Password recorded in
