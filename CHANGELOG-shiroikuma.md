@@ -3,7 +3,42 @@
 Everything built on top of stock [Catima](https://github.com/CatimaLoyalty/Android). Upstream owns
 `CHANGELOG.md` (compiled into the app); fork notes live here.
 
-## 2.43.0+9 — current
+## 2.44.0+002 — current
+
+Rebased onto Catima `v2.44.0` (versionCode 168).
+
+### 保存復元 automation — a stated default, and a real cancel
+- **`LIST_CATEGORIES` now answers with all four positional fields** —
+  `id<TAB>label<TAB>parent<TAB>on|off`. The fourth field is this app *stating* whether an item
+  starts ticked in a caller's backup-item picker, rather than the picker assuming it. Our list is
+  flat, so the third field is always empty; every category is `on`, because nothing this app
+  exports is large, derived *and* re-creatable. The flag lives on the category itself
+  (`SkEximport.Cat.defaultOn`), so a future category can answer differently by construction.
+- **The app's own Export/Import panel seeds its checkboxes from that same flag**, so the in-app
+  sheet and the automation picker can never drift apart.
+- **`CANCEL_EXPORT` (new, third action)**: a token-gated, fire-and-forget stop for a running
+  headless export, routed through the exported receiver — the only component a third-party caller
+  can reach. It answers nothing itself. It raises a `@Volatile` flag that the export reads
+  **between entries**, never mid-`write()` and never by interrupting a thread: the run unwinds at
+  the next boundary, **deletes its partial file** so the backup directory is left exactly as it
+  was found, and sends `ERROR:cancelled` as the one terminal reply to the *original* request,
+  under the existing `AtomicBoolean` guard. Sending it when nothing is running, or after the ZIP
+  is already complete, is a **silent no-op** — not an error, not a reply, not a crash.
+- **One unwind path**: the panel's own Cancel button now feeds the same signal, so the interactive
+  and headless stops behave identically, partial-file deletion included.
+
+### Packaging
+- **Rebased onto upstream Catima 2.44.0** — which brings an “Open in image gallery” overflow action
+  in the card image viewer, AGP 9.3.1 and Kotlin 2.4.10. `VERSION_NAME`/`VERSION_CODE` follow
+  upstream, so this line's versionCodes (`1680001`, …) stay above the 2.43.0 line's.
+- **The build counter is zero-padded to three digits in the version name** — `2.44.0+002` — so
+  builds sort in build order wherever they are read as text: the APK filenames, the phone's file
+  manager, and the release tags. The padding is name-only; `versionCode` arithmetic is unchanged,
+  so upgrade ordering cannot be affected. Earlier tags stay as published (`2.43.0+9`).
+- The upstream export-filename test now asserts the fork's `shiroikuma-nekokan_<date>.zip` rather
+  than stock's `catima_<date>.zip`, which it had been failing against since that rename.
+
+## 2.43.0+9
 
 Based on Catima `v2.43.0` (versionCode 167).
 
