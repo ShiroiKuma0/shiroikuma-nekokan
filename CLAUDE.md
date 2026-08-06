@@ -91,8 +91,11 @@ installable side-by-side with upstream Catima.
 
 ## Current status
 
-**Released `2.43.0+9`** (2026-07-25; tag `2.43.0+9`, APK attached, default branch `custom`;
-`README.md` + `CHANGELOG-shiroikuma.md` track it). The fork so far: identity + fork versioning +
+**Released `2.44.0+002`** (2026-08-06; tag `2.44.0+002`, APK attached, default branch `custom`;
+`README.md` + `CHANGELOG-shiroikuma.md` track it). Rebased onto upstream **Catima `v2.44.0`**
+(versionCode 168) — which also moved the toolchain to AGP 9.3.1 / Kotlin 2.4.10, where the
+**release unit-test task no longer exists**: run `./gradlew :app:testFossDebugUnitTest`, not the
+old `:app:testFossReleaseUnitTest`. The fork so far: identity + fork versioning +
 signing + skills; the black-yellow traced launcher icon (adaptive + legacy mipmaps, splash,
 welcome logo, widget preview); the complete string rebrand (default + 54 locales, incl.
 transliterations/inflections; card-export filename `shiroikuma-nekokan_<date>.zip`); the
@@ -108,7 +111,10 @@ per-card `CatimaExporter` hook, owned black-yellow dialog surfaces with pill but
 auto-close chain with Restart now / Later); the **kxkb page format** (1 px section
 hairlines, text-wide 20 sp/2.5 dp + 17 sp/1.5 dp underlined headings, 36/54/72/90 dp indent
 ladder); and the **保存復元 automation contract** (`SkStateExportReceiver` + `SkAutomation` —
-exported token-gated `EXPORT_STATE` / `LIST_CATEGORIES`, the same category ZIP run headlessly via
+exported token-gated `EXPORT_STATE` / `LIST_CATEGORIES` / `CANCEL_EXPORT`, the four-field
+`id⇥label⇥parent⇥on|off` category list seeded from `Cat.defaultOn` (which the in-app panel's
+checkboxes also read), the fire-and-forget cancel that flags the run, unwinds it between entries,
+deletes the partial file and replies `ERROR:cancelled` once, the same category ZIP run headlessly via
 `SkEximport.headlessTarget`, `path` → configured dir → `ERROR:no-directory`, single-fire plain
 broadcast reply `OK:<path>|<bytes>|<human>|<n> categories` with no binder and no ordered-result
 reliance, 500 ms-throttled real-count progress, an OFF-by-default switch + copy/regenerate token
@@ -116,8 +122,10 @@ row + All-files-access row inside the Export/Import section, `MANAGE_EXTERNAL_ST
 for absolute-path writes, and the family backup name
 `shiroikuma-nekokan_<yyyy-MM-dd_HH-mm-ss>.zip`).
 
-**Untested on-device as of the 2.43.0+9 publish**: the automation acceptance checklist (gate,
-category list, real export with `path` override, items subset, unknown id, no-directory,
-progress broadcasts, token absent from the ZIP) still needs an adb run once the build is
-installed and the switch is on. The app is **not in 自由作業盤's 保存復元 roster** yet — a
-wrapper task plus the `%BR_Token_…` settings lines need adding there.
+**Untested on-device as of the 2.44.0+002 publish**: the automation acceptance checklist (gate,
+category list — now including the fourth `on|off` field, real export with `path` override, items
+subset, unknown id, no-directory, progress broadcasts, `CANCEL_EXPORT` mid-run leaving the
+directory clean and replying `ERROR:cancelled`, a cancel with nothing running staying silent,
+token absent from the ZIP) still needs an adb run once the build is installed and the switch is
+on. The app is **not in 自由作業盤's 保存復元 roster** yet — a wrapper task plus the
+`%BR_Token_…` settings lines need adding there.
