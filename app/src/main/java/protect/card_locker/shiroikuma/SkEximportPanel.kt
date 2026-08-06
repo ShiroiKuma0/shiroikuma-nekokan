@@ -155,8 +155,11 @@ class SkEximportPanel(
             catBoxes[cat] = box
             holder.addView(box)
         }
-        catBoxes.values.forEach { it.isChecked = true }
-        selectAll.isChecked = true
+        // Seeded from the category's own default — the same answer LIST_CATEGORIES states as its
+        // fourth field, so this sheet and 保存復元's picker start from one place.
+        catBoxes.forEach { (cat, box) -> box.isChecked = cat.defaultOn }
+        selectAll.setOnCheckedChangeListener(null)
+        selectAll.isChecked = catBoxes.values.all { it.isChecked }
         bindSelectAll(selectAll)
 
         // Arcanechat button bar: Cancel alone on the left, Import + Export on the right.
@@ -366,7 +369,8 @@ class SkEximportPanel(
         workThread = Thread {
             try {
                 val summary = openStream().use {
-                    SkEximport.export(activity, cats, it, ::onWorkProgress)
+                    // Same unwind path as the headless CANCEL_EXPORT: a flag read between entries.
+                    SkEximport.export(activity, cats, it, ::onWorkProgress) { workCancelled }
                 }
                 cancelCleanup = null
                 activity.runOnUiThread {

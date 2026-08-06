@@ -61,7 +61,13 @@ object SkEximport {
     private const val CARDS_ENTRY = "cards.zip"
     private const val FONTS_DIR_ENTRY = "fonts/"
 
-    enum class Cat(val id: String, val labelRes: Int) {
+    /**
+     * [defaultOn] is the answer this app states for a backup-item picker — its own panel and the
+     * automation contract's fourth `LIST_CATEGORIES` field alike. Everything here is small, live
+     * state that cannot be re-created, so every category starts ticked; the flag exists so a future
+     * category that is large, derived *and* regenerable can say so.
+     */
+    enum class Cat(val id: String, val labelRes: Int, val defaultOn: Boolean = true) {
         CARDS("cards", R.string.sk_eim_cat_cards),
         APPEARANCE("appearance", R.string.sk_eim_cat_appearance),
         APP_SETTINGS("app_settings", R.string.sk_eim_cat_settings),
@@ -195,9 +201,19 @@ object SkEximport {
         fun onProgress(done: Int, total: Int, stage: String)
     }
 
-    /** Cancellation = worker-thread interrupt (the panel's Cancel button). */
-    private fun checkCancelled() {
-        if (Thread.currentThread().isInterrupted) {
+    /**
+     * Asked between entries, never mid-write: true unwinds the run at the next boundary. The
+     * headless automation cancel (`CANCEL_EXPORT`) sets a flag another thread reads through this;
+     * the panel's Cancel button interrupts the worker, which is checked alongside it.
+     */
+    fun interface CancelSignal {
+        fun isCancelled(): Boolean
+    }
+
+    private val NEVER_CANCELLED = CancelSignal { false }
+
+    private fun checkCancelled(cancel: CancelSignal = NEVER_CANCELLED) {
+        if (cancel.isCancelled() || Thread.currentThread().isInterrupted) {
             throw InterruptedException("cancelled")
         }
     }
@@ -208,6 +224,7 @@ object SkEximport {
         cats: Set<Cat>,
         out: OutputStream,
         listener: ProgressListener = ProgressListener { _, _, _ -> },
+        cancel: CancelSignal = NEVER_CANCELLED,
     ): String {
         // Total item count up front, so the dialog can show a real n/total.
         val cardTotal = if (Cat.CARDS in cats) countCards(context) else 0
@@ -232,13 +249,13 @@ object SkEximport {
             writeEntry(zip, "manifest.json", manifest.toString(2).toByteArray())
 
             for (cat in Cat.entries.filter { it in cats }) {
-                checkCancelled()
+                checkCancelled(cancel)
                 val label = context.getString(cat.labelRes)
                 listener.onProgress(done, total, label)
                 when (cat) {
                     Cat.CARDS -> {
                         val bytes = exportCards(context) { exported ->
-                            checkCancelled()
+                            checkCancelled(cancel)
                             listener.onProgress(done + exported, total, label)
                         }
                         writeEntry(zip, CARDS_ENTRY, bytes)
@@ -251,7 +268,7 @@ object SkEximport {
                         done += appearanceKeys
                         listener.onProgress(done, total, label)
                         val fonts = exportFonts(context, zip) {
-                            checkCancelled()
+                            checkCancelled(cancel)
                             listener.onProgress(done + it, total, label)
                         }
                         done += fontTotal
