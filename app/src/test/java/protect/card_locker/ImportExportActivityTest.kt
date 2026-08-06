@@ -65,7 +65,8 @@ class ImportExportActivityTest {
     @Test
     fun testExportFilenameHasTimestamp() {
         val filename = ImportExportActivity.getExportFilename()
-        assertTrue(filename.matches(Regex("catima_\\d{8}\\.zip")))
+        // shiroikuma-nekokan fork: the card export carries the fork's name, not Catima's.
+        assertTrue(filename.matches(Regex("shiroikuma-nekokan_\\d{8}\\.zip")))
     }
 
     @Test
