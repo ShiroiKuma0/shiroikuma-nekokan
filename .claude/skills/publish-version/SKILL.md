@@ -18,15 +18,16 @@ README + fork changelog, and a default branch (`custom`) so the repo landing pag
 
 ## What gets published
 
-The **latest APK in `~/tmp/`** (`shiroikuma-nekokan_<VERSION_NAME>+<BUILD_NUMBER>_arm64-v8a.apk`) —
+The **latest APK in `~/tmp/`** (`shiroikuma-nekokan_<VERSION_NAME>+<NNN>_arm64-v8a.apk`, the build
+counter zero-padded to 3 digits) —
 the build the user just tested on-device. Derive the version from the **APK filename**, NOT
 `gradle.properties` (whose `BUILD_NUMBER` is already the *next* number, because `buildApk` bumps it
 after building).
 
 ```bash
 APK=$(ls -t ~/tmp/shiroikuma-nekokan_*.apk 2>/dev/null | head -1)
-VERSION=$(basename "$APK" | sed -E 's/^shiroikuma-nekokan_(.+)_arm64-v8a\.apk$/\1/')   # e.g. 2.43.0+1
-TAG="$VERSION"   # the tag is the bare version, no "v" prefix (e.g. 2.43.0+1)
+VERSION=$(basename "$APK" | sed -E 's/^shiroikuma-nekokan_(.+)_arm64-v8a\.apk$/\1/')   # e.g. 2.44.0+002
+TAG="$VERSION"   # the tag is the bare version, no "v" prefix (e.g. 2.44.0+002)
 ```
 
 If `$APK` is empty, stop and tell the user there's no built APK to publish (run `build-apk` first).
