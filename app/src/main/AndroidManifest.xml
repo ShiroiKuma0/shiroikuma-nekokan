@@ -51,6 +51,9 @@
             <intent-filter>
                 <action android:name="${applicationId}.action.EXPORT_STATE" />
                 <action android:name="${applicationId}.action.LIST_CATEGORIES" />
+                <!-- Fire-and-forget stop for a running export. It must reach us from outside, so it
+                     is routed through this exported receiver rather than any internal component. -->
+                <action android:name="${applicationId}.action.CANCEL_EXPORT" />
             </intent-filter>
         </receiver>
 
