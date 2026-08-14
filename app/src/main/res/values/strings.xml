@@ -401,7 +401,7 @@
     <string name="settings_key_wear_sync" translatable="false">pref_wear_sync</string>
     <string name="settings_wear_sync">Sync with Wear OS</string>
     <string name="settings_wear_sync_summary">Allows the Wear OS companion app to read your cards over Bluetooth</string>
-    <string name="wear_sync_permission_required">Catima needs the permissions you denied to sync with your Wear OS smartwatch</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 needs the permissions you denied to sync with your Wear OS smartwatch</string>
     <string name="settings_key_wear_sync_devices" translatable="false">pref_wear_sync_devices</string>
     <string name="settings_wear_sync_devices">Allowed Wear OS devices</string>
     <string name="settings_wear_sync_devices_summary">Manage devices allowed to sync over Bluetooth</string>
@@ -419,7 +419,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> devices blocked</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Remove device?</string>
-    <string name="settings_wear_sync_unpair_message">Remove <xliff:g>%1$s</xliff:g> from Catima? It will no longer be able to sync your cards.</string>
+    <string name="settings_wear_sync_unpair_message">Remove <xliff:g>%1$s</xliff:g> from 白い熊 猫管? It will no longer be able to sync your cards.</string>
     <string name="settings_wear_sync_unblock_message">Remove <xliff:g>%1$s</xliff:g> from the blocked list? It will be able to request access again.</string>
     <string name="settings_wear_sync_unpair">Remove</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -485,7 +485,7 @@
     <string name="nfc_block_system_error">Failed to pause NFC</string>
     <string name="open_in_gallery">Open in image gallery</string>
     <string name="wear_bt_channel_name">Wear OS companion</string>
-    <string name="wear_bt_notification_title">Catima Wear OS sync active</string>
+    <string name="wear_bt_notification_title">白い熊 猫管 Wear OS sync active</string>
     <string name="settings_category_title_smartwatch">Smartwatch support</string>
     <string name="wear_bt_failed_foreground_notification_title">Failed to start Wear OS sync service</string>
     <string name="wear_bt_critical_error_channel_name">Wear OS sync critical error</string>
