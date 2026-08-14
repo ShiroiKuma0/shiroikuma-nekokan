@@ -1,9 +1,44 @@
 # 白い熊 猫管 — fork changelog
 
 Everything built on top of stock [Catima](https://github.com/CatimaLoyalty/Android). Upstream owns
-`CHANGELOG.md` (compiled into the app); fork notes live here.
+`CHANGELOG.md` (it was compiled into the app until Catima 2.45.0 dropped the embedded copy); fork
+notes live here.
 
-## 2.44.0+002 — current
+## 2.45.0+001 — current
+
+Rebased onto Catima `v2.45.0` (versionCode 1002).
+
+No new fork features — this release moves the customization layer onto upstream's Wear OS release
+and re-seats the patches that upstream restructured underneath them.
+
+### What upstream brings
+- **Wear OS companion support**: the phone app gains a Bluetooth server (`wearos/`, a
+  `connectedDevice` foreground service) that serves cards to Catima's new Wear OS watch app, with
+  trusted-device pairing, allow/block device lists, and a warning when a known device presents a
+  changed identity token. Settings' *Privacy* category is now **Smartwatch support**; the sync
+  switch is **off** until turned on, and nothing runs until it is.
+- Two new Gradle modules — `:shared` (Bluetooth protocol/security, `ForegroundColorHelper`) and
+  `:wear` (the watch app, which this fork does not build or ship).
+- **The embedded changelog is gone**: upstream stopped copying `CHANGELOG.md` into `res/raw`, so
+  About → *Version history* now links to catima.app instead of opening an in-app dialog.
+- Reworked notification icons, a foreground-service start-failure notification, an `fdroidLegacy`
+  product flavor (we still ship **foss** only), and constraintlayout 2.2.2.
+
+### Fork-side work
+- **Rebranding of the new user-visible strings**: the three that name *this* app — the Wear
+  permission prompt, the device-removal confirmation and the sync notification title — now say
+  白い熊 猫管. The token-mismatch warning deliberately keeps “the Catima Wear OS app”: that names
+  the watch-side app, which is upstream's and not forked here.
+- **The 白い熊 猫管 UI entry follows upstream's refactor**: `onCreatePreferences` was split into
+  per-preference `setup*` functions, so the fork's Settings entry became `setupShiroikumaUiPreference()`
+  alongside them rather than an inline block wedged into the middle.
+- **Lithuanian**: Weblate rewrote `importCatimaMessage`, `importCatima` and `permissionReadCardsLabel`
+  in this release — the new translations are kept, with our branding re-applied on top.
+- **Upstream's new versionCode scheme**: Android releases now start at 1002 and advance by even
+  numbers (odd ones belong to `fdroidLegacy`). The fork line therefore jumps from `1680000 + N` to
+  `10020000 + N`, which stays above every 2.44.0 build, so upgrades remain monotonic.
+
+## 2.44.0+002
 
 Rebased onto Catima `v2.44.0` (versionCode 168).
 
