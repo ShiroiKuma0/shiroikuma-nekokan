@@ -10,7 +10,7 @@ A fork of [Catima](https://github.com/CatimaLoyalty/Android) with **major additi
 
 Installs **side-by-side** with Catima (app id `shiroikuma.nekokan`).
 
-**📥 Latest release: [`2.44.0+002`](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases/latest)** — [all releases & APK downloads »](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases)
+**📥 Latest release: [`2.45.0+001`](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases/latest)** — [all releases & APK downloads »](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases)
 
 </div>
 
