@@ -63,8 +63,8 @@ installable side-by-side with upstream Catima.
 - **After every successful build, deliver the APK automatically via `/after-build`** — never ask
   how to transfer it, never pause.
 - **Commit subjects:** plain descriptive summary, no prefix.
-- Upstream owns `CHANGELOG.md` (compiled into the app via the `copyRawResFiles` task) — fork
-  changelog notes go to `CHANGELOG-shiroikuma.md` only.
+- Upstream owns `CHANGELOG.md` (it was compiled into the app via `copyRawResFiles` until Catima
+  2.45.0 dropped the embedded copy) — fork changelog notes go to `CHANGELOG-shiroikuma.md` only.
 
 ## Repo layout (upstream Catima)
 
@@ -75,8 +75,10 @@ installable side-by-side with upstream Catima.
 - `app/src/main/res/` — View-based layouts + some Compose; ~55 translated locales (label change
   therefore lives in the **non-translatable `sk_app_name`** string + manifest, never in the
   translated `app_name`).
-- Flavors: `foss` (default, we ship this) and `gplay`. minSdk 23, targetSdk 36, JDK 21.
-- Tests: `./gradlew :app:testFossReleaseUnitTest` (Robolectric).
+- Flavors: `foss` (default, we ship this), `fdroidLegacy` and `gplay`. minSdk 23, targetSdk 36,
+  JDK 21. Modules: `:app`, `:shared` (Wear Bluetooth protocol/security + `ForegroundColorHelper`)
+  and `:wear` (upstream's Wear OS app — never built here).
+- Tests: `./gradlew :app:testFossDebugUnitTest` (Robolectric).
 
 ## Fork identity (the standing customization layer)
 
@@ -91,11 +93,21 @@ installable side-by-side with upstream Catima.
 
 ## Current status
 
-**Released `2.44.0+002`** (2026-08-06; tag `2.44.0+002`, APK attached, default branch `custom`;
-`README.md` + `CHANGELOG-shiroikuma.md` track it). Rebased onto upstream **Catima `v2.44.0`**
-(versionCode 168) — which also moved the toolchain to AGP 9.3.1 / Kotlin 2.4.10, where the
-**release unit-test task no longer exists**: run `./gradlew :app:testFossDebugUnitTest`, not the
-old `:app:testFossReleaseUnitTest`. The fork so far: identity + fork versioning +
+**Released `2.45.0+001`** (2026-08-14; tag `2.45.0+001`, APK attached, default branch `custom`;
+`README.md` + `CHANGELOG-shiroikuma.md` track it). Rebased onto upstream **Catima `v2.45.0`**
+(versionCode **1002** — upstream's new scheme: Android releases start at 1000 and use **even**
+codes, the odd ones belonging to its new `fdroidLegacy` flavor, so our line moved from
+`1680000 + N` to `10020000 + N`). That release adds the **Wear OS companion**: two new Gradle
+modules (`:shared`, `:wear` — we build neither, though `:app` now depends on `:shared`), a
+Bluetooth `connectedDevice` foreground service under `wearos/` with trusted-device pairing and
+allow/block lists, a **Smartwatch support** settings category (sync switch OFF by default), and
+the removal of the embedded changelog (About → *Version history* just links out now; the
+`copyRawResFiles` task no longer copies `CHANGELOG.md`). `Utils.needsDarkForeground` moved to
+`:shared` as `ForegroundColorHelper`. Since AGP 9.3.1 / Kotlin 2.4.10 the **release unit-test task
+no longer exists**: run `./gradlew :app:testFossDebugUnitTest`, not the old
+`:app:testFossReleaseUnitTest` (110 tests green on this base). Upstream strings naming *this* app
+are rebranded as usual; the Wear token-mismatch warning keeps “the Catima Wear OS app”, which
+names the unforked watch-side app. The fork so far: identity + fork versioning +
 signing + skills; the black-yellow traced launcher icon (adaptive + legacy mipmaps, splash,
 welcome logo, widget preview); the complete string rebrand (default + 54 locales, incl.
 transliterations/inflections; card-export filename `shiroikuma-nekokan_<date>.zip`); the
@@ -122,7 +134,7 @@ row + All-files-access row inside the Export/Import section, `MANAGE_EXTERNAL_ST
 for absolute-path writes, and the family backup name
 `shiroikuma-nekokan_<yyyy-MM-dd_HH-mm-ss>.zip`).
 
-**Untested on-device as of the 2.44.0+002 publish**: the automation acceptance checklist (gate,
+**Untested on-device as of the 2.45.0+001 publish**: the automation acceptance checklist (gate,
 category list — now including the fourth `on|off` field, real export with `path` override, items
 subset, unknown id, no-directory, progress broadcasts, `CANCEL_EXPORT` mid-run leaving the
 directory clean and replying `ERROR:cancelled`, a cancel with nothing running staying silent,
