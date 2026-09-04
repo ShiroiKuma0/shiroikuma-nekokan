@@ -63,9 +63,10 @@
     <string name="sk_eim_select_all" translatable="false">Select all</string>
     <string name="sk_eim_export" translatable="false">Export</string>
     <string name="sk_eim_import" translatable="false">Import</string>
-    <string name="sk_eim_cat_cards" translatable="false">All cards</string>
-    <string name="sk_eim_cat_appearance" translatable="false">白い熊 猫管 UI (colors · fonts)</string>
-    <string name="sk_eim_cat_settings" translatable="false">App settings</string>
+    <string name="sk_eim_cat_cards" translatable="false">All cards (barcodes and card numbers — scannable)</string>
+    <string name="sk_eim_cat_card_images" translatable="false">Card images (photos of the physical cards)</string>
+    <string name="sk_eim_cat_appearance" translatable="false">白い熊 猫管 UI (colors · fonts · borders)</string>
+    <string name="sk_eim_cat_settings" translatable="false">App settings (preferences, not card data)</string>
     <string name="sk_eim_exporting" translatable="false">Exporting…</string>
     <string name="sk_eim_importing" translatable="false">Importing…</string>
     <string name="sk_eim_export_done_title" translatable="false">✓ Export finished</string>
@@ -82,8 +83,24 @@
     <string name="sk_eim_cards_count" translatable="false">%1$d cards</string>
     <string name="sk_eim_prefs_count" translatable="false">%1$d settings</string>
     <string name="sk_eim_fonts_count" translatable="false">%1$d fonts</string>
+    <string name="sk_eim_cards_no_images" translatable="false">without images</string>
+
+    <!-- The `contains` list SkAutomationProvider.describe() hands a caller before any export
+         exists. 応用管理 renders these verbatim next to a "back this app up" row, so this is the
+         one place to say what the archive actually is: not a settings dump, but the barcodes of
+         白い熊's loyalty and membership cards. Someone choosing where to keep that file should be
+         told before they choose, not after. -->
+    <string name="sk_eim_contains_cards" translatable="false">Loyalty &amp; membership cards — barcodes and card numbers (scannable credentials)</string>
+    <string name="sk_eim_contains_card_images" translatable="false">Card images — photos of the physical cards (may show names and numbers)</string>
+    <string name="sk_eim_contains_appearance" translatable="false">白い熊 猫管 UI — colors, fonts, borders</string>
+    <string name="sk_eim_contains_settings" translatable="false">App settings</string>
     <string name="sk_auto_title" translatable="false">Automation export</string>
-    <string name="sk_auto_desc" translatable="false">Let sister-app tasks trigger this export headlessly through the token-gated intent.</string>
+    <string name="sk_auto_desc" translatable="false">Let sister apps trigger this export headlessly, and let 白い熊 応用管理 back this app up with its data and restore it onto a clean phone.</string>
+    <string name="sk_auto_require_token_title" translatable="false">Use authorization token?</string>
+    <string name="sk_auto_require_token_desc" translatable="false">Off: any app on the phone may drive the automation — and this app\'s backup carries scannable card barcodes. On: a caller must also present the token below. Either way the data door checks the caller\'s package, uid and signing certificate.</string>
+    <string name="sk_auto_data_channel" translatable="false">Automation data</string>
+    <string name="sk_auto_data_exporting" translatable="false">Handing the backup over…</string>
+    <string name="sk_auto_data_importing" translatable="false">Restoring the backup…</string>
     <string name="sk_auto_token_title" translatable="false">Automation token (tap to copy)</string>
     <string name="sk_auto_token_regenerate" translatable="false">Regenerate</string>
     <string name="sk_auto_token_copied" translatable="false">Automation token copied</string>

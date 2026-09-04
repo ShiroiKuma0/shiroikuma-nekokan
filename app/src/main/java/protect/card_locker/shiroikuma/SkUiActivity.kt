@@ -115,9 +115,16 @@ class SkUiActivity : CatimaAppCompatActivity() {
 
         addSection(R.string.sk_section_eximport)
         addEximportRow(1)
-        // The 保存復元 automation lives where backup lives — inside this section, below its rows.
+        // The 保存復元 automation lives where backup lives — inside this section, below its rows,
+        // never in a section of its own: this is a backup feature, and every sister app puts it in
+        // the same place so 白い熊 finds it where backup lives.
         addAutomationSwitchRow(1)
-        addAutomationTokenRow(1)
+        addAutomationRequireTokenRow(1)
+        // Only when it is actually being asked for. A 48-character secret sitting under an off
+        // switch invites 白い熊 to paste it somewhere it will do nothing.
+        if (SkAutomation.requireToken(this)) {
+            addAutomationTokenRow(1)
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             addAllFilesAccessRow(1)
         }
@@ -210,8 +217,10 @@ class SkUiActivity : CatimaAppCompatActivity() {
     }
 
     /**
-     * The 保存復元 master switch — OFF until 白い熊 turns it on; nothing in
-     * [SkStateExportReceiver] is reachable before that.
+     * The 保存復元 master switch — **ON by default since contract v2**, because the case this now
+     * serves is 応用管理 restoring this app *and its cards* onto a clean phone, where nothing has
+     * been configured and nobody has pasted anything. It stays a switch rather than disappearing
+     * because it is the only way to close this app off again.
      */
     private fun addAutomationSwitchRow(level: Int) {
         val row = ItemSkSwitchBinding.inflate(LayoutInflater.from(this), binding.skHolder, false)
@@ -227,6 +236,37 @@ class SkUiActivity : CatimaAppCompatActivity() {
             SkAutomation.setEnabled(this, checked)
         }
         // The switch itself is not clickable — the whole row is its hit area.
+        row.root.setOnClickListener { row.skSwitchToggle.toggle() }
+        indentRow(row.root, level)
+        binding.skHolder.addView(row.root)
+    }
+
+    /**
+     * 「Use authorization token?」 — **OFF by default**. Off means any sister app may drive the
+     * automation; on means a caller must also present the token row below.
+     *
+     * The description says out loud what off costs *for this app*, because 猫管 is not a settings
+     * dump: its backup carries scannable card barcodes, and the broadcast half of the contract
+     * writes wherever it is told to. That is 白い熊's trade to make — the point is that it is made
+     * with the fact in view rather than discovered later.
+     */
+    private fun addAutomationRequireTokenRow(level: Int) {
+        val row = ItemSkSwitchBinding.inflate(LayoutInflater.from(this), binding.skHolder, false)
+        val accent = SkTheme.color(this, SkSlot.ACCENT)
+        row.skSwitchTitle.setText(R.string.sk_auto_require_token_title)
+        row.skSwitchTitle.setTextColor(SkTheme.color(this, SkSlot.TEXT))
+        row.skSwitchDesc.setText(R.string.sk_auto_require_token_desc)
+        row.skSwitchDesc.setTextColor(SkTheme.color(this, SkSlot.TEXT_SECONDARY))
+        row.skSwitchToggle.thumbTintList = ColorStateList.valueOf(accent)
+        row.skSwitchToggle.trackTintList = ColorStateList.valueOf(accent)
+        row.skSwitchToggle.isChecked = SkAutomation.requireToken(this)
+        row.skSwitchToggle.setOnCheckedChangeListener { _, checked ->
+            SkAutomation.setRequireToken(this, checked)
+            // The token row appears and disappears with this switch. Posted rather than called
+            // here: buildRows() clears the holder, and tearing a view down inside its own
+            // checked-change callback is how you get a crash nobody can reproduce on demand.
+            row.root.post { buildRows() }
+        }
         row.root.setOnClickListener { row.skSwitchToggle.toggle() }
         indentRow(row.root, level)
         binding.skHolder.addView(row.root)

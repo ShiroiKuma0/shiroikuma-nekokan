@@ -19,6 +19,10 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+    <!-- 保存復元 automation v2: SkAutomationDataService streams a full card archive through a
+         caller-supplied descriptor, which can take minutes. Its type is specialUse because none of
+         the framework's categories describes "hand this app's own backup to another app". -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="23" />
     <!-- 保存復元 automation: an EXPORT_STATE broadcast may name an absolute directory to write the
          backup ZIP into (白い熊's one archive folder), which needs All-files access. Granted by hand
@@ -26,6 +30,15 @@
     <uses-permission
         android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
+
+    <!-- Without this, setPackage() on our reply and progress broadcasts fails SILENTLY on Android
+         11+: the export runs, writes correctly, and is never heard of. Package visibility is not
+         optional plumbing here — it is the difference between a working contract and one that looks
+         like a dead app to the caller. -->
+    <queries>
+        <package android:name="shiroikuma.oyokanri" />
+        <package android:name="shiroikuma.jiyusagyoban" />
+    </queries>
 
     <uses-feature
         android:name="android.hardware.nfc"
@@ -49,8 +62,11 @@
         
         <!-- The 保存復元 state-export contract (SkStateExportReceiver): sister-app automation
              triggers this app's Export/Import backup headlessly. No android:permission — the caller
-             cannot hold one; the automation token is the gate, and the master switch is OFF until
-             白い熊 turns it on. -->
+             cannot hold one. Since contract v2 the master switch ships ON and the token is opt-in,
+             so this is the deliberately unauthenticated half of the surface: it only writes where
+             it was told to and reports what it did. Note what that means for THIS app, whose
+             archive is loyalty-card barcodes: with the token off, any app on the phone can name a
+             path and trigger one. 「Use authorization token?」 in the UI page is how that is shut. -->
         <receiver
             android:name="protect.card_locker.shiroikuma.SkStateExportReceiver"
             android:exported="true">
@@ -62,6 +78,34 @@
                 <action android:name="${applicationId}.action.CANCEL_EXPORT" />
             </intent-filter>
         </receiver>
+
+        <!-- 保存復元 automation v2, the data door. Exported with no android:permission on purpose:
+             a custom permission would have to be `normal` (any app may hold it) or `signature`
+             (impossible — every app in this family has its own keystore, 42 of them). Neither buys
+             anything SkAutomationCallers does not already do better, by checking the caller's exact
+             package name, its uid as the kernel reports it, and its pinned signing certificate. -->
+        <provider
+            android:name="protect.card_locker.shiroikuma.SkAutomationProvider"
+            android:authorities="${applicationId}.automation"
+            android:exported="true" />
+
+        <service
+            android:name="protect.card_locker.shiroikuma.SkAutomationDataService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Automation data export/import" />
+        </service>
+
+        <!-- Capability discovery, readable WITHOUT waking this app — which matters because 白い熊
+             freezes apps aggressively, and a disabled package cannot be asked anything. 応用管理
+             reads these across every installed package at once with MATCH_UNINSTALLED_PACKAGES |
+             MATCH_DISABLED_COMPONENTS. An app without them is simply not offered for data backup,
+             so declaring them IS the opt-in. -->
+        <meta-data android:name="shiroikuma.automation.contract" android:value="2" />
+        <meta-data android:name="shiroikuma.automation.format" android:value="1" />
+        <meta-data android:name="shiroikuma.automation.min_format" android:value="1" />
 
         <receiver
             android:name=".ListWidget"
