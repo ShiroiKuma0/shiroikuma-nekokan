@@ -93,8 +93,8 @@ installable side-by-side with upstream Catima.
 
 ## Current status
 
-**Released `2.45.0+001`** (2026-08-14; tag `2.45.0+001`, APK attached, default branch `custom`;
-`README.md` + `CHANGELOG-shiroikuma.md` track it). Rebased onto upstream **Catima `v2.45.0`**
+**Released `2.45.0+003`** (2026-09-04; tag `2.45.0+003`, APK attached, default branch `custom`;
+`README.md` + `CHANGELOG-shiroikuma.md` track it). Previously `2.45.0+001` (2026-08-14). Rebased onto upstream **Catima `v2.45.0`**
 (versionCode **1002** — upstream's new scheme: Android releases start at 1000 and use **even**
 codes, the odd ones belonging to its new `fdroidLegacy` flavor, so our line moved from
 `1680000 + N` to `10020000 + N`). That release adds the **Wear OS companion**: two new Gradle
@@ -134,10 +134,37 @@ row + All-files-access row inside the Export/Import section, `MANAGE_EXTERNAL_ST
 for absolute-path writes, and the family backup name
 `shiroikuma-nekokan_<yyyy-MM-dd_HH-mm-ss>.zip`).
 
-**Untested on-device as of the 2.45.0+001 publish**: the automation acceptance checklist (gate,
-category list — now including the fourth `on|off` field, real export with `path` override, items
-subset, unknown id, no-directory, progress broadcasts, `CANCEL_EXPORT` mid-run leaving the
-directory clean and replying `ERROR:cancelled`, a cancel with nothing running staying silent,
-token absent from the ZIP) still needs an adb run once the build is installed and the switch is
-on. The app is **not in 自由作業盤's 保存復元 roster** yet — a wrapper task plus the
-`%BR_Token_…` settings lines need adding there.
+`2.45.0+003` adds **automation contract v2** (`SkAutomation` + `SkAutomationCallers` /
+`SkAutomationJobs` / `SkAutomationProvider` / `SkAutomationDataService` / `SkAutomationProgress`):
+`automation_enabled` now defaults **on** and the token became the opt-in
+`automation_require_token` (**off**), both resolved by one `SkAutomation.refuse()`, with a token
+sent to an app that does not want one **ignored, never refused**; a `ContentProvider` at
+`${APP_ID}.automation` (`describe`/`export`/`import`/`cancel`) whose caller is checked by exact
+package name, uid and **pinned signing certificate**, moving the archive through a caller-supplied
+`ParcelFileDescriptor` — `import` exists **only** there, since the receiver is exported with no
+permission; a `specialUse` foreground service whose `stop()` goes foreground even on a start it
+cannot service (skipping it kills the app with `ForegroundServiceDidNotStartInTimeException`); the
+three `shiroikuma.automation.*` `<meta-data>` discovery entries and a `<queries>` naming
+**both** `shiroikuma.oyokanri` and `shiroikuma.jiyusagyoban` (`getPackageInfo` /
+`getPackagesForUid` are visibility-filtered, so without it the *identity* check fails, not just the
+reply); the `cards.images` **sub-option** (parent `cards`, default **on** — photographs are neither
+derived nor re-creatable, so the off-by-default rule does not apply; honoured on import too via
+`CatimaExporter.setIncludeImages` and nested-archive stripping); synchronous `commit()` of imported
+preferences (the caller `SIGKILL`s us on success and an `apply()` in flight is lost); and a
+spooled, streamed import so a large restore no longer holds the archive twice in heap.
+
+**Open question for 白い熊, family-wide**: v2's defaults leave the *broadcast* half unauthenticated
+by design, and 猫管's payload is scannable card barcodes written to a caller-chosen absolute path.
+The defaults were implemented as specified and the risk stated in the 「Use authorization token?」
+row rather than deviated from; `shiroikuma-universal-installer` and `shiroikuma-kako` raised the
+identical shape. Do not flip either default unilaterally.
+
+**Untested on-device as of the 2.45.0+003 publish**: the whole automation checklist, v1 and v2
+alike — the gate, the category list (now with a real `parent` third field for `cards.images` and
+the `on|off` fourth), a real export with `path` override, items subset, unknown id, no-directory,
+progress broadcasts carrying `item`, `CANCEL_EXPORT` mid-run leaving the directory clean and
+replying `ERROR:cancelled`, a cancel with nothing running staying silent, the token absent from the
+ZIP — plus the entire provider surface (`describe` on a never-launched app, a refused caller, an
+export and an import over a descriptor, a stale `job_id`). The app is **not in 自由作業盤's 保存復元
+roster** yet — a wrapper task needs adding there, though v2 no longer needs the `%BR_Token_…`
+settings lines unless the token switch is turned on.

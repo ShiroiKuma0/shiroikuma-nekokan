@@ -4,7 +4,92 @@ Everything built on top of stock [Catima](https://github.com/CatimaLoyalty/Andro
 `CHANGELOG.md` (it was compiled into the app until Catima 2.45.0 dropped the embedded copy); fork
 notes live here.
 
-## 2.45.0+001 — current
+## 2.45.0+003 — current
+
+Sister-app automation moves to **contract v2**: the token stops being the gate and becomes an
+opt-in extra, and a second, authenticated door is added so another app can back this one up **with
+its cards** and put them back on a wiped phone. Built on Catima `v2.45.0` (versionCode 1002).
+
+### The gate — a switch that is on, and a token that is off
+- `automation_enabled` now defaults **on**; a new `automation_require_token` defaults **off**. The
+  reason the default flipped is the restore case: a phone that has just been wiped has nothing
+  configured on it, so a gate that had to be set up first was no use for setting the phone up.
+- Both checks now live in a single `SkAutomation.refuse()`. Written out separately at each entry
+  point, “disabled” and “bad token” drift apart; they stay distinct errors because they are
+  diagnosed differently.
+- **A token sent to the app while it is not asking for one is ignored, never refused.** Tokens
+  outlive the setting they were pasted for, so refusing one would turn a single switch being off
+  into half a backup batch mysteriously failing.
+- New 「Use authorization token?」 row in the Export/Import section. The token row now appears
+  **only when that switch is on** — a 48-character secret sitting under an off switch invites being
+  pasted somewhere it will do nothing. The row says in plain words what leaving the token off means
+  for this app in particular, whose backup is scannable card barcodes rather than a settings dump.
+
+### The data door — a provider, a verified caller, and a file descriptor
+- New `ContentProvider` at `shiroikuma.nekokan.automation` with `describe` / `export` / `import` /
+  `cancel`. A broadcast cannot say who sent it, and the caller supplies the destination an export is
+  written into, so identity had to come from the framework rather than from a shared secret.
+- The caller is checked three ways: its **exact package name** (never a `shiroikuma.*` prefix —
+  package names are not a namespace anyone owns, so any sideloaded app may take one that is
+  currently uninstalled, which is precisely the clean-phone case), the **uid** the kernel reports
+  for it, and its **pinned signing certificate**. Both pins were re-derived from the sister apps'
+  signed release APKs rather than copied from the contract.
+- The backup travels through a **caller-supplied `ParcelFileDescriptor`**, duplicated before it
+  leaves the binder call and closed in a `finally`. This app therefore never writes into another
+  app's directory, and the capability expires when the file is closed.
+- **`import` exists only here.** The broadcast receiver is exported with no permission; an import
+  action there would let any app on the phone overwrite the wallet.
+- The work runs in a foreground service, since a full card archive can take minutes and a binder
+  call cannot hold that. `describe` answers synchronously and touches nothing that needs the
+  Application to have started, so it is correct on a freshly installed, never-launched app.
+- Manifest: the provider, the service, three `shiroikuma.automation.*` `<meta-data>` entries that
+  let a backup app discover this capability **without waking the app** (a frozen package cannot be
+  asked anything), and a `<queries>` element naming both caller packages — without it
+  `getPackageInfo` and `getPackagesForUid` are visibility-filtered, so the identity check fails
+  outright rather than merely losing the reply.
+
+### Card photographs become a selectable sub-option — defaulting on
+- New `cards.images` category, reported as a **sub-option of `cards`** and rendered indented in the
+  app's own panel as well as in an automation picker. Card photos are the bulk of an archive's
+  bytes, so a barcodes-only backup is now expressible.
+- **It defaults on, and the reasoning matters**: the test for starting a category unticked is that
+  it is large, *derived* **and** re-creatable — a generated thumbnail, a re-downloadable tile. A
+  photograph of a physical card is none of those, so it is offered rather than assumed away.
+- Honoured in **both** directions: export skips the images via a new `CatimaExporter` hook, and
+  import strips them out of the nested archive, so the checkbox is not quietly export-only.
+  Selecting `cards.images` without `cards` implies `cards`, since the images are entries inside
+  `cards.zip` keyed by the card ids in its CSV.
+
+### Fixes
+- **Imported preferences are now committed synchronously.** A restoring app force-stops this one the
+  moment an import reports success — it has to, or this process would write its cached preferences
+  back out and undo the import — but that force-stop is a `SIGKILL`, which discards an `apply()`
+  still in flight. The restore would have reported success over settings that never reached disk.
+- **A stale automation job id no longer crashes the app.** The data service's early-exit paths
+  returned without ever calling `startForeground`, which the platform punishes by killing the whole
+  process with `ForegroundServiceDidNotStartInTimeException`. A caller retrying with a job id this
+  app had already finished would have killed the wallet mid-backup instead of being ignored.
+- **A failed service start no longer leaks the caller's file.** If the foreground service cannot be
+  started — a background start may simply be refused — the duplicated descriptor is closed and the
+  job dropped before the refusal is returned, rather than being left open for the life of the
+  process.
+- **Restoring a large backup no longer holds it twice in memory.** The archive is spooled to the
+  cache directory (and deleted afterwards, so no plaintext copy of the wallet lingers) and the
+  nested `cards.zip` is streamed straight into Catima's importer instead of being materialised,
+  roughly halving peak heap on the path where the phone has enough cards to be worth restoring.
+
+### Wording
+- Category labels now say what they actually hold, in the panel, in the automation category list and
+  in the provider's header alike — “All cards (barcodes and card numbers — scannable)”, “Card images
+  (photos of the physical cards)”, “App settings (preferences, not card data)”. A backup app renders
+  those strings verbatim, so this is where you find out what a backup contains.
+- Automation progress broadcasts now carry the **category id** being written, which is what moves
+  the highlight in a caller's progress panel; previously it had to guess from the item count.
+
+`2.45.0+002` was the same feature set without the synchronous-preference-commit fix; it was built
+and delivered but never released.
+
+## 2.45.0+001
 
 Rebased onto Catima `v2.45.0` (versionCode 1002).
 
