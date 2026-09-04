@@ -7,9 +7,7 @@ import android.os.Build
 import android.os.Environment
 import android.util.Log
 import protect.card_locker.BuildConfig
-import protect.card_locker.R
 import java.io.OutputStream
-import java.util.Locale
 import java.util.concurrent.CopyOnWriteArrayList
 import java.util.concurrent.atomic.AtomicBoolean
 
@@ -17,13 +15,18 @@ import java.util.concurrent.atomic.AtomicBoolean
  * shiroikuma-nekokan fork — the 保存復元 state-export contract, for 白い熊 自由作業盤's one-run
  * backup of every sister app.
  *
- * Three exported, token-gated actions ([SkAutomation] is the gate — no `android:permission`, since
- * the caller cannot hold one):
+ * Three exported actions. [SkAutomation] is the gate — no `android:permission`, since the caller
+ * cannot hold one — and since contract v2 that gate is a switch which is **ON by default** with the
+ * token an **opt-in extra**: a `token` handed to us while 「Use authorization token?」 is off is
+ * ignored, never refused. This receiver is deliberately the unauthenticated half of the surface; it
+ * only ever writes where it was told to and reports what it did. Everything that moves data through
+ * a caller-supplied descriptor — and `import`, which exists nowhere else — lives behind
+ * [SkAutomationProvider], which knows exactly who is calling.
  *  - [ACTION_LIST_CATEGORIES] — instant; replies `OK:` plus one `id<TAB>label<TAB>parent<TAB>on|off`
- *    line per exportable category. The ids are exactly the ones `items` accepts and the entry names
- *    used in the ZIP. Our list is flat (no sub-options), so the `parent` field is always empty; the
- *    fourth field is this app stating whether the item starts ticked in the caller's picker, which
- *    is [SkEximport.Cat.defaultOn] — the same answer our own panel seeds itself from.
+ *    line per exportable category. The ids are exactly the ones `items` accepts. The third field
+ *    names the parent for a sub-option — `cards.images` hangs under `cards` — and the fourth is
+ *    this app stating whether the item starts ticked in the caller's picker, which is
+ *    [SkEximport.Cat.defaultOn], the same answer our own panel seeds itself from.
  *  - [ACTION_EXPORT_STATE] — runs the very same category ZIP as the Export/Import panel
  *    ([SkEximport.export]), headlessly: no Activity, no interaction, ONE zip. Extras: `token`,
  *    optional `path` (an absolute directory that OVERRIDES the configured export directory),
@@ -107,7 +110,7 @@ class SkStateExportReceiver : BroadcastReceiver() {
         when (request) {
             is Request.Done -> finishWith(request.result)
             is Request.Export -> {
-                val progress = throttledProgress(app, progressAction, replyPackage, replyId)
+                val progress = SkAutomationProgress(app, progressAction, replyPackage, replyId)
                 // Published before the thread starts, so a cancel racing the very first entry still
                 // finds this run; dropped only once the terminal reply is out.
                 val run = RunningExport(replyId)
@@ -131,7 +134,7 @@ class SkStateExportReceiver : BroadcastReceiver() {
     private fun cancelExport(context: Context, intent: Intent) {
         val token = intent.getStringExtra(EXTRA_TOKEN)
         val replyId = intent.getStringExtra(EXTRA_REPLY_ID)?.trim().orEmpty()
-        if (!SkAutomation.enabled(context) || !SkAutomation.isTokenValid(context, token)) {
+        if (SkAutomation.refuse(context, token) != null) {
             Log.i(TAG, "cancel ignored: gate closed")
             return
         }
@@ -151,16 +154,19 @@ class SkStateExportReceiver : BroadcastReceiver() {
         val token = intent.getStringExtra(EXTRA_TOKEN)
         val itemsRaw = intent.getStringExtra(EXTRA_ITEMS)?.trim().orEmpty()
         val path = intent.getStringExtra(EXTRA_PATH)?.trim().orEmpty()
-        val cats = parseItems(itemsRaw)
+        val cats = SkEximport.resolveItems(itemsRaw)
         Log.i(
             TAG,
             "received $action: enabled=${SkAutomation.enabled(context)}, " +
+                "requireToken=${SkAutomation.requireToken(context)}, " +
                 "tokenLen=${token?.length ?: 0}, items=$itemsRaw, path=$path"
         )
 
+        // One gate for both doors and all three actions — see SkAutomation.refuse for why the two
+        // checks must not be written out separately at each entry point.
+        SkAutomation.refuse(context, token)?.let { return Request.Done(it) }
+
         return when {
-            !SkAutomation.enabled(context) -> Request.Done("ERROR:automation disabled")
-            !SkAutomation.isTokenValid(context, token) -> Request.Done("ERROR:bad token")
             action == ACTION_LIST_CATEGORIES -> Request.Done(categoryList(context))
             cats == null -> Request.Done("ERROR:unknown category in items: $itemsRaw")
             path.isNotEmpty() && !path.startsWith("/") ->
@@ -172,28 +178,23 @@ class SkStateExportReceiver : BroadcastReceiver() {
 
     /**
      * `OK:` plus one `id<TAB>label<TAB>parent<TAB>on|off` line per category — the ids `items`
-     * accepts. The third field is empty throughout: our list is flat, and a top-level item still
-     * needs the placeholder for the fourth field to land in the right column.
+     * accepts. The third field names the parent of a sub-option and is empty for a top-level item,
+     * which still needs the placeholder for the fourth field to land in the right column.
+     * [SkEximport.Cat] declares parents before their children, which is the order the caller's
+     * picker needs to draw them indented.
      */
     private fun categoryList(context: Context): String =
         SkEximport.Cat.entries.joinToString(separator = "\n", prefix = "OK:") {
-            "${it.id}\t${context.getString(it.labelRes)}\t\t${if (it.defaultOn) "on" else "off"}"
+            "${it.id}\t${context.getString(it.labelRes)}\t${it.parentId.orEmpty()}\t" +
+                if (it.defaultOn) "on" else "off"
         }
-
-    /** The requested categories, or null when [itemsRaw] names an id we do not export. */
-    private fun parseItems(itemsRaw: String): Set<SkEximport.Cat>? {
-        val ids = itemsRaw.split(',').map { it.trim() }.filter { it.isNotEmpty() }
-        if (ids.isEmpty()) return SkEximport.Cat.entries.toSet()
-        val cats = ids.mapNotNull { SkEximport.Cat.byId(it) }.toSet()
-        return cats.takeIf { it.size == ids.distinct().size }
-    }
 
     /** Runs on a background thread; returns the single result line and never throws. */
     private fun runExport(
         context: Context,
         cats: Set<SkEximport.Cat>,
         path: String,
-        progress: ThrottledProgress,
+        progress: SkAutomationProgress,
         run: RunningExport,
     ): String {
         val target = try {
@@ -212,7 +213,8 @@ class SkStateExportReceiver : BroadcastReceiver() {
             val bytes = target.size().takeIf { it > 0 } ?: counting.count
             progress.final()
             // A cancel landing here arrived after the ZIP was complete — the no-op case; reply OK.
-            "OK:${target.displayPath}|$bytes|${humanSize(bytes)}|${cats.size} categories"
+            "OK:${target.displayPath}|$bytes|${SkEximport.humanSize(bytes)}|" +
+                "${SkEximport.topLevelCount(cats)} categories"
         } catch (e: Exception) {
             // A half-written ZIP is garbage — never leave it as "the last export", and a cancelled
             // run must leave the directory exactly as it found it.
@@ -240,66 +242,6 @@ class SkStateExportReceiver : BroadcastReceiver() {
     private fun reason(e: Throwable): String =
         (e.message?.takeIf { it.isNotBlank() } ?: e.javaClass.simpleName).replace('\n', ' ')
 
-    /** Display size for the reply line — the caller cannot stat the file, so we compute both forms. */
-    private fun humanSize(bytes: Long): String = when {
-        bytes < KILO -> "$bytes B"
-        bytes < KILO * KILO -> "%.1f KB".format(Locale.ROOT, bytes / KILO)
-        bytes < KILO * KILO * KILO -> "%.1f MB".format(Locale.ROOT, bytes / (KILO * KILO))
-        else -> "%.2f GB".format(Locale.ROOT, bytes / (KILO * KILO * KILO))
-    }
-
-    private fun throttledProgress(
-        context: Context,
-        progressAction: String,
-        replyPackage: String,
-        replyId: String,
-    ): ThrottledProgress {
-        val appLabel = context.getString(R.string.sk_app_name)
-        val unit = context.getString(R.string.sk_state_progress_unit)
-
-        fun send(current: Long, total: Long, text: String) {
-            try {
-                context.sendBroadcast(
-                    Intent(progressAction)
-                        .setPackage(replyPackage.ifEmpty { null })
-                        .putExtra(EXTRA_REPLY_ID, replyId)
-                        .putExtra(EXTRA_PROGRESS_APP, appLabel)
-                        .putExtra(EXTRA_PROGRESS_TEXT, text)
-                        .putExtra(EXTRA_PROGRESS_CURRENT, current)
-                        .putExtra(EXTRA_PROGRESS_TOTAL, total)
-                        .putExtra(EXTRA_PROGRESS_UNIT, unit)
-                        .addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
-                )
-            } catch (e: Exception) {
-                Log.w(TAG, "progress broadcast failed: $e")
-            }
-        }
-
-        var lastSent = 0L
-        var lastTotal = 0L
-        return ThrottledProgress(
-            listener = { done, total, stage ->
-                lastTotal = total.toLong()
-                val now = System.currentTimeMillis()
-                if (progressAction.isNotEmpty() && now - lastSent >= PROGRESS_THROTTLE_MS) {
-                    lastSent = now
-                    send(done.toLong(), total.toLong(), "$unit $done/$total — $stage")
-                }
-            },
-            final = {
-                if (progressAction.isNotEmpty()) {
-                    send(lastTotal, lastTotal, "$unit $lastTotal/$lastTotal")
-                }
-            },
-        )
-    }
-
-    /** The throttled progress channel plus the unthrottled completion broadcast. */
-    private class ThrottledProgress(
-        val listener: SkEximport.ProgressListener,
-        val final: () -> Unit,
-    )
-
     private class CountingOutputStream(private val out: OutputStream) : OutputStream() {
         var count = 0L
             private set
@@ -321,8 +263,6 @@ class SkStateExportReceiver : BroadcastReceiver() {
 
     companion object {
         private const val TAG = "NekokanStateExport"
-        private const val KILO = 1024.0
-        private const val PROGRESS_THROTTLE_MS = 500L
 
         // Must stay in step with the manifest's ${applicationId}.action.* intent filter.
         const val ACTION_EXPORT_STATE = BuildConfig.APPLICATION_ID + ".action.EXPORT_STATE"
@@ -345,10 +285,5 @@ class SkStateExportReceiver : BroadcastReceiver() {
         private const val EXTRA_REPLY_PACKAGE = "reply_package"
         private const val EXTRA_REPLY_ID = "reply_id"
         private const val EXTRA_RESULT = "result"
-        private const val EXTRA_PROGRESS_APP = "app"
-        private const val EXTRA_PROGRESS_TEXT = "text"
-        private const val EXTRA_PROGRESS_CURRENT = "current"
-        private const val EXTRA_PROGRESS_TOTAL = "total"
-        private const val EXTRA_PROGRESS_UNIT = "unit"
     }
 }

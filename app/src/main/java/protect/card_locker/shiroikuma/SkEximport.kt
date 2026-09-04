@@ -21,6 +21,7 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
+import java.io.InputStream
 import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -59,24 +60,87 @@ object SkEximport {
     private const val LEGACY_EXPORT_MARKER = "-export_"
 
     private const val CARDS_ENTRY = "cards.zip"
+
+    /** The one entry inside [CARDS_ENTRY] that is not a card photograph. */
+    private const val CARDS_CSV_ENTRY = "catima.csv"
     private const val FONTS_DIR_ENTRY = "fonts/"
+    private const val KILO = 1024.0
 
     /**
      * [defaultOn] is the answer this app states for a backup-item picker — its own panel and the
-     * automation contract's fourth `LIST_CATEGORIES` field alike. Everything here is small, live
-     * state that cannot be re-created, so every category starts ticked; the flag exists so a future
-     * category that is large, derived *and* regenerable can say so.
+     * automation contract's fourth `LIST_CATEGORIES` field alike.
+     *
+     * **Everything here is `on`, [CARD_IMAGES] included, and that is a decision rather than an
+     * oversight.** The contract's rule for marking something `off` is *large, derived and
+     * re-creatable* — cover caches, generated thumbnails, anything rebuilt from data already in the
+     * backup. Card images are none of that: they are photographs 白い熊 took of physical cards, and
+     * nothing can make them again. They get their own selectable line because they are the bulk of
+     * the archive's bytes and a barcodes-only backup is a reasonable thing to want, not because
+     * losing them silently would ever be acceptable.
+     *
+     * [parentId] is the third `LIST_CATEGORIES` field: a sub-option names the id of the category it
+     * belongs to, and the caller draws it indented under that row.
+     *
+     * [containsRes] is what [SkAutomationProvider]'s header shows a caller *before* any export
+     * exists, so it says plainly what this app's backup is — scannable card credentials, not a
+     * settings dump.
      */
-    enum class Cat(val id: String, val labelRes: Int, val defaultOn: Boolean = true) {
-        CARDS("cards", R.string.sk_eim_cat_cards),
-        APPEARANCE("appearance", R.string.sk_eim_cat_appearance),
-        APP_SETTINGS("app_settings", R.string.sk_eim_cat_settings),
+    enum class Cat(
+        val id: String,
+        val labelRes: Int,
+        val containsRes: Int,
+        val parentId: String? = null,
+        val defaultOn: Boolean = true,
+    ) {
+        CARDS("cards", R.string.sk_eim_cat_cards, R.string.sk_eim_contains_cards),
+
+        /**
+         * The card photographs, which live as entries *inside* [CARDS_ENTRY] rather than as an
+         * archive entry of their own — hence a sub-option and not a top-level category.
+         */
+        CARD_IMAGES(
+            "cards.images",
+            R.string.sk_eim_cat_card_images,
+            R.string.sk_eim_contains_card_images,
+            parentId = "cards",
+        ),
+        APPEARANCE("appearance", R.string.sk_eim_cat_appearance, R.string.sk_eim_contains_appearance),
+        APP_SETTINGS("app_settings", R.string.sk_eim_cat_settings, R.string.sk_eim_contains_settings),
         ;
 
         companion object {
             /** The ids accepted in the automation contract's `items` extra. */
             fun byId(id: String): Cat? = entries.firstOrNull { it.id == id }
         }
+    }
+
+    /**
+     * The categories an automation `items` extra names, or null when it names an id we do not
+     * export. Absent or empty = our DEFAULT set — the ones we report as `on` from
+     * `LIST_CATEGORIES`, which the contract is explicit is not the same thing as "everything".
+     *
+     * [Cat.CARD_IMAGES] pulls [Cat.CARDS] in with it: the images are entries inside `cards.zip`,
+     * keyed by the card ids in its CSV, so "the images without the cards they belong to" is not
+     * something this format can express. Implying the parent beats refusing a request that is
+     * obviously meant.
+     */
+    fun resolveItems(items: String?): Set<Cat>? {
+        val ids = items.orEmpty().split(',').map { it.trim() }.filter { it.isNotEmpty() }
+        if (ids.isEmpty()) return Cat.entries.filter { it.defaultOn }.toSet()
+        val cats = ids.mapNotNull { Cat.byId(it) }.toSet()
+        if (cats.size != ids.distinct().size) return null
+        return if (Cat.CARD_IMAGES in cats) cats + Cat.CARDS else cats
+    }
+
+    /** How many real archive entries a selection amounts to — sub-options are not categories. */
+    fun topLevelCount(cats: Set<Cat>): Int = cats.count { it.parentId == null }
+
+    /** Display size for an automation reply — the caller cannot always stat what it handed us. */
+    fun humanSize(bytes: Long): String = when {
+        bytes < KILO -> "$bytes B"
+        bytes < KILO * KILO -> "%.1f KB".format(Locale.ROOT, bytes / KILO)
+        bytes < KILO * KILO * KILO -> "%.1f MB".format(Locale.ROOT, bytes / (KILO * KILO))
+        else -> "%.2f GB".format(Locale.ROOT, bytes / (KILO * KILO * KILO))
     }
 
     // ------------------------------------------------------------- directory
@@ -196,9 +260,16 @@ object SkEximport {
 
     // ------------------------------------------------------------- export
 
-    /** Live progress: [done] of [total] items, currently working on [stage]. */
+    /**
+     * Live progress: [done] of [total] items, currently writing the category [catId] (whose human
+     * label is [stage]).
+     *
+     * [catId] exists for the automation contract's `item` extra, which is what moves the highlight
+     * in 自由作業盤's panel — see [SkAutomationProgress]. The panel cannot infer it from [done],
+     * because [done] counts cards and preference keys rather than categories.
+     */
     fun interface ProgressListener {
-        fun onProgress(done: Int, total: Int, stage: String)
+        fun onProgress(done: Int, total: Int, stage: String, catId: String)
     }
 
     /**
@@ -223,7 +294,7 @@ object SkEximport {
         context: Context,
         cats: Set<Cat>,
         out: OutputStream,
-        listener: ProgressListener = ProgressListener { _, _, _ -> },
+        listener: ProgressListener = ProgressListener { _, _, _, _ -> },
         cancel: CancelSignal = NEVER_CANCELLED,
     ): String {
         // Total item count up front, so the dialog can show a real n/total.
@@ -248,28 +319,37 @@ object SkEximport {
                 .put("categories", JSONArray(cats.map { it.id }))
             writeEntry(zip, "manifest.json", manifest.toString(2).toByteArray())
 
-            for (cat in Cat.entries.filter { it in cats }) {
+            // Sub-options are written as part of their parent, never as an archive entry of their
+            // own, so the walk is over top-level categories only.
+            for (cat in Cat.entries.filter { it in cats && it.parentId == null }) {
                 checkCancelled(cancel)
                 val label = context.getString(cat.labelRes)
-                listener.onProgress(done, total, label)
+                listener.onProgress(done, total, label, cat.id)
                 when (cat) {
                     Cat.CARDS -> {
-                        val bytes = exportCards(context) { exported ->
+                        // The photographs ride inside cards.zip. Dropping them still leaves a valid
+                        // Catima archive — a card that had one simply comes back without it.
+                        val withImages = Cat.CARD_IMAGES in cats
+                        val itemId = if (withImages) Cat.CARD_IMAGES.id else cat.id
+                        val bytes = exportCards(context, withImages) { exported ->
                             checkCancelled(cancel)
-                            listener.onProgress(done + exported, total, label)
+                            listener.onProgress(done + exported, total, label, itemId)
                         }
                         writeEntry(zip, CARDS_ENTRY, bytes)
                         done += cardTotal
-                        parts += "$label: " + context.getString(R.string.sk_eim_cards_count, cardTotal)
+                        parts += "$label: " +
+                            context.getString(R.string.sk_eim_cards_count, cardTotal) +
+                            if (withImages) "" else
+                                " (" + context.getString(R.string.sk_eim_cards_no_images) + ")"
                     }
                     Cat.APPEARANCE -> {
                         val json = exportPrefs(defaultPrefs(context)) { it.startsWith("sk_") }
                         writeEntry(zip, "${cat.id}.json", json.first.toByteArray())
                         done += appearanceKeys
-                        listener.onProgress(done, total, label)
+                        listener.onProgress(done, total, label, cat.id)
                         val fonts = exportFonts(context, zip) {
                             checkCancelled(cancel)
-                            listener.onProgress(done + it, total, label)
+                            listener.onProgress(done + it, total, label, cat.id)
                         }
                         done += fontTotal
                         parts += "$label: " +
@@ -282,8 +362,10 @@ object SkEximport {
                         done += settingsKeys
                         parts += "$label: " + context.getString(R.string.sk_eim_prefs_count, json.second)
                     }
+                    // Written above, inside CARDS — it has no entry of its own to walk to.
+                    Cat.CARD_IMAGES -> Unit
                 }
-                listener.onProgress(done, total, label)
+                listener.onProgress(done, total, label, cat.id)
             }
         }
         return parts.joinToString("\n")
@@ -298,13 +380,19 @@ object SkEximport {
         }
     }
 
-    private fun exportCards(context: Context, onCard: (Int) -> Unit): ByteArray {
+    private fun exportCards(
+        context: Context,
+        withImages: Boolean,
+        onCard: (Int) -> Unit,
+    ): ByteArray {
         val buffer = ByteArrayOutputStream()
         val database = DBHelper(context).writableDatabase
         try {
-            // CatimaExporter directly (not MultiFormatExporter) for the per-card callback.
+            // CatimaExporter directly (not MultiFormatExporter) for the per-card callback and the
+            // image switch — both fork hooks on an otherwise untouched upstream class.
             val exporter = CatimaExporter()
             exporter.setCardProgressListener { exported -> onCard(exported) }
+            exporter.setIncludeImages(withImages)
             exporter.exportData(context, database, buffer, CharArray(0))
             return buffer.toByteArray()
         } finally {
@@ -330,16 +418,120 @@ object SkEximport {
 
     // ------------------------------------------------------------- import
 
+    /**
+     * Where an archive's bytes come from, **re-openably**.
+     *
+     * The import walks the outer ZIP twice — once for the small entries, once to stream
+     * [CARDS_ENTRY] straight into Catima's importer — rather than holding the whole thing in a
+     * `ByteArray`. In this app the archive's bulk is card photographs, so materialising it costs
+     * roughly twice the backup's size in heap at the exact moment 白い熊 has enough cards to be
+     * restoring them, and an OutOfMemory halfway through a restore is the half-restored wallet this
+     * whole design exists to avoid.
+     */
+    fun interface ZipSource {
+        fun open(): InputStream
+    }
+
+    private fun bytesSource(zipBytes: ByteArray) = ZipSource { ByteArrayInputStream(zipBytes) }
+
+    /** The small entries of an archive, plus whether the big one is there. */
+    private class Archive(val entries: Map<String, ByteArray>, val hasCards: Boolean)
+
     /** The known category ids present in [zipBytes]; empty = not one of our exports. */
-    fun categoriesIn(zipBytes: ByteArray): Set<Cat> {
-        val files = runCatching { readZip(zipBytes) }.getOrNull() ?: return emptySet()
-        val manifest = files["manifest.json"]
+    fun categoriesIn(zipBytes: ByteArray): Set<Cat> = categoriesIn(bytesSource(zipBytes))
+
+    fun categoriesIn(source: ZipSource): Set<Cat> {
+        val archive = runCatching { readSmallEntries(source) }.getOrNull() ?: return emptySet()
+        val manifest = archive.entries["manifest.json"]
             ?.let { runCatching { JSONObject(it.decodeToString()) }.getOrNull() }
             ?: return emptySet()
         if (manifest.optString("format") != FORMAT) return emptySet()
+        val images = archive.hasCards && runCatching { hasCardImages(source) }.getOrDefault(false)
         return Cat.entries.filter {
-            files.containsKey(if (it == Cat.CARDS) CARDS_ENTRY else "${it.id}.json")
+            when (it) {
+                Cat.CARDS -> archive.hasCards
+                // Read from what the nested archive actually holds rather than from the manifest,
+                // so a pre-sub-option export — which never listed `cards.images` but does carry
+                // photographs — is still reported honestly.
+                Cat.CARD_IMAGES -> images
+                else -> archive.entries.containsKey("${it.id}.json")
+            }
         }.toSet()
+    }
+
+    /**
+     * Every entry but [CARDS_ENTRY], read into memory.
+     *
+     * Those are the manifest, the per-category JSON and the font files — kilobytes apiece. The one
+     * entry deliberately left on disk is the one that is measured in tens of megabytes.
+     */
+    private fun readSmallEntries(source: ZipSource): Archive {
+        val files = LinkedHashMap<String, ByteArray>()
+        var hasCards = false
+        ZipInputStream(source.open()).use { zip ->
+            var entry = zip.nextEntry
+            while (entry != null) {
+                if (!entry.isDirectory) {
+                    if (entry.name == CARDS_ENTRY) hasCards = true else files[entry.name] = zip.readBytes()
+                }
+                entry = zip.nextEntry
+            }
+        }
+        return Archive(files, hasCards)
+    }
+
+    /**
+     * Run [block] against the [CARDS_ENTRY] stream, or return null when the archive has none.
+     *
+     * The stream handed to [block] is the live outer ZIP positioned at that entry — nothing is
+     * copied. `MultiFormatImporter` documents that it does not close what it is given (it spools to
+     * its own temp file), which is what makes handing it this stream safe.
+     */
+    private fun <T> withCardsEntry(source: ZipSource, block: (InputStream) -> T): T? {
+        ZipInputStream(source.open()).use { zip ->
+            var entry = zip.nextEntry
+            while (entry != null) {
+                if (!entry.isDirectory && entry.name == CARDS_ENTRY) return block(zip)
+                entry = zip.nextEntry
+            }
+        }
+        return null
+    }
+
+    /** True when the nested `cards.zip` holds anything besides its CSV — i.e. photographs. */
+    private fun hasCardImages(source: ZipSource): Boolean = withCardsEntry(source) { cards ->
+        val nested = ZipInputStream(cards)
+        var entry = nested.nextEntry
+        while (entry != null) {
+            if (!entry.isDirectory && entry.name != CARDS_CSV_ENTRY) return@withCardsEntry true
+            entry = nested.nextEntry
+        }
+        false
+    } ?: false
+
+    /**
+     * The nested `cards.zip` rebuilt with the CSV alone and every photograph dropped.
+     *
+     * Unticking the images sub-option has to mean something on the way back in too, or the checkbox
+     * would quietly be export-only. The CSV still names every card, so the wallet is restored whole
+     * — a card that had an image simply comes back without it. Written with `java.util.zip` rather
+     * than zip4j: our archives are never password-protected, and zip4j reads a plain ZIP back.
+     */
+    private fun stripCardImages(cards: InputStream): ByteArray {
+        val nested = ZipInputStream(cards)
+        var csv: ByteArray? = null
+        var entry = nested.nextEntry
+        while (entry != null) {
+            if (!entry.isDirectory && entry.name == CARDS_CSV_ENTRY) {
+                csv = nested.readBytes()
+                break
+            }
+            entry = nested.nextEntry
+        }
+        val rows = csv ?: throw IOException("$CARDS_ENTRY carries no $CARDS_CSV_ENTRY")
+        val buffer = ByteArrayOutputStream()
+        ZipOutputStream(buffer).use { writeEntry(it, CARDS_CSV_ENTRY, rows) }
+        return buffer.toByteArray()
     }
 
     /**
@@ -350,13 +542,21 @@ object SkEximport {
         context: Context,
         zipBytes: ByteArray,
         cats: Set<Cat>,
-        listener: ProgressListener = ProgressListener { _, _, _ -> },
+        listener: ProgressListener = ProgressListener { _, _, _, _ -> },
+    ): String = import(context, bytesSource(zipBytes), cats, listener)
+
+    fun import(
+        context: Context,
+        source: ZipSource,
+        cats: Set<Cat>,
+        listener: ProgressListener = ProgressListener { _, _, _, _ -> },
     ): String {
-        val files = readZip(zipBytes)
+        val archive = readSmallEntries(source)
+        val files = archive.entries
 
         // Totals from the ZIP content: cards count one lump (Catima's importer is one call),
         // preference keys and font files count individually.
-        val hasCards = Cat.CARDS in cats && files.containsKey(CARDS_ENTRY)
+        val hasCards = Cat.CARDS in cats && archive.hasCards
         val appearanceKeys = if (Cat.APPEARANCE in cats) {
             files["${Cat.APPEARANCE.id}.json"]?.let { countJsonKeys(it) { k -> k.startsWith("sk_") } } ?: 0
         } else 0
@@ -368,14 +568,18 @@ object SkEximport {
         var done = 0
 
         val parts = mutableListOf<String>()
-        for (cat in Cat.entries.filter { it in cats }) {
+        for (cat in Cat.entries.filter { it in cats && it.parentId == null }) {
             checkCancelled()
             val label = context.getString(cat.labelRes)
-            listener.onProgress(done, total, label)
+            listener.onProgress(done, total, label, cat.id)
             try {
                 when (cat) {
-                    Cat.CARDS -> files[CARDS_ENTRY]?.let { bytes ->
-                        importCards(context, bytes)
+                    Cat.CARDS -> if (hasCards) {
+                        val withImages = Cat.CARD_IMAGES in cats
+                        withCardsEntry(source) { cards ->
+                            if (withImages) importCards(context, cards)
+                            else importCards(context, ByteArrayInputStream(stripCardImages(cards)))
+                        }
                         done += 1
                         val database = DBHelper(context).readableDatabase
                         val count = try {
@@ -383,17 +587,20 @@ object SkEximport {
                         } finally {
                             database.close()
                         }
-                        parts += "$label: " + context.getString(R.string.sk_eim_cards_count, count)
+                        parts += "$label: " +
+                            context.getString(R.string.sk_eim_cards_count, count) +
+                            if (withImages) "" else
+                                " (" + context.getString(R.string.sk_eim_cards_no_images) + ")"
                     }
                     Cat.APPEARANCE -> files["${cat.id}.json"]?.let { bytes ->
                         val applied = importPrefs(defaultPrefs(context), bytes.decodeToString()) {
                             it.startsWith("sk_")
                         }
                         done += appearanceKeys
-                        listener.onProgress(done, total, label)
+                        listener.onProgress(done, total, label, cat.id)
                         val fonts = importFonts(context, files) {
                             checkCancelled()
-                            listener.onProgress(done + it, total, label)
+                            listener.onProgress(done + it, total, label, cat.id)
                         }
                         done += fontTotal
                         SkFonts.invalidateCache()
@@ -408,13 +615,15 @@ object SkEximport {
                         done += settingsKeys
                         parts += "$label: " + context.getString(R.string.sk_eim_prefs_count, applied)
                     }
+                    // Applied above, inside CARDS — it has no entry of its own to walk to.
+                    Cat.CARD_IMAGES -> Unit
                 }
             } catch (e: InterruptedException) {
                 throw e // cancellation must abort the whole import, not just this category
             } catch (e: Exception) {
                 android.util.Log.e("Catima", "sk import ${cat.id} failed", e)
             }
-            listener.onProgress(done, total, label)
+            listener.onProgress(done, total, label, cat.id)
         }
         if (parts.isEmpty()) {
             throw IOException("no category could be applied")
@@ -422,17 +631,18 @@ object SkEximport {
         return parts.joinToString("\n")
     }
 
+
     private fun countJsonKeys(bytes: ByteArray, filter: (String) -> Boolean): Int =
         runCatching {
             val root = JSONObject(bytes.decodeToString())
             root.keys().asSequence().count(filter)
         }.getOrDefault(0)
 
-    private fun importCards(context: Context, bytes: ByteArray) {
+    private fun importCards(context: Context, input: InputStream) {
         val database = DBHelper(context).writableDatabase
         try {
             val result = MultiFormatImporter.importData(
-                context, database, ByteArrayInputStream(bytes), DataFormat.Catima, null,
+                context, database, input, DataFormat.Catima, null,
             )
             if (result.resultType() != ImportExportResultType.Success) {
                 throw IOException(result.developerDetails() ?: result.resultType().toString())
@@ -453,20 +663,6 @@ object SkEximport {
             onFont(count)
         }
         return count
-    }
-
-    private fun readZip(zipBytes: ByteArray): Map<String, ByteArray> {
-        val files = LinkedHashMap<String, ByteArray>()
-        ZipInputStream(ByteArrayInputStream(zipBytes)).use { zip ->
-            var entry = zip.nextEntry
-            while (entry != null) {
-                if (!entry.isDirectory) {
-                    files[entry.name] = zip.readBytes()
-                }
-                entry = zip.nextEntry
-            }
-        }
-        return files
     }
 
     // ------------------------------------------------------------- prefs (type-tagged JSON)
@@ -499,7 +695,17 @@ object SkEximport {
         return root.toString(2) to count
     }
 
-    /** Merge matching typed keys into [sp] (no clear); returns the number applied. */
+    /**
+     * Merge matching typed keys into [sp] (no clear); returns the number applied.
+     *
+     * **`commit()`, deliberately, not `apply()`.** 応用管理 force-stops this app the instant we
+     * reply `OK` to an automation import — it has to, because a process shutting down orderly
+     * writes its cached preferences back out and silently undoes the import. But that force-stop is
+     * a `SIGKILL`, and `apply()` only promises to land before an *orderly* shutdown: an in-flight
+     * write is simply lost, and the restore reports success over data that never reached disk.
+     * `commit()` is synchronous, so by the time we answer, it is on disk. We are already on a
+     * background thread in every caller, so the block costs nothing worth having.
+     */
     private fun importPrefs(sp: SharedPreferences, json: String, filter: (String) -> Boolean): Int {
         val root = JSONObject(json)
         val editor = sp.edit()
@@ -521,7 +727,7 @@ object SkEximport {
             }
             count++
         }
-        editor.apply()
+        editor.commit()
         return count
     }
 }

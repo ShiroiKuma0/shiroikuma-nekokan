@@ -43,6 +43,15 @@ public class CatimaExporter implements Exporter {
         cardProgressListener = listener;
     }
 
+    // shiroikuma fork: the `cards.images` backup sub-option. Card photographs are the bulk of an
+    // archive's bytes, so a barcodes-only backup is a reasonable thing to ask for; the CSV still
+    // names every card, and a card that had an image simply comes back without one.
+    private boolean includeImages = true;
+
+    public void setIncludeImages(boolean include) {
+        includeImages = include;
+    }
+
     public void exportData(Context context, SQLiteDatabase database, OutputStream output, char[] password) throws IOException, InterruptedException {
         // Necessary vars
         int readLen;
@@ -79,7 +88,7 @@ public class CatimaExporter implements Exporter {
             LoyaltyCard card = LoyaltyCard.fromCursor(context, cardCursor);
 
             // For each image
-            for (ImageLocationType imageLocationType : ImageLocationType.values()) {
+            for (ImageLocationType imageLocationType : includeImages ? ImageLocationType.values() : new ImageLocationType[0]) {
                 // If it exists, add to the .zip file
                 Bitmap image = card.getImageForImageLocationType(context, imageLocationType);
                 if (image != null) {
