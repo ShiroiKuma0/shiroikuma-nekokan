@@ -147,7 +147,13 @@ class SkEximportPanel(
         holder.addView(selectAll)
         for (cat in SkEximport.Cat.entries) {
             val box = checkBox(activity.getString(cat.labelRes))
-            box.setOnCheckedChangeListener { _, _ ->
+            // A sub-option sits indented under the category it belongs to — the same shape
+            // 保存復元's picker draws from the LIST_CATEGORIES parent field.
+            if (cat.parentId != null) {
+                box.setPadding(dp(28), dp(2), 0, dp(2))
+            }
+            box.setOnCheckedChangeListener { _, checked ->
+                followParent(cat, checked)
                 selectAll.setOnCheckedChangeListener(null)
                 selectAll.isChecked = catBoxes.values.all { it.isChecked }
                 bindSelectAll(selectAll)
@@ -179,6 +185,27 @@ class SkEximportPanel(
         holder.addView(bar)
 
         return ScrollView(activity).apply { addView(holder) }
+    }
+
+    /**
+     * Keep a sub-option and its parent consistent: dropping a category drops its parts, and asking
+     * for a part asks for the category it lives in. The second half is not a convenience — the card
+     * photographs are entries *inside* `cards.zip`, so "images without the cards" is not something
+     * the archive format can express, and [SkEximport.resolveItems] resolves an automation request
+     * the same way.
+     */
+    private fun followParent(changed: SkEximport.Cat, checked: Boolean) {
+        if (changed.parentId == null) {
+            if (!checked) {
+                catBoxes.filterKeys { it.parentId == changed.id }.values
+                    .filter { it.isChecked }
+                    .forEach { it.isChecked = false }
+            }
+            return
+        }
+        if (!checked) return
+        val parent = SkEximport.Cat.byId(changed.parentId) ?: return
+        catBoxes[parent]?.takeIf { !it.isChecked }?.isChecked = true
     }
 
     private fun bindSelectAll(selectAll: CheckBox) {
@@ -294,7 +321,8 @@ class SkEximportPanel(
             }
     }
 
-    private fun onWorkProgress(done: Int, total: Int, stage: String) {
+    /** [catId] is for the automation contract's `item` extra; the panel shows the label instead. */
+    private fun onWorkProgress(done: Int, total: Int, stage: String, catId: String) {
         activity.runOnUiThread {
             progressCount?.text = activity.getString(R.string.sk_eim_progress, done, total)
             progressStage?.text = stage
