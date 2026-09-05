@@ -8,12 +8,6 @@ import android.content.IntentFilter;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
-import org.acra.ACRA;
-import org.acra.config.CoreConfigurationBuilder;
-import org.acra.config.DialogConfigurationBuilder;
-import org.acra.config.MailSenderConfigurationBuilder;
-import org.acra.data.StringFormat;
-
 import protect.card_locker.preferences.Settings;
 import protect.card_locker.wearos.BluetoothStateReceiver;
 import protect.card_locker.wearos.WearSyncServiceManager;
@@ -24,25 +18,8 @@ public class LoyaltyCardLockerApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Initialize crash reporter (if enabled)
-        if (BuildConfig.useAcraCrashReporter) {
-            ACRA.init(this, new CoreConfigurationBuilder()
-                    //core configuration:
-                    .withBuildConfigClass(BuildConfig.class)
-                    .withReportFormat(StringFormat.KEY_VALUE_LIST)
-                    .withPluginConfigurations(
-                            new DialogConfigurationBuilder()
-                                    .withText(String.format(getString(R.string.acra_catima_has_crashed), getString(R.string.app_name)))
-                                    .withCommentPrompt(getString(R.string.acra_explain_crash))
-                                    .withResTheme(R.style.AppTheme)
-                                    .build(),
-                            new MailSenderConfigurationBuilder()
-                                    .withMailTo("acra-crash@catima.app")
-                                    .withSubject(String.format(getString(R.string.acra_crash_email_subject), getString(R.string.app_name)))
-                                    .build()
-                    )
-            );
-        }
+        // shiroikuma-nekokan fork: upstream initialised the ACRA crash reporter here. The fork
+        // ships no crash reporter at all, so nothing is initialised.
 
         // Set theme
         Settings settings = new Settings(this);
