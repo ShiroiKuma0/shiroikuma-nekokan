@@ -3,9 +3,6 @@
 compose = "2026.06.01"
 kotlin = "2.4.10"
 
-# Third-party
-acra = "5.13.1"
-
 # Testing
 androidXTest = "1.7.0"
 
@@ -44,8 +41,6 @@ com-google-zxing-core = { group = "com.google.zxing", name = "core", version = "
 org-apache-commons-commons_csv = { group = "org.apache.commons", name = "commons-csv", version = "1.9.0" }
 com-jaredrummler-colorpicker = { group = "com.jaredrummler", name = "colorpicker", version = "1.1.0" }
 net-lingala-zip4j-zip4j = { group = "net.lingala.zip4j", name = "zip4j", version = "2.11.6" }
-ch-acra-acra-mail = { group = "ch.acra", name = "acra-mail", version.ref = "acra" }
-ch-acra-acra-dialog = { group = "ch.acra", name = "acra-dialog", version.ref = "acra" }
 
 # Wear OS
 androidx-wear-compose-foundation = { group = "androidx.wear.compose", name = "compose-foundation", version.ref = "wearCompose" }
@@ -69,5 +64,4 @@ org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.re
 org-jetbrains-kotlin-plugin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 [bundles]
-acra = ["ch-acra-acra-mail", "ch-acra-acra-dialog"]
 androidx-test = ["androidx-test-core", "androidx-test-runner"]

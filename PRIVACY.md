@@ -15,9 +15,7 @@ Catima offers a feature to share cards with other users. All the relevant data i
 
 ## Crash reporting privacy
 
-In the FOSS version of Catima (the version used on IzzyOnDroid, F-Droid and GitHub), the open source crash reporter ACRA is used for crash reporting. When a crash is detected, Catima will ask the user if they are willing to report the crash. If they choose to do so, the user's mail client is opened so they can review the data that would be sent. Crash reporting data is only sent when the user explicitly chooses to do so, it is **never** sent automatically. Crash reporting data is only used to solve crashes and no (potentially) sensitive information is ever shared. Users who do not want to be asked to report crashes can disable the "Ask to send crash reports" setting in Catima settings.
-
-For the Google Play version of Catima, crash reporting is [managed by Google](https://support.google.com/googleplay/android-developer/answer/9859174?hl=en). Users can opt in or out of crash reporting through the Google app under the "Usage and diagnostics" setting.
+白い熊 猫管 contains **no crash reporter and no analytics of any kind**. Upstream Catima ships the open source crash reporter ACRA in its FOSS builds (and relies on Google Play crash reporting in its Play builds); this fork removes the ACRA library altogether. No crash data is collected, no report is ever offered or sent, and no reporting code is present in the app at all — which is why a tracker scan of this APK finds nothing.
 
 # Changes
 This Privacy Policy may be updated from time to time for any reason. We will notify you of any changes to our Privacy Policy by posting the new Privacy Policy to https://catima.app/privacy-policy/. A snapshot of the Privacy Policy is available within the Catima app, though it may be outdated. When the Privacy Policy on the website and in the app differ, the website should be considered leading. You are advised to consult the Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.

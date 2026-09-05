@@ -51,7 +51,6 @@ android {
 
         buildConfigField("boolean", "showDonate", "true")
         buildConfigField("boolean", "showRateOnGooglePlay", "false")
-        buildConfigField("boolean", "useAcraCrashReporter", "true")
     }
 
     signingConfigs {
@@ -105,9 +104,6 @@ android {
             // Google doesn't allow donation links
             buildConfigField("boolean", "showDonate", "false")
             buildConfigField("boolean", "showRateOnGooglePlay", "true")
-
-            // Google Play already sends crashes to the Google Play Console
-            buildConfigField("boolean", "useAcraCrashReporter", "false")
         }
     }
 
@@ -189,8 +185,9 @@ dependencies {
     implementation(libs.com.jaredrummler.colorpicker)
     implementation(libs.net.lingala.zip4j.zip4j)
 
-    // Crash reporting
-    implementation(libs.bundles.acra)
+    // shiroikuma-nekokan fork: no crash reporter. Upstream's `implementation(libs.bundles.acra)`
+    // is removed here so the APK carries no ACRA classes — a tracker scanner finds nothing.
+    // Do not reinstate it on a rebase.
 
     // Testing
     testImplementation(libs.androidx.test.core)
