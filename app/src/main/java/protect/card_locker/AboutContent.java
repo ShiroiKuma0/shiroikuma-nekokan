@@ -84,7 +84,6 @@ public class AboutContent {
 
     public String getThirdPartyLibrariesHtml() {
         final List<ThirdPartyInfo> usedLibraries = new ArrayList<>();
-        usedLibraries.add(new ThirdPartyInfo("ACRA", "https://github.com/ACRA/acra", "Apache 2.0"));
         usedLibraries.add(new ThirdPartyInfo("Color Picker", "https://github.com/jaredrummler/ColorPicker", "Apache 2.0"));
         usedLibraries.add(new ThirdPartyInfo("Commons CSV", "https://commons.apache.org/proper/commons-csv/", "Apache 2.0"));
         usedLibraries.add(new ThirdPartyInfo("uCrop", "https://github.com/Yalantis/uCrop", "Apache 2.0"));

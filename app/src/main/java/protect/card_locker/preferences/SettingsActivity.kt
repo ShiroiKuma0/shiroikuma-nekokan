@@ -27,7 +27,6 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
-import protect.card_locker.BuildConfig
 import protect.card_locker.CatimaAppCompatActivity
 import protect.card_locker.MainActivity
 import protect.card_locker.R
@@ -153,7 +152,6 @@ class SettingsActivity : CatimaAppCompatActivity() {
             setupThemePreference()
             setupOledDarkPreference()
             setupLocalePreference()
-            setupCrashReporterPreference()
             setupWearSyncPreference()
             setupWearSyncDevicePreferences()
         }
@@ -243,12 +241,6 @@ class SettingsActivity : CatimaAppCompatActivity() {
                 AppCompatDelegate.setApplicationLocales(if (newLocale.isEmpty()) LocaleListCompat.getEmptyLocaleList() else LocaleListCompat.create(Utils.stringToLocale(newLocale)))
                 true
             }
-        }
-
-        private fun setupCrashReporterPreference() {
-            // Hide crash reporter settings on builds it's not enabled on
-            val crashReporterPreference = findPreference<Preference>("acra.enable")
-            crashReporterPreference!!.isVisible = BuildConfig.useAcraCrashReporter
         }
 
         private fun setupWearSyncPreference() {
