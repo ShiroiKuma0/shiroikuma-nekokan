@@ -4,7 +4,39 @@ Everything built on top of stock [Catima](https://github.com/CatimaLoyalty/Andro
 `CHANGELOG.md` (it was compiled into the app until Catima 2.45.0 dropped the embedded copy); fork
 notes live here.
 
-## 2.45.0+003 — current
+## 2.45.0+004 — current
+
+**The app now contains no tracker at all.** A tracker scan of `2.45.0+003` reported one hit — ACRA,
+upstream Catima's crash reporter — and this build removes the library rather than switching it off.
+Built on Catima `v2.45.0` (versionCode 1002).
+
+### ACRA removed, not disabled
+- Upstream's crash reporter was already benign in behaviour: it never sent anything automatically,
+  it opened a mail draft the user had to review and send by hand, and a settings switch turned even
+  the asking off. What it could not stop being was **present** — a scanner matches the library's
+  classes in the dex, so the only way to a clean report is for those classes not to be there.
+- The dependency (`acra-mail` + `acra-dialog`) and its version-catalog entries are gone, so nothing
+  ACRA-shaped is compiled into the APK. Verified on the built artefact: neither `classes.dex` nor
+  `classes2.dex` contains a single occurrence of the string `acra`.
+- The `ACRA.init(…)` block in `LoyaltyCardLockerApplication` is gone with it, as is the
+  `useAcraCrashReporter` `BuildConfig` field it was guarded by (upstream set it false only for the
+  Google Play flavor, which this fork never builds).
+- The 「Ask to send crash reports」 switch is removed from the settings screen along with the code
+  that used to hide it, and the **ACRA credit disappears from About → third-party libraries**,
+  which would otherwise still name a library the app no longer carries.
+- A comment now stands where the dependency was, so a future rebase onto a new Catima release does
+  not quietly reinstate it.
+- The five now-unused `acra_*` strings are deliberately **left** in the default locale and its 54
+  translations. They are inert text with no code behind them, and deleting them would collide with
+  every upstream Weblate sync — the tracker was the classes, not the words.
+
+### The privacy policy says so
+- The 「Crash reporting privacy」 section of `PRIVACY.md` — which the app shows verbatim under
+  About → Privacy policy — described ACRA and Google Play crash reporting. It now states that
+  白い熊 猫管 contains no crash reporter and no analytics of any kind, which is the reason a tracker
+  scan of this APK finds nothing.
+
+## 2.45.0+003
 
 Sister-app automation moves to **contract v2**: the token stops being the gate and becomes an
 opt-in extra, and a second, authenticated door is added so another app can back this one up **with

@@ -6,11 +6,11 @@
 
 **Loyalty cards, membership cards, coupons — in the black-yellow 白い熊 house style.**
 
-A fork of [Catima](https://github.com/CatimaLoyalty/Android) with **major additions**: one-tap full export/import (cards + theme + fonts + settings, by category), headless backup on request for automation, backup-and-restore of the app's own data by a sister app so a wiped phone comes back whole, a fully settable 白い熊 猫管 UI page (RGBA color pickers, external fonts, border/roundness sliders — everything live-previewed), the black-yellow traced icon and theme, and complete rebranding across all 54 locales.
+A fork of [Catima](https://github.com/CatimaLoyalty/Android) with **major additions**: one-tap full export/import (cards + theme + fonts + settings, by category), headless backup on request for automation, backup-and-restore of the app's own data by a sister app so a wiped phone comes back whole, a fully settable 白い熊 猫管 UI page (RGBA color pickers, external fonts, border/roundness sliders — everything live-previewed), the black-yellow traced icon and theme, complete rebranding across all 54 locales, and **not a single tracker** — upstream's crash reporter is removed, not merely switched off.
 
 Installs **side-by-side** with Catima (app id `shiroikuma.nekokan`).
 
-**📥 Latest release: [`2.45.0+003`](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases/latest)** — [all releases & APK downloads »](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases)
+**📥 Latest release: [`2.45.0+004`](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases/latest)** — [all releases & APK downloads »](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases)
 
 </div>
 
@@ -33,6 +33,14 @@ It is a narrow door, and it is the half that is **not** unauthenticated. The cal
 Your card photographs are usually most of a backup's size, so there is a checkbox for them — a **sub-option under "All cards"**, in the app's own panel and in any automation picker alike. Untick it and you get a barcodes-only backup: small, fast, and complete as far as the card data goes.
 
 It defaults **on** and always will. The test for starting a category unticked is that it is large, *derived* **and** re-creatable — a thumbnail cache, a re-downloadable map tile. A photo you took of a physical card is none of those: nothing can make it again. So it is offered, never assumed away. The choice is honoured in both directions, too — unticking it on import strips the images out of the archive rather than quietly restoring them, so the checkbox means the same thing whichever way the data is moving.
+
+## 🚫 Zero trackers — the crash reporter is gone
+Stock Catima ships the open source crash reporter ACRA: benign in behaviour — it never sends
+anything by itself, it opens a mail draft you review first, and a switch turns even the asking off —
+but its classes sit in the app, and every tracker scanner matches them. So this fork does not
+disable it, it **removes** it: the dependency, the initialisation, the settings switch and the
+About-page credit are all gone, and the built APK's dex contains no occurrence of the word `acra`.
+There is no crash reporting and no analytics of any kind, and the app's own privacy policy says so.
 
 ## 🎨 The 白い熊 猫管 UI page
 One page controls the whole look — reachable from Settings or by **long-pressing the ⋮ button** on the main screen. Sister-repo construction: big bold underlined section headings (Foundation / Top bar / Main screen / Buttons & controls), deeply indented items per level, tight rows. Every color opens a picker with **four RGBA sliders**, a live hex + swatch preview, and one-click boxes prefilled with your prior-selected colors. Foundation colors cascade: change the accent once and the toolbar icons, FAB, card borders and section rules follow.
