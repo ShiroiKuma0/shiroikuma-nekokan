@@ -93,8 +93,9 @@ installable side-by-side with upstream Catima.
 
 ## Current status
 
-**Released `2.45.0+003`** (2026-09-04; tag `2.45.0+003`, APK attached, default branch `custom`;
-`README.md` + `CHANGELOG-shiroikuma.md` track it). Previously `2.45.0+001` (2026-08-14). Rebased onto upstream **Catima `v2.45.0`**
+**Released `2.45.0+004`** (2026-09-05; tag `2.45.0+004`, APK attached, default branch `custom`;
+`README.md` + `CHANGELOG-shiroikuma.md` track it). Previously `2.45.0+003` (2026-09-04) and
+`2.45.0+001` (2026-08-14). Rebased onto upstream **Catima `v2.45.0`**
 (versionCode **1002** — upstream's new scheme: Android releases start at 1000 and use **even**
 codes, the odd ones belonging to its new `fdroidLegacy` flavor, so our line moved from
 `1680000 + N` to `10020000 + N`). That release adds the **Wear OS companion**: two new Gradle
@@ -158,6 +159,17 @@ by design, and 猫管's payload is scannable card barcodes written to a caller-c
 The defaults were implemented as specified and the risk stated in the 「Use authorization token?」
 row rather than deviated from; `shiroikuma-universal-installer` and `shiroikuma-kako` raised the
 identical shape. Do not flip either default unilaterally.
+
+`2.45.0+004` removes the **ACRA crash reporter** — a tracker scan of `+003` reported it as the
+app's one tracker, so the library is gone rather than disabled: the `acra-mail`/`acra-dialog`
+dependency and its version-catalog entries, the `ACRA.init` block in `LoyaltyCardLockerApplication`,
+the `useAcraCrashReporter` `BuildConfig` field, the 「Ask to send crash reports」 preference plus its
+`setupCrashReporterPreference` wiring, and the About-page third-party credit. The built APK's dex
+files contain no occurrence of `acra` (verified on the artefact); the five now-unused `acra_*`
+strings stay in the default locale and its 54 translations, since deleting them would conflict with
+every upstream Weblate sync. A comment stands where the dependency was so a rebase does not restore
+it. `PRIVACY.md`'s 「Crash reporting privacy」 section (shown in-app under About) now states that the
+fork carries no crash reporter and no analytics.
 
 **Untested on-device as of the 2.45.0+003 publish**: the whole automation checklist, v1 and v2
 alike — the gate, the category list (now with a real `parent` third field for `cards.images` and
