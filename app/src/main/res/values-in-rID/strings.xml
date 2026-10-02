@@ -302,7 +302,7 @@
     <string name="zoomBackImage">Perbesar gambar belakang</string>
     <string name="settings_wear_sync">Sinkronkan dengan Wear OS</string>
     <string name="settings_wear_sync_summary">Memungkinkan aplikasi pendamping Wear OS membaca kartu Anda melalui Bluetooth</string>
-    <string name="wear_sync_permission_required">Catima memerlukan izin yang Anda tolak untuk menyinkronkan dengan smartwatch Wear OS Anda</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 memerlukan izin yang Anda tolak untuk menyinkronkan dengan smartwatch Wear OS Anda</string>
     <string name="settings_wear_sync_devices">Perangkat Wear OS yang diizinkan</string>
     <string name="settings_wear_sync_devices_summary">Kelola perangkat yang diizinkan untuk sinkronisasi melalui Bluetooth</string>
     <string name="settings_wear_sync_no_devices">Tidak ada perangkat yang diizinkan</string>
@@ -316,7 +316,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> perangkat diblokir</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Hapus perangkat?</string>
-    <string name="settings_wear_sync_unpair_message">Hapus <xliff:g>%1$s</xliff:g> dari Catima? Perangkat ini tidak akan dapat menyinkronkan kartu Anda lagi.</string>
+    <string name="settings_wear_sync_unpair_message">Hapus <xliff:g>%1$s</xliff:g> dari 白い熊 猫管? Perangkat ini tidak akan dapat menyinkronkan kartu Anda lagi.</string>
     <string name="settings_wear_sync_unblock_message">Hapus <xliff:g>%1$s</xliff:g> dari daftar yang diblokir? Perangkat ini akan dapat meminta akses lagi.</string>
     <string name="settings_wear_sync_unpair">Hapus</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -333,7 +333,7 @@
     <string name="open_settings">Buka pengaturan</string>
     <string name="open_in_gallery">Buka di galeri gambar</string>
     <string name="wear_bt_channel_name">Pendamping Wear OS</string>
-    <string name="wear_bt_notification_title">Sinkronisasi Catima Wear OS aktif</string>
+    <string name="wear_bt_notification_title">Sinkronisasi 白い熊 猫管 Wear OS aktif</string>
     <string name="settings_category_title_smartwatch">Dukungan smartwatch</string>
     <string name="wear_bt_failed_foreground_notification_title">Gagal memulai layanan sinkronisasi Wear OS</string>
     <string name="wear_bt_critical_error_channel_name">Kesalahan kritis sinkronisasi Wear OS</string>

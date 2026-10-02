@@ -302,14 +302,14 @@
     <string name="zoomFrontImage">放大正面圖片</string>
     <string name="zoomBackImage">放大背面圖片</string>
     <string name="settings_wear_sync_summary">允許 Wear OS 配套應用程式透過藍牙讀取您的卡片</string>
-    <string name="wear_sync_permission_required">Catima 需要您先前拒絕的權限，才能與您的 Wear OS 智慧手錶同步</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 需要您先前拒絕的權限，才能與您的 Wear OS 智慧手錶同步</string>
     <string name="settings_wear_sync_devices_summary">管理允許透過藍牙同步的裝置</string>
     <string name="settings_wear_sync_no_devices">沒有已允許的裝置</string>
     <string name="settings_wear_sync_blocked_devices">已封鎖的 Wear OS 裝置</string>
     <string name="settings_wear_sync_blocked_devices_summary">管理已封鎖的 Wear OS 裝置</string>
     <string name="settings_wear_sync_no_blocked_devices">沒有已封鎖的裝置</string>
     <string name="settings_wear_sync_unpair_title">要移除裝置嗎？</string>
-    <string name="settings_wear_sync_unpair_message">要從 Catima 移除 <xliff:g>%1$s</xliff:g> 嗎？此裝置之後將無法再同步您的卡片。</string>
+    <string name="settings_wear_sync_unpair_message">要從 白い熊 猫管 移除 <xliff:g>%1$s</xliff:g> 嗎？此裝置之後將無法再同步您的卡片。</string>
     <string name="settings_wear_sync_unblock_message">要將 <xliff:g>%1$s</xliff:g> 從封鎖清單中移除嗎？此裝置將可再次要求存取權限。</string>
     <string name="settings_wear_sync_unpair">移除</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g>（<xliff:g>%2$s</xliff:g>）</string>
@@ -326,7 +326,7 @@
     <string name="open_settings">開啟設定</string>
     <string name="open_in_gallery">在圖片庫中開啟</string>
     <string name="wear_bt_channel_name">Wear OS 配套應用程式</string>
-    <string name="wear_bt_notification_title">Catima Wear OS 同步中</string>
+    <string name="wear_bt_notification_title">白い熊 猫管 Wear OS 同步中</string>
     <string name="settings_category_title_smartwatch">智慧手錶支援</string>
     <string name="wear_bt_failed_foreground_notification_title">無法啟動 Wear OS 同步服務</string>
     <string name="wear_bt_critical_error_channel_name">Wear OS 同步發生嚴重錯誤</string>

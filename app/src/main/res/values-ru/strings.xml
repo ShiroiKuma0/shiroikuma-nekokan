@@ -321,7 +321,7 @@
     <string name="open_in_gallery">Открыть в галерее</string>
     <string name="settings_wear_sync">Синхронизация с Wear OS</string>
     <string name="settings_wear_sync_summary">Разрешить приложению-компаньону Wear OS читать ваши карты по Bluetooth</string>
-    <string name="wear_sync_permission_required">Для синхронизации умными часами Wear OS Catima требуются разрешения, в которых ранее было отказано</string>
+    <string name="wear_sync_permission_required">Для синхронизации умными часами Wear OS 白い熊 猫管 требуются разрешения, в которых ранее было отказано</string>
     <string name="settings_wear_sync_devices">Доверенные устройства Wear OS</string>
     <string name="settings_wear_sync_devices_summary">Управление устройствами, которым разрешена синхронизация по Bluetooth</string>
     <string name="settings_wear_sync_no_devices">Нет доверенных устройств</string>
@@ -341,7 +341,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> заблокированных устройств</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Удалить устройство?</string>
-    <string name="settings_wear_sync_unpair_message">Удалить <xliff:g>%1$s</xliff:g> из Catima? Он больше не сможет синхронизировать ваши карты.</string>
+    <string name="settings_wear_sync_unpair_message">Удалить <xliff:g>%1$s</xliff:g> из 白い熊 猫管? Он больше не сможет синхронизировать ваши карты.</string>
     <string name="settings_wear_sync_unblock_message">Удалить устройство <xliff:g>%1$s</xliff:g> из списка заблокированных? Оно снова сможет запросить доступ.</string>
     <string name="settings_wear_sync_unpair">Удалить</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -357,7 +357,7 @@
     <string name="wear_bt_pairing_mismatch_message">Данное устройство ранее было авторизовано, но теперь предоставляет другой токен идентификации. Это происходит, когда приложение Wear OS переустанавливается или его данные очищаются. Также это может указывать на попытку подделать MAC-адрес Bluetooth.\n\nРазрешайте только в том случае, если вы недавно переустановили приложение Catima Wear OS на этих часах.</string>
     <string name="open_settings">Открыть настройки</string>
     <string name="wear_bt_channel_name">Компаньон Wear OS</string>
-    <string name="wear_bt_notification_title">Синхронизация Catima с Wear OS активна</string>
+    <string name="wear_bt_notification_title">Синхронизация 白い熊 猫管 с Wear OS активна</string>
     <string name="settings_category_title_smartwatch">Поддержка умных часов</string>
     <string name="wear_bt_failed_foreground_notification_title">Невозможно запустить службу синхронизации Wear OS</string>
     <string name="wear_bt_critical_error_channel_name">Критическая ошибка синхронизации Wear OS</string>

@@ -309,7 +309,7 @@
     <string name="open_in_gallery">Resim galerisinde aç</string>
     <string name="settings_wear_sync">Wear OS ile eşzamanla</string>
     <string name="settings_wear_sync_summary">Wear OS yardımcı uygulamasının Bluetooth üzerinden kartlarınızı okumasına izin verir</string>
-    <string name="wear_sync_permission_required">Catima, Wear OS akıllı saatinizle eşzamanlama için reddettiğiniz izinlere ihtiyaç duyuyor</string>
+    <string name="wear_sync_permission_required">白い熊 猫管, Wear OS akıllı saatinizle eşzamanlama için reddettiğiniz izinlere ihtiyaç duyuyor</string>
     <string name="settings_wear_sync_devices">İzin verilen Wear OS aygıtları</string>
     <string name="settings_wear_sync_devices_summary">Bluetooth üzerinden eşzamanlanmasına izin verilen aygıtları yönetin</string>
     <string name="settings_wear_sync_no_devices">İzin verilen aygıt yok</string>
@@ -325,7 +325,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> aygıt engellendi</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Aygıt kaldırılsın mı?</string>
-    <string name="settings_wear_sync_unpair_message"><xliff:g>%1$s</xliff:g> Catima\'dan kaldırılsın mı? Artık kartlarınızı eşzamanlayamayacak.</string>
+    <string name="settings_wear_sync_unpair_message"><xliff:g>%1$s</xliff:g> 白い熊 猫管\'dan kaldırılsın mı? Artık kartlarınızı eşzamanlayamayacak.</string>
     <string name="settings_wear_sync_unblock_message"><xliff:g>%1$s</xliff:g> engellenen listesinden kaldırılsın mı? Tekrar erişim isteğinde bulunabilecek.</string>
     <string name="settings_wear_sync_unpair">Kaldır</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -341,7 +341,7 @@
     <string name="wear_bt_pairing_mismatch_message">Bu aygıt daha önce yetkilendirildi, ancak şu anda farklı bir kimlik belirteci sunuyor. Bu durum, Wear OS uygulamasının yeniden kurulması veya verilerinin silinmesi durumunda ortaya çıkar. Ayrıca, bir Bluetooth MAC sahteciliği girişimi olduğunu da gösterebilir.\n\nYalnızca bu saatte Catima Wear OS uygulamasını yakın zamanda yeniden kurduysanız kabul edin.</string>
     <string name="open_settings">Ayarları aç</string>
     <string name="wear_bt_channel_name">Wear OS yardımcısı</string>
-    <string name="wear_bt_notification_title">Catima Wear OS eşzamanlaması etkin</string>
+    <string name="wear_bt_notification_title">白い熊 猫管 Wear OS eşzamanlaması etkin</string>
     <string name="settings_category_title_smartwatch">Akıllı saat desteği</string>
     <string name="wear_bt_failed_foreground_notification_title">Wear OS eşzamanlama hizmeti başlatılamadı</string>
     <string name="wear_bt_critical_error_channel_name">Wear OS eşzamanlaması önemli hata</string>

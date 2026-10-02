@@ -104,7 +104,8 @@ upstream release tag, replay our `custom` customizations on top, and produce a f
 8. **Stop.** Let the user test. Commit/push only on their explicit **"Push"**. Because the rebase
    rewrites `custom`'s history: `git push --force-with-lease origin custom`; `main` is
    `git push origin main` (fast-forward / new tag base). Run upstream-side tests too:
-   `./gradlew :app:testFossReleaseUnitTest` (or `:app:test`) should stay green.
+   `./gradlew :app:testFossDebugUnitTest` should stay green (the release unit-test task no longer
+   exists since AGP 9.3.1 / Kotlin 2.4.10).
 
 ## Notes
 
@@ -112,7 +113,7 @@ upstream release tag, replay our `custom` customizations on top, and produce a f
   over merging, so the customization set stays easy to audit and replay.
 - Do **not** rename the `protect.card_locker` code namespace (only `APP_ID` differs) — renaming
   would make every rebase a mass-conflict.
-- Upstream owns `CHANGELOG.md` (it is even compiled into the app via `copyRawResFiles`) — our fork
+- Upstream owns `CHANGELOG.md` (it was compiled into the app via `copyRawResFiles` until Catima 2.45.0) — our fork
   changelog lives in `CHANGELOG-shiroikuma.md` instead; never move fork notes into upstream's file.
 
 ---
