@@ -315,7 +315,7 @@
     <string name="open_in_gallery">Ouvrir dans la galerie d\'images</string>
     <string name="settings_wear_sync">Synchroniser avec Wear OS</string>
     <string name="settings_wear_sync_summary">Permet à l\'appli compagnon Wear OS de lire vos cartes par Bluetooth</string>
-    <string name="wear_sync_permission_required">Catima a besoin de l\'autorisation que vous avez refusée pour se synchroniser avec votre montre connectée Wear OS</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 a besoin de l\'autorisation que vous avez refusée pour se synchroniser avec votre montre connectée Wear OS</string>
     <string name="settings_wear_sync_devices">Appareils Wear OS autorisés</string>
     <string name="settings_wear_sync_devices_summary">Gérer les appareils autorisés à se synchroniser par Bluetooth</string>
     <string name="settings_wear_sync_no_devices">Aucun appareil autorisé</string>
@@ -333,7 +333,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> appareils bloqués</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Supprimer l\'appareil ?</string>
-    <string name="settings_wear_sync_unpair_message">Retirer <xliff:g>%1$s</xliff:g> de Catima ? Il ne pourra plus synchroniser de cartes.</string>
+    <string name="settings_wear_sync_unpair_message">Retirer <xliff:g>%1$s</xliff:g> de 白い熊 猫管 ? Il ne pourra plus synchroniser de cartes.</string>
     <string name="settings_wear_sync_unblock_message">Retirer <xliff:g>%1$s</xliff:g> de la liste des appareils bloqués ? Il pourra demander l\'accès à nouveau.</string>
     <string name="settings_wear_sync_unpair">Retirer</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -348,7 +348,7 @@
     <string name="wear_bt_pairing_mismatch_title">Nouvelle demande d\'autorisation de <xliff:g>%1$s</xliff:g></string>
     <string name="open_settings">Ouvrir les paramètres</string>
     <string name="wear_bt_channel_name">Compagnon Wear OS</string>
-    <string name="wear_bt_notification_title">Synchronisation Catima Wear OS active</string>
+    <string name="wear_bt_notification_title">Synchronisation 白い熊 猫管 Wear OS active</string>
     <string name="settings_category_title_smartwatch">Prise en charge des montres connectées</string>
     <string name="wear_bt_failed_foreground_notification_title">Erreur au démarrage du service de synchronisation Wear OS</string>
     <string name="wear_bt_critical_error_channel_name">Erreur critique de synchronisation Wear OS</string>

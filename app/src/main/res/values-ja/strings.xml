@@ -302,7 +302,7 @@
     <string name="open_in_gallery">ギャラリーを開く</string>
     <string name="settings_wear_sync">Wear OS と同期</string>
     <string name="settings_wear_sync_summary">Wear OS コンパニオンアプリによる Bluetooth 経由のカード読取を許可する</string>
-    <string name="wear_sync_permission_required">貴方が拒否した権限は Catima が Wear OS スマートウォッチと同期するのに必要です</string>
+    <string name="wear_sync_permission_required">貴方が拒否した権限は 白い熊 猫管 が Wear OS スマートウォッチと同期するのに必要です</string>
     <string name="settings_wear_sync_devices">対応している Wear OS デバイス</string>
     <string name="settings_wear_sync_devices_summary">Bluetooth 経由での同期が許可されたデバイスの管理</string>
     <string name="settings_wear_sync_no_devices">デバイスが許可されていません</string>
@@ -316,7 +316,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> 台のデバイスがブロックされています</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">デバイスを削除しますか？</string>
-    <string name="settings_wear_sync_unpair_message">Catima から <xliff:g>%1$s</xliff:g> を削除しますか？ 削除するとカードの同期は出来なくなります。</string>
+    <string name="settings_wear_sync_unpair_message">白い熊 猫管 から <xliff:g>%1$s</xliff:g> を削除しますか？ 削除するとカードの同期は出来なくなります。</string>
     <string name="settings_wear_sync_unblock_message">ブロックの一覧から <xliff:g>%1$s</xliff:g> を削除しますか？ 削除すればアクセスを再要求できるようになります。</string>
     <string name="settings_wear_sync_unpair">削除</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> （<xliff:g>%2$s</xliff:g>）</string>
@@ -332,7 +332,7 @@
     <string name="wear_bt_pairing_mismatch_message">当該デバイスは以前に認証済みでしたが異なる識別トークンを現段階で提示しています。これは Wear OS アプリを再インストールした場合もしくはそのデータが消去された場合に発生します。Bluetooth MACアドレスのなりすまし攻撃の試行の可能性もあります。\n\n当該スマートウォッチで最近 Catima Wear OS アプリを再インストールした場合のみ承認して下さい。</string>
     <string name="open_settings">設定を開く</string>
     <string name="wear_bt_channel_name">Wear OS コンパニオン</string>
-    <string name="wear_bt_notification_title">Catima は Wear OS と同期中です</string>
+    <string name="wear_bt_notification_title">白い熊 猫管 は Wear OS と同期中です</string>
     <string name="settings_category_title_smartwatch">対応するスマートウォッチです</string>
     <string name="wear_bt_failed_foreground_notification_title">Wear OSとの同期サービスの開始が失敗しました</string>
     <string name="wear_bt_critical_error_channel_name">Wear OS 同期の深刻なエラー</string>

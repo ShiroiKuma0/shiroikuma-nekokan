@@ -309,7 +309,7 @@
     <string name="open_in_gallery">Άνοιγμα στη συλλογή εικόνων</string>
     <string name="settings_wear_sync">Συγχρονισμός με Wear OS</string>
     <string name="settings_wear_sync_summary">Επιτρέπει στην συνοδευτική εφαρμογή Wear OS να διαβάζει τις κάρτες σας μέσω Bluetooth</string>
-    <string name="wear_sync_permission_required">Η Catima χρειάζεται τα δικαιώματα που απορρίψατε για να συγχρονιστεί με το Wear OS smartwatch σας</string>
+    <string name="wear_sync_permission_required">Η 白い熊 猫管 χρειάζεται τα δικαιώματα που απορρίψατε για να συγχρονιστεί με το Wear OS smartwatch σας</string>
     <string name="settings_wear_sync_devices">Επιτρεπόμενες συσκευές Wear OS</string>
     <string name="settings_wear_sync_devices_summary">Διαχείριση συσκευών που επιτρέπεται να συγχρονίζονται μέσω Bluetooth</string>
     <string name="settings_wear_sync_no_devices">Δεν επιτρέπονται συσκευές</string>
@@ -325,7 +325,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> συσκευές αποκλεισμένες</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Αφαίρεση συσκευής;</string>
-    <string name="settings_wear_sync_unpair_message">Να καταργηθεί η <xliff:g>%1$s</xliff:g> από το Catima; Δεν θα είναι πλέον δυνατός ο συγχρονισμός των καρτών σας.</string>
+    <string name="settings_wear_sync_unpair_message">Να καταργηθεί η <xliff:g>%1$s</xliff:g> από το 白い熊 猫管; Δεν θα είναι πλέον δυνατός ο συγχρονισμός των καρτών σας.</string>
     <string name="settings_wear_sync_unblock_message">Να καταργηθεί η <xliff:g>%1$s</xliff:g> από τη λίστα αποκλεισμένων; Θα μπορεί να ζητήσει ξανά πρόσβαση.</string>
     <string name="settings_wear_sync_unpair">Αφαίρεση</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -341,7 +341,7 @@
     <string name="wear_bt_pairing_mismatch_message">Αυτή η συσκευή είχε προηγουμένως εξουσιοδοτηθεί, αλλά τώρα παρουσιάζει διαφορετικό διακριτικό ταυτότητας. Αυτό συμβαίνει όταν η εφαρμογή Wear OS επανεγκαθίσταται ή τα δεδομένα της διαγράφονται. Μπορεί επίσης να υποδεικνύει μια προσπάθεια πλαστογράφησης MAC Bluetooth.\n\nΑποδεχθείτε μόνο εάν επανεγκαταστήσατε πρόσφατα την εφαρμογή Catima Wear OS σε αυτό το ρολόι.</string>
     <string name="open_settings">Άνοιγμα ρυθμίσεων</string>
     <string name="wear_bt_channel_name">Συνοδευτική εφαρμογή Wear OS</string>
-    <string name="wear_bt_notification_title">Ο συγχρονισμός Wear OS του Catima είναι ενεργός</string>
+    <string name="wear_bt_notification_title">Ο συγχρονισμός Wear OS του 白い熊 猫管 είναι ενεργός</string>
     <string name="settings_category_title_smartwatch">Συγχρονισμός smartwatch</string>
     <string name="wear_bt_failed_foreground_notification_title">Αποτυχία εκκίνησης της υπηρεσίας συγχρονισμού Wear OS</string>
     <string name="wear_bt_critical_error_channel_name">Σοβαρό σφάλμα συγχρονισμού Wear OS</string>

@@ -309,7 +309,7 @@
         <item quantity="other">기기 <xliff:g>%d</xliff:g>개 차단함</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">기기를 제거하시겠습니까?</string>
-    <string name="settings_wear_sync_unpair_message">Catima에서 <xliff:g>%1$s</xliff:g> 기기를 제거하시겠습니까? 더 이상 카드를 동기화하지 못하게 됩니다.</string>
+    <string name="settings_wear_sync_unpair_message">白い熊 猫管에서 <xliff:g>%1$s</xliff:g> 기기를 제거하시겠습니까? 더 이상 카드를 동기화하지 못하게 됩니다.</string>
     <string name="settings_wear_sync_unblock_message">차단한 목록에서 <xliff:g>%1$s</xliff:g> 기기를 제거하시겠습니까? 접근 요청을 다시 할 수 있게 됩니다.</string>
     <string name="settings_wear_sync_unpair">제거</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -329,12 +329,12 @@
     <string name="wear_bt_failed_foreground_notification_title">Wear OS 동기화 서비스 시작 실패</string>
     <string name="wear_bt_critical_error_channel_name">Wear OS 동기화 치명적 오류</string>
     <string name="wear_bt_channel_name">Wear OS 컴패니언</string>
-    <string name="wear_bt_notification_title">Catima Wear OS 동기화 활성화됨</string>
+    <string name="wear_bt_notification_title">白い熊 猫管 Wear OS 동기화 활성화됨</string>
     <string name="sort_by_most_recently_added">가장 최근에 추가함</string>
     <string name="show_card_id">카드 ID 표시</string>
     <string name="settings_wear_sync">Wear OS와 동기화</string>
     <string name="settings_wear_sync_summary">Wear OS 연동 앱이 블루투스로 카드를 읽을 수 있도록 허용</string>
-    <string name="wear_sync_permission_required">Catima에서 Wear OS 스마트워치와 동기화하려면 거절하셨던 권한이 필요합니다</string>
+    <string name="wear_sync_permission_required">白い熊 猫管에서 Wear OS 스마트워치와 동기화하려면 거절하셨던 권한이 필요합니다</string>
     <string name="zoomFrontImage">전면 사진 확대</string>
     <string name="zoomBackImage">후면 사진 확대</string>
 </resources>

@@ -315,7 +315,7 @@
     <string name="open_in_gallery">Otevřít v galerii</string>
     <string name="settings_wear_sync">Synchronizovat s Wear OS</string>
     <string name="settings_wear_sync_summary">Umožňuje doprovodné aplikaci Wear OS číst vaše karty skrze Bluetooth</string>
-    <string name="wear_sync_permission_required">Catima potřebuje oprávnění, které jste zamítli, k synchronizaci s vašimi chytrými hodinkami Wear OS</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 potřebuje oprávnění, které jste zamítli, k synchronizaci s vašimi chytrými hodinkami Wear OS</string>
     <string name="settings_wear_sync_devices">Povolená zařízení Wear OS</string>
     <string name="settings_wear_sync_devices_summary">Správa zařízení, u kterých je povolena synchronizace skrze Bluetooth</string>
     <string name="settings_wear_sync_no_devices">Žádná povolená zařízení</string>
@@ -335,7 +335,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> zablokovaných zařízení</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Odstranit zařízení?</string>
-    <string name="settings_wear_sync_unpair_message">Odstranit zařízení <xliff:g>%1$s</xliff:g> z aplikace Catima? Již nebude moci synchronizovat vaše karty.</string>
+    <string name="settings_wear_sync_unpair_message">Odstranit zařízení <xliff:g>%1$s</xliff:g> z aplikace 白い熊 猫管? Již nebude moci synchronizovat vaše karty.</string>
     <string name="settings_wear_sync_unblock_message">Odstranit zařízení <xliff:g>%1$s</xliff:g> ze seznamu zablokovaných? Bude moci znovu žádat o přístup.</string>
     <string name="settings_wear_sync_unpair">Odstranit</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -351,7 +351,7 @@
     <string name="wear_bt_pairing_mismatch_message">Toto zařízení bylo v minulosti autorizováno, nyní se ale prezentuje jiným tokenem identity. K této situaci může dojít při reinstalaci aplikace Wear OS nebo vymazání jejích dat. Může to ale také značit pokus o maskování adresy Bluetooth MAC.\n\nPřijměte pouze, pokud jste na těchto hodinkách nedávno přeinstalovali aplikaci Catima pro Wear OS.</string>
     <string name="open_settings">Otevřít nastavení</string>
     <string name="wear_bt_channel_name">Doprovoná aplikace na Wear OS</string>
-    <string name="wear_bt_notification_title">Synchronizace s Catima Wear OS je aktivní</string>
+    <string name="wear_bt_notification_title">Synchronizace s 白い熊 猫管 Wear OS je aktivní</string>
     <string name="settings_category_title_smartwatch">Podpora chytrých hodinek</string>
     <string name="wear_bt_failed_foreground_notification_title">Nepodařilo se spustit synchronizační službu Wear OS</string>
     <string name="wear_bt_critical_error_channel_name">Kritická chyba synchronizace s Wear OS</string>

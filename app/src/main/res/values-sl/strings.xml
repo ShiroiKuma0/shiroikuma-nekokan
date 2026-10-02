@@ -320,7 +320,7 @@
     <string name="open_in_gallery">Odpri v galeriji slik</string>
     <string name="settings_wear_sync">Sinhronizacija z Wear OS</string>
     <string name="settings_wear_sync_summary">Omogoča spremljevalni aplikaciji Wear OS branje tvojih kartic prek Bluetootha</string>
-    <string name="wear_sync_permission_required">Catima potrebuje dovoljenja, ki si jih zavrnil/a, za sinhronizacijo z vašo pametno uro Wear OS</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 potrebuje dovoljenja, ki si jih zavrnil/a, za sinhronizacijo z vašo pametno uro Wear OS</string>
     <string name="settings_wear_sync_devices">Dovoljene naprave Wear OS</string>
     <string name="settings_wear_sync_devices_summary">Upravljanje naprav, ki imajo dovoljenje za sinhronizacijo prek Bluetootha</string>
     <string name="settings_wear_sync_no_devices">Ni dovoljenih naprav</string>
@@ -340,7 +340,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> blokiranih naprav</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Želiš odstraniti napravo?</string>
-    <string name="settings_wear_sync_unpair_message">Želiš odstraniti <xliff:g>%1$s</xliff:g> iz Catime? Naprava ne bo več mogla sinhronizirati tvojih kartic.</string>
+    <string name="settings_wear_sync_unpair_message">Želiš odstraniti <xliff:g>%1$s</xliff:g> iz 白い熊 猫管? Naprava ne bo več mogla sinhronizirati tvojih kartic.</string>
     <string name="settings_wear_sync_unblock_message">Želiš odstraniti <xliff:g>%1$s</xliff:g> s seznama blokiranih naprav? Naprava bo lahko ponovno zaprosila za dostop.</string>
     <string name="settings_wear_sync_unpair">Odstrani</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -356,7 +356,7 @@
     <string name="wear_bt_pairing_mismatch_message">Ta naprava je bila že avtorizirana, zdaj pa prikazuje drugačen identifikacijski žeton. To se zgodi, ko se aplikacija Wear OS ponovno namesti ali se njeni podatki izbrišejo. Lahko pa gre tudi za poskus ponarejanja MAC-naslova prek Bluetootha.\n\nSprejmi le, če si pred kratkim na tej uri ponovno namestil/a aplikacijo Catima Wear OS.</string>
     <string name="open_settings">Odpri nastavitve</string>
     <string name="wear_bt_channel_name">Spremljevalna aplikacija Wear OS</string>
-    <string name="wear_bt_notification_title">Sinhronizacija Catima Wear OS je aktivna</string>
+    <string name="wear_bt_notification_title">Sinhronizacija 白い熊 猫管 Wear OS je aktivna</string>
     <string name="settings_category_title_smartwatch">Podpora za pametne ure</string>
     <string name="wear_bt_failed_foreground_notification_title">Zagon storitve sinhronizacije Wear OS ni uspel</string>
     <string name="wear_bt_critical_error_channel_name">Kritična napaka pri sinhronizaciji Wear OS</string>

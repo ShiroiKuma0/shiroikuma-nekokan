@@ -308,7 +308,7 @@
     <string name="show_card_id">Visa kort-ID</string>
     <string name="open_in_gallery">Öppna i bildgalleriet</string>
     <string name="settings_wear_sync">Synka med Wear OS</string>
-    <string name="wear_sync_permission_required">Catima behöver få de behörigheter du nekade appen för att kunna synka med din smarta klocka med Wear OS</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 behöver få de behörigheter du nekade appen för att kunna synka med din smarta klocka med Wear OS</string>
     <string name="settings_wear_sync_devices">Tillåtna Wear OS-enheter</string>
     <string name="settings_wear_sync_devices_summary">Hantera enheter som tillåts synka över Bluetooth</string>
     <string name="settings_wear_sync_no_devices">Inga tillåtna enheter</string>
@@ -331,7 +331,7 @@
     <string name="open_settings">Öppna inställningar</string>
     <string name="settings_wear_sync_summary">Tillåter att Wear OS-kompanjonsappen läser dina kort via Bluetooth.</string>
     <string name="settings_wear_sync_unpair_title">Ta bort enhet?</string>
-    <string name="settings_wear_sync_unpair_message">Ta bort <xliff:g>%1$s</xliff:g> från Catima? Enheten kan då inte längre synkronisera dina kort.</string>
+    <string name="settings_wear_sync_unpair_message">Ta bort <xliff:g>%1$s</xliff:g> från 白い熊 猫管? Enheten kan då inte längre synkronisera dina kort.</string>
     <string name="settings_wear_sync_unblock_message">Ta bort <xliff:g>%1$s</xliff:g> från blockeringslistan? Enheten kan då begära åtkomst igen.</string>
     <string name="settings_wear_sync_unpair">Ta bort</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -342,7 +342,7 @@
     <string name="wear_bt_pairing_mismatch_title">Ny auktoriseringsbegäran från <xliff:g>%1$s</xliff:g></string>
     <string name="wear_bt_pairing_mismatch_message">Enheten har tidigare auktoriserats men presenterar nu en annan identitetstoken. Det händer när Wear OS-appen installeras om eller dess data rensas. Det kan också tyda på ett försök att förfalska en Bluetooth-MAC-adress.\n\nGodkänn endast om du nyligen installerade om Catima Wear OS-appen på den här klockan.</string>
     <string name="wear_bt_channel_name">Wear OS-kompanjon</string>
-    <string name="wear_bt_notification_title">Catima Wear OS-synkronisering är aktiv</string>
+    <string name="wear_bt_notification_title">白い熊 猫管 Wear OS-synkronisering är aktiv</string>
     <string name="settings_category_title_smartwatch">Stöd för smartklockor</string>
     <string name="wear_bt_failed_foreground_notification_title">Kunde inte starta synkroniseringstjänsten för Wear OS</string>
 </resources>

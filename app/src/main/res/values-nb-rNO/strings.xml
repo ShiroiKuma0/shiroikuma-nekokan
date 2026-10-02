@@ -288,7 +288,7 @@
     <string name="show_card_id">Vis kort-ID</string>
     <string name="settings_wear_sync">Synkroniser med Wear OS</string>
     <string name="settings_wear_sync_summary">Lar Wear OS-appen lese kortene dine via Bluetooth</string>
-    <string name="wear_sync_permission_required">Catima trenger tillatelsene du avslo for å synkronisere med Wear OS-klokken din</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 trenger tillatelsene du avslo for å synkronisere med Wear OS-klokken din</string>
     <string name="settings_wear_sync_devices">Tillatte Wear OS-enheter</string>
     <string name="settings_wear_sync_devices_summary">Administrer enheter som kan synkronisere via Bluetooth</string>
     <string name="settings_wear_sync_no_devices">Ingen tillatte enheter</string>
@@ -304,7 +304,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> blokkerte enheter</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Fjerne enheten?</string>
-    <string name="settings_wear_sync_unpair_message">Fjerne <xliff:g>%1$s</xliff:g> fra Catima? Enheten kan da ikke lenger synkronisere kortene dine.</string>
+    <string name="settings_wear_sync_unpair_message">Fjerne <xliff:g>%1$s</xliff:g> fra 白い熊 猫管? Enheten kan da ikke lenger synkronisere kortene dine.</string>
     <string name="settings_wear_sync_unblock_message">Fjerne <xliff:g>%1$s</xliff:g> fra blokkeringslisten? Enheten kan da be om tilgang på nytt.</string>
     <string name="settings_wear_sync_unpair">Fjern</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -322,7 +322,7 @@
     <string name="width">Bredde</string>
     <string name="card_list_widget_name">Kortliste</string>
     <string name="setBarcodeWidth">Angi strekkodebredde</string>
-    <string name="card_list_widget_empty">Når du legger til kundekort i Catima, vises de her. Hvis du allerede har kort, må du kontrollere at ikke alle er arkivert.</string>
+    <string name="card_list_widget_empty">Når du legger til kundekort i 白い熊 猫管, vises de her. Hvis du allerede har kort, må du kontrollere at ikke alle er arkivert.</string>
     <string name="cardWithNumber">Kort <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kort <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Ikke roter enheten, ellers blir handlingen avbrutt</string>
@@ -341,7 +341,7 @@
     <string name="nfc_block_system_error">Kunne ikke sette NFC på pause</string>
     <string name="open_in_gallery">Åpne i bildegalleriet</string>
     <string name="wear_bt_channel_name">Wear OS-tillegg</string>
-    <string name="wear_bt_notification_title">Catima-synkronisering med Wear OS er aktiv</string>
+    <string name="wear_bt_notification_title">白い熊 猫管-synkronisering med Wear OS er aktiv</string>
     <string name="settings_category_title_smartwatch">Støtte for smartklokker</string>
     <string name="wear_bt_failed_foreground_notification_title">Kunne ikke starte synkroniseringstjenesten for Wear OS</string>
     <string name="wear_bt_critical_error_channel_name">Kritisk feil ved Wear OS-synkronisering</string>

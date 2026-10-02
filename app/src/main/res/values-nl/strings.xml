@@ -308,7 +308,7 @@
     <string name="zoomBackImage">Achterzijde inzoomen</string>
     <string name="open_in_gallery">Open in afbeeldingsgalerij</string>
     <string name="settings_wear_sync">Synchroniseren met Wear OS</string>
-    <string name="wear_sync_permission_required">Catima heeft toestemming nodig om te synchroniseren met je Wear OS smartwatch</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 heeft toestemming nodig om te synchroniseren met je Wear OS smartwatch</string>
     <string name="settings_wear_sync_devices">Toegestane Wear OS-apparaten</string>
     <string name="settings_wear_sync_devices_summary">Apparaten beheren die via Bluetooth kunnen worden gesynchroniseerd</string>
     <string name="settings_wear_sync_no_devices">Geen toegestane apparaten</string>
@@ -324,7 +324,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> apparaten geblokkeerd</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Apparaat verwijderen?</string>
-    <string name="settings_wear_sync_unpair_message"><xliff:g>%1$s</xliff:g> van Catima verwijderen? Het zal je kaarten niet meer kunnen synchroniseren.</string>
+    <string name="settings_wear_sync_unpair_message"><xliff:g>%1$s</xliff:g> van 白い熊 猫管 verwijderen? Het zal je kaarten niet meer kunnen synchroniseren.</string>
     <string name="wear_bt_pairing_message"><xliff:g>%1$s</xliff:g> toestaan om toegang te krijgen tot jouw kaarten?</string>
     <string name="settings_wear_sync_summary">Stelt de Wear OS companion app in staat om jouw kaarten via Bluetooth te lezen</string>
     <string name="wear_bt_channel_name">Wear OS companion</string>
@@ -341,7 +341,7 @@
     <string name="wear_bt_pairing_mismatch_title">Nieuw autorisatieverzoek van <xliff:g>%1$s</xliff:g></string>
     <string name="wear_bt_pairing_mismatch_message">Dit apparaat was eerder geautoriseerd, maar presenteert nu een ander identiteitstoken. Dit gebeurt wanneer de Wear OS-app opnieuw wordt geïnstalleerd of de gegevens ervan worden gewist. Het kan ook duiden op een Bluetooth MAC-spoofingpoging.\n\nAccepteer alleen als je onlangs de Catima Wear OS-app opnieuw op dit horloge hebt geïnstalleerd.</string>
     <string name="open_settings">Instellingen openen</string>
-    <string name="wear_bt_notification_title">Catima Wear OS synchronisatie is geactiveerd</string>
+    <string name="wear_bt_notification_title">白い熊 猫管 Wear OS synchronisatie is geactiveerd</string>
     <string name="settings_category_title_smartwatch">Smartwatch-ondersteuning</string>
     <string name="wear_bt_failed_foreground_notification_title">Starten van Wear OS-synchronisatieservice is mislukt</string>
     <string name="wear_bt_critical_error_channel_name">Kritische fout met Wear OS-synchronisatie</string>

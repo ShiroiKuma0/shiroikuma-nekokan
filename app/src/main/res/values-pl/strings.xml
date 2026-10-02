@@ -321,7 +321,7 @@
     <string name="open_in_gallery">Otwórz zdjęcie w galerii</string>
     <string name="settings_wear_sync">Synchronizacja z systemem Wear OS</string>
     <string name="settings_wear_sync_summary">Umożliwia aplikacji towarzyszącej Wear OS odczytywanie kart za pośrednictwem Bluetooth</string>
-    <string name="wear_sync_permission_required">Aplikacja Catima potrzebuje uprawnień, których nie przyznałeś, aby zsynchronizować się z Twoim smartwatchem z systemem Wear OS</string>
+    <string name="wear_sync_permission_required">Aplikacja 白い熊 猫管 potrzebuje uprawnień, których nie przyznałeś, aby zsynchronizować się z Twoim smartwatchem z systemem Wear OS</string>
     <string name="settings_wear_sync_devices">Obsługiwane urządzenia z systemem Wear OS</string>
     <string name="settings_wear_sync_devices_summary">Zarządzaj urządzeniami, które mogą synchronizować się przez Bluetooth</string>
     <string name="settings_wear_sync_no_devices">Żadne urządzenia nie są dozwolone</string>
@@ -341,7 +341,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> urządzeń zablokowanych</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Usunąć urządzenie?</string>
-    <string name="settings_wear_sync_unpair_message">Czy chcesz usunąć <xliff:g>%1$s</xliff:g> z aplikacji Catima? W takim przypadku aplikacja nie będzie już mogła synchronizować Twoich kart.</string>
+    <string name="settings_wear_sync_unpair_message">Czy chcesz usunąć <xliff:g>%1$s</xliff:g> z aplikacji 白い熊 猫管? W takim przypadku aplikacja nie będzie już mogła synchronizować Twoich kart.</string>
     <string name="settings_wear_sync_unblock_message">Czy chcesz usunąć <xliff:g>%1$s</xliff:g> z listy zablokowanych? Wówczas będzie mogło ponownie poprosić o dostęp.</string>
     <string name="settings_wear_sync_unpair">Usuń</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -357,7 +357,7 @@
     <string name="wear_bt_pairing_mismatch_message">To urządzenie zostało wcześniej autoryzowane, ale obecnie przedstawia inny token tożsamości. Sytuacja ta ma miejsce po ponownej instalacji aplikacji Wear OS lub wyczyszczeniu jej danych. Może to również wskazywać na próbę sfałszowania adresu MAC przez Bluetooth.\n\nZatwierdź tylko wtedy, gdy niedawno ponownie zainstalowałeś aplikację Catima Wear OS na tym zegarku.</string>
     <string name="open_settings">Otwórz ustawienia</string>
     <string name="wear_bt_channel_name">Aplikacja towarzysząca dla Wear OS</string>
-    <string name="wear_bt_notification_title">Synchronizacja Catima Wear OS jest aktywna</string>
+    <string name="wear_bt_notification_title">Synchronizacja 白い熊 猫管 Wear OS jest aktywna</string>
     <string name="settings_category_title_smartwatch">Obsługa smartwatchów</string>
     <string name="wear_bt_failed_foreground_notification_title">Nie udało się uruchomić usługi synchronizacji Wear OS</string>
     <string name="wear_bt_critical_error_channel_name">Krytyczny błąd synchronizacji systemu Wear OS</string>

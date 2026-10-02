@@ -315,12 +315,12 @@
     <string name="show_card_id">Rādīt kartes Id</string>
     <string name="settings_wear_sync">Vienādot ar Wear OS</string>
     <string name="settings_wear_sync_summary">Ļauj Wear OS palīglietotnei lasīt kartes ar Bluetooth starpniecību</string>
-    <string name="wear_sync_permission_required">Catima ir nepieciešamas iepriekš noraidītās atļaujas, lai vienādotu ar Wear OS viedpulksteni</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 ir nepieciešamas iepriekš noraidītās atļaujas, lai vienādotu ar Wear OS viedpulksteni</string>
     <string name="settings_wear_sync_devices">Atļautās Wear OS ierīces</string>
     <string name="wear_bt_critical_error_channel_name">Būtiska Wear OS vienādošanas kļūda</string>
     <string name="wear_bt_failed_foreground_notification_title">Neizdevās palaist Wear OS vienādošanas pakalpojumu</string>
     <string name="settings_category_title_smartwatch">Viedpulksteņu atbalsts</string>
-    <string name="wear_bt_notification_title">Catima Wear OS vienādošana darbojas</string>
+    <string name="wear_bt_notification_title">白い熊 猫管 Wear OS vienādošana darbojas</string>
     <string name="wear_bt_channel_name">Wear OS palīgs</string>
     <string name="open_settings">Atvērt iestatījumus</string>
     <string name="wear_bt_pairing_mismatch_message">Šī ierīce iepriekš bija pilnvarota, bet tagad norāda citu identitātes pilnvaru. Tas notiek, kad Wear OS lietotne ir uzstādīta no jauna vai ir notīrīti tās dati. Tas var norādīt arī uz Bluetooth MAC atdarināšanas mēģinājumu.\n\nPieņemt tikai tad, ja šajā pulkstenī Catima Wear OS lietotne tika uzstādīta no jauna.</string>
@@ -336,7 +336,7 @@
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
     <string name="settings_wear_sync_unpair">Noņemt</string>
     <string name="settings_wear_sync_unblock_message">Noņemt <xliff:g>%1$s</xliff:g> no liegumu saraksta? Tā atkal varēs pieprasīt piekļuvi.</string>
-    <string name="settings_wear_sync_unpair_message">Noņemt <xliff:g>%1$s</xliff:g> no Catima? Tā vairs nevarēs vienādot kartes.</string>
+    <string name="settings_wear_sync_unpair_message">Noņemt <xliff:g>%1$s</xliff:g> no 白い熊 猫管? Tā vairs nevarēs vienādot kartes.</string>
     <string name="settings_wear_sync_unpair_title">Noņemt ierīci?</string>
     <plurals name="settings_wear_sync_blocked_devices_summary_count">
         <item quantity="zero">Liegtas <xliff:g>%d</xliff:g> ierīces</item>
