@@ -4,7 +4,37 @@ Everything built on top of stock [Catima](https://github.com/CatimaLoyalty/Andro
 `CHANGELOG.md` (it was compiled into the app until Catima 2.45.0 dropped the embedded copy); fork
 notes live here.
 
-## 2.45.0+004 — current
+## 2.45.1+001 — current
+
+**Rebased onto upstream Catima `v2.45.1`** (versionCode 1004). Every fork feature carries over
+unchanged; this release brings upstream's fixes and keeps the rebrand complete over its new
+translations.
+
+### From upstream Catima 2.45.1
+- **The list widget refreshes when you open a card from it.** Before, opening a card there did not
+  update the widget, so it kept showing stale content until something else redrew it.
+- **Opening `.pkpass` and PDF files from network or cloud locations no longer sometimes fails.**
+  Reading such a file now happens off the main thread, and image-barcode errors are reported by a
+  thread-safe toast instead of from the middle of the read.
+- **Wear OS sync no longer crashes when Bluetooth is off** (sync itself stays off by default), with
+  a new notice for when Android refuses to start the sync service.
+- Toolchain moves with upstream: Android Gradle Plugin 9.4.1, Kotlin 2.4.20, Gradle 9.7.1,
+  AppCompat 1.8.0, Robolectric 4.17 — plus upstream's new `MainActivity` and `ScanActivity` tests,
+  which pass against this fork's patched sources (115 unit tests green).
+- Weblate translation updates across some thirty locales.
+
+### Rebrand kept whole
+- Upstream's translators newly translated four strings that name the app — the Wear OS sync
+  permission request, the unpair confirmation, the sync notification title and the empty
+  list-widget hint. All 70 new occurrences across 24 locales now read **白い熊 猫管**, inflected the
+  way the earlier rebrand did (`白い熊 猫管sta`, `白い熊 猫管\'dan`, …).
+- Retranslated strings that collided with the existing rebrand during the rebase (the Gadgetbridge
+  sync title and summary, the card-reading permission, the welcome line, the Norwegian import hint)
+  take upstream's new wording with the app name rebranded in it.
+- The Wear OS pairing-mismatch warning still says “the Catima Wear OS app” in every language — it
+  names the unforked watch-side app, which is what the user would actually have to reinstall.
+
+## 2.45.0+004
 
 **The app now contains no tracker at all.** A tracker scan of `2.45.0+003` reported one hit — ACRA,
 upstream Catima's crash reporter — and this build removes the library rather than switching it off.
