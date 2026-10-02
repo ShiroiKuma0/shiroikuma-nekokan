@@ -8,7 +8,7 @@ installable side-by-side with upstream Catima.
 
 - `origin` = `git@github.com:ShiroiKuma0/shiroikuma-nekokan.git` (ssh) — our fork.
 - `upstream` = `https://github.com/CatimaLoyalty/Android.git` (https).
-- **`main`** tracks the latest upstream **release tag** (current base `v2.43.0`).
+- **`main`** tracks the latest upstream **release tag** (current base `v2.45.1`).
 - **`custom`** carries all our work, rebased onto `main` on each new upstream release. **All
   development happens on `custom`.**
 - **Do not rename the `protect.card_locker` code namespace** — only the installed `APP_ID` differs
@@ -93,12 +93,19 @@ installable side-by-side with upstream Catima.
 
 ## Current status
 
-**Released `2.45.0+004`** (2026-09-05; tag `2.45.0+004`, APK attached, default branch `custom`;
-`README.md` + `CHANGELOG-shiroikuma.md` track it). Previously `2.45.0+003` (2026-09-04) and
-`2.45.0+001` (2026-08-14). Rebased onto upstream **Catima `v2.45.0`**
-(versionCode **1002** — upstream's new scheme: Android releases start at 1000 and use **even**
-codes, the odd ones belonging to its new `fdroidLegacy` flavor, so our line moved from
-`1680000 + N` to `10020000 + N`). That release adds the **Wear OS companion**: two new Gradle
+**Released `2.45.1+001`** (2026-10-02; tag `2.45.1+001`, APK attached, default branch `custom`;
+`README.md` + `CHANGELOG-shiroikuma.md` track it). Previously `2.45.0+004` (2026-09-05),
+`2.45.0+003` (2026-09-04) and `2.45.0+001` (2026-08-14). Based on upstream **Catima `v2.45.1`**
+(versionCode **1004**, so our line is `10040000 + N`): list-widget refresh on card open, pkpass/PDF
+import from network locations moved off the main thread (`MainActivity`, `ScanActivity`,
+`PkpassesParser`, and `Utils.retrieveBarcodesFromImage` now throws instead of toasting, with a new
+`Utils.showToast`), a Wear sync crash fix with Bluetooth off, AGP 9.4.1 / Kotlin 2.4.20, and new
+`MainActivityTest`/`ScanActivityTest` (115 unit tests green). The 2.45.1 rebase conflicted only in
+`app/build.gradle.kts` (version lines) and 15 locale `strings.xml` (retranslated brand strings);
+Weblate's new translations of the four Wear/widget strings naming the app were rebranded in 24
+locales. Upstream versionCodes follow its 2.45.0 scheme: Android releases start at 1000 and use
+**even** codes, the odd ones belonging to its `fdroidLegacy` flavor (our line moved from
+`1680000 + N` to `10020000 + N` at 2.45.0). Catima 2.45.0 added the **Wear OS companion**: two new Gradle
 modules (`:shared`, `:wear` — we build neither, though `:app` now depends on `:shared`), a
 Bluetooth `connectedDevice` foreground service under `wearos/` with trusted-device pairing and
 allow/block lists, a **Smartwatch support** settings category (sync switch OFF by default), and
@@ -106,7 +113,7 @@ the removal of the embedded changelog (About → *Version history* just links ou
 `copyRawResFiles` task no longer copies `CHANGELOG.md`). `Utils.needsDarkForeground` moved to
 `:shared` as `ForegroundColorHelper`. Since AGP 9.3.1 / Kotlin 2.4.10 the **release unit-test task
 no longer exists**: run `./gradlew :app:testFossDebugUnitTest`, not the old
-`:app:testFossReleaseUnitTest` (110 tests green on this base). Upstream strings naming *this* app
+`:app:testFossReleaseUnitTest` (115 tests green on 2.45.1). Upstream strings naming *this* app
 are rebranded as usual; the Wear token-mismatch warning keeps “the Catima Wear OS app”, which
 names the unforked watch-side app. The fork so far: identity + fork versioning +
 signing + skills; the black-yellow traced launcher icon (adaptive + legacy mipmaps, splash,
