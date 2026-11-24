@@ -14,6 +14,7 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.Toast
+import protect.card_locker.shiroikuma.SkToast // shiroikuma-nekokan fork
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.Toolbar
@@ -148,7 +149,7 @@ class ImportExportActivity : CatimaAppCompatActivity() {
                 try {
                     fileCreateLauncher.launch(intentCreateDocumentAction)
                 } catch (e: ActivityNotFoundException) {
-                    Toast.makeText(
+                    SkToast.makeText(
                         applicationContext,
                         R.string.failedOpeningFileManager,
                         Toast.LENGTH_LONG
@@ -246,7 +247,7 @@ class ImportExportActivity : CatimaAppCompatActivity() {
                         try {
                             fileOpenLauncher.launch("*/*")
                         } catch (e: ActivityNotFoundException) {
-                            Toast.makeText(
+                            SkToast.makeText(
                                 applicationContext,
                                 R.string.failedOpeningFileManager,
                                 Toast.LENGTH_LONG

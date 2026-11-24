@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  shiroikuma-nekokan fork: every string the fork adds (the launcher label sk_app_name excepted,
+  which stays beside app_name in strings.xml).
+
+  They live in a file of their own so that upstream's strings.xml stays as upstream wrote it,
+  apart from the rebranded lines. Every string here that is not marked untranslatable has its
+  Japanese translation in values-ja/sk_strings.xml, made in the same change — compare the two
+  key sets before a build is called done. The other 53 locales fall back to English, hence the
+  lint exemption.
+
+  Among them: the `contains` list SkAutomationProvider.describe() hands a caller before any
+  export exists (sk_eim_contains_*). 応用管理 renders these verbatim next to a "back this app up"
+  row, so they say what the archive actually is: not a settings dump, but the barcodes of
+  白い熊's loyalty and membership cards.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="sk_ui_title" translatable="false">白い熊 猫管 UI</string>
+    <string name="sk_settings_ui_summary">Colors, fonts, borders — the black-yellow look</string>
+    <string name="sk_section_foundation">Foundation</string>
+    <string name="sk_section_top_bar">Top bar</string>
+    <string name="sk_section_main">Main screen</string>
+    <string name="sk_section_controls">Buttons</string>
+    <string name="sk_group_welcome">Welcome view</string>
+    <string name="sk_group_card_list">Card list</string>
+    <string name="sk_group_fab">Add button (+)</string>
+    <string name="sk_slot_background">Background</string>
+    <string name="sk_slot_text">Primary text</string>
+    <string name="sk_slot_text_secondary">Secondary text</string>
+    <string name="sk_slot_accent">Accent</string>
+    <string name="sk_slot_toolbar_background">Bar background</string>
+    <string name="sk_slot_toolbar_title">Bar title</string>
+    <string name="sk_slot_toolbar_icon">Bar icons</string>
+    <string name="sk_slot_welcome_title">Welcome title</string>
+    <string name="sk_slot_welcome_text">Welcome text</string>
+    <string name="sk_slot_card_name">Card name</string>
+    <string name="sk_slot_card_note">Card note</string>
+    <string name="sk_slot_card_background">Card background</string>
+    <string name="sk_slot_card_border">Card border color</string>
+    <string name="sk_slot_fab_background">Button ground</string>
+    <string name="sk_slot_fab_icon">Button icon</string>
+    <string name="sk_slot_button_text">Button text</string>
+    <string name="sk_dimen_card_border_width">Border thickness</string>
+    <string name="sk_dimen_card_corner_radius">Corner roundness</string>
+    <string name="sk_font">Font</string>
+    <string name="sk_weight">Weight</string>
+    <string name="sk_size">Size</string>
+    <string name="sk_default">Default</string>
+    <string name="sk_sp_value" translatable="false">%d sp</string>
+    <string name="sk_dp_value" translatable="false">%d dp</string>
+    <string name="sk_add_font">Add font…</string>
+    <string name="sk_font_invalid">Not a usable font file (ttf/otf)</string>
+    <string name="sk_font_system_default">System default</string>
+    <string name="sk_font_monospace">Monospace</string>
+    <string name="sk_font_sample" translatable="false">AaIiMmQqWw 0123 白い熊 猫管 áčřž</string>
+    <string name="sk_frame_preview_text" translatable="false">白い熊</string>
+    <string name="sk_weight_default">Default</string>
+    <string name="sk_weight_thin">Thin (100)</string>
+    <string name="sk_weight_light">Light (300)</string>
+    <string name="sk_weight_regular">Regular (400)</string>
+    <string name="sk_weight_medium">Medium (500)</string>
+    <string name="sk_weight_semibold">Semibold (600)</string>
+    <string name="sk_weight_bold">Bold (700)</string>
+    <string name="sk_weight_black">Black (900)</string>
+    <string name="sk_section_eximport">Export / Import</string>
+    <string name="sk_eim_title">Export / Import — 白い熊 猫管</string>
+    <string name="sk_eim_row_desc">Export or import everything — cards, colors, fonts, settings — by category.</string>
+    <string name="sk_eim_desc">Save or load everything — cards, colors, fonts, settings — as selectable categories.</string>
+    <string name="sk_eim_dir">Export directory (tap to choose)</string>
+    <string name="sk_eim_dir_unset">Not set — tap to choose a directory</string>
+    <string name="sk_eim_warn_nodir">No directory set yet — pick one to enable one-tap export.</string>
+    <string name="sk_eim_warn_none">No export in this directory yet.</string>
+    <string name="sk_eim_last">Last export: %1$s</string>
+    <string name="sk_eim_select_all">Select all</string>
+    <string name="sk_eim_export">Export</string>
+    <string name="sk_eim_import">Import</string>
+    <string name="sk_eim_cat_cards">All cards (barcodes and card numbers — scannable)</string>
+    <string name="sk_eim_cat_card_images">Card images (photos of the physical cards)</string>
+    <string name="sk_eim_cat_appearance">白い熊 猫管 UI (colors · fonts · borders)</string>
+    <string name="sk_eim_cat_settings">App settings (preferences, not card data)</string>
+    <string name="sk_eim_exporting">Exporting…</string>
+    <string name="sk_eim_importing">Importing…</string>
+    <string name="sk_eim_export_done_title">✓ Export finished</string>
+    <string name="sk_eim_export_done_body">Exported: %1$s\n\n%2$s</string>
+    <string name="sk_eim_import_done_title">✓ Import finished</string>
+    <string name="sk_eim_import_done_body">Restored:\n\n%1$s\n\nRestart to apply everything.</string>
+    <string name="sk_eim_restart_now">Restart now</string>
+    <string name="sk_eim_restart_later">Later</string>
+    <string name="sk_eim_export_fail">Export failed: %1$s</string>
+    <string name="sk_eim_import_fail">Import failed: %1$s</string>
+    <string name="sk_eim_import_none">No 白い熊 猫管 export found in that file.</string>
+    <string name="sk_eim_none_selected">No categories selected.</string>
+    <string name="sk_eim_progress" translatable="false">%1$d / %2$d</string>
+    <string name="sk_eim_cards_count">%1$d cards</string>
+    <string name="sk_eim_prefs_count">%1$d settings</string>
+    <string name="sk_eim_fonts_count">%1$d fonts</string>
+    <string name="sk_eim_cards_no_images">without images</string>
+    <string name="sk_eim_contains_cards">Loyalty &amp; membership cards — barcodes and card numbers (scannable credentials)</string>
+    <string name="sk_eim_contains_card_images">Card images — photos of the physical cards (may show names and numbers)</string>
+    <string name="sk_eim_contains_appearance">白い熊 猫管 UI — colors, fonts, borders</string>
+    <string name="sk_eim_contains_settings">App settings</string>
+    <string name="sk_auto_title">Automation export</string>
+    <string name="sk_auto_desc">Let sister apps trigger this export headlessly, and let 白い熊 応用管理 back this app up with its data and restore it onto a clean phone.</string>
+    <string name="sk_auto_require_token_title">Use authorization token?</string>
+    <string name="sk_auto_require_token_desc">Off: any app on the phone may drive the automation — and this app\'s backup carries scannable card barcodes. On: a caller must also present the token below. Either way the data door checks the caller\'s package, uid and signing certificate.</string>
+    <string name="sk_auto_data_channel">Automation data</string>
+    <string name="sk_auto_data_exporting">Handing the backup over…</string>
+    <string name="sk_auto_data_importing">Restoring the backup…</string>
+    <string name="sk_auto_token_title">Automation token (tap to copy)</string>
+    <string name="sk_auto_token_regenerate">Regenerate</string>
+    <string name="sk_auto_token_copied">Automation token copied</string>
+    <string name="sk_auto_token_regenerated">Automation token regenerated — update pasted copies</string>
+    <string name="sk_auto_token_regen_warning">Replace the automation token? Every pasted copy — 自由作業盤\'s 保存復元 settings — must be updated with the new value.</string>
+    <string name="sk_auto_allfiles_title">All-files access</string>
+    <string name="sk_auto_allfiles_desc">Needed only so an automation export can write to an absolute path outside the directory above.</string>
+    <string name="sk_auto_allfiles_granted">Granted</string>
+    <string name="sk_auto_allfiles_needed">Not granted — tap to grant</string>
+    <string name="sk_state_progress_unit" translatable="false">項目</string>
+
+    <!-- The black-yellow theme: the UI page's sections, its colour roles and its actions. -->
+    <string name="sk_eim_open">Export / Import…</string>
+    <string name="sk_app_settings">App settings</string>
+    <string name="sk_app_settings_desc">Everything that is not about the look: language, card view, smartwatch.</string>
+    <string name="sk_section_text">Text</string>
+    <string name="sk_section_dialogs">Dialogs</string>
+    <string name="sk_section_switches">Switches</string>
+    <string name="sk_section_menus">Menus</string>
+    <string name="sk_section_lists">Lists and tabs</string>
+    <string name="sk_section_marks">Check boxes and radio buttons</string>
+    <string name="sk_section_fields">Text fields</string>
+    <string name="sk_section_settings_pages">Settings pages</string>
+    <string name="sk_section_bars">Bars and messages</string>
+    <string name="sk_section_maintenance">Maintenance</string>
+    <string name="sk_group_icon_roles">Icons, by what the row does</string>
+    <string name="sk_group_tabs">Tabs</string>
+    <string name="sk_group_section_icons">Section icons of this page</string>
+    <string name="sk_slot_text_tertiary">Tertiary text</string>
+    <string name="sk_slot_text_hint">Hint text</string>
+    <string name="sk_slot_text_disabled">Disabled text</string>
+    <string name="sk_slot_link">Links</string>
+    <string name="sk_slot_text_selection">Text selection</string>
+    <string name="sk_slot_icon">Icons</string>
+    <string name="sk_slot_icon_active">Active icons and controls</string>
+    <string name="sk_slot_pill_frame">Button frame</string>
+    <string name="sk_slot_pill_ground">Button ground</string>
+    <string name="sk_slot_danger">Delete red</string>
+    <string name="sk_slot_dialog_ground">Dialog ground</string>
+    <string name="sk_slot_dialog_frame">Dialog frame</string>
+    <string name="sk_slot_dialog_title">Dialog title</string>
+    <string name="sk_slot_dialog_text">Dialog text</string>
+    <string name="sk_slot_fab_frame">Button ring</string>
+    <string name="sk_slot_switch_on">Switch, on</string>
+    <string name="sk_slot_switch_off">Switch, off</string>
+    <string name="sk_slot_menu_ground">Menu ground</string>
+    <string name="sk_slot_menu_frame">Menu frame</string>
+    <string name="sk_slot_menu_label">Menu label</string>
+    <string name="sk_slot_menu_row_frame">Menu row frame</string>
+    <string name="sk_slot_menu_divider">Menu divider</string>
+    <string name="sk_slot_menu_icon_open">Opens, adds, imports, synchronises</string>
+    <string name="sk_slot_menu_icon_write">Edits, duplicates</string>
+    <string name="sk_slot_menu_icon_group">Groups and devices</string>
+    <string name="sk_slot_menu_icon_share">Shares, copies, exports</string>
+    <string name="sk_slot_menu_icon_view">Views, sorts, settings</string>
+    <string name="sk_slot_menu_icon_block">Archives, locks, blocks</string>
+    <string name="sk_slot_list_divider">List divider</string>
+    <string name="sk_slot_list_pressed">Pressed row</string>
+    <string name="sk_slot_list_selected">Selected item, ground</string>
+    <string name="sk_slot_list_selected_text">Selected item, text</string>
+    <string name="sk_slot_tab_selected">Selected tab</string>
+    <string name="sk_slot_tab_unselected">Other tabs</string>
+    <string name="sk_slot_tab_indicator">Tab indicator</string>
+    <string name="sk_slot_mark_on">Mark, checked</string>
+    <string name="sk_slot_mark_off">Mark, unchecked</string>
+    <string name="sk_slot_field_text">Field text</string>
+    <string name="sk_slot_field_frame">Field frame, focused</string>
+    <string name="sk_slot_field_frame_idle">Field frame</string>
+    <string name="sk_slot_heading">Headings</string>
+    <string name="sk_slot_note">Explanations and their left rule</string>
+    <string name="sk_slot_section_divider">Line between sections</string>
+    <string name="sk_slot_chip_frame">Index chip frame</string>
+    <string name="sk_slot_chip_text">Index chip text</string>
+    <string name="sk_slot_slider">Sliders</string>
+    <string name="sk_slot_section_base">The base: the app and its settings</string>
+    <string name="sk_slot_section_controls">Controls: what you operate</string>
+    <string name="sk_slot_section_words">Words, written and read</string>
+    <string name="sk_slot_section_frame">The frame and its boxes</string>
+    <string name="sk_slot_section_reach">The app asks, offers, hands over</string>
+    <string name="sk_slot_section_warning">Warning: resets and wipes</string>
+    <string name="sk_slot_section_flash">A brief flash</string>
+    <string name="sk_slot_navigation_bar">Navigation bar</string>
+    <string name="sk_slot_snackbar_ground">Message bar ground</string>
+    <string name="sk_slot_snackbar_text">Message bar text</string>
+    <string name="sk_slot_snackbar_action">Message bar action</string>
+    <string name="sk_group_toasts">Toasts</string>
+    <string name="sk_slot_toast_ground">Ground</string>
+    <string name="sk_slot_toast_frame">Frame</string>
+    <string name="sk_slot_toast_text">Text</string>
+    <string name="sk_reset_section_order">Reset section order</string>
+    <string name="sk_reset_section_order_desc">Puts the sections of this page back in their original order. What is folded stays folded.</string>
+    <string name="sk_section_order_reset">Section order reset</string>
+    <string name="sk_reset_all_colors">Reset all colours</string>
+    <string name="sk_reset_all_colors_desc">Puts every colour on this page back to its default. Fonts, sizes and borders stay.</string>
+    <string name="sk_reset_all_colors_confirm">Put every colour back to its default?</string>
+    <string name="sk_colors_reset">All colours reset</string>
+</resources>

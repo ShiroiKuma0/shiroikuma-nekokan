@@ -13,24 +13,8 @@
             app:iconSpaceReserved="false"
             app:singleLineTitle="false" />
 
-        <ListPreference
-            android:defaultValue="@string/settings_key_system_theme"
-            android:entries="@array/theme_value_strings"
-            android:entryValues="@array/theme_values"
-            android:key="@string/settings_key_theme"
-            android:title="@string/settings_theme"
-            app:iconSpaceReserved="false"
-            app:singleLineTitle="false"
-            app:useSimpleSummaryProvider="true" />
-
-        <SwitchPreferenceCompat
-            android:widgetLayout="@layout/preference_material_switch"
-            android:defaultValue="false"
-            android:key="@string/settings_key_oled_dark"
-            android:summary="@string/settings_oled_dark_summary"
-            android:title="@string/settings_oled_dark"
-            app:iconSpaceReserved="false"
-            app:singleLineTitle="false" />
+        <!-- shiroikuma-nekokan fork: upstream's Theme list and OLED switch are removed; every
+             colour is a role on the 白い熊 猫管 UI page. -->
 
         <ListPreference
             android:defaultValue=""

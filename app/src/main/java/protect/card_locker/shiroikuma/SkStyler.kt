@@ -1,15 +1,11 @@
 package protect.card_locker.shiroikuma
 
 import android.app.Activity
-import android.content.res.ColorStateList
-import android.graphics.Typeface
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.card.MaterialCardView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import protect.card_locker.R
 
 /**
@@ -17,7 +13,8 @@ import protect.card_locker.R
  *
  * Called centrally from CatimaAppCompatActivity (onPostCreate + onResume), so every
  * View-based screen picks up the current colors/fonts; list rows are styled from the
- * adapters via [styleCardRow].
+ * adapters via [styleCardRow]. Buttons, switches, selection marks, floating buttons and tab
+ * bars are drawn from their roles as they are inflated (SkViewInflater).
  */
 object SkStyler {
 
@@ -28,11 +25,11 @@ object SkStyler {
 
         activity.findViewById<Toolbar>(R.id.toolbar)?.let { styleToolbar(activity, it) }
 
-        activity.findViewById<FloatingActionButton>(R.id.fabAdd)?.let { fab ->
-            fab.backgroundTintList =
-                ColorStateList.valueOf(SkTheme.color(activity, SkSlot.FAB_BACKGROUND))
-            fab.imageTintList =
-                ColorStateList.valueOf(SkTheme.color(activity, SkSlot.FAB_ICON))
+        // The image wells of the card editor: upstream filled them with the primary colour.
+        for (id in intArrayOf(R.id.frontImage, R.id.backImage)) {
+            activity.findViewById<View>(id)?.background = SkPill.panel(
+                activity, background, SkTheme.color(activity, SkSlot.FIELD_FRAME_IDLE), 8f,
+            )
         }
 
         activity.findViewById<TextView>(R.id.welcome_text)?.let { view ->
@@ -95,25 +92,6 @@ object SkStyler {
         note?.let {
             it.setTextColor(SkTheme.color(context, SkSlot.CARD_NOTE))
             SkFonts.applyFont(it, SkSlot.CARD_NOTE)
-        }
-    }
-
-    /** Buttons anywhere in the tree get the button text slot (color + font). */
-    fun styleButtons(root: View) {
-        walk(root) { view ->
-            if (view is android.widget.Button) {
-                view.setTextColor(SkTheme.color(view.context, SkSlot.BUTTON_TEXT))
-                SkFonts.applyFont(view, SkSlot.BUTTON_TEXT, Typeface.BOLD)
-            }
-        }
-    }
-
-    private fun walk(view: View, action: (View) -> Unit) {
-        action(view)
-        if (view is ViewGroup) {
-            for (i in 0 until view.childCount) {
-                walk(view.getChildAt(i), action)
-            }
         }
     }
 }

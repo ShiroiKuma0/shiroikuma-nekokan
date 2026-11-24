@@ -35,6 +35,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import protect.card_locker.shiroikuma.SkToast; // shiroikuma-nekokan fork
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -123,10 +124,10 @@ public class Utils {
     // Displays the toast immediately on the main UI loop, or asks Android to display it there otherwise.
     static public void showToast(Context context, int message, int duration) {
         if (Looper.myLooper() == Looper.getMainLooper()) {
-            Toast.makeText(context, message, duration).show();
+            SkToast.makeText(context, message, duration).show();
         } else {
             new Handler(Looper.getMainLooper()).post(
-                    () -> Toast.makeText(context, message, duration).show());
+                    () -> SkToast.makeText(context, message, duration).show());
         }
     }
 
@@ -943,16 +944,12 @@ public class Utils {
 
     // replace colors in the current theme
     public static void patchColors(AppCompatActivity activity) {
-        Settings settings = new Settings(activity);
-
         Resources.Theme theme = activity.getTheme();
         // shiroikuma-nekokan fork: the 白い熊 猫管 black/yellow look replaces
         // Material You dynamic colors (see themes.xml SkBlackYellow + SkStyler).
         theme.applyStyle(R.style.SkBlackYellow, true);
-
-        if (isDarkModeEnabled(activity) && settings.getOledDark()) {
-            theme.applyStyle(R.style.DarkBackground, true);
-        }
+        // Upstream's DarkBackground overlay (the OLED setting) writes a literal black over the
+        // background; here the background is a settable role, so it is not applied.
     }
 
     // Force correct color

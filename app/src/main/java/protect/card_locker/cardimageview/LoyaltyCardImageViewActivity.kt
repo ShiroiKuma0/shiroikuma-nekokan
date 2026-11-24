@@ -7,6 +7,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Toast
+import protect.card_locker.shiroikuma.SkToast // shiroikuma-nekokan fork
 import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.compose.setContent
 import androidx.annotation.StringRes
@@ -51,6 +52,11 @@ import protect.card_locker.R
 import protect.card_locker.Utils
 import protect.card_locker.compose.CatimaTopAppBar
 import protect.card_locker.compose.theme.CatimaTheme
+import protect.card_locker.compose.theme.SkMenuRow
+import protect.card_locker.compose.theme.skPanelFrame
+import protect.card_locker.compose.theme.skRole
+import protect.card_locker.shiroikuma.SkIconRole
+import protect.card_locker.shiroikuma.SkSlot
 import protect.card_locker.preferences.Settings
 
 class LoyaltyCardImageViewActivity : CatimaComponentActivity() {
@@ -67,7 +73,7 @@ class LoyaltyCardImageViewActivity : CatimaComponentActivity() {
         }
 
         if (loyaltyCardId == 0 || imageLocationType == null || bitmap == null) {
-            Toast.makeText(this, R.string.failedToRetrieveImageFile, Toast.LENGTH_SHORT).show()
+            SkToast.makeText(this, R.string.failedToRetrieveImageFile, Toast.LENGTH_SHORT).show()
             finish()
             return
         }
@@ -168,12 +174,20 @@ fun LoyaltyCardImageViewScreen(
                             contentDescription = stringResource(R.string.action_more_options)
                         )
                     }
+                    // shiroikuma-nekokan fork: the menu's panel and its row are drawn from the
+                    // menu roles — the row a full-width pill with a role-coloured icon.
                     DropdownMenu(
                         expanded = expanded,
-                        onDismissRequest = { expanded = false }
+                        onDismissRequest = { expanded = false },
+                        modifier = Modifier.skPanelFrame(SkSlot.MENU_FRAME, 4),
+                        containerColor = skRole(SkSlot.MENU_GROUND),
                     ) {
-                        DropdownMenuItem(onClick = { openInImageGallery(context, cardId, imageLocationType) },
-                            text = { Text(stringResource(R.string.open_in_gallery)) },
+                        SkMenuRow(
+                            text = stringResource(R.string.open_in_gallery),
+                            icon = R.drawable.baseline_image_24,
+                            role = SkIconRole.OPEN,
+                            onClick = { openInImageGallery(context, cardId, imageLocationType) },
+                            opens = true,
                         )
                     }
                 }

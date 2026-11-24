@@ -14,12 +14,17 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowInsetsControllerCompat;
 
+import protect.card_locker.shiroikuma.SkPalette;
 import protect.card_locker.shiroikuma.SkSlot;
 import protect.card_locker.shiroikuma.SkStyler;
 import protect.card_locker.shiroikuma.SkTheme;
 
 public class CatimaAppCompatActivity extends AppCompatActivity {
     protected boolean activityOverridesNavBarColor = false;
+    // shiroikuma-nekokan fork: the colour generation this activity was built from. The 白い熊
+    // 猫管 UI page repaints itself and sets this to false.
+    protected boolean recreateOnColorChange = true;
+    private int skColorGeneration;
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -30,7 +35,13 @@ public class CatimaAppCompatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         EdgeToEdge.enable(this);
+        // shiroikuma-nekokan fork: lay the colour roles over the resources before the theme
+        // and any layout read a colour from them.
+        SkPalette.apply(this);
+        skColorGeneration = SkPalette.INSTANCE.getGeneration();
         super.onCreate(savedInstanceState);
+        // Again, in case AppCompat gave the activity new resources for the night mode.
+        SkPalette.apply(this);
         Utils.patchColors(this);
     }
 
@@ -56,8 +67,13 @@ public class CatimaAppCompatActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        // shiroikuma-nekokan fork: a screen built from older colours is built again.
+        if (recreateOnColorChange && skColorGeneration != SkPalette.INSTANCE.getGeneration()) {
+            recreate();
+            return;
+        }
         if (!activityOverridesNavBarColor) {
-            Utils.setNavigationBarColor(this, null, SkTheme.INSTANCE.color(this, SkSlot.BACKGROUND), false);
+            Utils.setNavigationBarColor(this, null, SkTheme.INSTANCE.color(this, SkSlot.NAVIGATION_BAR), false);
         }
         // shiroikuma-nekokan fork: re-apply on return (e.g. after edits in the UI page).
         SkStyler.INSTANCE.apply(this);

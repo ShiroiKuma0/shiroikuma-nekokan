@@ -34,6 +34,7 @@ import protect.card_locker.Utils
 import protect.card_locker.databinding.SettingsActivityBinding
 import protect.card_locker.shared.BluetoothPermissionHelper
 import protect.card_locker.shared.WearBluetoothSecurity
+import protect.card_locker.shiroikuma.SkPreferenceRows
 import protect.card_locker.shiroikuma.SkUiActivity
 import protect.card_locker.wearos.BluetoothPairingNotificationManager
 import protect.card_locker.wearos.WearSyncPermissionRequester
@@ -149,11 +150,13 @@ class SettingsActivity : CatimaAppCompatActivity() {
             addPreferencesFromResource(R.xml.preferences)
 
             setupShiroikumaUiPreference()
-            setupThemePreference()
-            setupOledDarkPreference()
+            // shiroikuma-nekokan fork: the Theme and OLED rows are removed from preferences.xml
+            // (every colour is a role on the UI page), so they are not set up.
             setupLocalePreference()
             setupWearSyncPreference()
             setupWearSyncDevicePreferences()
+            // shiroikuma-nekokan fork: icons, pills and note-coloured summaries for every row.
+            SkPreferenceRows.apply(this)
         }
 
         // shiroikuma-nekokan fork: the 白い熊 猫管 UI page entry

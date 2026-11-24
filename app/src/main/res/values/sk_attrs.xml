@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- shiroikuma-nekokan fork: theme attributes of the 白い熊 theme. -->
+<resources>
+    <!-- Set by the theme of a dialog: lets shiroikuma/SkViewInflater tell a dialog's views from
+         an activity's. -->
+    <attr name="skDialog" format="boolean" />
+</resources>

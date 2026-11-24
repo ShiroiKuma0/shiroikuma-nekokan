@@ -25,6 +25,7 @@ import android.widget.ListAdapter
 import android.widget.SimpleAdapter
 import android.widget.TextView
 import android.widget.Toast
+import protect.card_locker.shiroikuma.SkToast // shiroikuma-nekokan fork
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -480,7 +481,7 @@ class ScanActivity : CatimaAppCompatActivity() {
             launcher.launch(chooserIntent)
         } catch (e: ActivityNotFoundException) {
             setScannerActive(true)
-            Toast.makeText(applicationContext, errorMessage, Toast.LENGTH_LONG).show()
+            SkToast.makeText(applicationContext, errorMessage, Toast.LENGTH_LONG).show()
             Log.e(TAG, "No activity found to handle intent", e)
         }
     }
@@ -601,7 +602,7 @@ class ScanActivity : CatimaAppCompatActivity() {
                 }
             } else {
                 setScannerActive(true)
-                Toast.makeText(this, R.string.storageReadPermissionRequired, Toast.LENGTH_LONG)
+                SkToast.makeText(this, R.string.storageReadPermissionRequired, Toast.LENGTH_LONG)
                     .show()
             }
         }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- shiroikuma-nekokan fork: the row of a dialog's action list, named by the dialog style as its
+     listItemLayout (themes.xml, MaterialAlertDialog.Sk). It carries no colour: the row draws
+     itself from its roles (shiroikuma/SkDialogItemView.kt). -->
+<protect.card_locker.shiroikuma.SkDialogItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:maxLines="2"
+    android:textSize="16sp" />

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- shiroikuma-nekokan fork: tag keys of the theme layer. -->
+<resources>
+    <item name="sk_pill_main" type="id" />
+    <item name="sk_dialog_framed" type="id" />
+    <item name="sk_row_icon" type="id" />
+</resources>

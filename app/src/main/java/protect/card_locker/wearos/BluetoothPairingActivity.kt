@@ -7,13 +7,18 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import protect.card_locker.R
 import protect.card_locker.shared.WearBluetoothSecurity
+import protect.card_locker.shiroikuma.SkPalette
 
 class BluetoothPairingActivity : AppCompatActivity() {
 
     private var currentDialog: AlertDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // shiroikuma-nekokan fork: this activity is not a CatimaAppCompatActivity, so it takes
+        // the colour roles and the 白い熊 猫管 look itself — its dialog is drawn from them.
+        SkPalette.apply(this)
         super.onCreate(savedInstanceState)
+        theme.applyStyle(R.style.SkBlackYellow, true)
         showPairingDialog(intent)
     }
 

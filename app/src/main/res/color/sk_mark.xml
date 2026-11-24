@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- shiroikuma-nekokan fork: a selection mark (check box, radio button) drawn by the platform
+     from the theme: on and off, both role colours. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:color="@color/sk_role_mark_on" />
+    <item android:color="@color/sk_role_mark_off" />
+</selector>

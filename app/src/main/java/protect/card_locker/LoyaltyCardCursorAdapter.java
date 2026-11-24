@@ -278,7 +278,7 @@ public class LoyaltyCardCursorAdapter extends BaseCursorAdapter<LoyaltyCardCurso
                 if (color != null) {
                     icon.setColorFilter(BlendModeColorFilterCompat.createBlendModeColorFilterCompat(color, BlendModeCompat.SRC_ATOP));
                 } else {
-                    icon.setColorFilter(BlendModeColorFilterCompat.createBlendModeColorFilterCompat(mDarkModeEnabled ? Color.WHITE : Color.BLACK, BlendModeCompat.SRC_ATOP));
+                    icon.setColorFilter(BlendModeColorFilterCompat.createBlendModeColorFilterCompat(protect.card_locker.shiroikuma.SkTheme.INSTANCE.color(mContext, protect.card_locker.shiroikuma.SkSlot.CARD_NOTE), BlendModeCompat.SRC_ATOP) /* shiroikuma-nekokan fork: a role, not white or black */);
                 }
             }
 

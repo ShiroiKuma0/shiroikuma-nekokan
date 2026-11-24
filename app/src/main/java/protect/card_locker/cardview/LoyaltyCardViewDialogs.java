@@ -15,6 +15,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import protect.card_locker.shiroikuma.SkToast; // shiroikuma-nekokan fork
 
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
@@ -142,7 +143,7 @@ final class LoyaltyCardViewDialogs {
                 BigDecimal balanceChange = Utils.parseBalance(input.getText().toString(), loyaltyCard.balanceType);
                 BigDecimal newBalance = loyaltyCard.balance.subtract(balanceChange).max(new BigDecimal(0));
                 balanceUpdateListener.onBalanceUpdated(newBalance);
-                Toast.makeText(
+                SkToast.makeText(
                         context,
                         context.getString(
                                 R.string.newBalanceSentence,
@@ -151,7 +152,7 @@ final class LoyaltyCardViewDialogs {
                         Toast.LENGTH_LONG
                 ).show();
             } catch (ParseException e) {
-                Toast.makeText(context, R.string.amountParsingFailed, Toast.LENGTH_LONG).show();
+                SkToast.makeText(context, R.string.amountParsingFailed, Toast.LENGTH_LONG).show();
             }
         });
         builder.setNegativeButton(R.string.receive, (dialogInterface, i) -> {
@@ -159,7 +160,7 @@ final class LoyaltyCardViewDialogs {
                 BigDecimal balanceChange = Utils.parseBalance(input.getText().toString(), loyaltyCard.balanceType);
                 BigDecimal newBalance = loyaltyCard.balance.add(balanceChange);
                 balanceUpdateListener.onBalanceUpdated(newBalance);
-                Toast.makeText(
+                SkToast.makeText(
                         context,
                         context.getString(
                                 R.string.newBalanceSentence,
@@ -168,7 +169,7 @@ final class LoyaltyCardViewDialogs {
                         Toast.LENGTH_LONG
                 ).show();
             } catch (ParseException e) {
-                Toast.makeText(context, R.string.amountParsingFailed, Toast.LENGTH_LONG).show();
+                SkToast.makeText(context, R.string.amountParsingFailed, Toast.LENGTH_LONG).show();
             }
         });
         builder.setNeutralButton(context.getString(R.string.cancel), (dialog, which) -> dialog.cancel());

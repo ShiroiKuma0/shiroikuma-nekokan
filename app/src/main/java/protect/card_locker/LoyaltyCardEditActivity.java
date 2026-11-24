@@ -32,6 +32,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import protect.card_locker.shiroikuma.SkToast; // shiroikuma-nekokan fork
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -267,7 +268,7 @@ public class LoyaltyCardEditActivity extends CatimaAppCompatActivity implements 
             LoyaltyCard loyaltyCard = DBHelper.getLoyaltyCard(this, mDatabase, viewModel.getLoyaltyCardId());
             if (loyaltyCard == null) {
                 Log.w(TAG, "Could not lookup loyalty card " + viewModel.getLoyaltyCardId());
-                Toast.makeText(this, R.string.noCardExistsError, Toast.LENGTH_LONG).show();
+                SkToast.makeText(this, R.string.noCardExistsError, Toast.LENGTH_LONG).show();
                 finish();
                 return false;
             }
@@ -277,7 +278,7 @@ public class LoyaltyCardEditActivity extends CatimaAppCompatActivity implements 
             try {
                 viewModel.setLoyaltyCard(new ImportURIHelper(this).parse(importLoyaltyCardUri));
             } catch (InvalidObjectException ex) {
-                Toast.makeText(this, R.string.failedParsingImportUriError, Toast.LENGTH_LONG).show();
+                SkToast.makeText(this, R.string.failedParsingImportUriError, Toast.LENGTH_LONG).show();
                 finish();
                 return false;
             }
@@ -573,7 +574,7 @@ public class LoyaltyCardEditActivity extends CatimaAppCompatActivity implements 
                             setLoyaltyCardBarcodeType(barcodeFormat);
 
                             if (!barcodeFormat.isSupported()) {
-                                Toast.makeText(LoyaltyCardEditActivity.this, getString(R.string.unsupportedBarcodeType), Toast.LENGTH_LONG).show();
+                                SkToast.makeText(LoyaltyCardEditActivity.this, getString(R.string.unsupportedBarcodeType), Toast.LENGTH_LONG).show();
                             }
                         } catch (IllegalArgumentException e) {
                         }
@@ -693,13 +694,13 @@ public class LoyaltyCardEditActivity extends CatimaAppCompatActivity implements 
                     } else if (requestedIcon()) {
                         setThumbnailImage(Utils.resizeBitmap(bitmap, Utils.BITMAP_SIZE_SMALL));
                     } else {
-                        Toast.makeText(this, R.string.generic_error_please_retry, Toast.LENGTH_LONG).show();
+                        SkToast.makeText(this, R.string.generic_error_please_retry, Toast.LENGTH_LONG).show();
                         return;
                     }
                     Log.d("cropper", "requestedImageType: " + viewModel.getRequestedImageType());
                     viewModel.setHasChanged(true);
                 } else {
-                    Toast.makeText(LoyaltyCardEditActivity.this, R.string.errorReadingImage, Toast.LENGTH_LONG).show();
+                    SkToast.makeText(LoyaltyCardEditActivity.this, R.string.errorReadingImage, Toast.LENGTH_LONG).show();
                 }
             } else if (result.getResultCode() == UCrop.RESULT_ERROR) {
                 Throwable e = UCrop.getError(intent);
@@ -1085,7 +1086,7 @@ public class LoyaltyCardEditActivity extends CatimaAppCompatActivity implements 
         }
 
         if (failureReason != null) {
-            Toast.makeText(this, failureReason, Toast.LENGTH_LONG).show();
+            SkToast.makeText(this, failureReason, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -1157,7 +1158,7 @@ public class LoyaltyCardEditActivity extends CatimaAppCompatActivity implements 
         try {
             mPhotoTakerLauncher.launch(photoURI);
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(getApplicationContext(), R.string.cameraPermissionDeniedTitle, Toast.LENGTH_LONG).show();
+            SkToast.makeText(getApplicationContext(), R.string.cameraPermissionDeniedTitle, Toast.LENGTH_LONG).show();
             Log.e(TAG, "No activity found to handle intent", e);
         }
     }
@@ -1175,7 +1176,7 @@ public class LoyaltyCardEditActivity extends CatimaAppCompatActivity implements 
         try {
             mPhotoPickerLauncher.launch(chooserIntent);
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(getApplicationContext(), R.string.failedLaunchingPhotoPicker, Toast.LENGTH_LONG).show();
+            SkToast.makeText(getApplicationContext(), R.string.failedLaunchingPhotoPicker, Toast.LENGTH_LONG).show();
             Log.e(TAG, "No activity found to handle intent", e);
         }
     }
@@ -1184,7 +1185,7 @@ public class LoyaltyCardEditActivity extends CatimaAppCompatActivity implements 
     public void onBarcodeImageWriterResult(boolean success) {
         if (!success) {
             barcodeImageLayout.setVisibility(View.GONE);
-            Toast.makeText(LoyaltyCardEditActivity.this, getString(R.string.wrongValueForBarcodeType), Toast.LENGTH_LONG).show();
+            SkToast.makeText(LoyaltyCardEditActivity.this, getString(R.string.wrongValueForBarcodeType), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -1582,7 +1583,7 @@ public class LoyaltyCardEditActivity extends CatimaAppCompatActivity implements 
         } else if (requestedIcon()) {
             mCropperOptions.setToolbarTitle(getResources().getString(R.string.setIcon));
         } else {
-            Toast.makeText(this, R.string.generic_error_please_retry, Toast.LENGTH_LONG).show();
+            SkToast.makeText(this, R.string.generic_error_please_retry, Toast.LENGTH_LONG).show();
             return;
         }
 

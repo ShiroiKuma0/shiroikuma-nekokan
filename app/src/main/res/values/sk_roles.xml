@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  shiroikuma-nekokan fork: the colour ROLES, as resources.
+
+  Every name here is fed by one role of the role table in code (shiroikuma/SkTheme.kt, through
+  shiroikuma/SkPalette.kt): from Android 11 on, SkPalette lays a resources loader over the app
+  that gives each name the colour its role has — the one 白い熊 set on the UI page, or the role's
+  default.
+
+  The values in this file are what a system WITHOUT that loader shows (Android 6 to 10): each
+  role's default, computed from the two primaries exactly as SkTheme.default() does. They are a
+  copy, kept for those systems only — the role table in code stays the one place a default is
+  decided, and a default changed there must be changed here too.
+
+  Never add a qualified copy of this file (values-night, values-v30, …): a qualified value beats
+  the loader.
+-->
+<resources>
+    <color name="sk_role_background">#FF000000</color>
+    <color name="sk_role_surface">#FF000000</color>
+    <color name="sk_role_on_accent">#FF000000</color>
+    <color name="sk_role_app_bar">#FF000000</color>
+    <color name="sk_role_dialog_ground">#FF000000</color>
+    <color name="sk_role_menu_ground">#FF000000</color>
+    <color name="sk_role_selected">#FF3F3F00</color>
+    <color name="sk_role_snackbar_ground">#FF1E1E00</color>
+    <color name="sk_role_accent">#FFFFFF00</color>
+    <color name="sk_role_text">#FFFFFF00</color>
+    <color name="sk_role_text_disabled">#60FFFF00</color>
+    <color name="sk_role_text_secondary">#A5FFFF00</color>
+    <color name="sk_role_text_tertiary">#A5FFFF00</color>
+    <color name="sk_role_text_hint">#7FFFFF00</color>
+    <color name="sk_role_text_selection">#59FFFF00</color>
+    <color name="sk_role_link">#FFFFFF00</color>
+    <color name="sk_role_icon">#FFFFFF00</color>
+    <color name="sk_role_icon_active">#FFFFFF00</color>
+    <color name="sk_role_pressed">#4CFFFF00</color>
+    <color name="sk_role_outline">#FF8C8C00</color>
+    <color name="sk_role_field_frame">#FFFFFF00</color>
+    <color name="sk_role_field_text">#FFFFFF00</color>
+    <color name="sk_role_list_divider">#33FFFF00</color>
+    <color name="sk_role_on_selected">#FFFFFF00</color>
+    <color name="sk_role_danger">#FFFF0000</color>
+    <color name="sk_role_dialog_frame">#FFFFFF00</color>
+    <color name="sk_role_dialog_title">#FFFFFF00</color>
+    <color name="sk_role_dialog_text">#FFFFFF00</color>
+    <color name="sk_role_menu_frame">#FFFFFF00</color>
+    <color name="sk_role_menu_label">#FFFFFF00</color>
+    <color name="sk_role_snackbar_text">#FFFFFF00</color>
+    <color name="sk_role_snackbar_action">#FFFFFF00</color>
+    <color name="sk_role_tab_selected">#FFFFFF00</color>
+    <color name="sk_role_mark_on">#FFFFFF00</color>
+    <color name="sk_role_mark_off">#FF8C8C00</color>
+</resources>

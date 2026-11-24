@@ -59,6 +59,13 @@ public class Settings {
     }
 
     public int getTheme() {
+        // shiroikuma-nekokan fork: the Theme setting is removed. Night or day follows the
+        // background role, so the system bar icons contrast with whatever ground is set.
+        if (true) {
+            int ground = protect.card_locker.shiroikuma.SkTheme.INSTANCE.color(mContext, protect.card_locker.shiroikuma.SkSlot.BACKGROUND);
+            return androidx.core.graphics.ColorUtils.calculateLuminance(ground) > 0.5
+                    ? AppCompatDelegate.MODE_NIGHT_NO : AppCompatDelegate.MODE_NIGHT_YES;
+        }
         String value = getString(R.string.settings_key_theme, getResString(R.string.settings_key_system_theme));
 
         if (value.equals(getResString(R.string.settings_key_light_theme))) {

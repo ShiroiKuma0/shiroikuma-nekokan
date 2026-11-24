@@ -8,6 +8,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import protect.card_locker.shiroikuma.SkToast // shiroikuma-nekokan fork
 import androidx.core.view.MenuProvider
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.lifecycleScope
@@ -98,7 +99,7 @@ class BarcodeSelectorActivity : CatimaAppCompatActivity(), BarcodeSelectorListen
         val catimaBarcode = barcodeWithValue!!.catimaBarcode()
         
         if (!mAdapter.isValid(view)) {
-            Toast.makeText(this, getString(R.string.wrongValueForBarcodeType), Toast.LENGTH_LONG).show()
+            SkToast.makeText(this, getString(R.string.wrongValueForBarcodeType), Toast.LENGTH_LONG).show()
             return
         }
         

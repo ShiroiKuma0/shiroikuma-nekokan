@@ -30,6 +30,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import protect.card_locker.shiroikuma.SkToast; // shiroikuma-nekokan fork
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.ActionBar;
@@ -175,7 +176,7 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
             // Call correct drawMainImage
             setFullscreen(isFullscreen);
 
-            Toast.makeText(LoyaltyCardViewActivity.this, getString(R.string.wrongValueForBarcodeType), Toast.LENGTH_LONG).show();
+            SkToast.makeText(LoyaltyCardViewActivity.this, getString(R.string.wrongValueForBarcodeType), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -211,7 +212,7 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
             Bundle incomingIntentExtras = getIntent().getExtras();
 
             if (incomingIntentExtras == null) {
-                Toast.makeText(this, R.string.noCardExistsError, Toast.LENGTH_LONG).show();
+                SkToast.makeText(this, R.string.noCardExistsError, Toast.LENGTH_LONG).show();
                 finish();
                 return;
             }
@@ -281,7 +282,7 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
             if (loyaltyCard.getImageThumbnail(this) != null) {
                 openImage(LoyaltyCardImageType.ICON);
             } else {
-                Toast.makeText(LoyaltyCardViewActivity.this, R.string.icon_header_click_text, Toast.LENGTH_LONG).show();
+                SkToast.makeText(LoyaltyCardViewActivity.this, R.string.icon_header_click_text, Toast.LENGTH_LONG).show();
             }
         });
         binding.iconContainer.setOnLongClickListener(view -> {
@@ -551,7 +552,7 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
             } catch (Exception e) {
                 // For some unknown reason, this can throw a DeadObjectException.
                 // Mostly got reports from FOSS users, which implies it may be more common with custom ROMs? Uncertain.
-                Toast.makeText(this, R.string.nfc_block_system_error, Toast.LENGTH_SHORT).show();
+                SkToast.makeText(this, R.string.nfc_block_system_error, Toast.LENGTH_SHORT).show();
                 Log.e(TAG, "Failed to pause NFC: " + e);
                 e.printStackTrace();
             }
@@ -567,7 +568,7 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
         }
 
         Log.w(TAG, "Could not lookup loyalty card " + loyaltyCardId);
-        Toast.makeText(this, R.string.noCardExistsError, Toast.LENGTH_LONG).show();
+        SkToast.makeText(this, R.string.noCardExistsError, Toast.LENGTH_LONG).show();
         return false;
     }
 
@@ -631,6 +632,9 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
         editButtonIcon.mutate();
         editButtonIcon.setTint(ForegroundColorHelper.Companion.needsDarkForeground(complementaryColor) ? Color.BLACK : Color.WHITE);
         binding.fabEdit.setImageDrawable(editButtonIcon);
+        // shiroikuma-nekokan fork: the edit button stays a ring in its own roles — upstream
+        // filled it with the complement of the card's colour.
+        protect.card_locker.shiroikuma.SkWidgets.INSTANCE.fab(binding.fabEdit);
 
         Bitmap icon = loyaltyCard.getImageThumbnail(this);
         Utils.setIconOrTextWithBackground(this, loyaltyCard, icon, binding.iconImage, binding.iconText, 1);
@@ -661,7 +665,7 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
             return true;
         }
 
-        Toast.makeText(this, getString(R.string.unsupportedBarcodeType), Toast.LENGTH_LONG).show();
+        SkToast.makeText(this, getString(R.string.unsupportedBarcodeType), Toast.LENGTH_LONG).show();
         return false;
     }
 
@@ -782,7 +786,7 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
             try {
                 importURIHelper.startShareIntent(Arrays.asList(loyaltyCard));
             } catch (UnsupportedEncodingException e) {
-                Toast.makeText(LoyaltyCardViewActivity.this, R.string.failedGeneratingShareURL, Toast.LENGTH_LONG).show();
+                SkToast.makeText(LoyaltyCardViewActivity.this, R.string.failedGeneratingShareURL, Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
 
@@ -808,7 +812,7 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
             return true;
         } else if (id == R.id.action_archive) {
             DBHelper.updateLoyaltyCardArchiveStatus(database, this, loyaltyCardId, 1);
-            Toast.makeText(LoyaltyCardViewActivity.this, R.string.archived, Toast.LENGTH_LONG).show();
+            SkToast.makeText(LoyaltyCardViewActivity.this, R.string.archived, Toast.LENGTH_LONG).show();
 
             listWidget.updateAll(LoyaltyCardViewActivity.this);
 
@@ -819,7 +823,7 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
             return true;
         } else if (id == R.id.action_unarchive) {
             DBHelper.updateLoyaltyCardArchiveStatus(database, this, loyaltyCardId, 0);
-            Toast.makeText(LoyaltyCardViewActivity.this, R.string.unarchived, Toast.LENGTH_LONG).show();
+            SkToast.makeText(LoyaltyCardViewActivity.this, R.string.unarchived, Toast.LENGTH_LONG).show();
 
             // Re-init loyaltyCard with new data from DB
             onResume();
@@ -1057,7 +1061,7 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
         String value = loyaltyCard.cardId;
 
         if (value == null || value.isEmpty()) {
-            Toast.makeText(this, R.string.nothing_to_copy, Toast.LENGTH_SHORT).show();
+            SkToast.makeText(this, R.string.nothing_to_copy, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -1065,6 +1069,6 @@ public class LoyaltyCardViewActivity extends CatimaAppCompatActivity implements 
         ClipData clip = ClipData.newPlainText(getString(R.string.cardId), value);
         cm.setPrimaryClip(clip);
 
-        Toast.makeText(this, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show();
+        SkToast.makeText(this, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show();
     }
 }

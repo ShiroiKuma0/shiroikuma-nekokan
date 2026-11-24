@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.widget.Toast
+import protect.card_locker.shiroikuma.SkToast // shiroikuma-nekokan fork
 import androidx.core.app.NotificationCompat
 import protect.card_locker.NotificationInfo
 import protect.card_locker.R
@@ -115,7 +116,7 @@ object BluetoothPairingNotificationManager {
             context.getString(R.string.wear_bt_pairing_blocked, deviceName)
         }
 
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        SkToast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
     fun notificationId(address: String): Int = address.hashCode()

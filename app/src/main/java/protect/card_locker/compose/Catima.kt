@@ -19,6 +19,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import protect.card_locker.R
+import protect.card_locker.compose.theme.skRole
+import protect.card_locker.shiroikuma.SkSlot
 import protect.card_locker.preferences.Settings
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -26,20 +28,15 @@ import protect.card_locker.preferences.Settings
 fun CatimaTopAppBar(title: String,
                     onBackPressedDispatcher: OnBackPressedDispatcher?,
                     actions : @Composable RowScope.() -> Unit = {}) {
-    // Use pure black in OLED theme
-    val context = LocalContext.current
-    val settings = Settings(context)
-    val isDarkMode = when (settings.theme) {
-        AppCompatDelegate.MODE_NIGHT_NO -> false
-        AppCompatDelegate.MODE_NIGHT_YES -> true
-        else -> isSystemInDarkTheme()
-    }
-
-    val appBarColors = if (isDarkMode && settings.oledDark) {
-        TopAppBarDefaults.topAppBarColors().copy(containerColor = Color.Black)
-    } else {
-        TopAppBarDefaults.topAppBarColors()
-    }
+    // shiroikuma-nekokan fork: the bar's ground, title and icons are the top-bar roles.
+    // (Upstream chose between its default and a literal black for the OLED setting here.)
+    val appBarColors = TopAppBarDefaults.topAppBarColors(
+        containerColor = skRole(SkSlot.TOOLBAR_BACKGROUND),
+        scrolledContainerColor = skRole(SkSlot.TOOLBAR_BACKGROUND),
+        titleContentColor = skRole(SkSlot.TOOLBAR_TITLE),
+        navigationIconContentColor = skRole(SkSlot.TOOLBAR_ICON),
+        actionIconContentColor = skRole(SkSlot.TOOLBAR_ICON),
+    )
 
     TopAppBar(
         modifier = Modifier.testTag("topbar_catima"),

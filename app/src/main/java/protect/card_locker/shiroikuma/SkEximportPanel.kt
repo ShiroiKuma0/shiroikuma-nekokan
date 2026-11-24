@@ -40,9 +40,13 @@ class SkEximportPanel(
     private val openImportFile: () -> Unit,
 ) {
     private val density = activity.resources.displayMetrics.density
-    private val accent = SkTheme.color(activity, SkSlot.ACCENT)
-    private val background = SkTheme.color(activity, SkSlot.BACKGROUND)
-    private val textColor = SkTheme.color(activity, SkSlot.TEXT)
+    // Every colour of the panel is a dialog role (UI page → Dialogs).
+    private val accent = SkTheme.color(activity, SkSlot.DIALOG_FRAME)
+    private val background = SkTheme.color(activity, SkSlot.DIALOG_GROUND)
+    private val textColor = SkTheme.color(activity, SkSlot.DIALOG_TEXT)
+    private val titleColor = SkTheme.color(activity, SkSlot.DIALOG_TITLE)
+    private val noteColor = SkTheme.color(activity, SkSlot.NOTE)
+    private val warnColor = SkTheme.color(activity, SkSlot.DANGER)
 
     private val dialog: AlertDialog
     private lateinit var dirValue: TextView
@@ -106,7 +110,7 @@ class SkEximportPanel(
         }
 
         holder.addView(
-            text(activity.getString(R.string.sk_eim_title), 18f, accent, bold = true).apply {
+            text(activity.getString(R.string.sk_eim_title), 18f, titleColor, bold = true).apply {
                 gravity = Gravity.CENTER_HORIZONTAL
             },
         )
@@ -131,7 +135,7 @@ class SkEximportPanel(
             setOnClickListener { pickDirectory() }
         }
         dirBox.addView(
-            text(activity.getString(R.string.sk_eim_dir), 12f, accent).apply { alpha = 0.8f },
+            text(activity.getString(R.string.sk_eim_dir), 12f, noteColor),
         )
         dirValue = text("", 15f, textColor, bold = true).apply { setPadding(0, dp(2), 0, 0) }
         dirBox.addView(dirValue)
@@ -181,7 +185,7 @@ class SkEximportPanel(
             },
         )
         bar.addView(pillButton(activity.getString(R.string.sk_eim_import)) { onImportClicked() })
-        bar.addView(pillButton(activity.getString(R.string.sk_eim_export)) { onExportClicked() })
+        bar.addView(pillButton(activity.getString(R.string.sk_eim_export), main = true) { onExportClicked() })
         holder.addView(bar)
 
         return ScrollView(activity).apply { addView(holder) }
@@ -219,7 +223,7 @@ class SkEximportPanel(
             text = label
             textSize = 15f
             setTextColor(textColor)
-            buttonTintList = ColorStateList.valueOf(accent)
+            SkWidgets.mark(this)
             if (bold) setTypeface(typeface, android.graphics.Typeface.BOLD)
             setPadding(dp(4), dp(2), 0, dp(2))
         }
@@ -233,28 +237,17 @@ class SkEximportPanel(
     }
 
     /**
-     * Arcanechat pill as a plain TextView (no Button — Material tints button backgrounds
-     * away): black fill, round accent border, accent text, accent ripple.
+     * A pill as a plain TextView, drawn from the button roles (shiroikuma/SkPill.kt): never
+     * filled, the main action of the block with the 3 dp frame and bold text.
      */
-    private fun pillButton(label: String, onClick: () -> Unit): TextView =
+    private fun pillButton(label: String, main: Boolean = false, onClick: () -> Unit): TextView =
         AppCompatTextView(activity).apply {
             text = label
             textSize = 14f
-            setTextColor(accent)
             gravity = Gravity.CENTER
             isClickable = true
             isFocusable = true
-            val shape = GradientDrawable().apply {
-                setColor(this@SkEximportPanel.background)
-                cornerRadius = 50 * density
-                setStroke((1.5f * density).toInt(), accent)
-            }
-            background = RippleDrawable(
-                ColorStateList.valueOf((accent and 0x00FFFFFF) or 0x33000000),
-                shape,
-                null,
-            )
-            setPadding(dp(20), dp(8), dp(20), dp(8))
+            SkPill.apply(this, main = main)
             layoutParams = LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -271,15 +264,15 @@ class SkEximportPanel(
         val name = SkEximport.exportDir(activity)?.name
             ?: SkEximport.dirUri(activity)?.lastPathSegment
         dirValue.text = name ?: activity.getString(R.string.sk_eim_dir_unset)
-        dirValue.setTextColor(if (name == null) WARN_COLOR else textColor)
+        dirValue.setTextColor(if (name == null) warnColor else textColor)
         val (message, warn) = SkEximport.lastExportStatus(activity)
         statusView.text = message
-        statusView.setTextColor(if (warn) WARN_COLOR else textColor)
+        statusView.setTextColor(if (warn) warnColor else textColor)
         statusView.alpha = if (warn) 1f else 0.8f
     }
 
     private fun toast(message: String) {
-        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
+        SkToast.makeText(activity, message, Toast.LENGTH_LONG).show()
     }
 
     // ------------------------------------------------------------- progress dialog
@@ -291,8 +284,8 @@ class SkEximportPanel(
             setPadding(dp(26), dp(20), dp(26), dp(20))
             background = borderedBox(16)
         }
-        box.addView(text(activity.getString(titleRes), 19f, accent, bold = true))
-        progressCount = text("", 21f, accent, bold = true).apply {
+        box.addView(text(activity.getString(titleRes), 19f, titleColor, bold = true))
+        progressCount = text("", 21f, titleColor, bold = true).apply {
             gravity = Gravity.CENTER_HORIZONTAL
             setPadding(0, dp(10), 0, dp(4))
         }
@@ -489,8 +482,8 @@ class SkEximportPanel(
             setPadding(dp(22), dp(20), dp(22), dp(16))
             background = borderedBox(16)
         }
-        box.addView(text(title, 19f, accent, bold = true))
-        box.addView(text(body, 14f, accent).apply { setPadding(0, dp(10), 0, 0) })
+        box.addView(text(title, 19f, titleColor, bold = true))
+        box.addView(text(body, 14f, textColor).apply { setPadding(0, dp(10), 0, 0) })
 
         val bar = LinearLayout(activity).apply {
             orientation = LinearLayout.HORIZONTAL
@@ -501,8 +494,9 @@ class SkEximportPanel(
             .setView(ScrollView(activity).apply { addView(box) })
             .setCancelable(false)
             .create()
-        for ((label, onClick) in buttons) {
-            bar.addView(pillButton(label) { onClick(info) })
+        // The last button is the one the dialog is for: the main pill.
+        buttons.forEachIndexed { index, (label, onClick) ->
+            bar.addView(pillButton(label, main = index == buttons.lastIndex) { onClick(info) })
         }
         box.addView(bar)
         info.show()
@@ -548,7 +542,4 @@ class SkEximportPanel(
         Runtime.getRuntime().exit(0)
     }
 
-    companion object {
-        private const val WARN_COLOR = 0xFFFF5252.toInt()
-    }
 }

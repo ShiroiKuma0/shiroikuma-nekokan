@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import protect.card_locker.shiroikuma.SkToast // shiroikuma-nekokan fork
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.view.MenuProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -44,7 +45,7 @@ class CardShortcutConfigure : CatimaAppCompatActivity(), CardAdapterListener, Me
         
         // If there are no cards, bail
         if (DBHelper.getLoyaltyCardCount(mDatabase) == 0) {
-            Toast.makeText(this, R.string.noCardsMessage, Toast.LENGTH_LONG).show()
+            SkToast.makeText(this, R.string.noCardsMessage, Toast.LENGTH_LONG).show()
             finish()
         }
         

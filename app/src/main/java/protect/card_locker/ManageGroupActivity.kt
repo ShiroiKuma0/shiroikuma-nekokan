@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import protect.card_locker.shiroikuma.SkToast // shiroikuma-nekokan fork
 import androidx.activity.OnBackPressedCallback
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.GridLayoutManager
@@ -94,7 +95,7 @@ class ManageGroupActivity : CatimaAppCompatActivity(), CardAdapterListener {
             if (currentGroupName != mGroup._id) {
                 when {
                     currentGroupName.isEmpty() -> {
-                        Toast.makeText(
+                        SkToast.makeText(
                             applicationContext,
                             R.string.group_name_is_empty,
                             Toast.LENGTH_SHORT
@@ -103,7 +104,7 @@ class ManageGroupActivity : CatimaAppCompatActivity(), CardAdapterListener {
                     }
 
                     !mGroupNameNotInUse -> {
-                        Toast.makeText(
+                        SkToast.makeText(
                             applicationContext,
                             R.string.group_name_already_in_use,
                             Toast.LENGTH_SHORT
@@ -117,7 +118,7 @@ class ManageGroupActivity : CatimaAppCompatActivity(), CardAdapterListener {
             if (currentGroupName != mGroup._id) {
                 DBHelper.updateGroup(mDatabase, this@ManageGroupActivity, mGroup._id, currentGroupName)
             }
-            Toast.makeText(
+            SkToast.makeText(
                 applicationContext,
                 R.string.group_updated,
                 Toast.LENGTH_SHORT

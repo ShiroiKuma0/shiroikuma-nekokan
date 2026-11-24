@@ -21,8 +21,7 @@ class SkFontPickerDialog(
 
     init {
         val binding = DialogSkFontPickerBinding.inflate(LayoutInflater.from(activity))
-        val textColor = SkTheme.color(activity, SkSlot.TEXT)
-        val accentColor = SkTheme.color(activity, SkSlot.ACCENT)
+        val textColor = SkTheme.color(activity, SkSlot.DIALOG_TEXT)
 
         SkFonts.availableFontOptions(activity).forEach { option ->
             val row = ItemSkFontOptionBinding.inflate(
@@ -42,7 +41,8 @@ class SkFontPickerDialog(
             LayoutInflater.from(activity), binding.skFontPickerHolder, false,
         )
         addRow.skFontOptionLabel.text = activity.getString(R.string.sk_add_font)
-        addRow.skFontOptionLabel.setTextColor(accentColor)
+        // The one action among the choices: a pill.
+        SkPill.apply(addRow.skFontOptionLabel)
         addRow.skFontOptionLabel.setOnClickListener {
             dialog?.dismiss()
             onAddFont()

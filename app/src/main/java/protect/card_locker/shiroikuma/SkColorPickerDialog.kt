@@ -64,6 +64,7 @@ class SkColorPickerDialog(
         initial: Int,
         onChange: (Int) -> Unit,
     ) {
+        SkWidgets.slider(seekBar)
         seekBar.max = 255
         seekBar.progress = initial
         valueView.text = initial.toString()
@@ -125,7 +126,7 @@ class SkColorPickerDialog(
         setColor(color)
         setStroke(
             (1.5f * activity.resources.displayMetrics.density).toInt(),
-            SkTheme.color(activity, SkSlot.ACCENT),
+            SkTheme.color(activity, SkSlot.DIALOG_FRAME),
         )
     }
 }

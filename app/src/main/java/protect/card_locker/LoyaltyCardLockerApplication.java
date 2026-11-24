@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import protect.card_locker.preferences.Settings;
+import protect.card_locker.shiroikuma.SkAppContext;
+import protect.card_locker.shiroikuma.SkPalette;
+import protect.card_locker.shiroikuma.SkToast;
 import protect.card_locker.wearos.BluetoothStateReceiver;
 import protect.card_locker.wearos.WearSyncServiceManager;
 
@@ -20,6 +23,12 @@ public class LoyaltyCardLockerApplication extends Application {
 
         // shiroikuma-nekokan fork: upstream initialised the ACRA crash reporter here. The fork
         // ships no crash reporter at all, so nothing is initialised.
+
+        // shiroikuma-nekokan fork: the colour roles, laid over the resources before anything
+        // reads a colour from them (see shiroikuma/SkPalette.kt).
+        SkAppContext.set(this);
+        SkPalette.apply(this);
+        SkToast.watch(this);
 
         // Set theme
         Settings settings = new Settings(this);

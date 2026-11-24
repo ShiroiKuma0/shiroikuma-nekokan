@@ -7,8 +7,8 @@
     android:focusable="true"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp">
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp">
 
     <TextView
         android:id="@+id/sk_color_label"
@@ -21,8 +21,8 @@
 
     <View
         android:id="@+id/sk_color_preview"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true" />
 </RelativeLayout>

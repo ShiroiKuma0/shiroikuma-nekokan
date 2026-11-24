@@ -17,6 +17,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import protect.card_locker.shiroikuma.SkToast // shiroikuma-nekokan fork
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
@@ -87,7 +88,7 @@ class MainActivity : CatimaAppCompatActivity(), CardAdapterListener {
                     try {
                         ImportURIHelper(this@MainActivity).startShareIntent(mAdapter.getSelectedItems())
                     } catch (e: UnsupportedEncodingException) {
-                        Toast.makeText(
+                        SkToast.makeText(
                             this@MainActivity,
                             R.string.failedGeneratingShareURL,
                             Toast.LENGTH_LONG

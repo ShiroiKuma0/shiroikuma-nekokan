@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
+import protect.card_locker.shiroikuma.SkToast; // shiroikuma-nekokan fork
 
 public class OpenWebLinkHandler {
 
@@ -21,7 +22,7 @@ public class OpenWebLinkHandler {
         try {
             activity.startActivity(intent);
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(activity, R.string.failedToOpenUrl, Toast.LENGTH_LONG).show();
+            SkToast.makeText(activity, R.string.failedToOpenUrl, Toast.LENGTH_LONG).show();
             Log.e(TAG, "No activity found to handle intent", e);
         }
     }
