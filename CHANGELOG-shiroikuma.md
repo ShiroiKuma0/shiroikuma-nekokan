@@ -4,7 +4,87 @@ Everything built on top of stock [Catima](https://github.com/CatimaLoyalty/Andro
 `CHANGELOG.md` (it was compiled into the app until Catima 2.45.0 dropped the embedded copy); fork
 notes live here.
 
-## 2.45.1+001 — current
+## 2.46.0+002 — current
+
+**Rebased onto upstream Catima `v2.46.0`** (versionCode 1008), and **the black-yellow theme applied
+fully**: every surface of the app follows it, and every colour is a settable role.
+
+### From upstream Catima 2.45.2 and 2.46.0
+- **Targets Android 17** (`compileSdk` / `targetSdk` 37).
+- **A card's note, valid-from and expiry dates are sent to the watch** over the Bluetooth server.
+- **The content provider notifies on every card change**, so Gadgetbridge notices a changed card
+  at once.
+- **Wear OS sync starts when Bluetooth is turned on**, if sync is enabled.
+- **The extra screen-on time while viewing a card is limited to 5 minutes**, against overheating.
+- **The full-screen barcode view avoids the camera cut-out.**
+- Upstream's new tests pass against the fork's sources (122 unit tests green), and Weblate
+  translation updates come along.
+
+### Colours — nothing fixed, every item settable
+- **76 colour roles**, each set on the UI page in the section of the item it paints: Foundation,
+  Text, Buttons, Top bar, Dialogs, Main screen, Switches, Menus, Lists, Marks, Fields, Settings
+  pages, Bars and messages. The defaults are the two primaries, `#FFFF00` and `#000000`, plus the
+  settled colours that carry meaning (the seven icon roles, the delete red).
+- **Upstream's layouts stay as upstream wrote them.** The fork's theme points every colour
+  attribute at a role resource, and a resources loader lays the stored colours over those at run
+  time (Android 11 and later; older systems show each role's default). The fork's own layouts
+  carry no colour and are painted in code.
+- **Each role can be reset alone**, and *Reset all colours* is in Maintenance. The roles travel in
+  the UI category of the export.
+- A screen built before a colour change rebuilds itself when it is next shown.
+
+### The UI page
+- **A pill to the app settings** opens the page, followed by **an index of chips**, one per
+  section, each with the section's icon in the section's colour. A tap unfolds the section and
+  scrolls to it; a long-press drags the chip, and the sections reorder to match.
+- **Every section folds** (› folded, ⌄ open) and starts folded. Fold state and section order are
+  remembered and exported; *Reset section order* is in Maintenance.
+- **Every row has an icon**, coloured by what the row does. Rows that open or run something are
+  outlined pills; rows with a switch, a swatch or a slider stay plain. Row padding is minimal.
+
+### Buttons, switches, dialogs
+- **Every button is an outlined pill** — 3 dp and bold for the main action of a block, 1.25 dp for
+  the others, red frame and label for a destructive one. No filled and no bare-text button remains,
+  stock confirmation dialogs included.
+- **Every switch is an outlined pill with a solid dot** — right and accent when on, left and dim
+  when off, both colours roles.
+- **Dialogs** have a framed panel in their own ground, frame, title and text roles; their action
+  lists are icon rows. Check boxes and radio buttons use the selection-mark roles.
+- **The add button and the card view's edit button are rings**, not filled discs. The card view
+  keeps the card's own colour, which is the card's data.
+
+### Menus, lists, settings screen
+- **Every menu action is a full-width pill row** with its icon at the left, coloured by role —
+  open (green), write (blue), group (light blue), share (orange), view (accent), block (rose),
+  delete (red) — with a › where the row opens something, and a clear divider between groups. This
+  covers the toolbar ⋮ menus, their submenus and the Compose image view's menu.
+- **The settings screen** has an icon on every row, pills for the rows that open a screen, and
+  summaries in the note colour.
+- **Upstream's Theme list and OLED switch are removed** from the settings screen; light or dark
+  system-bar icons follow the background role.
+
+### Toasts
+- **Toasts are in the house look**: a framed panel in toast ground, frame and text roles, at all 47
+  places the app shows one. A toast shown while no screen of the app is open keeps the system look,
+  since Android allows a custom one only in front.
+
+### Compose screens
+- The About screen and the card image view take their whole colour scheme from the roles, with pill
+  buttons, framed dialogs and icon rows.
+
+### Japanese
+- **Everything the fork adds is translated into Japanese** — 178 strings: the UI page, the
+  export/import panel, the automation rows, dialogs and notes. The fork's strings moved into files
+  of their own (`sk_strings.xml`), out of upstream's.
+
+### Rebrand kept whole
+- Twenty newly translated occurrences of the app's name in seven locales (Catalan, Danish, Italian,
+  both Portuguese, Swedish, Vietnamese) now read **白い熊 猫管**.
+
+`2.46.0+001` was the first build of this line, delivered for testing only: the same rebase and
+theme, without the themed toasts and still with the Theme and OLED rows.
+
+## 2.45.1+001
 
 **Rebased onto upstream Catima `v2.45.1`** (versionCode 1004). Every fork feature carries over
 unchanged; this release brings upstream's fixes and keeps the rebrand complete over its new

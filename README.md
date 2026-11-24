@@ -6,11 +6,11 @@
 
 **Loyalty cards, membership cards, coupons — in the black-yellow 白い熊 house style.**
 
-A fork of [Catima](https://github.com/CatimaLoyalty/Android) with **major additions**: one-tap full export/import (cards + theme + fonts + settings, by category), headless backup on request for automation, backup-and-restore of the app's own data by a sister app so a wiped phone comes back whole, a fully settable 白い熊 猫管 UI page (RGBA color pickers, external fonts, border/roundness sliders — everything live-previewed), the black-yellow traced icon and theme, complete rebranding across all 54 locales, and **not a single tracker** — upstream's crash reporter is removed, not merely switched off.
+A fork of [Catima](https://github.com/CatimaLoyalty/Android) with **major additions**: one-tap full export/import (cards + theme + fonts + settings, by category), headless backup on request for automation, backup-and-restore of the app's own data by a sister app so a wiped phone comes back whole, the black-yellow theme applied to every surface with **every colour a settable role** (76 of them, each with its own RGBA picker, on a folding 白い熊 猫管 UI page with a chip index), outlined pill buttons, outlined switches and pill menus throughout, external fonts, border/roundness sliders, the black-yellow traced icon, a full Japanese translation of everything the fork adds, complete rebranding across all 54 locales, and **not a single tracker** — upstream's crash reporter is removed, not merely switched off.
 
 Installs **side-by-side** with Catima (app id `shiroikuma.nekokan`).
 
-**📥 Latest release: [`2.45.1+001`](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases/latest)** — [all releases & APK downloads »](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases)
+**📥 Latest release: [`2.46.0+002`](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases/latest)** — [all releases & APK downloads »](https://github.com/ShiroiKuma0/shiroikuma-nekokan/releases)
 
 </div>
 
@@ -42,14 +42,19 @@ disable it, it **removes** it: the dependency, the initialisation, the settings 
 About-page credit are all gone, and the built APK's dex contains no occurrence of the word `acra`.
 There is no crash reporting and no analytics of any kind, and the app's own privacy policy says so.
 
-## 🎨 The 白い熊 猫管 UI page
-One page controls the whole look — reachable from Settings or by **long-pressing the ⋮ button** on the main screen. Sister-repo construction: big bold underlined section headings (Foundation / Top bar / Main screen / Buttons & controls), deeply indented items per level, tight rows. Every color opens a picker with **four RGBA sliders**, a live hex + swatch preview, and one-click boxes prefilled with your prior-selected colors. Foundation colors cascade: change the accent once and the toolbar icons, FAB, card borders and section rules follow.
+## 🎨 The 白い熊 猫管 UI page — every colour is yours
+One page controls the whole look — reachable from Settings or by **long-pressing the ⋮ button** on the main screen. It opens with a pill to the app settings and an **index of chips**, one per section: tap a chip to unfold its section and jump there, long-press to drag it, and the sections reorder to match. Every section folds, carries its own icon and colour, and remembers its state.
+
+Nothing in the app has a fixed colour. **76 roles** — each kind of text, frame, ground, icon, divider and control state — sit in the section of the thing they paint: Foundation, Text, Buttons, Top bar, Dialogs, Main screen, Switches, Menus, Lists, Marks, Fields, Settings pages, Bars and messages. Every one opens a picker with **four RGBA sliders**, a live hex + swatch preview and boxes of your recent colours; each can be reset alone, or all at once. The two foundation colours cascade, so changing the accent once moves everything that has not been set separately. The roles travel in the export.
 
 ## 🔤 External fonts, rendered in their own glyphs
 Import any `ttf`/`otf` and assign it per role — primary text, secondary text, bar title, welcome view, card name/note, buttons — each with its own weight (100–900) and size slider, and a live sample line. The font list draws every font's name **in that font**.
 
-## 🖤💛 Black-yellow everywhere, borders to 0
-The whole app boots into the house look: black surfaces, yellow text, yellow borders — dialogs, Settings and the Compose About screen included (Material You is retired). Card frames have color, **thickness and corner-roundness sliders that go all the way to 0**, with a live preview box.
+## 🖤💛 Black-yellow everywhere
+The whole app is in the house look, on every screen — upstream's included. **Buttons are outlined pills**, never filled: a thick bold frame for the main action of a block, a thin one for the rest, red for anything that deletes. **Switches are outlined** with a solid dot. **Menus are full-width pill rows**, each with an icon coloured by what the row does — open, write, group, share, view, block, delete. Dialogs, lists, the settings screen (an icon on every row), the add button, tabs, toasts and the Compose screens all follow. Card frames have colour, **thickness and corner-roundness sliders that go all the way to 0**, with a live preview box. Upstream's Theme list and OLED switch are gone — the UI page replaces them.
+
+## 🇯🇵 Japanese throughout
+Every string the fork adds — the whole UI page, the export/import panel, the automation rows, the dialogs — has a proper Japanese translation, so nothing English sits between Japanese lines.
 
 ## 🐱 The traced icon
 The Catima cat-card glyph re-traced as pure-yellow line art on black — hidden edges properly removed — as an adaptive icon, the splash screen, the welcome logo and the widget preview.
