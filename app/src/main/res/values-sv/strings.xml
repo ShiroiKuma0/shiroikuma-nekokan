@@ -135,7 +135,7 @@
     <string name="balance">Saldo</string>
     <string name="balanceSentence">Saldo: <xliff:g>%s</xliff:g></string>
     <string name="settings_disable_lockscreen_while_viewing_card">Visa ovanför låsskärm</string>
-    <string name="import白い熊 猫管Message">Välj den exporterade från 白い熊 猫管 som du vill importera.\nSkapa den från Import/Export-menyn i en annan 白い熊 猫管-app genom att trycka på Exportera.</string>
+    <string name="importCatimaMessage">Välj den exporterade från 白い熊 猫管 som du vill importera.\nSkapa den från Import/Export-menyn i en annan 白い熊 猫管-app genom att trycka på Exportera.</string>
     <string name="expiryStateSentence">Giltigt till: <xliff:g>%s</xliff:g></string>
     <string name="exportSuccessful">Data exporterad</string>
     <string name="importSuccessful">Data importerad</string>

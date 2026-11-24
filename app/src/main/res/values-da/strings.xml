@@ -192,7 +192,7 @@
     <string name="app_libraries">Tredjepartsbiblioteker: <xliff:g id="app_libraries_list">%s</xliff:g></string>
     <string name="app_resources">Tredjepartsressourcer: <xliff:g id="app_resources_list">%s</xliff:g></string>
     <string name="app_loyalty_card_keychain">Loyalitetskort Nøglering</string>
-    <string name="importCatimaMessage">Vælg den eksport fra Catima, der skal importeres.\nOpret den via menuen Import/eksport i en anden Catima-app ved at trykke på Eksportér.</string>
+    <string name="importCatimaMessage">Vælg den eksport fra 白い熊 猫管, der skal importeres.\nOpret den via menuen Import/eksport i en anden 白い熊 猫管-app ved at trykke på Eksportér.</string>
     <string name="importFidmeMessage">Vælg din eksport fra FidMe, der skal importeres, og vælg derefter stregkodetyperne manuelt.\nOpret eksporten via din FidMe-profil ved at vælge Databeskyttelse og derefter trykke på \"Udtræk mine data\".</string>
     <string name="importLoyaltyCardKeychain">Importér fra loyalitetskort til nøglering</string>
     <string name="importLoyaltyCardKeychainMessage">Vælg den eksport fra Loyalty Card Nøglering, som skal importeres.\nOpret den via menuen Import/Eksport i Loyalty Card Keychain ved at trykke på Eksport.</string>
@@ -219,7 +219,7 @@
     <string name="previousCard">Forrige</string>
     <string name="nextCard">Næste</string>
     <string name="failedToOpenUrl">Installer en webbrowser først</string>
-    <string name="welcome">Velkommen til Catima</string>
+    <string name="welcome">Velkommen til 白い熊 猫管</string>
     <string name="importCards">Importer kort</string>
     <string name="updateBalanceTitle">Hvor meget brugte eller modtog du?</string>
     <string name="updateBalanceHint">Indtast beløb</string>
@@ -259,7 +259,7 @@
     <string name="settings_category_title_privacy">Privatliv</string>
     <string name="settings_wear_sync">Synkroniser med Wear OS</string>
     <string name="settings_wear_sync_summary">Giver Wear OS-ledsageappen mulighed for at læse dine kort via Bluetooth</string>
-    <string name="wear_sync_permission_required">Catima har brug for de tilladelser, du afviste, for at kunne synkronisere med dit Wear OS-smartwatch</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 har brug for de tilladelser, du afviste, for at kunne synkronisere med dit Wear OS-smartwatch</string>
     <string name="settings_wear_sync_devices">Tilladte Wear OS-enheder</string>
     <string name="settings_wear_sync_devices_summary">Administrer enheder, der må synkronisere via Bluetooth</string>
     <string name="settings_wear_sync_no_devices">Ingen tilladte enheder</string>
@@ -275,7 +275,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> blokerede enheder</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Fjern enhed?</string>
-    <string name="settings_wear_sync_unpair_message">Fjern <xliff:g>%1$s</xliff:g> fra Catima? Den vil ikke længere kunne synkronisere dine kort.</string>
+    <string name="settings_wear_sync_unpair_message">Fjern <xliff:g>%1$s</xliff:g> fra 白い熊 猫管? Den vil ikke længere kunne synkronisere dine kort.</string>
     <string name="settings_wear_sync_unblock_message">Fjern <xliff:g>%1$s</xliff:g> fra listen over blokerede enheder? Den vil kunne anmode om adgang igen.</string>
     <string name="settings_wear_sync_unpair">Fjern</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -322,7 +322,7 @@
     <string name="width">Bredde</string>
     <string name="card_list_widget_name">Kortliste</string>
     <string name="setBarcodeWidth">Angiv stregkodebredde</string>
-    <string name="card_list_widget_empty">Når du har tilføjet loyalitetskort i Catima, vil de blive vist her. Hvis du har kort, så sørg for, at de ikke alle er arkiveret.</string>
+    <string name="card_list_widget_empty">Når du har tilføjet loyalitetskort i 白い熊 猫管, vil de blive vist her. Hvis du har kort, så sørg for, at de ikke alle er arkiveret.</string>
     <string name="cardWithNumber">Kort <xliff:g>%d</xliff:g></string>
     <string name="cardWithNumberAndLocale">Kort <xliff:g>%d</xliff:g> (<xliff:g>%s</xliff:g>)</string>
     <string name="pleaseDoNotRotateTheDevice">Undlad venligst at rotere enheden, da dette vil annullere handlingen</string>
@@ -341,7 +341,7 @@
     <string name="nfc_block_system_error">Kunne ikke sætte NFC på pause</string>
     <string name="open_in_gallery">Åbn i billedgalleri</string>
     <string name="wear_bt_channel_name">Wear OS-ledsager</string>
-    <string name="wear_bt_notification_title">Catima Wear OS-synkronisering aktiv</string>
+    <string name="wear_bt_notification_title">白い熊 猫管 Wear OS-synkronisering aktiv</string>
     <string name="settings_category_title_smartwatch">Understøttelse af smartwatches</string>
     <string name="wear_bt_failed_foreground_notification_title">Kunne ikke starte Wear OS-synkroniseringstjenesten</string>
     <string name="wear_bt_critical_error_channel_name">Kritisk fejl ved synkronisering i Wear OS</string>

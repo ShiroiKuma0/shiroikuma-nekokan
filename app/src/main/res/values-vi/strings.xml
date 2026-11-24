@@ -303,7 +303,7 @@
     <string name="open_in_gallery">Mở trong thư viện ảnh</string>
     <string name="settings_wear_sync">Đồng bộ với Wear OS</string>
     <string name="settings_wear_sync_summary">Cho phép ứng dụng hỗ trợ Wear OS đọc thẻ của bạn qua Bluetooth</string>
-    <string name="wear_sync_permission_required">Catima cần quyền bạn đã từ chối cấp để đồng bộ với đồng hồ thông minh Wear OS</string>
+    <string name="wear_sync_permission_required">白い熊 猫管 cần quyền bạn đã từ chối cấp để đồng bộ với đồng hồ thông minh Wear OS</string>
     <string name="settings_wear_sync_devices">Các thiết bị Wear OS được cho phép</string>
     <string name="settings_wear_sync_devices_summary">Quản lý các thiết bị được phép đồng bộ qua Bluetooth</string>
     <string name="settings_wear_sync_no_devices">Không có thiết bị được cho phép</string>
@@ -317,7 +317,7 @@
         <item quantity="other"><xliff:g>%d</xliff:g> thiết bị đã chặn</item>
     </plurals>
     <string name="settings_wear_sync_unpair_title">Xoá thiết bị?</string>
-    <string name="settings_wear_sync_unpair_message">Xoá <xliff:g>%1$s</xliff:g> khỏi Catima? Thiết bị sẽ không thể đồng bộ các thẻ của bạn nữa.</string>
+    <string name="settings_wear_sync_unpair_message">Xoá <xliff:g>%1$s</xliff:g> khỏi 白い熊 猫管? Thiết bị sẽ không thể đồng bộ các thẻ của bạn nữa.</string>
     <string name="settings_wear_sync_unblock_message">Xoá <xliff:g>%1$s</xliff:g> khỏi danh sách chặn? Thiết bị có thể yêu cầu lại quyền truy cập.</string>
     <string name="settings_wear_sync_unpair">Xoá</string>
     <string name="settings_wear_sync_device_name"><xliff:g>%1$s</xliff:g> (<xliff:g>%2$s</xliff:g>)</string>
@@ -333,7 +333,7 @@
     <string name="wear_bt_pairing_mismatch_message">Thiết bị này đã được xác thực trước đây nhưng hiện đang hiển thị một mã nhận dạng khác. Tình trạng này xảy ra khi ứng dụng Wear OS được cài đặt lại hoặc dữ liệu của ứng dụng bị xóa. Đây cũng có thể là dấu hiệu của một nỗ lực giả mạo địa chỉ MAC Bluetooth.\n\nChỉ chấp nhận nếu bạn vừa cài đặt lại ứng dụng Catima Wear OS trên đồng hồ này.</string>
     <string name="open_settings">Mở cài đặt</string>
     <string name="wear_bt_channel_name">Ứng dụng đồng hành Wear OS</string>
-    <string name="wear_bt_notification_title">Đồng bộ Catima Wear OS đang bật</string>
+    <string name="wear_bt_notification_title">Đồng bộ 白い熊 猫管 Wear OS đang bật</string>
     <string name="settings_category_title_smartwatch">Hỗ trợ đồng hồ thông minh</string>
     <string name="wear_bt_failed_foreground_notification_title">Khởi động dịch vụ đồng bộ Wear OS thất bại</string>
     <string name="wear_bt_critical_error_channel_name">Lỗi nghiêm trọng đồng bộ Wear OS</string>

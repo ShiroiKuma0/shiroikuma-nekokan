@@ -272,8 +272,8 @@
     <string name="chooseImportType">Importar dades desde</string>
     <string name="privacy_policy">Politica de privacitat</string>
     <string name="accept">Acceptar</string>
-    <string name="importCatima">Importar desde Catima</string>
-    <string name="importCatimaMessage">Per importar sel•lecciona el fitxer generat desde Catima.\nCrea el document desde el menú importar/exportar desde una altra aplicació Catima, clicant Exportar.</string>
+    <string name="importCatima">Importar desde 白い熊 猫管</string>
+    <string name="importCatimaMessage">Per importar sel•lecciona el fitxer generat desde 白い熊 猫管.\nCrea el document desde el menú importar/exportar desde una altra aplicació 白い熊 猫管, clicant Exportar.</string>
     <string name="importFidme">Importar desde FidMe</string>
     <string name="importLoyaltyCardKeychain">Importar desde Loyalty Card Keychain</string>
     <string name="importVoucherVault">Importar desde Voucher Vault</string>
