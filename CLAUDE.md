@@ -8,7 +8,7 @@ installable side-by-side with upstream Catima.
 
 - `origin` = `git@github.com:ShiroiKuma0/shiroikuma-nekokan.git` (ssh) — our fork.
 - `upstream` = `https://github.com/CatimaLoyalty/Android.git` (https).
-- **`main`** tracks the latest upstream **release tag** (current base `v2.45.1`).
+- **`main`** tracks the latest upstream **release tag** (current base `v2.46.0`).
 - **`custom`** carries all our work, rebased onto `main` on each new upstream release. **All
   development happens on `custom`.**
 - **Do not rename the `protect.card_locker` code namespace** — only the installed `APP_ID` differs
@@ -75,7 +75,7 @@ installable side-by-side with upstream Catima.
 - `app/src/main/res/` — View-based layouts + some Compose; ~55 translated locales (label change
   therefore lives in the **non-translatable `sk_app_name`** string + manifest, never in the
   translated `app_name`).
-- Flavors: `foss` (default, we ship this), `fdroidLegacy` and `gplay`. minSdk 23, targetSdk 36,
+- Flavors: `foss` (default, we ship this), `fdroidLegacy` and `gplay`. minSdk 23, targetSdk 37,
   JDK 21. Modules: `:app`, `:shared` (Wear Bluetooth protocol/security + `ForegroundColorHelper`)
   and `:wear` (upstream's Wear OS app — never built here).
 - Tests: `./gradlew :app:testFossDebugUnitTest` (Robolectric).
@@ -93,7 +93,34 @@ installable side-by-side with upstream Catima.
 
 ## Current status
 
-**Released `2.45.1+001`** (2026-10-02; tag `2.45.1+001`, APK attached, default branch `custom`;
+**Released `2.46.0+002`** (2026-11-24; tag `2.46.0+002`, APK attached). Based on upstream **Catima
+`v2.46.0`** (versionCode **1008**, so our line is `10080000 + N`; `compileSdk`/`targetSdk` 37; 122
+unit tests green). `+001` was a test build only and is not a release. The 2.46.0 rebase conflicted
+in `app/build.gradle.kts`, locale `strings.xml`, `LoyaltyCardLockerApplication.java` and
+`gradle/libs.versions.toml` (ACRA stays removed); twenty new occurrences of the app name in seven
+locales were rebranded — **never let a search-and-replace touch a resource `name=`** (it broke
+`importCatimaMessage` in `values-sv` once).
+
+This release **applies the black-yellow theme fully, the MIXED way** (白い熊, 2026-11-23): upstream's
+layouts are untouched; the `SkBlackYellow` overlay holds no colour and points every colour
+attribute at `@color/sk_role_…` (`values/sk_roles.xml`, default `values/` only), over which
+`SkPalette` lays the stored colours with a `ResourcesLoader` (Android 11+) built by
+`com.google.android.material.color.SkColorLoaderBridge`; the fork's own layouts carry no colour and
+are painted in code. The role table is `shiroikuma/SkTheme.kt` — `SkSlot` (76 roles in 15
+`SkSection`s), `SkIconRole`, `SkSectionColor` — stored under `sk_` keys in the default preferences.
+`SkViewInflater` (the theme's `viewInflaterClass`) gives pills, outlined switches, selection marks,
+ring FABs and tabs; menus use app copies of AppCompat's two `abc_*_menu_item_layout.xml` with
+`SkPillMenuItemView` (re-copy them when AppCompat moves past 1.8.0) and the `SkMenuPills` table by
+menu item id; `SkPreferenceRows` gives the settings rows their icons by preference key;
+`SkToast.makeText` replaces `Toast.makeText` at every call site (a new upstream toast must be
+switched over after a rebase); the three platform-read shapes are `@Keep` drawable classes in
+`drawable-v24/`. `SkUiActivity` is the folding page with the chip index. Upstream's Theme list and
+OLED switch are removed from `preferences.xml`, and `Settings.getTheme()` answers from the
+background role's luminance. The fork's strings live in `values/sk_strings.xml` and
+`values-ja/sk_strings.xml` (178 keys, all translated — keep the key sets equal). **Not yet checked
+on the device** as of the publish.
+
+Previously **released `2.45.1+001`** (2026-10-02; tag `2.45.1+001`, APK attached, default branch `custom`;
 `README.md` + `CHANGELOG-shiroikuma.md` track it). Previously `2.45.0+004` (2026-09-05),
 `2.45.0+003` (2026-09-04) and `2.45.0+001` (2026-08-14). Based on upstream **Catima `v2.45.1`**
 (versionCode **1004**, so our line is `10040000 + N`): list-widget refresh on card open, pkpass/PDF
